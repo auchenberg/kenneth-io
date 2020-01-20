@@ -31,6 +31,7 @@ module.exports = {
     // combine the map of post pages with the home
     return Object.assign({}, pages, {
       '/': {page: '/'},
+      '/about': {page: '/about'},
       '/posts': {page: '/posts'},
       '/projects': {page: '/projects'},
       '/speaking': {page: '/speaking'},
