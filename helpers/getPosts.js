@@ -3,7 +3,7 @@ var slug = require('slug');
 var MarkdownIt = require('markdown-it');
 let _ = require('lodash');
 
-export function getBlogPosts() {
+function getBlogPosts() {
   const path = require('path');
   let md = new MarkdownIt({
     html: true,
@@ -37,7 +37,7 @@ export function getBlogPosts() {
   return posts;
 }
 
-export function getBlogPostsGroupedByYear() {
+function getBlogPostsGroupedByYear() {
   let allPosts = getBlogPosts();
   let groupedPosts = _.groupBy(allPosts, (p) => {
     return new Date(p.data.date).getFullYear();
@@ -45,7 +45,7 @@ export function getBlogPostsGroupedByYear() {
   return groupedPosts;
 }
 
-export function getBlogPostBySlug(slug) {
+function getBlogPostBySlug(slug) {
   let allPosts = getBlogPosts();
 
   let post = allPosts.filter((post) => {
@@ -55,3 +55,7 @@ export function getBlogPostBySlug(slug) {
 
   return post ? post[0] : null;
 }
+
+module.exports.getBlogPosts = getBlogPosts;
+module.exports.getBlogPostBySlug = getBlogPostBySlug;
+module.exports.getBlogPostsGroupedByYear = getBlogPostsGroupedByYear;
