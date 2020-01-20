@@ -49,7 +49,6 @@ function getBlogPostBySlug(slug) {
   let allPosts = getBlogPosts();
 
   let post = allPosts.filter((post) => {
-    console.log('post.slug', post.slug);
     return post.slug == slug;
   });
 
