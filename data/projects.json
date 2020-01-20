@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Visual Studio Code",
+    "place": "Seattle, USA",
+    "description": "Cross platform open source code editor",
+    "date": "October 2015",
+    "url": "https://code.visualstudio.com",
+    "image": "vscode.png"
+  },
+  {
+    "title": "Edge DevTools",
+    "place": "Seattle, USA",
+    "description": "Browser DevTools for Microsoft Edge",
+    "date": "October 2015",
+    "url": "https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide",
+    "image": "vscode.png"
+  },
+  {
+    "title": "Volkswagen",
+    "place": "Copenhagen, Denmark",
+    "description": "Node.js module to defeat unit tests. Viral open source joke on the Volkswagen emission scandal of 2015.",
+    "date": "October 2015",
+    "url": "/projects/volkswagen",
+    "image": "volkswagen.png"
+  },
+  {
+    "title": "#CPHFTW",
+    "place": "Copenhagen, Denmark",
+    "description": "Initiative to unify the danish startup scene by creating an umbrella organization that's run and founded by the danish startups.",
+    "date": "March 2015",
+    "url": "/projects/cphftw",
+    "image": "cphftw.png"
+  },
+  {
+    "title": "ColdFront Conference",
+    "place": "Copenhagen, Denmark",
+    "description": "The first dedicated front-end conference in Copenhagen. First conference took place in 2014 with 300 participants.",
+    "date": "September 2014",
+    "url": "/projects/coldfrontconf",
+    "image": "coldfront.png"
+  },
+  {
+    "title": "GoToMeeting Free (Hutt)",
+    "place": "Copenhagen, Denmark / San Francisco, US",
+    "description": "Next generation of the video conference system GoToMeeting, built from the ground up by building a startup inside Citrix.",
+    "date": "January 2014",
+    "url": "/projects/gotomeeting-free",
+    "image": "gotomeeting_free.png"
+  },
+  {
+    "title": "Prototype",
+    "place": "Copenhagen, Denmark",
+    "description": "Non-profit co-working space in a former coffee shop in Copenhagen for frackers, designers, troublemakers and other disrupters.",
+    "date": "May 2016",
+    "url": "/projects/prototype",
+    "image": "prototype.png"
+  },
+  {
+    "title": "RemoteDebug",
+    "place": "",
+    "description": "Intiative to unitfy browser remote debugging to enable better cross-browser DevTools and integration between browsers and editors.",
+    "date": "May 2016",
+    "url": "/projects/remotedebug",
+    "image": "remotedebug.png"
+  },
+  {
+    "title": "CopenhagenJS",
+    "place": "Copenhagen, Denmark",
+    "description": "Community for Javascript developers in the Copenhagen and area. Reached 1.000+ members at it's peak with monthly meetups and events.",
+    "date": "May 2016",
+    "url": "/projects/copenhagenjs",
+    "image": "copenhagenjs.png"
+  },
+  {
+    "title": "Podio",
+    "place": "Copenhagen, Denmark",
+    "description": "Social collaboration platform that merged the social network with the spreadsheet, by enabling everyone to build their own apps. Acquired by Citrix.",
+    "date": "May 2012",
+    "url": "/projects/podio",
+    "image": "podio.png"
+  },
+  {
+    "title": "ZYB",
+    "place": "Copenhagen, Denmark",
+    "description": "Social network and phone backup service for feature phones prior to Facebook and iPhone. Acquired by Vodafone.",
+    "date": "May 2010",
+    "url": "/projects/zyb",
+    "image": "zyb.png"
+  }
+]
