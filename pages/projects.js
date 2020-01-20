@@ -40,8 +40,8 @@ export default class Projects extends React.Component {
       });
     };
     return (
-      <Layout title="Speaking">
-        <div className="speaking">
+      <Layout title="Speaking" center>
+        <div className="projects">
           <h1>Projects</h1>
           <ul className="list">{projects()}</ul>
         </div>
@@ -51,7 +51,6 @@ export default class Projects extends React.Component {
           }
 
           .list {
-            margin: 30px 0 0 0;
             padding: 0;
           }
         `}</style>

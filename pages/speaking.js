@@ -40,7 +40,7 @@ class Home extends React.Component {
       });
     };
     return (
-      <Layout title="Speaking">
+      <Layout title="Speaking" center>
         <div className="speaking">
           <h1>Speaking</h1>
           <p>

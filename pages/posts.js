@@ -34,57 +34,23 @@ export default class Posts extends React.Component {
           <>
             <h3>{year}</h3>
             <ul>{postsByYear(year)}</ul>
+            <style jsx>{`
+              h3 {
+                font-size: 20px;
+              }
+            `}</style>
           </>
         );
       });
 
     return (
-      <Layout title="Posts">
+      <Layout title="Posts" center>
         <div className="home">
-          <h1>Posts</h1>
-          {posts}
+          <h1>Articles</h1>
+          <div className="list">{posts}</div>
         </div>
         <style jsx>{`
-          @keyframes wave-animation {
-            0% {
-              transform: rotate(0deg);
-            }
-            10% {
-              transform: rotate(-10deg);
-            }
-            20% {
-              transform: rotate(50deg);
-            }
-            30% {
-              transform: rotate(-10deg);
-            }
-            40% {
-              transform: rotate(9deg);
-            }
-            50% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(0deg);
-            }
-          }
-
-          h1 {
-            font-size: 35px;
-            font-weight: 600;
-          }
-
-          h2 {
-            font-size: 16px;
-            width: 70%;
-          }
-
-          .wave {
-            animation-name: wave-animation;
-            animation-duration: 2.5s;
-            animation-iteration-count: infinite;
-            transform-origin: 70% 70%;
-            display: inline-block;
+          .list {
           }
         `}</style>
       </Layout>

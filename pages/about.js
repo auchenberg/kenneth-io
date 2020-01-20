@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 export default class About extends React.Component {
   render() {
     return (
-      <Layout title="About Kenenth Auchenberg">
+      <Layout title="About Kenenth Auchenberg" center>
         <div className="page-about">
           <h1>About</h1>
           <p>Hej there, I'm Kenneth.</p>
@@ -253,17 +253,7 @@ export default class About extends React.Component {
             </li>
           </ul> */}
         </div>
-        <style jsx>{`
-          h1 {
-            font-size: 35px;
-            font-weight: 600;
-          }
-
-          h2 {
-            font-size: 16px;
-            width: 70%;
-          }
-        `}</style>
+        <style jsx>{``}</style>
       </Layout>
     );
   }

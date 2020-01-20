@@ -58,7 +58,7 @@ const Layout = (props) => (
         font-size: 28px;
         font-weight: 600;
         color: #202020;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
       }
 
       :global(h2) {
