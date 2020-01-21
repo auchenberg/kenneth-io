@@ -6,10 +6,15 @@ import moment from 'moment';
 import {getBlogPostBySlug} from '../../helpers/getPosts';
 
 class Post extends React.Component {
-  static async getInitialProps({query}) {
+  static async getInitialProps(params) {
     if (typeof window === 'undefined') {
+      let path = params.asPath;
+      let pathParts = path.split('/');
+
+      let slug = pathParts[pathParts.length - 1];
+
       return {
-        post: getBlogPostBySlug(query.slug[0]),
+        post: getBlogPostBySlug(slug),
       };
     }
   }
