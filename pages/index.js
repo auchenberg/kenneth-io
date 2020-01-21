@@ -16,24 +16,24 @@ class Home extends React.Component {
             infrastructure for the internet.
           </p>{' '}
           <p>
-            Before that I worked at Microsoft building developer tools such as
+            Before that I worked at Microsoft, building developer tools such as
             Visual Studio Code and Edge DevTools.
           </p>
           <p>
             Prior to that I co-founded{' '}
-            <a href="https://coldfront.co">ColdFront</a>, and been a part of two
-            startup acquisitions with the Podio (=> Citrix) and ZYB (=>
-            Vodafone).
+            <a href="https://coldfront.co">ColdFront</a>, and was a part of the
+            Danish startups, Podio and ZYB, who both got acquired with the Podio
+            going to Citrix, and ZYB going to Vodafone.
           </p>
           <p>
             I'm a Global Shaper for{' '}
-            <a href="https://www.weforum.org/">Word Economic Forum</a>, serves
-            on multiple advisory boards, and I'm a frequent public speaker who
-            travels the world.
+            <a href="https://www.weforum.org/">Word Economic Forum</a>, serve on
+            multiple advisory boards and a frequent public speaker who travels
+            the world
           </p>
           <p>
-            I love helping people, and I'm always up for a ☕️so shoot me an
-            email at <a href="">kenneth@auchenberg.dk</a> or ping me at Twitter{' '}
+            I love helping people and am always up for a ☕️so shoot me an email
+            at <a href="">kenneth@auchenberg.dk</a> or ping me at Twitter{' '}
             <a href="https://twitter.com/auchenberg">@auchenberg</a> if you
             wanna chat.
           </p>
@@ -75,6 +75,7 @@ class Home extends React.Component {
           }
 
           .wave {
+            font-size: 30px;
             animation-name: wave-animation;
             animation-duration: 2.5s;
             animation-iteration-count: infinite;

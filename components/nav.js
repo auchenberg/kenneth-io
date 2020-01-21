@@ -13,7 +13,6 @@ class Nav extends React.Component {
         <a href="/projects">Projects</a>
         <a href="/speaking">Speaking</a>
         <a href="https://instagram.com/auchenberg">Photography</a>
-        <a href="/about">About</a>
 
         <style jsx>{`
           .menu {

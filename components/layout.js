@@ -10,9 +10,7 @@ const Layout = (props) => (
     {!props.main && (
       <div className="header">
         <section>
-          <a className="code" href="/">
-            &lt;&lt; back to kenneth.io
-          </a>
+          <a href="/"> 👈 back to kenneth.io</a>
         </section>
       </div>
     )}
@@ -42,8 +40,13 @@ const Layout = (props) => (
         color: #333333;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        height: 100%;
         padding: 60px 50px;
+      }
+
+      @media (max-width: 768px) {
+        :global(body) {
+          padding: 25px;
+        }
       }
 
       :global(html) {
