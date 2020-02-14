@@ -35,7 +35,10 @@ const Head = (props) => (
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
   
-    <meta name="monetization" content="$coil.xrptipbot.com/KpgTb2m4QWeVNe6HXKzodg">
+    <meta 
+      name="monetization" 
+      content="$coil.xrptipbot.com/KpgTb2m4QWeVNe6HXKzodg"
+    />
   </NextHead>
 );
 
