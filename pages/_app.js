@@ -1,5 +1,6 @@
 import React from 'react';
-import App from 'next/app';
+import App, {Container} from 'next/app';
+import {DefaultSeo} from 'next-seo';
 
 export default class Kenneth extends App {
   render() {
@@ -7,6 +8,23 @@ export default class Kenneth extends App {
 
     let renderProps = {...pageProps};
 
-    return <Component {...renderProps} />;
+    return (
+      <Container>
+        <DefaultSeo
+          openGraph={{
+            type: 'website',
+            locale: 'en_us',
+            url: 'https://kenneth.io',
+            site_name: 'Kenneth Auchenberg',
+          }}
+          twitter={{
+            handle: '@auchenberg',
+            site: '@site',
+            cardType: 'summary_large_image',
+          }}
+        />
+        <Component {...renderProps} />;
+      </Container>
+    );
   }
 }

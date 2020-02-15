@@ -1,11 +1,23 @@
 import React from 'react';
 import Head from '../components/head';
 import NProgress from '../components/nprogress';
+import {NextSeo} from 'next-seo';
 
 const Layout = (props) => (
   <>
-    <Head title={props.title || 'Home'} />
+    <Head title={props.title || 'Hej!' + ' | Kenneth Auchenberg'} />
     <NProgress />
+
+    <NextSeo
+      title={props.title || 'Hej!' + ' | Kenneth Auchenberg'}
+      openGraph={{
+        images: [
+          {
+            url: props.socialImage,
+          },
+        ],
+      }}
+    />
 
     {!props.main && (
       <div className="header">

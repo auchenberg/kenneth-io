@@ -15,6 +15,7 @@ class Post extends React.Component {
 
       return {
         post: getBlogPostBySlug(slug),
+        baseUrl: 'https' + '://' + params.req.headers.host,
       };
     }
   }
@@ -25,9 +26,15 @@ class Post extends React.Component {
     }
 
     let formattedData = moment(this.props.post.data.date).format('MMMM YYYY');
+    let socialImageUrl =
+      this.props.baseUrl + '/static/' + this.props.post.data.og_image;
 
     return (
-      <Layout title="Post" center>
+      <Layout
+        title={this.props.post.data.title}
+        socialImage={socialImageUrl}
+        center
+      >
         <div className="post">
           <header>
             <h1>{this.props.post.data.title}</h1>

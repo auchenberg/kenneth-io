@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 class Home extends React.Component {
   render() {
     return (
-      <Layout title="Welcome" main>
+      <Layout title="Hej" main>
         <div className="home">
           <h1>Kenneth Auchenberg</h1>
           <p className="wave">👋</p>
