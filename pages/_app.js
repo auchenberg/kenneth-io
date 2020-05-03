@@ -23,7 +23,7 @@ export default class Kenneth extends App {
             cardType: 'summary_large_image',
           }}
         />
-        <Component {...renderProps} />;
+        <Component {...renderProps} />
       </Container>
     );
   }
