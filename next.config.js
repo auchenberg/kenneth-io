@@ -35,6 +35,7 @@ module.exports = {
       '/posts': {page: '/posts'},
       '/projects': {page: '/projects'},
       '/speaking': {page: '/speaking'},
+      '/talk': {page: '/talk'},
     });
   },
 };
