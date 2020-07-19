@@ -52,4 +52,4 @@ The good news is that I'm not alone with this; Jake from the Chrome team, and gi
 
 So let's put [some power behind a petition](https://github.com/h5bp/lazyweb-requests/issues/181#issuecomment-117792929) and get this ball rolling. It's about time that we get a free browser choice on iOS.
 
-*This post is written on the train to Narita airport in Tokyo, so bear with me on typos, etc.*
+_This post is written on the train to Narita airport in Tokyo, so bear with me on typos, etc._

@@ -82,7 +82,7 @@ What Scott Riddle wrote in [I’m 35 and I may suddenly have lost the rest of my
 
 > Stop just assuming you have a full lifetime to do whatever it is you dream of doing. I know it sounds ridiculously cliched, and of course you never think it will happen to you, but let me assure you that life really can be taken from you at any time, so live it with that reality in mind.
 
-Earlier this year I started reading pieces by the British philosopher Alan Watts, and in particular his “[**Live Fully Now**](http://songmeanings.com/songs/view/3530822107859525021/ "Alan Watts – Live Fully Now")**”** made things click for me. What good does a great plan do, if you never take the step to execute it? What good does great savings do for you, if it means saving takes priority over doing the things you dream of?
+Earlier this year I started reading pieces by the British philosopher Alan Watts, and in particular his “[**Live Fully Now**](http://songmeanings.com/songs/view/3530822107859525021/ 'Alan Watts – Live Fully Now')**”** made things click for me. What good does a great plan do, if you never take the step to execute it? What good does great savings do for you, if it means saving takes priority over doing the things you dream of?
 
 So this summer I decided to pull the trigger and spend a fair amount of savings on a Porsche 911 that’s been my dream car since I’ve been a kid. It’s a somewhat silly material thing to do, but every morning when I drive to work it’s a good reminder to evaluate whether the things I’m about to do are well aligned with my overall priorities, and more importantly that I should stop dreaming and start doing.
 
@@ -106,9 +106,9 @@ And most importantly I’ve started to be more for myself.
 
 ### In 2018 I aim to
 
-*   Get my health under control.
-*   Stay true to my priorities.
-*   Spend more time with significant others.
-*   Be less for others. More for myself and the people I care about.
+- Get my health under control.
+- Stay true to my priorities.
+- Spend more time with significant others.
+- Be less for others. More for myself and the people I care about.
 
 /k

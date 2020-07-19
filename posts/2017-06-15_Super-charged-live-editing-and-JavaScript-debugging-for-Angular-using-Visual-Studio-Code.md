@@ -21,8 +21,8 @@ Super-charged live editing and JavaScript debugging enables you to write and deb
 2.  Make sure Chrome is at least version version 59 (see [issue](https://github.com/Microsoft/vscode-chrome-debug/issues/447))
 3.  Create your Angular app using [angular-cli](https://github.com/angular/angular-cli)
 4.  Create a`launch.json`file to configure the VS Code debugger and put it inside `.vscode` in your root folder. VS Code launch.json configs for angular-cli
-5. Start your Angular app by running `ng serve` in your favorite terminal.
-6. Start debugging in VS Code by pressing `F5`or going to the debug section select `Launch Chrome with ng serve` followed by clicking the `green debug icon`.
+5.  Start your Angular app by running `ng serve` in your favorite terminal.
+6.  Start debugging in VS Code by pressing `F5`or going to the debug section select `Launch Chrome with ng serve` followed by clicking the `green debug icon`.
 
 #### Debugging Angular unit tests with VS Code
 

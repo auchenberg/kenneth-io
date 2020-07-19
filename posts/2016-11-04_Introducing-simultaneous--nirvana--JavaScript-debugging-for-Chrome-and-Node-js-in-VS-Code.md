@@ -37,8 +37,8 @@ As long as there’s a debugger available for VS Code, it should work (in theory
 
 1.  To get started you need the [latest version of VS Code Insiders](https://code.visualstudio.com/insiders), and make sure you have installed [our Chrome Debugger](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
 2.  From here you can use the following launch.json config to setup a new “hybrid” target via the new composite-type:
-3. Start your node server with debugging enabled by running: `node --inspect <your server file>.js`
-4. Start debugging by pressing the green debug icon or simply just F5
+3.  Start your node server with debugging enabled by running: `node --inspect <your server file>.js`
+4.  Start debugging by pressing the green debug icon or simply just F5
 
 Bam, we have a debug party! 🎉🎈
 

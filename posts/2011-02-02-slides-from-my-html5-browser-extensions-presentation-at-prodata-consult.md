@@ -21,8 +21,4 @@ Normally I embed the presentation into the blog-post, using an embedded <a href=
   <iframe src="http://auchenberg-html5.heroku.com/#1"></iframe>
 </figure>
 
-
 To see my slides (which is hosted on <a href="http://auchenberg-html5.heroku.com/#1">Heroku</a>), just click the thumbnail below:
-
-
-

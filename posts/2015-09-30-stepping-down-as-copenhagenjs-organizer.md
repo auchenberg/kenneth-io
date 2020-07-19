@@ -59,7 +59,6 @@ Much has happened in Copenhagen the past 4 years. We now have an established tec
 
 So going forward, I sincerely hope that new organizers and organizers of existing meetups like [cphfront](http://cphfront.com), will come together, collaborate, and maybe even unite. So we, together, can show the world why Copenhagen should be on the international front-end map.
 
-
 Thanks for the ride.
 
 /k

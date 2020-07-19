@@ -51,7 +51,6 @@ With [Microsoft Edge](https://dev.modern.ie/), Microsoft has been quite clear ab
 
 I’ll be joining a team of brilliant people like [Rey Bango](https://twitter.com/reybango), [Andy Sterland](https://twitter.com/andysterland), [Christian Heilmann](https://twitter.com/codepo8), [Mads Kristensen](https://twitter.com/mkristensen) and many others who I'm exicited to work with. I’m really looking forward to spend my time making it easier to build for the web, **regardless of the used platform and browser**.
 
-
 ## What, wait, relocating to Vancouver?
 
 Yup. In January 2016, I’ll be relocating to Vancouver, Canada, so I can be in the same timezone, and be close to the team in Seattle. Once I’ll get my american visa, I’ll be packing my things and be headed to the Microsoft HQ in Redmond.
@@ -86,4 +85,3 @@ So the next coming months I’ll be busy wrapping things up here in Copenhagen. 
 There’s a new adventure ahead, and it's gonna be great!
 
 /k
-

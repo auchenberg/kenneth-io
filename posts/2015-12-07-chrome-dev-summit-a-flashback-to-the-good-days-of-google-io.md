@@ -9,7 +9,6 @@ categories:
 og_image: images/posts/chrome-dev-summit/keynote.jpg
 ---
 
-
 Three weeks ago I attended [Chrome Dev Summit 2015](https://developer.chrome.com/devsummit) down at Google offices in Mountain View, and what an experience! It’s the third year Google is running Chrome Dev Summit, and this year you could feel that the event is a new priority for Google.
 
 <img src="/static/images/posts/chrome-dev-summit/keynote.jpg" />
@@ -31,7 +30,7 @@ The main takeaway from this year's Chrome Dev Summit was that Google sees the we
 
 It gives me hope that we'll continue to see Google investing into Chrome and the web platform as alternative app platform to it's proprietary Android platform. Our current mobile platforms need an open alternative, and the web can be that.
 
-The emphasis of the web being ready as a fully fledged application was implied in in most of the event's sessions. Each session showed how new primitives like [Service Worker](http://www.html5rocks.com/en/tutorials/service-worker/introduction/), [Push Notifications]( https://developers.google.com/web/updates/2015/03/push-notifications-on-the-open-web?hl=en) and [Physical Web](https://google.github.io/physical-web/), can be put together in into an incredibly compelling app model named Progressive Web App. [Alex Russel](https://twitter.com/slightlylate) coined [Progressive Web Apps](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) a few months ago, and is compelling because PWA's work across browser, devices, platforms and most importantly, vendors.
+The emphasis of the web being ready as a fully fledged application was implied in in most of the event's sessions. Each session showed how new primitives like [Service Worker](http://www.html5rocks.com/en/tutorials/service-worker/introduction/), [Push Notifications](https://developers.google.com/web/updates/2015/03/push-notifications-on-the-open-web?hl=en) and [Physical Web](https://google.github.io/physical-web/), can be put together in into an incredibly compelling app model named Progressive Web App. [Alex Russel](https://twitter.com/slightlylate) coined [Progressive Web Apps](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) a few months ago, and is compelling because PWA's work across browser, devices, platforms and most importantly, vendors.
 
 <img src="/static/images/posts/chrome-dev-summit/not_just_chrome.jpg" />
 
@@ -41,7 +40,7 @@ Google wants developers to build for the web, regardless of the targeted browser
 
 ## A flashback to the good days of Google I/O
 
-This year's Chrome Dev Summit reminded me of the good days at Google I/O, where I attended to get an overview of how Chrome is doing and how Google sees the future of the web. I've been missing this., as Google I/O in the recently years has changed its focus to be the premier Android and Google Cloud event. 
+This year's Chrome Dev Summit reminded me of the good days at Google I/O, where I attended to get an overview of how Chrome is doing and how Google sees the future of the web. I've been missing this., as Google I/O in the recently years has changed its focus to be the premier Android and Google Cloud event.
 
 The change of Google I/O is a natural consequence of Android growing and Google focusing on a broader variety of products, but this broader focus has also meant that going to Google I/O as a front-end/web developer, isn't very attractive anymore. Google I/O has simply lost it's value, as the number of sessions related to the web have declined to almost zero.
 

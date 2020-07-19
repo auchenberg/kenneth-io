@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What if you could use Chrome DevTools with Mozilla Firefox?"
+title: 'What if you could use Chrome DevTools with Mozilla Firefox?'
 date: 2013-12-09 20:14
 published: true
 comments: true
@@ -28,7 +28,6 @@ It make it more understandable I created a small screencast showing it in action
 <figure>
   <iframe src="https://www.youtube.com/embed/86qg7zYh3AY" frameborder="0" allowfullscreen></iframe>
 </figure>
-
 
 It's still an early prototype, but [remotedebug-firefox-bridge](https://github.com/auchenberg/remotedebug-firefox-bridge) shows some of the possibilities that will be possible when we, as a community, unify remote debugging in our browsers.
 

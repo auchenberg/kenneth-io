@@ -4,11 +4,13 @@ title: New version of CSS Reloader for Chrome is out
 categories: Uncategorized
 date: 2011-01-09 12:00
 ---
+
 It has been a long time since I did changes to my CSS Reloader browser extension. This evening I had some time, and pushed a updated version of CSS Reloader for Chrome out in the public.
 
 <!--more-->
 
 The new version contains a revised code-base, which is way more well structured and cleaner, and I also added som new features:
+
 <ul>
 	<li>Much requested options-page has been added - allows you to change the keyboard shortcut.</li>
 	<li>CSS Reloader got a nice new logo (credits goes to <a href="http://www.everaldo.com/crystal/">Everaldo Coelho</a> for the lovely icon.)</li>

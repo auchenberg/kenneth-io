@@ -15,8 +15,8 @@ Los Angeles traffic. Source: [https://www.youtube.com/watch?v=E8kyePbFGbk](https
 
 We decided to do an experiment: **Would car sharing be cheaper than renting a car for the trip?**
 
-*   **Best case:** We would save money, and have more convenient transport.
-*   **Worst case:** We would rent a car once arrived, and take it from there.
+- **Best case:** We would save money, and have more convenient transport.
+- **Worst case:** We would rent a car once arrived, and take it from there.
 
 ### The cost
 
@@ -36,7 +36,7 @@ This is the cost breakdown for 4 days, arriving Friday afternoon and leaving Mon
 
 ### Conclusion: Car sharing has won me over
 
-The numbers speak for themselves. We saved **$308.93** on a 4 day weekend trip by using car sharing instead of going with a regular rented car. We were driven around the city with our own driver, didn’t have to think about parking and overall had a much more convenient transport in the city.
+The numbers speak for themselves. We saved **\$308.93** on a 4 day weekend trip by using car sharing instead of going with a regular rented car. We were driven around the city with our own driver, didn’t have to think about parking and overall had a much more convenient transport in the city.
 
 Car sharing has won me over, and for the future shorter trips I won’t be renting cars anymore.
 

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Diving into photography. "
+title: 'Diving into photography. '
 categories: Uncategorized
 date: 2011-01-12 12:00
 ---
+
 Lately I've been quite hooked on getting a DSLR, because I wanted to explore the world of photography from another angle than just looking at beautiful pictures.
 
 To begin with I started looking at high-end camera's (top-model or no-model mentality), but after a lot of research I ended up buying a Canon 550d, which is also known as T2I or KISS X4.
@@ -13,6 +14,7 @@ To begin with I started looking at high-end camera's (top-model or no-model ment
 It's very similar to Canon 60D and Canon 7D, but the main difference is the physical body, which is in plastic and is lacking some quite nifty navigation buttons compared to 7D/60D.
 
 So why did I buy the 550d?
+
 <ul>
 	<li>It's cheap</li>
 	<li>Shooting execelent video ( See <a href="http://www.youtube.com/watch?v=R2AXjF-wFVo">http://www.youtube.com/watch?v=R2AXjF-wFVo</a>)</li>
@@ -26,9 +28,10 @@ After some more research in various places I came to the conclusion that my firs
 
 Therefore I ended up buying a Canon EF 28mm 1/8 USM lens, which is going to be equal 45mm on the 550d, got 1/8 aperture, and is using the EF-mount, which means I also can be used on the Canon pro-cameras (if I should end there some day).
 
-The lens was a bit expensive 450$, but got some pretty good reviews, and the sample photos I found in the <a href="http://www.flickr.com/groups/canonef28mmf18usm/">28mm group in Flickr</a> is simply stunning.
+The lens was a bit expensive 450\$, but got some pretty good reviews, and the sample photos I found in the <a href="http://www.flickr.com/groups/canonef28mmf18usm/">28mm group in Flickr</a> is simply stunning.
 
 In addition to the 550d and 28mm lens, I also bought a filter, lens hood and a battery grip, so totally I ended up with
+
 <ul>
 	<li>Canon 550D body</li>
 	<li>Canon EF 28mm 1/8 USM lens</li>

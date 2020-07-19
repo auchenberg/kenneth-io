@@ -13,15 +13,15 @@ This enables you as a developer to write and debug your React code without leavi
 
 ![](/static/images/posts/1__lai2E3hB0L8oGBEUNcMsCQ.png)
 
-You can now write code, set a breakpoints, make a changes to the code, and debug your newly modified code — all from your editor 🔥 _🎉_🎈
+You can now write code, set a breakpoints, make a changes to the code, and debug your newly modified code — all from your editor 🔥 *🎉*🎈
 
 ### How to get started in 6 steps
 
 1.  Download the [latest release of VS Code](http://code.visualstudio.com/Download) and install our [Chrome debugger](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 2.  Create your React app using [create-react-app](https://github.com/facebookincubator/create-react-app)
 3.  Use the following config for your `launch.json`file to configure the VS Code debugger and put it inside `.vscode` in your root folder.
-4. Start your React app by running `npm start` in your favorite terminal
-5. Start debugging in VS Code by pressing `F5`or by clicking the green debug icon
+4.  Start your React app by running `npm start` in your favorite terminal
+5.  Start debugging in VS Code by pressing `F5`or by clicking the green debug icon
 
 Happy debugging! 🎉🎈
 

@@ -19,5 +19,3 @@ The talk in danish, so if you understand my mother tongue, go ahead and watch my
 <figure>
   <iframe style="height:556px; width:960px" src="http://channel9.msdn.com/Events/Microsoft-Campus-Days/Microsoft-Campus-Days-2012/Reality-check-af-HTML5/player?w=960&h=540" frameBorder="0" scrolling="no" ></iframe>
 </figure>
-
-

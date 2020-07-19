@@ -3,6 +3,7 @@ layout: post
 title: Introducing Auto-Check-in
 date: 2010-08-11
 ---
+
 The past few days I worked on a new mashup-project I wanted to realize since the day I started used Foursquare...
 
 <!--more-->
@@ -18,6 +19,7 @@ I teamed up with my friend and colleague <a href="http://mortenjust.com">Morten
 <a href="http://autocheckin.appspot.com/">Auto-Check-In</a> is currently running in a public alpha, and is having about 100 active users that each and every day is checking into a lot of venues, without they need to remember it.
 
 <strong>Roadmap:</strong>
+
 <ul>
 	<li>Ranking of near-by-venues, to select a more qualified venue than the closest one.</li>
 	<li>Black/white-listing.</li>

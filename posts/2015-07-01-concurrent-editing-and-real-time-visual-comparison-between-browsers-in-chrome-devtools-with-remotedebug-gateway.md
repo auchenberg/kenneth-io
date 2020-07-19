@@ -19,4 +19,3 @@ There’s many aspects of [RemoteDebug Gateway](https://github.com/auchenberg/re
 Check out the project on [GitHub](https://github.com/auchenberg/remotedebug-gateway), and as always any kind of feedback is highly appreciated!
 
 /k
-

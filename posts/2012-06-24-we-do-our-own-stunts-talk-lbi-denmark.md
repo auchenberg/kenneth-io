@@ -13,6 +13,7 @@ In the context of doing stunts I thought the evolution of the Podio front-end st
 <!--more-->
 
 ## Podio's air-bourne stunt.
+
 This was a bold decision and atypical for a startup in the early stage, something rarely see. We didn't have 6 months to set aside for refactoring. Instead we choose to tacle this from a different perspective: This was the perfect opportunity to review all the features in the product. With this opportunity in our hands, the flow as actually straight forward. Everytime we added or improved a feature, we implemented it in the new code-base, and made the transition completely transparant to our users.
 
 Our goals with this project was to ensure a solid techinical platform that would enable us to keep our team productive, while growing, nad to ensure a foundation to deliver the best experience to our users.
@@ -24,4 +25,3 @@ This was the "Podio air-bourne stunt". One hell of a trans-atlantic flight.
 </figure>
 
 Read more about the project in the slides, <a href="http://auchenberg.github.com/podio-frontend-stack-evolution">Podio Frontend Stack Evolution</a>
-

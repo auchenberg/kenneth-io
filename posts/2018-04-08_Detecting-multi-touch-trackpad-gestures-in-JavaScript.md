@@ -12,7 +12,7 @@ Photo by [Scott Webb](https://unsplash.com/photos/ZLeogVvtXk0?utm_source=unsplas
 
 For a long time I have wondered how [Google Maps](http://maps.google.com/) and [Figma](http://figma.com) have been able to support pinch-to-zoom multi-touch gestures from my trackpad on my Macbook, when there’s no special trackpad JavaScript events exposed.
 
-So I started exploring this a few months ago and this weekend I stumbled upon this bug, [1052253 — OS X: Pinch to zoom gesture should map to mousewheel with the control key, like Chrome](https://bugzilla.mozilla.org/show_bug.cgi?id=1052253 "https://bugzilla.mozilla.org/show_bug.cgi?id=1052253"), in the Mozilla bug tracker and that finally made things click.
+So I started exploring this a few months ago and this weekend I stumbled upon this bug, [1052253 — OS X: Pinch to zoom gesture should map to mousewheel with the control key, like Chrome](https://bugzilla.mozilla.org/show_bug.cgi?id=1052253 'https://bugzilla.mozilla.org/show_bug.cgi?id=1052253'), in the Mozilla bug tracker and that finally made things click.
 
 Apparently Microsoft with IE10 was the pioneers here, as they enabled pinch-to-zoom gestures from multi-touch trackpad’s to be surfaced as `mousewheel`event with the `ctrl`modifier set to true.
 
@@ -23,11 +23,12 @@ As explained by [Rick Byers](https://twitter.com/RickByers) in the [this Chrome 
 ```
 The spec has an example that says:
 
-"The user's environment might be configured to associate vertical scrolling with rotation along the y-axis, horizontal scrolling with rotation along the x-axis, and zooming with rotation along the z-axis."  
-  
+"The user's environment might be configured to associate vertical scrolling with rotation along the y-axis, horizontal scrolling with rotation along the x-axis, and zooming with rotation along the z-axis."
+
 From this perspective it seems reasonable to generate deltaZ wheel events for trackpad pinch gestures.  This would enable apps like google maps to respond nicely to pinch.
 
 ```
+
 So that was a bit of the historic context. Today this means that we have a de-facto “hack” standard to detect pinch-to-zoom gestures from trackpads, which is supported in multiple browsers.
 
 ### Detecting pinch-to-zoom on your trackpad with JavaScript
@@ -44,10 +45,10 @@ That’s it.
 
 The browser support seems to be as following:
 
-*   Chrome: ✅ since Chrome M35
-*   Firefox: ✅ since Firefox 55
-*   Edge: ✅ [Unless you are using a “precision-touchpad”](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7134034/)
-*   Safari has basic wheel-events and supports the proprietary [gestureEvents](https://developer.mozilla.org/en-US/docs/Web/API/GestureEvent) which are explains below
+- Chrome: ✅ since Chrome M35
+- Firefox: ✅ since Firefox 55
+- Edge: ✅ [Unless you are using a “precision-touchpad”](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7134034/)
+- Safari has basic wheel-events and supports the proprietary [gestureEvents](https://developer.mozilla.org/en-US/docs/Web/API/GestureEvent) which are explains below
 
 ### Detecting more advanced trackpad gestures with GesturesEvents in Webkit
 
@@ -57,7 +58,7 @@ After the ctrl key modifer hacker landed there seem to have been a discussion on
 
 In March 2016 Apple has shipped new a`GestureEvent` for Webkit that shipped as a part of [Safari 9.1](https://webkit.org/blog/6008/new-web-features-in-safari/), and this new event model allow us to detect gesture rotation and much.
 
-You can read more about `GestureEvents` in the Apple documentation here: [https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple\_ref/doc/uid/TP40006511-SW23](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW23)
+You can read more about `GestureEvents` in the Apple documentation here: [https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW23](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW23)
 
 ### Demo using a combination of wheel + gesture events
 
