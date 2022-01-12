@@ -19,7 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "lowdb": "^1.0.0",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "micro-redirect": "^1.0.0",
     "moment": "^2.24.0",
     "next": "^9.2.0",
