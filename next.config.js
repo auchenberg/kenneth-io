@@ -36,6 +36,7 @@ module.exports = {
       '/projects': {page: '/projects'},
       '/speaking': {page: '/speaking'},
       '/chat': {page: '/chat'},
+      '/chat/priority': {page: '/chat/priority'},
     });
   },
 };
