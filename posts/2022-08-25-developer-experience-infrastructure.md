@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The era of Developer Experience Infrastructure (DXI)
+title: Developer Experience Infrastructure (DXI)
 date: 2022-08-25 09:00
 published: true
 comments: true
