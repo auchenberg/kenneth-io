@@ -6,7 +6,7 @@ published: true
 comments: true
 draft: true
 categories:
-og_image: images/posts/dxi/dxi_map_august.png
+og_image: images/posts/dxi/dxi_map.png
 ---
 
 Lately I’ve been taking a step back and looking at the broader trend of Developer Experience in our industry. I’ve seen many definitions of companies that are building infrastructure for developer-first companies, but none of the definitions has really resonated with me.
@@ -115,8 +115,6 @@ I have strong feelings on this particular topic, as I don’t think traditional 
 <blockquote class="twitter-tweet" data-align="center">
 
 <p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## The cost of (bad) developer experience
 
