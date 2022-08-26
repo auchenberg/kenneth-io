@@ -7,9 +7,13 @@ const Layout = (props) => (
   <>
     <Head title={props.title || 'Hej!' + ' | Kenneth Auchenberg'} />
     <NProgress />
-
     <NextSeo
       title={props.title || 'Hej!' + ' | Kenneth Auchenberg'}
+      description={props.description}
+      twitter={{
+        handle: '@auchenberg',
+        cardType: 'summary_large_image',
+      }}
       openGraph={{
         images: [
           {

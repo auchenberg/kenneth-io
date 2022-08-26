@@ -25,13 +25,13 @@ class Post extends React.Component {
     }
 
     let formattedData = moment(this.props.post.data.date).format('MMMM YYYY');
-    let socialImageUrl =
-      'https://kenneth.io/static/' + this.props.post.data.og_image;
+    let socialImageUrl = 'https://kenneth.io/' + this.props.post.data.og_image;
 
     return (
       <Layout
         title={this.props.post.data.title}
         socialImage={socialImageUrl}
+        description={this.props.post.data.description}
         center
       >
         <div className="post">
