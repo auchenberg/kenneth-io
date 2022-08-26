@@ -11,7 +11,7 @@ og_image: images/posts/dxi/dxi_map_august.png
 
 Lately I’ve been taking a step back and looking at the broader trend of Developer Experience in our industry. I’ve seen many definitions of companies that are building infrastructure for developer-first companies, but none of the definitions has really resonated with me.
 
-So today I’m introducing a new product category in our industry that I’m calling **Developer Experience Infrastructure**.
+I believe we are seeing a new product category emerge, and I propose that we should be calling this category for **Developer Experience Infrastructure**.
 
 But before we dive in, let me start with some pretext to set the context on how I view developer experience and infrastructure.
 
@@ -35,41 +35,48 @@ An example of this is developer tools, where if you are focused on internal DX, 
 
 I describe Developer Experience as the lifecycle which a developer is interacting with your platform, and that’s very intentionally, as developer experience doesnt stop with just the product or community. It's a holistic experience that spains across a range of surfaces:
 
-- Product DX
-  - Onboarding
-  - Scaffolding (time to Hello World)
-  - API Design
-  - Error messages and UI affordances/validation/visual feedback
-  - Dashboard/Admin IUs
-  - Source control, search, code reviews and collaboration
-  - CI/CD, Testing
-  - Monitoring and observability
-  - Metrics and productivity
-  - Developer Tools: Editors, CLIs, Utilities, Integrations, etc
-- Docs DX
-  - API Reference
-  - Tutorials, Guides, Recipes (shared with Content)
-  - FAQ and Glossary/Conceptual Explanations
-  - Debugging guide ("Common Errors & How To Fix Them")
-  - Readme's
-  - Versioning/Migration
-  - Search experience
-  - Information Architecture
-- Content DX
-  - Blog Posts
-  - Tutorials, Guides, Recipes (shared with Docs)
-  - Demos/Workshops
-  - Short Form Videos
-  - Longform Videos (including livestream footage and external talks)
-- Community DX
-  - Interaction with product teams
-  - Chat and support programs (Slack/Discord)
-  - Social media
-  - Live stream, meetups and conferences
+**Product DX**
+
+- Onboarding
+- Scaffolding (time to Hello World)
+- API Design
+- Error messages and UI affordances/validation/visual feedback
+- Dashboard/Admin IUs
+- Source control, search, code reviews and collaboration
+- CI/CD, Testing
+- Monitoring and observability
+- Metrics and productivity
+- Developer Tools: Editors, CLIs, Utilities, Integrations, etc
+
+**Docs DX**
+
+- API Reference
+- Tutorials, Guides, Recipes (shared with Content)
+- FAQ and Glossary/Conceptual Explanations
+- Debugging guide ("Common Errors & How To Fix Them")
+- Readme's
+- Versioning/Migration
+- Search experience
+- Information Architecture
+
+**Content DX**
+
+- Blog Posts
+- Tutorials, Guides, Recipes (shared with Docs)
+- Demos/Workshops
+- Short Form Videos
+- Longform Videos (including livestream footage and external talks)
+
+**Community DX**
+
+- Interaction with product teams
+- Chat and support programs (Slack/Discord)
+- Social media
+- Live stream, meetups and conferences
 
 _Source: Mostly lend from [https://dx.tips/circles](https://dx.tips/circles) with a few tweaks_
 
-## The raising expectations for Developer Experience
+## The rising expectations for Developer Experience
 
 In 2022, offering a bare-bones public-facing API without additional investments simply isn’t enough to compete. Due to the heterogeneous landscape of programming abstractions, which span everything from [99% developers](https://future.a16z.com/software-development-building-for-99-developers/) to enterprise system integrators, companies need to offer a holistic developer experience aross their products and platforms.
 
@@ -105,9 +112,13 @@ The argument is to be successful, developer advocacy needs to evolve into someth
 
 I have strong feelings on this particular topic, as I don’t think traditional outbond focused developer relations teams have the right set of competences to build more holistic experiences, but that’s a different topic for another today.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-align="center">
 
-## The cost of developer experience
+<p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## The cost of (bad) developer experience
 
 Developers are force-multipliers and their productivity correlates with the ability for organizations to generate revenue, launch new features, and capitalize on new opportunities.
 
@@ -136,6 +147,8 @@ Developer Experience Infrastructure is lowering the barrier for offering develop
 
 ![DXI Market Cap](/images/posts/dxi/dxi_map_august.png)
 
+_The Developer Experience Infrastructure Market Map is still evolving, so if you believe a company is missing or miscategorized, don't hesitate to contact me._
+
 ## The opportunity and what’s next for DXI
 
 Traditionally most companies have built in-house solutions to cover the various aspects of developer experience such as documentation, management UIs, and SDKs, but that’s changing.
@@ -144,7 +157,7 @@ Companies has started to realize how big an investment is required in order to t
 
 The DXI category is in its infancy with several emerging seed-stage companies, a handful of Series A, and a few Series D companies. No clear leader has emerged, and I believe there's still several green-field opportunities in this space, as the race to build the best developer experience is never a zero-sum game. We need more talent, more tooling, and more execution from teams of developers building for developers.
 
-When looking at the raising expecations for DX, I believe we will see a market demand for DXI that is similar to the same patterns we have seen from cloud infrastructure and data stacks in the past decade: People started building one-off solutions internally, which were hard to build, and as complexiy grew, the incentives to carry the cost internally declined.
+When looking at the rising expecations for DX, I believe we will see a market demand for DXI that is similar to the same patterns we have seen from cloud infrastructure and data stacks in the past decade: People started building one-off solutions internally, which were hard to build, and as complexiy grew, the incentives to carry the cost internally declined.
 
 That said, there will always be a reason to build developer experience internally, and I do think that there will be a category of companies of all sizes, where DX is so critical to the success of the core product that it can’t or shouldn’t be replaced with DXI. However I do believe DXI will enable a new industry baseline of what is considered good enough, and we will see a new generation of companies using DXI as their baselines and innovating from there.
 
@@ -158,10 +171,12 @@ _If you are working on something in this space, I want to talk with you. Whether
 
 ## Relevant reading
 
+- [The Developer Coefficient](https://stripe.com/files/reports/the-developer-coefficient.pdf), Stripe, September 2018
 - [Tyler Jewell](https://substack.com/profile/15568990-tyler-jewell)’s of Dell, [Developer-led landscape](https://tylerjewell.substack.com/p/the-developer-led-landscape-20-08-28?utm_source=%2Fprofile%2F15568990-tyler-jewell&utm_medium=reader2).
 - [Patrick Salyer](https://www.forbes.com/sites/patricksalyer/) of Mayfield’s [API Stack](https://www.forbes.com/sites/patricksalyer/2021/05/04/api-stack-the-billion-dollar-opportunities-redefining-infrastructure-services--platforms/?sh=3a4123fc43f9).
 - Jerry Chen & Corinne Riley of Greylock, [Cloud Challenges](https://greylock.com/greymatter/funding-the-cloud-challengers/).
 - McKinsey's [Why your IT organization should prioritize developer experience](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/tech-forward/why-your-it-organization-should-prioritize-developer-experience).
 - Postman's [API Platform landscape](https://blog.postman.com/2022-api-platform-landscape-trends-and-challenges/).
+- [Jean Yang](https://twitter.com/jeanqasaur)'s [The Case for Developer Experience](https://future.a16z.com/the-case-for-developer-experience/).
 
-_Thanks to @astasiaMyers, @chris_trag, @dalmaer, @deyang, @friism, @ericsimons40, @nickBruun, @mortenjust, @mxstbr, @ow, @swyx, @zachtratar for providing feedback on early drafts of this post._
+_Thanks to [@astasiaMyers](https://twitter.com/astasiaMyers), [@chris_trag](https://twitter.com/chris_trag), [@dalmaer](https://twitter.com/dalmaer), [@friism](https://twitter.com/friism), [@ericsimons40](https://twitter.com/ericsimons40), [@nickBruun](https://twitter.com/nickBruun), [@mortenjust](https://twitter.com/mortenjust), [@mxstbr](https://twitter.com/mxstbr), [@ow](https://twitter.com/ow), [@swyx](https://twitter.com/swyx), [@zachtratar](https://twitter.com/zachtratar) for providing feedback on early drafts of this post._
