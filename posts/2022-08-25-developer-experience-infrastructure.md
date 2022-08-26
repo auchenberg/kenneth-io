@@ -7,6 +7,7 @@ comments: true
 draft: true
 categories:
 og_image: images/posts/dxi/dxi_map.png
+description: Developer Experience Infrastructure (DXI) is a new emerging infrastructure category sitting on top of API and cloud infrastructure. It enables any company to deliver world-class developer experiences by offloading the intricate details and complexities of developer experience to a new set of infrastructure components and services.
 ---
 
 Lately I’ve been taking a step back and looking at the broader trend of Developer Experience in our industry. I’ve seen many definitions of companies that are building infrastructure for developer-first companies, but none of the definitions has really resonated with me.
