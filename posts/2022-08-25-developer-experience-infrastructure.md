@@ -12,7 +12,7 @@ description: Developer Experience Infrastructure (DXI) is a new emerging infrast
 
 Lately I’ve been taking a step back and looking at the broader trend of Developer Experience in our industry. I’ve seen many definitions of companies that are building infrastructure for developer-first companies, but none of the definitions has really resonated with me.
 
-I believe we are seeing a new product category emerge, and I propose that we should be calling this category for **Developer Experience Infrastructure**.
+I believe we see a new product category emerge, and I propose that we should be calling this category for **Developer Experience Infrastructure**.
 
 But before we dive in, let me start with some pretext to set the context on how I view developer experience and infrastructure.
 
