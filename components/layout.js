@@ -8,7 +8,8 @@ const Layout = (props) => (
     <Head title={props.title || 'Hej!' + ' | Kenneth Auchenberg'} />
     <NProgress />
     <NextSeo
-      title={props.title || 'Hej!' + ' | Kenneth Auchenberg'}
+      defaultTitle="Hej | Kenneth Auchenberg"
+      title={props.title + ' | Kenneth Auchenberg'}
       description={props.description}
       twitter={{
         handle: '@auchenberg',
