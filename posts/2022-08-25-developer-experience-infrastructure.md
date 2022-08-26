@@ -145,7 +145,7 @@ We need a new way to think about Developer Experience–one that scales, and thi
 
 Developer Experience Infrastructure is lowering the barrier for offering developer-focused products by providing the table stakes components that make up a complete developer experience. By lowering the barrier DXI has the potential to fundamentally change how companies ship developer-focused products, as whole new categories companies will be able to reach developers with minimal infrastructure investments, and that way expand the total addressable market.
 
-![DXI Market Cap](/images/posts/dxi/dxi_map_august.png)
+![DXI Market Cap](/images/posts/dxi/dxi_map.png)
 
 _The Developer Experience Infrastructure Market Map is still evolving, so if you believe a company is missing or miscategorized, don't hesitate to contact me._
 
