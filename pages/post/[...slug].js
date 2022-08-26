@@ -65,6 +65,18 @@ class Post extends React.Component {
             margin-top: 30px;
             margin-bottom: 20px;
           }
+
+          :global(.post h3) {
+            font-size: 16px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+          }
+
+          :global(.post blockquote) {
+            padding: 10px;
+            font-size: 16px;
+            margin: 0;
+          }
         `}</style>
       </Layout>
     );

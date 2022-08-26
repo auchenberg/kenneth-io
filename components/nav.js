@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -30,4 +30,3 @@ class Nav extends React.Component {
     );
   }
 }
-export default Nav;
