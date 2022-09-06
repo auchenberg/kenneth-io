@@ -24,9 +24,7 @@ I've always said that I don't "take jobs", but I join missions, and when I start
 
 I've always thought of Stripe as that "online payments company", but the more I heard about their platform, the more their pitch of **building economic infrastructure** for the next generation of companies (and developers) started to resonate.
 
-<figure>
-    <iframe width="600" height="300" src="https://www.youtube.com/embed/ck0u5OdyDdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</figure>
+{% youtube src="https://www.youtube.com/embed/ck0u5OdyDdo" width="600" height="300" /%}
 
 Having been an entrepreneur myself with [ColdFront](https://coldfront.co/), and been a part of several startups scaling from basement to offices around the world, I know how challenging is to build a business for a global connected world.
 

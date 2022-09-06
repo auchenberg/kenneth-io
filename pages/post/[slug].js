@@ -29,6 +29,53 @@ const markDocConfig = {
         },
       },
     },
+    youtube: {
+      render: 'YouTubeEmbed',
+      description: 'Display a embedded YouTube ',
+      attributes: {
+        src: {
+          type: String,
+          required: true,
+        },
+        width: {
+          type: String,
+        },
+        height: {
+          type: String,
+        },
+      },
+    },
+  },
+};
+
+const markDocComponents = {
+  TweetEmbed: ({id}) => {
+    return (
+      <div className="tweet-embed">
+        <TwitterTweetEmbed tweetId={id}></TwitterTweetEmbed>
+      </div>
+    );
+  },
+  ZoomableImage: ({src, title}) => {
+    return (
+      <Zoom>
+        <img src={src} title={title} />
+      </Zoom>
+    );
+  },
+  YouTubeEmbed: ({src, width, height}) => {
+    return (
+      <figure>
+        <iframe
+          width={width}
+          height={height}
+          src={src}
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </figure>
+    );
   },
 };
 
@@ -74,23 +121,6 @@ const Post = (props) => {
   let parsedContent = JSON.parse(post.content);
   let socialImageUrl = 'https://kenneth.io/' + post.og_image;
 
-  const components = {
-    TweetEmbed: ({id}) => {
-      return (
-        <div className="tweet-embed">
-          <TwitterTweetEmbed tweetId={id}></TwitterTweetEmbed>
-        </div>
-      );
-    },
-    ZoomableImage: ({src, title}) => {
-      return (
-        <Zoom>
-          <img src={src} title={title} />
-        </Zoom>
-      );
-    },
-  };
-
   return (
     <Layout
       title={post.title}
@@ -105,7 +135,7 @@ const Post = (props) => {
         </header>
         <div className="content">
           {Markdoc.renderers.react(parsedContent, React, {
-            components,
+            components: markDocComponents,
           })}
         </div>
       </div>
