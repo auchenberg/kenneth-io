@@ -2,6 +2,7 @@ import React from 'react';
 import Head from '../components/head';
 import NProgress from '../components/nprogress';
 import {NextSeo} from 'next-seo';
+import Link from 'next/link';
 
 const Layout = (props) => (
   <>
@@ -27,7 +28,9 @@ const Layout = (props) => (
     {!props.main && (
       <div className="header">
         <section>
-          <a href="/"> 👈 back to kenneth.io</a>
+          <Link href="/">
+            <a> 👈 back to kenneth.io</a>
+          </Link>
         </section>
       </div>
     )}
