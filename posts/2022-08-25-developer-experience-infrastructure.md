@@ -113,9 +113,7 @@ The argument is to be successful; developer advocacy needs to evolve into someth
 
 I have strong feelings about this particular topic. I don’t think traditional outbound-focused developer relations teams have the right competencies to build more holistic experiences, but that’s a different topic for another today.
 
-<blockquote class="twitter-tweet" data-align="center">
-    <p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a>
-</blockquote>
+{% tweet_embed id="1495559802973392896" /%}
 
 ## The cost of (bad) developer experience
 
@@ -123,7 +121,8 @@ Developers are force-multipliers, and their productivity correlates with the abi
 
 In 2018, Stripe released a report estimating that improving the efficiency of software engineering could have a [$3 trillion dollar impact on global GDP](https://stripe.com/newsroom/stories/developer-coefficient) across a 10 year period. There’s an opportunity to increase developer efficiency by 31.6% by making it easier for developers to build.
 
-![The Developer Coefficient stats](/images/posts/dxi/dxi_productivity_stats.png)
+{% image src="/images/posts/dxi/dxi_productivity_stats.png" title="The Developer Coefficient stats" /%}
+
 _(Source: [The Developer Coefficient](https://stripe.com/files/reports/the-developer-coefficient.pdf), Stripe, September 2018)_
 
 In practical terms, when a developer launches a new browser tab to open the docs for a new service, the clock starts to tick. Developers are expensive and are not always guaranteed the essential tools, docs, guides, and samples required to build a seamless integration.
@@ -144,7 +143,7 @@ We need a new way to think about Developer Experience–one that scales, and thi
 
 Developer Experience Infrastructure is lowering the barrier for offering developer-focused products by providing the table stakes components that make up a complete developer experience. By lowering the barrier, DXI has the potential to fundamentally change how companies ship developer-focused products, as whole new categories of companies will be able to reach developers with minimal infrastructure investments and, that way, expand the total addressable market.
 
-![DXI Market Cap](/images/posts/dxi/dxi_map.png)
+{% image src="/images/posts/dxi/dxi_map.png" title="DXI Market Cap" /%}
 
 _The Developer Experience Infrastructure Market Map is still evolving, so if you believe a company is missing or miscategorized, don't hesitate to contact me._
 

@@ -1,17 +1,33 @@
 import React from 'react';
-import Link from 'next/link';
 import Layout from '../../components/layout';
-import moment from 'moment';
 import Markdoc from '@markdoc/markdoc';
 import path from 'path';
 import fs from 'fs';
 
 import {getBlogPostBySlug, getBlogPosts} from '../../helpers/getPosts';
 
+import {TwitterTweetEmbed} from 'react-twitter-embed';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+
 const markDocConfig = {
-  nodes: {
-    paragraph: {
-      render: 'Paragraph',
+  tags: {
+    tweet_embed: {
+      render: 'TweetEmbed',
+      description: 'Display an embedded Tweet',
+    },
+    image: {
+      render: 'ZoomableImage',
+      description: 'Display a zoomable image',
+      attributes: {
+        src: {
+          type: String,
+          required: true,
+        },
+        title: {
+          type: String,
+        },
+      },
     },
   },
 };
@@ -31,7 +47,6 @@ export const getStaticProps = async (context) => {
 
   let post = getBlogPostBySlug(slug);
 
-  // // Our Markdown files are stored in the posts/ directory
   const POSTS_DIR = path.join(process.cwd(), 'posts');
   const fullPath = path.join(POSTS_DIR, post.fileName);
   const source = fs.readFileSync(fullPath, 'utf-8');
@@ -60,8 +75,19 @@ const Post = (props) => {
   let socialImageUrl = 'https://kenneth.io/' + post.og_image;
 
   const components = {
-    Paragraph: ({children}) => {
-      return <p className="">{children}</p>;
+    TweetEmbed: ({id}) => {
+      return (
+        <div className="tweet-embed">
+          <TwitterTweetEmbed tweetId={id}></TwitterTweetEmbed>
+        </div>
+      );
+    },
+    ZoomableImage: ({src, title}) => {
+      return (
+        <Zoom>
+          <img src={src} title={title} />
+        </Zoom>
+      );
     },
   };
 
