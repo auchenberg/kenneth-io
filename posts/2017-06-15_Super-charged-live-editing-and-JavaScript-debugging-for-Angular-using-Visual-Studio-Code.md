@@ -6,14 +6,14 @@ description: >-
 date: '2017-06-15T16:38:58.987Z'
 ---
 
-![Demo of a click event handler in an Angular component being debugged and live edited from VS Code](/static/images/posts/1__GNaWtfa4A61eFU9QQiwRXQ.gif)
+![Demo of a click event handler in an Angular component being debugged and live edited from VS Code](/images/posts/1__GNaWtfa4A61eFU9QQiwRXQ.gif)
 Demo of a click event handler in an Angular component being debugged and live edited from VS Code
 
 Back in February I wrote a Medium post on [How to Live edit and debug your React apps directly from VS Code](http://Live%20edit%20and%20debug%20your%20React%20apps%20directly%20from%20VS%20Code — without%20leaving%20the%20editor) powered by our [Chrome debugger for VS Code](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and Webpack’s Hot Module Reloading mechanism. Today I’m gonna show how you can achieve the same super-charged workflow for Angular by using [angular-cli](https://github.com/angular/angular-cli) and Visual Studio Code.
 
 Super-charged live editing and JavaScript debugging enables you to write and debug your Angular code without leaving the editor, and most importantly it enables you to have a more efficient development workflow, without context switching, because you stay inside your editor while you both author and debug 🔥 _🎉_ 🎈
 
-![](/static/images/posts/1____5HNFFK4YwHduy7uXuvUgQ.png)
+![](/images/posts/1____5HNFFK4YwHduy7uXuvUgQ.png)
 
 ### How to get started
 

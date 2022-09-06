@@ -7,11 +7,11 @@ og_image: images/posts/1__lai2E3hB0L8oGBEUNcMsCQ.png
 
 In our most recent release of our [Chrome debugger for VS Code](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), we have landed a bunch of improvements to our sourcemapping-engine, which enables us to support live-editing and debugging out of the box with [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-![Demo of React app being live edited and debugged from VS Code](/static/images/posts/1__74lkRfxrsJlxEWXCwSOF__Q.gif)
+![Demo of React app being live edited and debugged from VS Code](/images/posts/1__74lkRfxrsJlxEWXCwSOF__Q.gif)
 
 This enables you as a developer to write and debug your React code without leaving the editor, and most importantly it enables you to have a continuous development workflow, where context switching is minimal, as you don’t have to switch between tools.
 
-![](/static/images/posts/1__lai2E3hB0L8oGBEUNcMsCQ.png)
+![](/images/posts/1__lai2E3hB0L8oGBEUNcMsCQ.png)
 
 You can now write code, set a breakpoints, make a changes to the code, and debug your newly modified code — all from your editor 🔥 *🎉*🎈
 

@@ -28,7 +28,7 @@ As a developer, with no special design expertise, I spent quite some time readin
 
 Actually, the only mention of "desktop" I've been able to find was under the ["tabs component"](https://www.google.com/design/spec/components/tabs.html#tabs-usage).
 
-<img src="/static/images/posts/devtools-app/components_tabs_usage_desktop1.png"/>
+<img src="/images/posts/devtools-app/components_tabs_usage_desktop1.png"/>
 <p>Source: http://www.google.com/design/spec/components/tabs.html#tabs-usage</p>
 
 So I spent quite some time searching for examples of how material should be applied to desktop apps, and after a while I came to the conclusion that there wasn't any great examples around, so I started experimenting.
@@ -37,9 +37,9 @@ So I spent quite some time searching for examples of how material should be appl
 
 Let me introduce what I call the [Chrome DevTools App](https://github.com/auchenberg/chrome-devtools-app). It's a standalone app that runs Chrome DevTools in its own process. It's powered by [node-webkit](https://github.com/rogerwang/node-webkit), and it's able to run on Windows, Mac and Linux, completely independently of Chrome.
 
-<img src="/static/images/posts/devtools-app/app-intro.png" />
+<img src="/images/posts/devtools-app/app-intro.png" />
 
-<img src="/static/images/posts/devtools-app/app-inspector.png" />
+<img src="/images/posts/devtools-app/app-inspector.png" />
 
 When you start the app, you are presented with a list of "targets", similar to how they are presented inside Chrome at chrome://inspect. For now, you'll need to have an instance of Chrome running with remote debugging enabled, before the targets show up, but going forward we can make that much easier.
 
@@ -51,7 +51,7 @@ I also added a back button that allows you to quickly switch between different t
 	<iframe src="//www.youtube.com/embed/4oBSlY9J-iA" frameborder="0" allowfullscreen></iframe>
 </figure>
 
- If you want to try out the [Chrome DevTools App](https://github.com/auchenberg/chrome-devtools-app), you should checkout the GitHub repo, [https://github.com/auchenberg/chrome-devtools-app](https://github.com/auchenberg/chrome-devtools-app), where I've written a little guide on how to get started.
+If you want to try out the [Chrome DevTools App](https://github.com/auchenberg/chrome-devtools-app), you should checkout the GitHub repo, [https://github.com/auchenberg/chrome-devtools-app](https://github.com/auchenberg/chrome-devtools-app), where I've written a little guide on how to get started.
 
 Please be aware that this project is highly experimental, and I can't guarantee that stuff won't blow up, but give it a try, and let me know what you think ;)
 
@@ -60,17 +60,20 @@ Please be aware that this project is highly experimental, and I can't guarantee 
 As a part of this exploration there's a few perspectives of taking DevTools outside of the browser, that I find super interesting.
 
 ### Chrome DevTools is close to a functional editor.
+
 Chrome DevTools is pretty damn close to being a fully featured editor. I've been [quite vocal](https://kenneth.io/blog/2013/05/21/our-web-development-workflow-is-completely-broken/) about this in the past, as I still think DevTools should be something **different** than an editor, but in the perspective of separating DevTools from the browser, we could easily make the editor part of DevTools much more prominent.
 
 With relatively few UI changes, as DevTools already have functionality to read the filesystem via its much hidden [Workspaces feature](https://developer.chrome.com/devtools/docs/workspaces), we could easily turn DevTools into something like a basic version of [Brackets](http://brackets.io). It's straightforward.
 
 ### Browser independence.
+
 Another perspective of seperating DevTools from the browser is the independence of one specific browser. If Chrome DevTools wasn't bundled together with Chrome, but something you installed seperately, we wouldn't have the bias of DevTools only working with the browser it came bundled with.
 
 Why are DevTools still bundled with the browsers?
 What if clicking "inspect element" simply started an external DevTools app?
 
 ### Working with other browsers (via [RemoteDebug](http://remotedebug.org)).
+
 With DevTools separated from one specific browser, a natural next step would be making the DevTools app work with other browsers. I already explored this idea about a year ago, in my [What if you could use Chrome DevTools with Mozilla Firefox?](https://kenneth.io/blog/2013/12/09/what-if-you-could-use-chrome-devtools-with-firefox/) blog post, where I showed how my [RemoteDebug Firefox adaptor](https://github.com/auchenberg/remotedebug-firefox-bridge), could be used with Chrome DevTools.
 
 Imagine if we invested time in such adaptors, and the Firefox adaptor was packaged as a Firefox extension (yes, it's possible). Firefox instances would then be able to showed up in the "targets" list within the DevTools app. The same tool, now with multiple browsers.
@@ -80,11 +83,12 @@ We could easily do the same thing for Safari, via [Google's Safari to Webkit rem
 It's not science fiction.
 
 ### Working with other runtimes like node.js and iOS.
+
 Another perspective of having DevTools as a seperate app, is to re-use DevTools with runtimes other than our browsers.
 
 We have already seen this with projects like [node-inspector](https://github.com/node-inspector/node-inspector), that enables developers to debug their node.js applications using Chrome DevTools. We have also seen other explorations like [PonyDebugger](https://github.com/square/PonyDebugger), that allows developers to debug their native iOS applications using Chrome DevTools.
 
-<img src="/static/images/posts/devtools-app/ponydebugger.png" />
+<img src="/images/posts/devtools-app/ponydebugger.png" />
 <p>Source: http://github.com/square/PonyDebugger</p>
 
 I find this perspective really interesting, as there's something about being able to re-use our tooling with various runtimes. It's just nice to be able to re-use all the hardwork put into DevTools, instead of reinventing the wheel(s), just because the runtime is different.
@@ -100,4 +104,3 @@ It would be much better experience for local developers, but also enable concept
 This could be the beginning of something new and exciting in the world of DevTools. I hope to have time to explore this idea more in 2015, as I believe it has a lot of potential.
 
 If you like this idea, or find it utterly stupid, please leave a comment, as I love any kind of feedback.
-

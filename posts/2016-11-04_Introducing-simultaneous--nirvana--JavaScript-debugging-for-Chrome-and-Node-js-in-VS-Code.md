@@ -15,11 +15,11 @@ og_image: images/posts/1__lCs395mV1NHp__NEtNDwV2A.png
 
 In [Visual Studio Code](https://code.visualstudio.com) 1.7 we shipped a new experimental feature called [“multi-target debugging”](https://code.visualstudio.com/updates/v1_7#_node-debugging), which enables VS Code to start multiple debuggers from the same instance of the editor.
 
-![](/static/images/posts/1__lCs395mV1NHp__NEtNDwV2A.png)
+![](/images/posts/1__lCs395mV1NHp__NEtNDwV2A.png)
 
 For the web folks, this means we can connect VS Code to browsers and back-ends **simultaneously** using our debuggers, and enable what I call “nirvana debugging” where you as a developer can debug your code running in the **client and server** **straight from your editor.**
 
-![](/static/images/posts/1__OTj6o__r8LelgKqRvwIm9WA.gif)
+![](/images/posts/1__OTj6o__r8LelgKqRvwIm9WA.gif)
 
 #### Debugging client-side and server-side code directly from your editor
 

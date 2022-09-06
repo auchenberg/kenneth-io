@@ -10,10 +10,10 @@ slug: >-
 
 My life was unique until someone tweeted me this:
 
-![](/static/images/posts/1__uBfn__WPUcvg1KvQVxI3XIA.jpg)
+![](/images/posts/1__uBfn__WPUcvg1KvQVxI3XIA.jpg)
 
 Luckily with the [help of Twitter](https://twitter.com/briansolis/status/647430498105450496), I’ve now learned that there’s more to life:
 
-![](/static/images/posts/1__vL__AQMpnimT6QJZm4NdRNw.jpg)
+![](/images/posts/1__vL__AQMpnimT6QJZm4NdRNw.jpg)
 
 To be continued. #itsnotabubble

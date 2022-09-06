@@ -8,9 +8,7 @@ categories:
 
 A few months back I was sitting in [Jacob Bøtter](http://heutedenkenmorgenfertig.com/)'s kitchen discusing what it would take to disrupt postal services and ultimately eradicate letters for good.
 
-<img src="/static/images/helpmate.jpg" />
-
-<!--more-->
+![](/images/helpmate.jpg)
 
 After a few beers we came up with something different. I recently moved to a [new place](http://instagram.com/p/PjHbHADJCc/) here in Copenhagen, and been busy [renovating the apartment](http://instagram.com/p/PqnPkNDJMx/). Jacob still has 20-30 things in his apartment that needed to be fixed, but he hadn’t had time to tell people to do it.
 

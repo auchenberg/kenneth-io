@@ -1,11 +1,11 @@
 ---
 title: 'Auchenberg’s reading list #4'
 description: May 2-May 13 2018.
-date: '2018-05-14T04:46:12.277Z'
+date: '2018-05-14'
 og_image: images/posts/1__M8EUdfEMoy__2uVgBhSnbLg.jpeg
 ---
 
-![Photo by [Christin Hume](https://unsplash.com/photos/k2Kcwkandwg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/reading?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/static/images/posts/1__M8EUdfEMoy__2uVgBhSnbLg.jpeg)
+![Photo by [Christin Hume](https://unsplash.com/photos/k2Kcwkandwg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/reading?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/images/posts/1__M8EUdfEMoy__2uVgBhSnbLg.jpeg)
 Photo by [Christin Hume](https://unsplash.com/photos/k2Kcwkandwg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/reading?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 #### China

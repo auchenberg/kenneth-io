@@ -10,7 +10,7 @@ Last week I escaped the rain in Vancouver by going on spontaneous and extended w
 
 Los Angeles is famous for it’s [crazy traffic](http://www.huffingtonpost.ca/2016/11/24/los-angeles-traffic_n_13208902.html), so I was a bit hesitant on renting a car for the weekend, but the city is also know for a layout that requires a car to go anywhere, so we kinda needed something to get around.
 
-![Los Angeles traffic. Source: [https://www.youtube.com/watch?v=E8kyePbFGbk](https://www.youtube.com/watch?v=E8kyePbFGbk)](/static/images/posts/1__YIGL__ENdrXG3Pkfu__SP5Yw.jpeg)
+![Los Angeles traffic. Source: [https://www.youtube.com/watch?v=E8kyePbFGbk](https://www.youtube.com/watch?v=E8kyePbFGbk)](/images/posts/1__YIGL__ENdrXG3Pkfu__SP5Yw.jpeg)
 Los Angeles traffic. Source: [https://www.youtube.com/watch?v=E8kyePbFGbk](https://www.youtube.com/watch?v=E8kyePbFGbk)
 
 We decided to do an experiment: **Would car sharing be cheaper than renting a car for the trip?**
@@ -26,13 +26,13 @@ This is the cost breakdown for 4 days, arriving Friday afternoon and leaving Mon
 
 4 day car rental via National, valet parking at the hotel, daily city parking when driving around, and gas.
 
-![](/static/images/posts/1__JF0DAo2vHwRnnuaKYzheKg.png)
+![](/images/posts/1__JF0DAo2vHwRnnuaKYzheKg.png)
 
 #### Car sharing
 
 4 days of car sharing using Uber, Lyft and Zipcar. We started out using Uber, but had some interesting drivers, so we switched to Lift, and the final day we rented a Zipcar for the day to do some Los Angeles driving.
 
-![](/static/images/posts/1__bIzMPQx09kvx96WNuRXezg.png)
+![](/images/posts/1__bIzMPQx09kvx96WNuRXezg.png)
 
 ### Conclusion: Car sharing has won me over
 

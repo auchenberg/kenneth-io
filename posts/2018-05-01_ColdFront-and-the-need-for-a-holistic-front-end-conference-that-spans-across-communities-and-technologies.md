@@ -8,7 +8,7 @@ date: '2018-05-01T07:59:01.787Z'
 og_image: images/posts/1__6WSi655cxXpB6JMmcsU0fA.jpeg
 ---
 
-![](/static/images/posts/1__6WSi655cxXpB6JMmcsU0fA.jpeg)
+![](/images/posts/1__6WSi655cxXpB6JMmcsU0fA.jpeg)
 
 For the past 4 years I’ve been organizing a front-end conference in Copenhagen named [ColdFront](http://coldfront.co), and this year we are taking a holistic future outlook at the front-end landscape.
 
@@ -18,13 +18,13 @@ ColdFront grew out of our monthly JavaScript meetup, [CopenhagenJS](https://cope
 
 Our focus back in 2014 was front-end as a discipline, which really meant a focus on the web platfrom, and the technologies related to the open web such as HTML, CSS and JavaScript. Over the years we have covered topics like
 
-*   New CSS standards and responsive Web Design
-*   Web frameworks like Ember.js and Reactive Programming,
-*   Web Performance, Offline First and P2P
-*   New browsers and web runtimes like Microsoft Edge, Samsung Internet, and Mozilla Servo,
-*   Service Workers, Progressive Web Apps
-*   Headless web, WebVR, IoT, Emerging markets.
-*   Native mobile platforms such as React Native
+- New CSS standards and responsive Web Design
+- Web frameworks like Ember.js and Reactive Programming,
+- Web Performance, Offline First and P2P
+- New browsers and web runtimes like Microsoft Edge, Samsung Internet, and Mozilla Servo,
+- Service Workers, Progressive Web Apps
+- Headless web, WebVR, IoT, Emerging markets.
+- Native mobile platforms such as React Native
 
 Most of these topics are centered around the open web platform, as the “front-end” role typically have been around building interfaces for the web. The web used to run only on our desktops, then mobile came along, and today the modern web is an application platform running everywhere, but the reality is that here in 2018, there’s more to the front-end discipline than just the web platform.
 
@@ -34,7 +34,7 @@ When looking at the front-end landscape it has never been as complex as it is to
 
 Below is a timeline showing the development of web technologies from 1999 to 2016, and reading posts like “[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)” or [Roadmap to becoming a web developer in 2018](https://github.com/kamranahmedse/developer-roadmap), makes us all feel the pain, but the reality is that here in 2018 the timeline has just continued to evolve at a even faster pace.
 
-![Timeline from 1999 to 2016 by [https://github.com/mraible/history-of-web-frameworks-timeline](https://github.com/mraible/history-of-web-frameworks-timeline)](/static/images/posts/1__h98__HcFJaFEuzdSA3ahFXw.png)
+![Timeline from 1999 to 2016 by [https://github.com/mraible/history-of-web-frameworks-timeline](https://github.com/mraible/history-of-web-frameworks-timeline)](/images/posts/1__h98__HcFJaFEuzdSA3ahFXw.png)
 Timeline from 1999 to 2016 by [https://github.com/mraible/history-of-web-frameworks-timeline](https://github.com/mraible/history-of-web-frameworks-timeline)
 
 In 2018 if you are building an interface that needs to run on all desktop, mobile and voice platforms in all markets around the world, you are forced to use multiple technologies that involves web, native and everything in between. Paul Kinlan from Google covered this new reality in his fantastic [ColdFront talk](https://www.youtube.com/watch?v=7X-_wO5aRFo) [about the headless web, and the raise of new meta-platforms](https://paul.kinlan.me/the-headless-web/) back in 2015.
@@ -71,7 +71,7 @@ I’m not pointing fingers to stay that there’s anything wrong with that, but 
 
 This year marks the 5th anniversary for [ColdFront](https://2018.coldfront.co), our front-end conference in Copenhagen. ColdFront has always been about the future of our industry, and this year we are expanding our reach by taking holistic view on front-end and interfaces that span’s across the web and technologies, to adopt ColdFront to the just described reality of the front-end role here in 2018.
 
-![](/static/images/posts/1__Wdr7QuhsgaRI4t47yxgXVw.png)
+![](/images/posts/1__Wdr7QuhsgaRI4t47yxgXVw.png)
 
 By taking holistic view of front-end role we have invited an incredible crowd of international names to Copenhagen to cover this years perspective on“the future of front-end and interfaces”. We have asked each speaker to cover their theme and area in this perspective, and we are incredibly excited to create a melting-pot of technologies, perspectives, experiences and learnings from the full spectrum of the front-end landscape.
 
@@ -83,8 +83,8 @@ ColdFront started as a glorified community meet-up, and this year I’m proud to
 
 It’s an incredible team operating on taking ColdFront to new-levels!
 
-![](/static/images/posts/1__etCl8GSS8ZkBX__y9Snw01A.png)
-![](/static/images/posts/1__U2__TsCuZSMS8sKWBeY5q9w.png)
+![](/images/posts/1__etCl8GSS8ZkBX__y9Snw01A.png)
+![](/images/posts/1__U2__TsCuZSMS8sKWBeY5q9w.png)
 
 ### Introducing two new collaboration partners of ColdFront
 
@@ -94,7 +94,7 @@ Jayway and Zendesk are big players in the Danish front-end scene, who over the m
 
 Welcome Zendesk and Jayway!
 
-![](/static/images/posts/1__n9B7XCnVA77wSPOHAJY__yg.png)
+![](/images/posts/1__n9B7XCnVA77wSPOHAJY__yg.png)
 
 ### Introducing the new Advisory Board for ColdFront
 
@@ -102,9 +102,9 @@ As our ambitions for ColdFront has grown over the years, we have also build a in
 
 We have leading voices from the international design community, the Node community, the Scandinavian agency scene, and big perspectives from Google and the W3C TAG covered, who’s all helping taking ColdFront to the next level through great advice and perspectives. Personally I’m beyond excited to have these awesome people as a part of ColdFront 😎
 
-![](/static/images/posts/1__WkG7YQ2G7HsR2IXG0sU8SA.png)
-![](/static/images/posts/1__M8ON7432G2TR__Fkqa6NEWw.png)
-![](/static/images/posts/1__JXY1icF6UTHWRnTvibdjtg.png)
+![](/images/posts/1__WkG7YQ2G7HsR2IXG0sU8SA.png)
+![](/images/posts/1__M8ON7432G2TR__Fkqa6NEWw.png)
+![](/images/posts/1__JXY1icF6UTHWRnTvibdjtg.png)
 
 ### Introducing a 3rd ColdFront Community Day in collaboration with the Copenhagen front-end community
 

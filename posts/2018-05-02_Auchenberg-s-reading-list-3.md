@@ -1,10 +1,10 @@
 ---
 title: 'Auchenberg’s reading list #3'
 description: April 15th-May 2 2018.
-date: '2018-05-02T16:00:29.168Z'
+date: '2018-05-02'
 ---
 
-![[https://unsplash.com/photos/18mUXUS8ksI/info](https://unsplash.com/photos/18mUXUS8ksI/info)](/static/images/posts/1__0BYkLLhnju8utGBWi__9zfg.jpeg)
+![[https://unsplash.com/photos/18mUXUS8ksI/info](https://unsplash.com/photos/18mUXUS8ksI/info)](/images/posts/1__0BYkLLhnju8utGBWi__9zfg.jpeg)
 [https://unsplash.com/photos/18mUXUS8ksI/info](https://unsplash.com/photos/18mUXUS8ksI/info)
 
 #### **Tech**

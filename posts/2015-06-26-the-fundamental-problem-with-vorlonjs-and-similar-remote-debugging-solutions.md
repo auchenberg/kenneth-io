@@ -10,7 +10,7 @@ og_image: images/posts/vorlonjs/vorlonjs.jpg
 
 This post is a follow-up discussion of brief Twitter thread between [@deltakosh](https://twitter.com/deltakosh), [@meulta](https://twitter.com/meulta), [@pierlag](https://twitter.com/pierlag) and [@davrous](https://twitter.com/davrous) where I asked into the reasoning behind building [Vorlon.js](http://vorlonjs.com).
 
-<img src="/static/images/posts/vorlonjs/vorlonjs.jpg" />
+<img src="/images/posts/vorlonjs/vorlonjs.jpg" />
 
 **Preface**: This is quite an opinionated post, and everything here is said without have had a chat with the team, and is purely based upon the observations I’ve made since the announcement and by following the project. I might be completely wrong in my criticism.
 
@@ -24,9 +24,10 @@ I’ve been following the [vorlon.js](http://vorlonjs.com) project for a while n
 
 To me, this particular front-end work seems completely unnecessary as a front-end for this kinda of functionality already exists — and has for years.
 
-I’ve been reading the [announcement blog-post of vorlon.js](http://blogs.msdn.com/b/eternalcoding/archive/2015/04/30/why-we-made-vorlon-js-and-how-to-use-it-to-debug-your-javascript-remotely.aspx) a few few times to wrap my mind around the purpose of the project, and I get that the point of the project is a *“An open source, extensible, platform-agnostic tool for remotely debugging and testing your JavaScript.”*, but I simply don’t understand why the team has chosen an approach that includes to re-invent (as in re-implement) much of the logic,  our community have spent years on building and perfecting.
+I’ve been reading the [announcement blog-post of vorlon.js](http://blogs.msdn.com/b/eternalcoding/archive/2015/04/30/why-we-made-vorlon-js-and-how-to-use-it-to-debug-your-javascript-remotely.aspx) a few few times to wrap my mind around the purpose of the project, and I get that the point of the project is a _“An open source, extensible, platform-agnostic tool for remotely debugging and testing your JavaScript.”_, but I simply don’t understand why the team has chosen an approach that includes to re-invent (as in re-implement) much of the logic, our community have spent years on building and perfecting.
 
 ## Vorlon.js doesn’t bring anything new to the table
+
 [Vorlon.js](http://vorlonjs.com) is built on node.js and is using socket.io to manage it’s connections to the browsers and the front-end is simply communicating to the central (local) server that provides an aggregated view of the browser information.
 
 This architecture isn’t new.
@@ -41,8 +42,8 @@ However [vorlon.js](http://vorlonjs.com) adds one new thing to the table, and th
 
 In the perspective of [Weinre](http://people.apache.org/~pmuellr/weinre-docs/latest/) and [GhostLab](http://vanamco.com/ghostlab/), [vorlon.js](http://vorlonjs.com) simply looks to be yet one-of-the-many Microsoft-variants of tools that’s already exists.
 
-
 ## Re-implementing a front-end that already exists
+
 My first specific criticism of the [vorlon.js](http://vorlonjs.com) is that the team currently is re-implementing much of the functionality that already exists inside tools like [Chrome DevTools](https://developer.chrome.com/devtools) and [Firefox DevTools](https://developer.mozilla.org/en/docs/Tools). These projects are both open-source, and hundreds of people has over the last many years, spent I-dont-know-how-many man-hours on tweaking both the UI and the functionality of their “DOM Explores” and “Networking inspectors”
 
 So I simply don’t understand, why you would completely disregard what’s already out there (and work’s pretty damn well), and start rolling your own home-grown front-end.
@@ -56,6 +57,7 @@ For absolutely no reason.
 Even [Weinre](http://people.apache.org/~pmuellr/weinre-docs/latest/) and [GhostLab](http://vanamco.com/ghostlab/) realized that re-implementing the front-end would be massiv task, and probably also a waste of resources, so from the beginning [GhostLab](http://vanamco.com/ghostlab/) is simply re-using Chrome DevTools inside their app, and [Weinre](http://people.apache.org/~pmuellr/weinre-docs/latest/) is using Safari’s WebInspector. Wise decisions.
 
 ## The fundamental problem is the viewport sandbox and it’s limitations
+
 This leads me to my second criticism and that’s the basic assumption [vorlon.js](http://vorlonjs.com) and similar solutions like [Weinre](http://people.apache.org/~pmuellr/weinre-docs/latest/) are built upon: They rely on instrumentation of the running application inside the “viewport sandbox” using dynamic script injection.
 
 Let me explain why this is fundamental problem by showing you this illustration:
@@ -75,9 +77,10 @@ This constraint also exists for vorlon.js, and that’s why vorlon.js from the v
 This is also why modern DevTools aren’t relaying on dynamic script injection, but instead is using the [remote debugging protocols](http://remotedebug.org/specifications/). These are built into every modern browser, and aren’t limited by the “viewport sandbox”. They provides a much more advanced set of API’s for specifically created debugging and most importantly provided and maintained by the browser vendors.
 
 ## What should be the focus of vorlon.js
+
 Remote Debugging protocols already exists, and is wildly used by the browsers’s DevTools and other tools such as Adobe Brackets. There’s a proven need for why these protocols and API’s can’t be exposed inside the viewport, and why these are exposed as a separate interface to the browsers.
 
-If the goal is to build a tool to *“remotely debugging and testing your JavaScript”* the focus should be where the problem is: How to build a system using the existing API’s and protocols that works cross browser and runtimes.
+If the goal is to build a tool to _“remotely debugging and testing your JavaScript”_ the focus should be where the problem is: How to build a system using the existing API’s and protocols that works cross browser and runtimes.
 
 The focus **shouldn’t** be re-implementing a front-end that already exists, and spending time re-implementing debugging-API’s that the browser-vendors already provides in their remote debugging protocols.
 

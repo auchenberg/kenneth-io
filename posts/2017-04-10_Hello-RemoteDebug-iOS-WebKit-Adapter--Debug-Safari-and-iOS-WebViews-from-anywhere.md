@@ -9,7 +9,7 @@ og_image: images/posts/1__NGdCzvXOHYFEmZzA1OId4Q.png
 
 Today, I’m happy to announce a new project, [RemoteDebug iOS WebKit Adapter](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter), which enables Safari and WebViews on iOS to be debugged from tools like [VS Code](http://code.visualstudio.com), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) and [Firefox debugger.html](https://github.com/devtools-html/debugger.html) on both Windows and Mac.
 
-![RemoteDebug iOS WebKit Adapter overview](/static/images/posts/1__NGdCzvXOHYFEmZzA1OId4Q.png)
+![RemoteDebug iOS WebKit Adapter overview](/images/posts/1__NGdCzvXOHYFEmZzA1OId4Q.png)
 RemoteDebug iOS WebKit Adapter overview
 
 ### Purpose
@@ -24,7 +24,7 @@ I hope by having an open source protocol adapter we can _unite the energy and re
 
 The protocol adapter is implemented in TypeScript as Node-based CLI tool which starts an instance of [ios-webkit-debug-proxy](https://github.com/google/ios-webkit-debug-proxy), detects the connected iOS devices, and then starts up an instance of the correct protocol adapter depending on the iOS version.
 
-![RemoteDebug iOS WebKit Adapter architecture](/static/images/posts/1__2mCWfCt14HkSghg8fDcMug.png)
+![RemoteDebug iOS WebKit Adapter architecture](/images/posts/1__2mCWfCt14HkSghg8fDcMug.png)
 RemoteDebug iOS WebKit Adapter architecture
 
 The iOS version detection relies on _ideviceinfo_ from [libimobiledevice](http://www.libimobiledevice.org/), and is needed because the API exposed over the WebKit Remote Debugging Protocol has small variations depending on the WebKit version. As a starting point API differences from iOS 10 down to iOS 8 has been implemented and the [implementation can be seen here](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter/tree/master/src/protocols/ios).
@@ -35,18 +35,18 @@ Finally, the adapter is exposing a WebSocket server and a HTTP server, which are
 
 The protocol adapter enables a broad range of features that hasn’t been working for a long time to the growing delta between the APIs exposed by Chromium and WebKit.
 
--   **DOM / CSS editing**  
-    Implements a range of basic DOM/CSS APIs which enables basic element inspection and CSS manipulation.
--   **Console**  
-    Enables the console to function as expected, by [mapping](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter/blob/master/src/protocols/ios/ios.ts#L79) the WebKit APIs to the new Chrome APIs.
--   **Network tool ** 
-    Enables the network tool to function as expected, and re-enables cookies to be set and deleted.
--   **Script debugging**
-    Debugging of scripts and enables usage of the debugger-statement from VS Code, debugger.html and Chrome DevTools
--   **Screencasting**
-    As a little extra thing the protocol adapter also enables a basic version of screencasting via Chrome DevTools, as we discovered WebKit supports taking screenshots of the viewport via the [Page.snapshotRect](http://compatibility.remotedebug.org/Page/Safari%20iOS%2010.0/commands/snapshotRect) API. This enables us to emulate the screencasting behavior of Chromium, with the caveat of performance is sub-pair with the native implementation, and touch emulation isn’t fully implemented. The experience is limited, but conceptually it works.
+- **DOM / CSS editing**  
+  Implements a range of basic DOM/CSS APIs which enables basic element inspection and CSS manipulation.
+- **Console**  
+  Enables the console to function as expected, by [mapping](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter/blob/master/src/protocols/ios/ios.ts#L79) the WebKit APIs to the new Chrome APIs.
+- **Network tool **
+  Enables the network tool to function as expected, and re-enables cookies to be set and deleted.
+- **Script debugging**
+  Debugging of scripts and enables usage of the debugger-statement from VS Code, debugger.html and Chrome DevTools
+- **Screencasting**
+  As a little extra thing the protocol adapter also enables a basic version of screencasting via Chrome DevTools, as we discovered WebKit supports taking screenshots of the viewport via the [Page.snapshotRect](http://compatibility.remotedebug.org/Page/Safari%20iOS%2010.0/commands/snapshotRect) API. This enables us to emulate the screencasting behavior of Chromium, with the caveat of performance is sub-pair with the native implementation, and touch emulation isn’t fully implemented. The experience is limited, but conceptually it works.
 
-![Screencasting from iOS Simulator to Chrome DevTools](/static/images/posts/1__miVTt5ZXauyHyUYAYw__jXA.gif)
+![Screencasting from iOS Simulator to Chrome DevTools](/images/posts/1__miVTt5ZXauyHyUYAYw__jXA.gif)
 Screencasting from iOS Simulator to Chrome DevTools
 
 ### Getting started

@@ -13,7 +13,7 @@ To continue the [RemoteDebug](https://remotedebug.org) effort on unifying todayâ
 
 Today I'm happy to introduce the [RemoteDebug Compatibility Tables](https://compatibility.remotedebug.org/), which for the first time provides a full overview the APIâ€™s exposed by browsers and runtimes supporting the Chrome Debugging Protocol either natively or via protocol adapter.
 
-<img src="/static/images/posts/remotedebug-compatibility-tables/head.png"/>
+<img src="/images/posts/remotedebug-compatibility-tables/head.png"/>
 
 <!--more-->
 
@@ -37,7 +37,7 @@ This approach is much similar to the excellent [Chrome Debugging Protocol Viewer
 
 Besides, to generating the compatibility tables themselves and permalinks for each object, I've also some simple API comparison which marks a given API as "common" when all the compared runtimes support's it. There's a surprisingly large amount of common API's already.
 
-<img src="/static/images/posts/remotedebug-compatibility-tables/common_highlight.png" />
+<img src="/images/posts/remotedebug-compatibility-tables/common_highlight.png" />
 
 Getting an overview of common API's is the first step towards a RemoteDebug proposal as those API's would be a good starting point for a common set of APIs, as they already are supported and exposed today.
 
@@ -49,7 +49,7 @@ To make navigation between methods and their return objects, I also added inline
 
 The JSON highlighting powered by [Prism.js](prismjs.com), and the inline code navigation is done via an [relatively straightforward Prism extension](https://github.com/RemoteDebug/remotedebug-compatibility-tables/blob/master/assets/prism-ref-linker.js), which makes code navigation for [`Debugger.getScriptSource`](http://compatibility.remotedebug.org/Debugger/Chrome/commands/getScriptSource) a breeze to use.
 
-<img src="/static/images/posts/remotedebug-compatibility-tables/object_navigation.png" />
+<img src="/images/posts/remotedebug-compatibility-tables/object_navigation.png" />
 
 ## One step closer towards the RemoteDebug vision
 

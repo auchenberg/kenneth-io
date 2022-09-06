@@ -9,14 +9,14 @@ og_image: images/posts/1__3SDh5G__fTs3UnXPlmI76hw.jpeg
 
 _A lot of great things has happened in 2017, but I also learned my health wasn’t as great as I thought. It has changed many things and been dominating my 2017 completely. This is a very personal post, and try to put some of my many thoughts into words._
 
-![_Lake Chelan, October 2017, WA USA_](/static/images/posts/1__3SDh5G__fTs3UnXPlmI76hw.jpeg)
+![_Lake Chelan, October 2017, WA USA_](/images/posts/1__3SDh5G__fTs3UnXPlmI76hw.jpeg)
 _Lake Chelan, October 2017, WA USA_
 
 Back in [2016 I moved to Vancouver, Canada to join Microsoft](https://kenneth.io/blog/2015/10/29/joining-microsoft-and-relocating-to-vancouver/), and during 2016 I started to notice that I was in vicious cycle of colds, where I would get a week long cold about every month regardless of the season which left me drained of all energy.
 
 By the time I’d leave the office I would be ready to go to bed. First I blamed my travels, as I travelled a lot in 2016. but I clearly remember going to Cuba with a friend and during that trip I mostly slept. Ate and then slept again for a week in a row. I was a zombie, and I didn’t understand why.
 
-![Sleeping in Havana, Cuba, 2016](/static/images/posts/1__4FYF6fnHIUmOkW1ngEy3cw.jpeg)
+![Sleeping in Havana, Cuba, 2016](/images/posts/1__4FYF6fnHIUmOkW1ngEy3cw.jpeg)
 Sleeping in Havana, Cuba, 2016
 
 It was odd, as I prior to moving to Canada had spend a year off, and before that in 2015 had spent a significant time investing into my health by getting into healthy habits of lifting weight, eating healthy, getting enough sleep with the help from personal trainer sand nutritionists. I managed get far in my self labeled #projectBody, but I had one big problem: I couldn’t loose body-fat and my trainers didn’t understand why.
@@ -51,7 +51,7 @@ As you grow older you learn there’s nothing such as a free lunch, and my medic
 
 Today I’m a super-sized Kenneth, which I hope I will be able to do something about in 2018, but for now my priority is to get back on track and to increase my general productivity.
 
-![Guess when I started to take meds?](/static/images/posts/1____7ZfVKRmvNYNL5PQxb0PHQ.png)
+![Guess when I started to take meds?](/images/posts/1____7ZfVKRmvNYNL5PQxb0PHQ.png)
 Guess when I started to take meds?
 
 #### Having kids. A thing I’ve always taken for granted

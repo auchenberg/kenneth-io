@@ -13,7 +13,7 @@ About a month ago I launched an idea I’ve had for a while. The idea is called 
 
 I want to tell you a bit more about the prototype.
 
-<img src="/static/images/remote-debug-firefox-animation.gif" />
+<img src="/images/remote-debug-firefox-animation.gif" />
 
 <!--more-->
 

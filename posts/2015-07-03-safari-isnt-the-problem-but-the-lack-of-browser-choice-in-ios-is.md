@@ -12,7 +12,7 @@ Recently there has a been a lot of debate wether [Safari is the new IE](http://n
 
 The problem isn’t Safari. It’s a somewhat modern browser that in the eyes of some might lack some important features, but overall is still pretty good and modern.
 
-<img src="/static/images/posts/ios-browser-lock/safari-ios.png" />
+<img src="/images/posts/ios-browser-lock/safari-ios.png" />
 
 <!--more-->
 

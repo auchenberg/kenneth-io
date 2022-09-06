@@ -10,7 +10,7 @@ og_image: images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg
 
 Back in December I [decided to quit my job](https://kenneth.io/blog/2014/12/12/leaving-citrix-time-for-a-break/) and take a leap into unexplored territories. I ended up [packing a backpack to travel Asia](https://kenneth.io/blog/2015/02/22/60-items-for-the-next-many-months-in-asia/), which has been an amazing experience, but it also meant that I haven’t been able to help organizing [CopenhagenJS](http://copenhagenjs.dk), as I simply haven’t been around.
 
-<img src="/static/images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg" />
+<img src="/images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg" />
 
 Now I’m back in Copenhagen, and been putting a bit of thought into how I should be spending my time going forward, and I reached the conclusion that it’s time to step down as [CopenhagenJS](http://copenhagenjs.dk) organizer and pass the baton on.
 

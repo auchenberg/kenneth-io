@@ -5,7 +5,6 @@ date: 2019-08-19 09:00
 published: true
 comments: true
 draft: false
-categories:
 og_image: images/posts/stripe/head.png
 ---
 
@@ -13,13 +12,11 @@ About two months ago I announced that [I was leaving Microsoft](https://mobile.t
 
 It's been a fun adventure where I pivoted to product from engineering and a journey that took me to Pacific Northwest with stops in Vancouver, Canada and Seattle, WA.
 
-![](/static/images/posts/stripe/head.png)
+![](/images/posts/stripe/head.png)
 
 Today I'm excited to announce that I'm joining [**Stripe**](https://stripe.com/) to build the next generation of developer experiences for the economic infrastructure of the internet. 🌍💰🛠
 
 Let me tell you why.
-
-<!--more-->
 
 ## Building Global Economic Infrastructure for the next generation of companies
 

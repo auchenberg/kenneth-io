@@ -9,7 +9,7 @@ As something new I’m gonna try to curate a weekly reading list of interesting 
 
 Enjoy!
 
-![Photo by [Alisha Hieb](https://unsplash.com/photos/-WW6b0Mwplc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/static/images/posts/1__Sc1cMDS0vhSz734__QINz2Q.jpeg)
+![Photo by [Alisha Hieb](https://unsplash.com/photos/-WW6b0Mwplc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/images/posts/1__Sc1cMDS0vhSz734__QINz2Q.jpeg)
 Photo by [Alisha Hieb](https://unsplash.com/photos/-WW6b0Mwplc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 #### Facebook, Cambridge Analytica and privacy

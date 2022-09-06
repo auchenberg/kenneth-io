@@ -11,7 +11,7 @@ og_image: images/posts/1__ca9BN8dJBM70ZwExyOE9Bg__2x.png
 
 Finding and identifying issues with Node.js apps deployed to the cloud can be burdensome process that usually involves local debugging, the sprinkling of `console.logs`on to your codebase, and many re-deployments to get the problem identified and solved.
 
-![](/static/images/posts/1__ca9BN8dJBM70ZwExyOE9Bg__2x.png)
+![](/images/posts/1__ca9BN8dJBM70ZwExyOE9Bg__2x.png)
 
 Today we are changing that, as we are introducing a **public preview of remote debugging for Node.js apps deployed on Azure App Service for Linux**. Our remote debugging experience brings you the same great debugging experience that you already know from Visual Studio Code when debugging Node.js locally to the Azure Cloud.
 
@@ -37,14 +37,14 @@ Per our [default logic for Node](https://github.com/Azure-App-Service/node/blob/
 
 If you are using NPM scripts to start your Node app, you need to make a slight modification to how you start your app, as we won’t try to fiddle with your app. You know best how to launch your app, so for this _public preview_, we are asking you explicitly to create a **new debugging specific NPM script** that runs your Node app with `--inspect=0.0.0.0:$APPSVC_TUNNEL_PORT.`
 
-This runtime flag tells your Node app to start in debug mode listening on the debugging port specified by Azure, which is exposed as an environment variable.  
-  
+This runtime flag tells your Node app to start in debug mode listening on the debugging port specified by Azure, which is exposed as an environment variable.
+
 Your **scripts** section in your **package.json** should look something like:
 
 ```
-"scripts": {  
-  "start": "node index.js",  
-  "start\_azure\_debug": "node --inspect=0.0.0.0:$APPSVC\_TUNNEL\_PORT index.js"  
+"scripts": {
+  "start": "node index.js",
+  "start\_azure\_debug": "node --inspect=0.0.0.0:$APPSVC\_TUNNEL\_PORT index.js"
 }
 ```
 
@@ -54,7 +54,7 @@ Go to **Application settings** and update your **Startup File** to your newly co
 
 It should look something like:
 
-![](/static/images/posts/1__nI0__dXSB5yyfau4M7f72bA.png)
+![](/images/posts/1__nI0__dXSB5yyfau4M7f72bA.png)
 
 Your Node app is now figured to run with remote debugging enabled.
 
@@ -67,13 +67,13 @@ Next is to get your Visual Studio Code setup going, which is an easy process:
 1.  Install [**Visual Studio Code**](https://code.visualstudio.com/), if you haven’t.
 2.  Install the [**Azure App Service extension for VS Code**](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) by either clicking the link or search for it in the marketplace directly from VS Code
 
-![](/static/images/posts/1__URX9t9CKO8ceU__m6DLmKKA.png)
+![](/images/posts/1__URX9t9CKO8ceU__m6DLmKKA.png)
 
 3\. If you haven’t logged into Azure from VS Code, you should now click the **Azure** icon in the sidebar to the left, and login to see your App Service apps.
 
 4\. Since remote debugging is a **preview feature**, you now have to go to your VS Code settings to enable it. You do this by clicking **File** > **Preferences** > **Settings**. modify your `appService.enableRemoteDebugging` to be true.
 
-![](/static/images/posts/1__OzfPgGJdX4__55ai7B49O0Q.png)
+![](/images/posts/1__OzfPgGJdX4__55ai7B49O0Q.png)
 
 5\. Now that you have remote debugging enabled, the next step for you is to **open the source code** for your Node app as **your workspace in VS Code.**
 
@@ -81,17 +81,17 @@ Next is to get your Visual Studio Code setup going, which is an easy process:
 
 Right click and select the new **“Start Remote Debugging”** option.
 
-![](/static/images/posts/1__MqyBJ__hfJ9LzNnF4zGXtqg.png)
+![](/images/posts/1__MqyBJ__hfJ9LzNnF4zGXtqg.png)
 
 Once clicking on “Start remote debugging”, Visual Studio Code will check if remote debugging has been enabled for your app, and if it hasn’t you will be asked to confirm before enabling remote debugging on your behalf.
 
-![](/static/images/posts/1__axs7oofsl71w2AOw0Q8__Cw.png)
+![](/images/posts/1__axs7oofsl71w2AOw0Q8__Cw.png)
 
 Once the right configurations has been set, you should now see remote debugging for your Node.js app being started (you can follow the progress in the status bar) and once the debugger is connected VS Code will enter debug mode.
 
 _Notice: You might get a prompt from your firewall on Windows, please allow the connection_
 
-![](/static/images/posts/1__3AkNFEV1FvmgpjULqcjIkQ.png)
+![](/images/posts/1__3AkNFEV1FvmgpjULqcjIkQ.png)
 
 Bam. That’s it. 🎉🔥
 
@@ -101,7 +101,7 @@ The debugger is now connected, and you can remote debug your Node.js app running
 
 In the March 2018 release of VS Code, we introduced a new debugging concept called Logpoints. When combining Logpoints with remote debugging on Azure you have a powerful combination for seamless production debugging!
 
-Try it out and read more about Logpoints here 👉[https://code.visualstudio.com/updates/v1\_22#\_logpoints](https://code.visualstudio.com/updates/v1_22#_logpoints)
+Try it out and read more about Logpoints here 👉[https://code.visualstudio.com/updates/v1_22#\_logpoints](https://code.visualstudio.com/updates/v1_22#_logpoints)
 
 ### Try out the preview!
 

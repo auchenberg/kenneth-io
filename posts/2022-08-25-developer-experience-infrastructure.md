@@ -114,8 +114,8 @@ The argument is to be successful; developer advocacy needs to evolve into someth
 I have strong feelings about this particular topic. I don’t think traditional outbound-focused developer relations teams have the right competencies to build more holistic experiences, but that’s a different topic for another today.
 
 <blockquote class="twitter-tweet" data-align="center">
-
-<p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote>
+    <p lang="en" dir="ltr">&quot;Developer Experience&quot; is the new hot thing, and we now see many existing teams re-labeled as Dev Experience. What does DX really mean, and what is the relationship between developer relations, advocacy, DX, and product teams?<br><br>Read on 🧵👇</p>&mdash; 🛠 Kenneth Auchenberg 🏝 (@auchenberg) <a href="https://twitter.com/auchenberg/status/1495559802973392896?ref_src=twsrc%5Etfw">February 21, 2022</a>
+</blockquote>
 
 ## The cost of (bad) developer experience
 

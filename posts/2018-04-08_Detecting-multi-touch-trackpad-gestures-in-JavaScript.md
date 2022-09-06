@@ -7,7 +7,7 @@ date: '2018-04-08T21:52:45.693Z'
 og_image: images/posts/1__bwwRLlyBufhc1Tbjta3Szg.jpeg
 ---
 
-![Photo by [Scott Webb](https://unsplash.com/photos/ZLeogVvtXk0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/kP0pjdyYNyU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/static/images/posts/1__bwwRLlyBufhc1Tbjta3Szg.jpeg)
+![Photo by [Scott Webb](https://unsplash.com/photos/ZLeogVvtXk0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/kP0pjdyYNyU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/images/posts/1__bwwRLlyBufhc1Tbjta3Szg.jpeg)
 Photo by [Scott Webb](https://unsplash.com/photos/ZLeogVvtXk0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/kP0pjdyYNyU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 For a long time I have wondered how [Google Maps](http://maps.google.com/) and [Figma](http://figma.com) have been able to support pinch-to-zoom multi-touch gestures from my trackpad on my Macbook, when there’s no special trackpad JavaScript events exposed.
@@ -67,7 +67,7 @@ I’ve put together a simple demo of a <div> which you can move around and scale
 **Demo:** [https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)  
 **Code:** [https://stackblitz.com/edit/multi-touch-trackpad-gesture](https://stackblitz.com/edit/multi-touch-trackpad-gesture)
 
-![[https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)](/static/images/posts/1__ly0W__nCdu__7DmiA3j7arww.png)
+![[https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)](/images/posts/1__ly0W__nCdu__7DmiA3j7arww.png)
 [https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)
 
 Another cool demo I found is using WebGL and the performance is even better: [http://jsbin.com/fepuficudolo/3/edit?html,output](http://jsbin.com/fepuficudolo/3/edit?html,output)
