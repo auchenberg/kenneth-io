@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import {getTalks} from '../helpers/getTalks';
 
-class Home extends React.Component {
+class Speaking extends React.Component {
   static async getInitialProps() {
     if (typeof window === 'undefined') {
       return {
@@ -54,7 +54,7 @@ class Home extends React.Component {
             If you want me to speak at your event, please feel free to{' '}
             <a href="/contact/">contact me</a>, and let's see if it makes sense.
           </p>
-          <img src="/static/images/me_full_frontal_web.jpg" />
+          <img src="/images/me_full_frontal_web.jpg" />
           <p>
             Photo credits:{' '}
             <a href="http://www.flickr.com/photos/drewm/10757628855">
@@ -81,4 +81,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Speaking;
