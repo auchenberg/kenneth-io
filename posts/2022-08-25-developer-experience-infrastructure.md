@@ -85,7 +85,7 @@ With the rise of NoCode/LowCode, some might say that it’s no longer enough to 
 
 ### Table-stakes for developer experience in 2022
 
-Let’s say, for example, a company is developing a weather data product for developers and wants to offer an API. To meet basic developer expectations as of today, they would need to provide <span style="text-decoration:underline;">most</span> of the following DX traits to be considered top-tier:
+Let’s say, for example, a company is developing a weather data product for developers and wants to offer an API. To meet basic developer expectations as of today, they would need to provide **most** of the following DX traits to be considered top-tier:
 
 - **Documentation and content** that introduces and explains various domain-specific concepts and topics to developers and their users.
 - **Surprisingly great attention to detail on error messages** and API semantics.
