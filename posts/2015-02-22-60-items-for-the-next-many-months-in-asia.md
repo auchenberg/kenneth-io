@@ -18,9 +18,7 @@ So here I am. In Bangkok, with my laptop, camera and 58 other items.
 
 I’m ready to meet new people, explore Asia, and have a great time.
 
-<img src="/images/posts/60_items_in_asia.jpg" />
-
-<!--more-->
+![](/images/posts/60_items_in_asia.jpg)
 
 ## So what did I bring with me?
 

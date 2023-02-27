@@ -54,7 +54,7 @@ The browser support seems to be as following:
 
 After the ctrl key modifer hacker landed there seem to have been a discussion on how this could formalized into a better API as per this dicussion on Twitter:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/Alecazam123?ref_src=twsrc%5Etfw">@Alecazam123</a> <a href="https://twitter.com/grorgwork?ref_src=twsrc%5Etfw">@grorgwork</a> If we could agree on a standard gesture API, that would probably be better long term than my ctrl+wheel hack.</p>&mdash; Rick Byers (@RickByers) <a href="https://twitter.com/RickByers/status/618380969343451136?ref_src=twsrc%5Etfw">July 7, 2015</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% tweet_embed id="618380969343451136" /%}
 
 In March 2016 Apple has shipped new a`GestureEvent` for Webkit that shipped as a part of [Safari 9.1](https://webkit.org/blog/6008/new-web-features-in-safari/), and this new event model allow us to detect gesture rotation and much.
 

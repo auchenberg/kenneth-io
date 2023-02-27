@@ -14,9 +14,7 @@ I announced [RemoteDebug](http://remotedebug.org/) as a separate initiative, wit
 
 That didn’t happen.
 
-<img src="/images/posts/remotedebug-one-year/remotedebug-logo.jpg" />
-
-<!--more-->
+![](/images/posts/remotedebug-one-year/remotedebug-logo.jpg)
 
 During the past year I’ve had the pleasure to discuss RemoteDebug with great minds from Google, Mozilla, Microsoft, Adobe, W3C, and many others. I even had pleasure to attend the [W3C TPAC](http://www.w3.org/2014/11/TPAC/) in Santa Clara, where I gave a short presentation to the Browser Testing and Tools Working Group (Thanks, [Wilhelm](https://twitter.com/wilhelmja)), as I consider a common remote debugging protocol, a low-level API where things like WebDriver chould be implemented on top.
 
@@ -38,7 +36,8 @@ During the past year I've learned that true unification of DevTools isn’t in t
 
 At [EdgeConf in London](https://edgeconf.com/2014-london) I was a part of the DevTools panel where I had a heated dicussion with [Joe Walker](https://twitter.com/joewalker) from the Mozilla DevTools team, as we disagreed on some quite basic things. I think the DevTools teams are living in their own little "bubbles" that doesn't take into account that most developers need to learn multiple tools in order do their daily cross-browser work.
 
-<img src="/images/posts/remotedebug-one-year/edgeconf.jpg" />
+![](/images/posts/remotedebug-one-year/edgeconf.jpg)
+
 <p>Source: https://edgeconf.com/2014-london</p>
 
 Luckily my point resonated with others, and one of the persons I highly respect, [Jeremy Keith](https://twitter.com/adactio), wrote a [great blog post with his reflections](https://adactio.com/journal/6719) on this.
@@ -51,7 +50,8 @@ Today, most developers, doesn't care about the runtime, but they DO care about t
 
 Over the last year I've learned that a common remote debugging protocol is a "chicken or egg" problem. Both Chrome and Firefox already have open protocols that are documented, and used by their respective DevTools, but at the same time they also are the only "official" consumer of these protocols. This means that each browser vendor has the flexisbility to change the protocols to fit their needs, without the constraints of other consumers. This gives the DevTools teams a great amount of agility, but this is also holding others back integrating with the protocols, as they there's no standard to adhere to.
 
-<img src="/images/posts/remotedebug-one-year/standards.jpg" />
+![](/images/posts/remotedebug-one-year/standards.jpg)
+
 <p>Source: http://xkcd.com/927/</p>
 
 I've talked to several non-browser tooling vendors, and all of them would love a common interface to browser(s), but currently they are holding back integrating with the existing remote debugging protocols, because they first are too browser specific, and to fragile.
@@ -72,7 +72,8 @@ I was attending the [Extensibilty Web Summit](http://lanyrd.com/2014/extwebsummi
 
 At the last meeting I had with [David Camp](https://twitter.com/campd) and [Heather Arthur](https://twitter.com/harthvader) in the lovely Mozilla SF offices, Mozilla didn't seem overly positive about a common protocol, as I were advocating for using the wildly-used Chrome protocol as the starting point. I think Dave misunderstod my intention, as I'm not merried to the Chrome protocol, but to me, it still seems to be the best starting point, due to it's protocols existing usage and simplicity.
 
-<img src="/images/posts/remotedebug-one-year/firefox-protocol-adaptors.jpg"/>
+![](/images/posts/remotedebug-one-year/firefox-protocol-adaptors.jpg)
+
 <p>Source: http://arstechnica.com/information-technology/2014/09/debug-chrome-safari-apps-from-firefox-with-new-add-on/</p>
 
 I've been following the [Valence project](https://github.com/campd/valence) for a while now, and I'm really excited to see [J Ryan](https://twitter.com/jryans), [Paul Rouget](http://paulrouget.com/), [Panagiotis Astithas](https://twitter.com/pastith), and [others](https://github.com/campd/valence/graphs/contributors)
@@ -92,7 +93,7 @@ During the past year we also seen Chrome DevTools being re-used with other platf
 
 We have also seen Square putting some effort into [PonyDebugger](https://github.com/square/PonyDebugger), that enables you do use Chrome DevTools use debug native iOS applications, and most recently we seen Facebook release, [Stetho](http://facebook.github.io/stetho/), a bridge that enables developers to debug their native Android apps using Chrome DevTools.
 
-<img src="/images/posts/remotedebug-one-year/stetho-discovery.jpg" />
+![](/images/posts/remotedebug-one-year/stetho-discovery.jpg)
 
 [Stetho](http://facebook.github.io/stetho/) in particular is interesting, because it's using the same mechanism as chrome://inspect, powered by ADB, to make the Android apps discoverable by Chrome, which provides a neat user experience.
 
@@ -102,7 +103,7 @@ I find the perspectives of using DevTools with other platforms really interestin
 
 In addition to seeing DevTools re-use across platforms, we have also started seeing new kind of tooling being built in top of the remote debugging protocols.
 
-<img src="/images/posts/remotedebug-one-year/calibre.jpg" />
+![](/images/posts/remotedebug-one-year/calibre.jpg)
 
 One example is [Calibre](https://calibreapp.com/), a performance tool that is using the Chrome Remote Debugging protocol to extract performance related information from Chrome.
 

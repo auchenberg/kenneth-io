@@ -10,11 +10,9 @@ og_image: images/posts/browser-remote/social.jpg
 
 As a part of [my talk about the future of DevTools and my RemoteDebug initiative](https://auchenberg.github.io/presentations/jscamp-2015-future-of-devtools-with-remotedebug/#1) at [JSCamp in Romania](http://jscamp.ro), I build a little prototype I’d like to introduce. It’s called [BrowserRemote](https://github.com/auchenberg/browser-remote).
 
-<img src="/images/posts/browser-remote/social.jpg" />
+![](/images/posts/browser-remote/social.jpg)
 
 **Preface**: My intention with BrowserRemote is to show-case the powerfullness of exposing remote debugging, in a secure manner, to application developers via an injected API, and to show that remote debugging can be valuable for end-users too.
-
-<!--more-->
 
 [BrowserRemote](https://github.com/auchenberg/browser-remote) enables you to remote support or assist your users directly from the browser, within your own web app. No need to install anything, just click a button. This is kinda the nirvana of web support, as most of the support agents today ends up asking the user in trouble for screenshots, browser details, etc. BrowserRemote eliminates all of that by making it possible for the support agent to pull the needed information – remotely.
 
