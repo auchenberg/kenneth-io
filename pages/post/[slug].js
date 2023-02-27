@@ -9,6 +9,7 @@ import {getBlogPostBySlug, getBlogPosts} from '../../helpers/getPosts';
 import {TwitterTweetEmbed} from 'react-twitter-embed';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import {InstagramEmbed} from 'react-social-media-embed';
 
 const markDocConfig = {
   tags: {
@@ -45,10 +46,27 @@ const markDocConfig = {
         },
       },
     },
+    instagram: {
+      render: 'InstagramEmbed',
+      description: 'Display an embedded Instagram',
+      attributes: {
+        url: {
+          type: String,
+          required: true,
+        },
+      },
+    },
   },
 };
 
 const markDocComponents = {
+  InstagramEmbed: ({url}) => {
+    return (
+      <div className="instagram-embed">
+        <InstagramEmbed url={url} />
+      </div>
+    );
+  },
   TweetEmbed: ({id}) => {
     return (
       <div className="tweet-embed">
