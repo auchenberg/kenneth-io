@@ -10,9 +10,7 @@ og_image: images/posts/joining-microsoft/social.jpg
 
 It’s now almost a year ago I decided to [leave Citrix and take a break](/blog/2014/12/12/leaving-citrix-time-for-a-break/). Back in December 2014 there wasn’t any bigger plan, other than I needed a break to reflect how I should be spending my time going forward.
 
-<img src="/images/posts/joining-microsoft/social.jpg" />
-
-<!--more-->
+![](/images/posts/joining-microsoft/social.jpg)
 
 ## 2015 has been amazing
 
@@ -26,10 +24,7 @@ During this process it became clear that “my mission” since the early days b
 
 Looking back, I joined [Podio](https://podio.com) to empower non-technical people to build their own work tools, by using Podio as the platform to build software. And when looking at the projects I’ve been doing in my spare time, and the talks I’ve given at a number of conferences, it became crystal clear to me, that the next thing I should be doing, had to be about making it easier to build software.
 
-<figure>
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">I want to make it easier to build for the web. &#10;&#10;That&#39;s my mission.</p>&mdash; Kenneth Auchenberg (@auchenberg) <a href="https://twitter.com/auchenberg/status/642772859518119936">September 12, 2015</a></blockquote>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</figure>
+{% tweet_embed id="642772859518119936" /%}
 
 Back in June, I remember [sitting in Harajuku, Tokyo](https://instagram.com/p/4itnaeDJOj/?taken-by=auchenberg), where I after several months of constant travel, just wanted to find a coffee shop with working internet and write code - Just. Write. Freaking. Code.
 
@@ -43,9 +38,7 @@ In my role I’m going to focus on the overall web development workflow, which i
 
 I’m really excited to be joining [Microsoft](https://microsoft.com), who I think, after many years of unfocus, have re-invented itself under [Satya Nadella’s](https://en.wikipedia.org/wiki/Satya_Nadella) leadership, by finding it’s roots of focusing on empowering people to build things.
 
-<figure>
-	<iframe width="1280" height="500" src="https://www.youtube.com/embed/UcoS9aQItgA" frameborder="0" allowfullscreen></iframe>
-</figure>
+{% youtube src="https://www.youtube.com/embed/UcoS9aQItgA" width="600" height="300" /%}
 
 With [Microsoft Edge](https://dev.modern.ie/), Microsoft has been quite clear about investing into the web again, and by joining Microsoft I’ll joining one of the world's most respected tooling vendors. When combining this re-investment into the web and the solid experience of building tools, I truly think Microsoft is the vendor in the best position to move our web tooling forward.
 
@@ -61,9 +54,7 @@ This means I’ll be leaving Copenhagen, Denmark, where I’m born and raised. T
 
 The fun thing about Vancouver, or Canada for that matter, is that I never been. So I’ll be relocating to a city and country which I never visited, but based on what friends and the [internet](http://monocle.com/film/affairs/quality-of-life-cities/) are telling me, Vancouver should be an amazing city. Much like Copenhagen, but with some incredible nature surrounding it.
 
-<figure>
-	<iframe width="1280" height="500" src="https://www.youtube.com/embed/dNFrZNjs2ng" frameborder="0" allowfullscreen></iframe>
-</figure>
+{% youtube src="https://www.youtube.com/embed/dNFrZNjs2ng" width="600" height="300" /%}
 
 Living in Vancouver probably means I'll be starting to explore the nature some more. Maybe it's time to mountain bike again, or maybe time to learn how to snowboard?. Canada and especially British Columbia looks stunning, a bit cold, but I'm kinda used to that here in Copenhagen.
 
@@ -75,10 +66,7 @@ Living in Vancouver probably means I'll be starting to explore the nature some m
 
 Daniel and I are still wrapping up this year's [ColdFront](https://coldfrontconf.com), which was a [smashing success](https://storify.com/auchenberg/coldfront-conference-2015), so we haven’t decided what will happen to [ColdFront](https://coldfrontconf.com) now that I’ll be leaving Copenhagen. Maybe ColdFront will continue, maybe it won’t. We simply don’t know.
 
-<figure>
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Signed. Let the new adventures begin.</p>&mdash; Kenneth Auchenberg (@auchenberg) <a href="https://twitter.com/auchenberg/status/654214804358471680">October 14, 2015</a></blockquote>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</figure>
+{% tweet_embed id="654214804358471680" /%}
 
 So the next coming months I’ll be busy wrapping things up here in Copenhagen. This is why I recently [stepped down as CopenhagenJS organizer](/blog/2015/09/30/stepping-down-as-copenhagenjs-organizer/), and why I’m [not longer an active part of Prototype](/blog/2015/10/18/rebooting-prototype-our-hacker-cafe-in-copenhagen/), but that’s all for the greater good.
 
