@@ -10,16 +10,17 @@ const Home = () => {
         <h1>Kenneth Auchenberg</h1>
         <p className="wave">👋</p>
         <p>Hej there, I'm Kenneth.</p>
+
+        <p>I'm a product leader, angel investor, strategic advisor focused on developer tools based in NYC.</p>
+
         <p>
-          I work at <a href="https://stripe.com">Stripe</a>, building economic
-          infrastructure for the internet.
-        </p>{' '}
-        <p>
-          Before that I worked at Microsoft, building developer tools such as
-          Visual Studio Code and Edge DevTools.
+          Before that I worked at <a href="https://stripe.com">Stripe</a>, building developer experience infrastructure and ecosystems.</p>
+
+        <p>Prior to that I spent a few years at Microsoft, building developer tools such as
+          Visual Studio Code and browser DevTools.
         </p>
         <p>
-          Prior to that I co-founded{' '}
+         When I was based in Europe, I co-founded{' '}
           <a href="https://coldfront.co">ColdFront</a>, and was a part of the
           Danish startups, Podio and ZYB, who both got acquired with the Podio
           going to Citrix, and ZYB going to Vodafone.
@@ -31,7 +32,7 @@ const Home = () => {
           world
         </p>
         <p>
-          I love helping people and am always up for a ☕️so shoot me an email
+          I love helping people and am always up for a ☕️ so shoot me an email
           at <a href="">kenneth@auchenberg.dk</a> or ping me at Twitter{' '}
           <a href="https://twitter.com/auchenberg">@auchenberg</a> if you wanna
           chat.
