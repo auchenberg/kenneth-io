@@ -21,7 +21,7 @@ export default class About extends React.Component {
           <p>
             Prior to that I co-founded{' '}
             <a href="https://coldfront.co">ColdFront</a>, and been a part of two
-            startup acquisitions with the Podio (=> Citrix) and ZYB (=>
+            startup acquisitions with the Podio (= Citrix) and ZYB (=
             Vodafone).
           </p>
           <p>
