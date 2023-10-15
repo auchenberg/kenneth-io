@@ -9,8 +9,8 @@ export default class Nav extends React.Component {
   render() {
     return (
       <nav className="menu">
-        <a href="/posts">Thoughts</a>
-        <a href="/projects">Projects</a>
+        <a href="/posts">Thoughts & ideas</a>
+        <a href="/projects">Work</a>
         <a href="/speaking">Speaking</a>
         <a href="https://instagram.com/auchenberg">Photography</a>
 
