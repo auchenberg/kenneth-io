@@ -28,11 +28,13 @@ Here's a few insights from building @stripe’s developer platform:
 
   It turns out that great engineers aren’t always great API/abstraction designers, but this skill can be learned with support and tools.
 
-  My former colleague @cjav_dev has a great post on the API design process here: [https://blog.postman.com/how-stripe-builds-apis/](https://blog.postman.com/how-stripe-builds-apis/).
+  My former colleague [@cjav_dev](https://twitter.com/cjav_dev/) has a great post on the API design process here: [https://blog.postman.com/how-stripe-builds-apis/](https://blog.postman.com/how-stripe-builds-apis/).
 
 - **Abstraction ladders:** Every API as an abstraction, and as APIs evolve over time, so does it’s abstraction ladder. Great abstractions enables developers to do powerful things with minimal effort, and great platforms reveals power and complexity as they go through the abstraction ladder.
 
-  My former colleague, @sebasbensu, has a great blog post about API as ladders: [https://blog.sbensu.com/posts/apis-as-ladders/](https://blog.sbensu.com/posts/apis-as-ladders/)
+  {% image src="/images/posts/api-developer-experience-2024/abstraction_ladders.png" title="abstraction_ladders" /%}
+
+  My former colleague, [@sebasbensu](https://twitter.com/sebasbensu/), has a great blog post about API as ladders: [https://blog.sbensu.com/posts/apis-as-ladders/](https://blog.sbensu.com/posts/apis-as-ladders/)
 
 - **Consistency across abstractions:** One of the most common mistakes I see among companies are inconsistencies between method names and return signatures across abstraction ladders like REST → Back-end SDK → React SDK.
 
@@ -92,7 +94,7 @@ Here's a few insights from building @stripe’s developer platform:
 
 - And lastly, while building supporting developer products and processes for our developer platform, nothing would beat the process of **dog fooding** our own products and abstractions through a process we called **friction logging**, where we all would try to use a new thing, and document all the friction along the way.
 
-  Here is @dps sharing insights about friction logging to @lennysan
+  Here is [@dps](https://twitter.com/dps) sharing insights about friction logging to [@lennysan](https://twitter.com/lennysan/):
 
   {% tweet_embed id="1658293670960066562" /%}
 
