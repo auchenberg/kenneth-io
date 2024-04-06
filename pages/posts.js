@@ -12,7 +12,7 @@ const Posts = (props) => {
     return yearPosts.map((post) => {
       return (
         <li key={post.id}>
-          <Link href={'/post/' + post.slug}>
+          <Link href={'/post/' + post.slug} legacyBehavior>
             <a>{post.title}</a>
           </Link>
         </li>

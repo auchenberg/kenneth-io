@@ -28,7 +28,7 @@ const Layout = (props) => (
     {!props.main && (
       <div className="header">
         <section>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a> 👈 back to kenneth.io</a>
           </Link>
         </section>
