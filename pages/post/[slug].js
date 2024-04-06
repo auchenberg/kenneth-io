@@ -4,12 +4,12 @@ import Markdoc from '@markdoc/markdoc';
 import path from 'path';
 import fs from 'fs';
 
-import {getBlogPostBySlug, getBlogPosts} from '../../helpers/getPosts';
+import { getBlogPostBySlug, getBlogPosts } from '../../helpers/getPosts';
 
-import {TwitterTweetEmbed} from 'react-twitter-embed';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-import {InstagramEmbed} from 'react-social-media-embed';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 const markDocConfig = {
   tags: {
@@ -60,28 +60,28 @@ const markDocConfig = {
 };
 
 const markDocComponents = {
-  InstagramEmbed: ({url}) => {
+  InstagramEmbed: ({ url }) => {
     return (
       <div className="instagram-embed">
         <InstagramEmbed url={url} />
       </div>
     );
   },
-  TweetEmbed: ({id}) => {
+  TweetEmbed: ({ id }) => {
     return (
       <div className="tweet-embed">
         <TwitterTweetEmbed tweetId={id}></TwitterTweetEmbed>
       </div>
     );
   },
-  ZoomableImage: ({src, title}) => {
+  ZoomableImage: ({ src, title }) => {
     return (
       <Zoom>
         <img src={src} title={title} />
       </Zoom>
     );
   },
-  YouTubeEmbed: ({src, width, height}) => {
+  YouTubeEmbed: ({ src, width, height }) => {
     return (
       <figure>
         <iframe
@@ -101,10 +101,10 @@ export const getStaticPaths = async () => {
   let allPosts = getBlogPosts();
 
   const paths = allPosts.map((post) => {
-    return {params: {slug: `${post.slug}`}};
+    return { params: { slug: `${post.slug}` } };
   });
 
-  return {paths, fallback: false};
+  return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context) => {
