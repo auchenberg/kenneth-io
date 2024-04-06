@@ -6,7 +6,7 @@ published: true
 comments: true
 draft: true
 categories:
-og_image: images/posts/getting-back-to-my-entrepreneurial-roots.jpg
+og_image: images/posts/api-developer-experience-2024/social.png
 description:
 ---
 
