@@ -50,7 +50,7 @@ Here's a few insights from building @stripe’s developer platform:
 
   {% image src="/images/posts/api-developer-experience-2024/spell_check.png" title="spell_check" /%}
 
-- **Test-mode:** As developers build integrations with your platform, they will make a lot of requests, and a good portion of those will have errors as the developers learn your API. To make it easier to get rolling, we famously introduced a test mode that enabled developers to test their integration with Stripe without messing up real data or moving real money.
+- **Test-mode and instances:** As developers build integrations with your platform, they will make a lot of requests, and a good portion of those will have errors as the developers learn your API. To make it easier to get rolling, we famously introduced a test mode that enabled developers to test their integration with Stripe without messing up real data or moving real money.
 
   Having a test mode is critical, and in this day and age, I consider the evolution of test-mode with multi-instance/environment support to be a table stakes in 2024.
 
@@ -64,31 +64,31 @@ Here's a few insights from building @stripe’s developer platform:
 
 - Further, having request logs enables “inspectability” of any API request, an essential educational tool for developers, as they can learn how the platform works by inspecting requests and understated object models and relationships.
 
-  **Example:** Every API request made by the Stripe Dashboard shows up in request logs, enabling anyone to do something in the UI and map it to API requests.
+  **Example:** Every API request made by the Stripe Dashboard shows up in request logs, enabling anyone to use the Dashboard UI and map it to the underlaying API requests.
 
   {% image src="/images/posts/api-developer-experience-2024/inspectability.png" title="inspectability" /%}
 
 - **Integration insights:** Building upon request logs and the concept of inspectability, we built Integration Insights, which would analyze API request errors and provide developers with actionable insights and tips on how to fix their integration.
 
-  Developers would up/down vote insights, which helped our engine.
+  Developers would up/down vote insights, which helped our recommenation engine to provide insights.
 
   {% image src="/images/posts/api-developer-experience-2024/integration_insights.png" title="integration_insights" /%}
 
-- **Integration builders:** It’s common to provide sample projects and code examples to help developers get started, but it’s rare to take a more educational approach.
+- **Integration builders:** It’s common to provide sample projects and code examples to help developers get started, but what developers reallty want is a more educational approach, that can teach them core concepts while seeing code.
 
-  We introduced what we called Integration Builders, which takes an interactive approach to explaining concepts while also showing developers tangible sample code that they can download and run.
+  So we introduced what we called [Integration Builders](https://docs.stripe.com/checkout/quickstart), which takes an interactive approach to explaining concepts while also showing developers tangible sample code that they can download and run.
 
   The format has been vital in getting developers started even faster on Stripe. In particular, Stripe has scaled from indie hackers building in PHP to enterprise developers building in Java.
 
   {% image src="/images/posts/api-developer-experience-2024/integration_builder.png" title="integration_builder" /%}
 
-- **Integration with existing tools:** Most developers don’t live inside your platform but in other tools and platforms. So, to meet developers where they are, we built tools like Stripe CLI and Stripe for VS Code, enabling developers to quickly test their webhooks, lint their code, and generate integrations with Stripe.
+- **Integration with existing tools:** Most developers don’t live inside your platform but in other tools and platforms. So, to meet developers where they are, we built tools like [Stripe CLI](https://stripe.com/blog/stripe-cli) and [Stripe for VS Code](https://stripe.com/blog/stripe-extension-for-vs-code), enabling developers to quickly test their webhooks, lint their code, and generate integrations with Stripe.
 
   {% image src="/images/posts/api-developer-experience-2024/cli.png" title="cli" /%}
 
 - **Thicker SDKs:** As we went from handwritten SDKs to code generated SDKs based upon our OpenAPI spec, we gained the ability to have always up to date SDKs and code examples in our docs, but it also enabled us to provide static types for languages like TypeScript.
 
-  Most importantly, it enables us to focus our investments into thicker SDKs for frameworks like React, where we now could provide more tailored experiences by building upon our code-generated baseline.
+  Most importantly, it enabled us to focus our investments into thicker SDKs for frameworks like React, where we now could provide more tailored experiences by building upon our code-generated baseline.
 
   {% image src="/images/posts/api-developer-experience-2024/thick_sdks.png" title="thick_sdks" /%}
 
@@ -98,4 +98,4 @@ Here's a few insights from building @stripe’s developer platform:
 
   {% tweet_embed id="1658293670960066562" /%}
 
-If you made it this far: I hope you enjoyed this little thread, I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg)
+If you made it this far: I hope you enjoyed this little post, I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg)
