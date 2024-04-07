@@ -22,6 +22,8 @@ So here are a few insights and some of the things we built for @stripe's develop
 
   At Stripe, we spend a *lot* of time agonizing over patterns and consistency across the API to ensure developers have a consistent DX across products and abstractions.
 
+  With the rise of AI and agents, it will be increasingly important to have a strong API foundation based on predictable and consistent patterns easily digestible for systems. This may be more important than everything else. Time will tell.
+
 - **API Review:** To operationalize this, we introduced a forcing function called API Review, where every change that modifies Stripe’s API must pass a strict review process staffed by a cross-functional group of people who care about API design.
 
   Naturally, it was challenging to manage as a centralized friction point for the company, particularly at scale with 1000s of engineers.
