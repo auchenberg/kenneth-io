@@ -16,7 +16,7 @@ Since leaving Stripe, I've received a lot of questions from founders, operators,
 
 Here in 2024, I often see companies providing public APIs focused on delivering excellent documentation and code-generated SDKs, fueled by the rise of [DXI companies](/post/developer-experience-infrastructure-dxi). However, to provide a truly great developer experience for APIs in 2024, there's more to it than meets the eye.
 
-So here's a few insights from building @stripe’s developer platform:
+So here's a few insights, and some of the things we built for @stripe’s developer platform:
 
 - **Foundation:** First and foremost, a great API developer experience starts with a strong foundation: An intuitive API platform grounded in principles and predictable patterns across its surface area.
 
