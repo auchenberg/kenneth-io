@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Insights from building @stripe's developer platform and API developer experience
+title: "Insights from building @stripe's developer platform & API developer experience: Part 1"
 date: 2024-04-06 09:00
 published: true
 comments: true
@@ -10,11 +10,15 @@ og_image: images/posts/api-developer-experience-2024/social.png
 description:
 ---
 
-I often see companies providing public APIs focused on delivering excellent documentation and code-generated SDKs, but to provide a truly great **developer experience for APIs** in 2024, there’s more to it.
+This content originally started as a brain dump that was supposed to ship as a short Twitter thread, but based on [this](https://twitter.com/auchenberg/status/1776695008692715627), I'm now shipping this as a blog post. It will probably turn into a mini-series of smaller posts like this.
 
-Here's a few insights from building @stripe’s developer platform:
+Since leaving Stripe, I've received a lot of questions from founders, operators, and investors about whether I could share some insights into the work we put into building Stripe's developer platform and API developer experience. In this post, I want to share a few learnings from some of the pieces we built over the years, and link to resources that might be valuable for others building their developer platforms.
 
-- **Foundation:** First and foremost, a great API developer experience starts with a strong foundation: a predictable API platform grounded in principles and predictable patterns across its surface area.
+Here in 2024, I often see companies providing public APIs focused on delivering excellent documentation and code-generated SDKs, fueled by the rise of [DXI companies](/post/developer-experience-infrastructure-dxi). However, to provide a truly great developer experience for APIs in 2024, there's more to it than meets the eye.
+
+So here's a few insights from building @stripe’s developer platform:
+
+- **Foundation:** First and foremost, a great API developer experience starts with a strong foundation: An intuitive API platform grounded in principles and predictable patterns across its surface area.
 
   At Stripe, we spend a *lot* of time agonizing over patterns and consistency across the API to ensure developers have a consistent DX across products and abstractions.
 
@@ -50,7 +54,7 @@ Here's a few insights from building @stripe’s developer platform:
 
   {% image src="/images/posts/api-developer-experience-2024/spell_check.png" title="spell_check" /%}
 
-- **Test-mode and instances:** As developers build integrations with your platform, they will make a lot of requests, and a good portion of those will have errors as the developers learn your API. To make it easier to get rolling, we famously introduced a test mode that enabled developers to test their integration with Stripe without messing up real data or moving real money.
+- **Test-mode and instances:** As developers build integrations with your platform, they will make a lot of requests, and a good portion of those will have errors as the developers learn your API. To make it easier to get rolling, we set the standard by introducing a test mode that enabled developers to test their integration with Stripe without messing up real data or moving real money.
 
   Having a test mode is critical, and in this day and age, I consider the evolution of test-mode with multi-instance/environment support to be a table stakes in 2024.
 
@@ -76,7 +80,7 @@ Here's a few insights from building @stripe’s developer platform:
 
 - **Integration builders:** It’s common to provide sample projects and code examples to help developers get started, but what developers reallty want is a more educational approach, that can teach them core concepts while seeing code.
 
-  So we introduced what we called [Integration Builders](https://docs.stripe.com/checkout/quickstart), which takes an interactive approach to explaining concepts while also showing developers tangible sample code that they can download and run.
+  So we introduced what we called [integration b uilders](https://docs.stripe.com/checkout/quickstart), which takes an interactive approach to explaining concepts while also showing developers tangible sample code that they can download and run.
 
   The format has been vital in getting developers started even faster on Stripe. In particular, Stripe has scaled from indie hackers building in PHP to enterprise developers building in Java.
 
@@ -98,4 +102,9 @@ Here's a few insights from building @stripe’s developer platform:
 
   {% tweet_embed id="1658293670960066562" /%}
 
-If you made it this far: I hope you enjoyed this little post, I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg)
+If you made it this far: I hope you enjoyed this little post. Let me know what else you might find interesting, and I'll factor that into the next post.
+
+And as always I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg).
+
+Best,
+Kenneth
