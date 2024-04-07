@@ -10,13 +10,13 @@ og_image: images/posts/api-developer-experience-2024/social.png
 description:
 ---
 
-This content originally started as a brain dump that was supposed to ship as a short Twitter thread, but based on [this](https://twitter.com/auchenberg/status/1776695008692715627), I'm now shipping this as a blog post. It will probably turn into a mini-series of smaller posts like this.
+This content initially started as a brain dump that was supposed to ship as a short Twitter thread, but based on [this](https://twitter.com/auchenberg/status/1776695008692715627), I'm now shipping this as a blog post. It will probably turn into a mini-series of smaller posts like this.
 
-Since leaving Stripe, I've received a lot of questions from founders, operators, and investors about whether I could share some insights into the work we put into building Stripe's developer platform and API developer experience. In this post, I want to share a few learnings from some of the pieces we built over the years, and link to resources that might be valuable for others building their developer platforms.
+Since leaving Stripe, I've received many questions from founders, operators, and investors about whether I could share some insights into the work we put into building Stripe's developer platform and API developer experience. In this post, I want to share a few learnings from some of the pieces we built over the years, and link to resources that might be valuable for others building their developer platforms.
 
-Here in 2024, I often see companies providing public APIs focused on delivering excellent documentation and code-generated SDKs, fueled by the rise of [DXI companies](/post/developer-experience-infrastructure-dxi). However, to provide a truly great developer experience for APIs in 2024, there's more to it than meets the eye.
+In 2024, I often see companies providing public APIs focused on delivering excellent documentation and code-generated SDKs, fueled by the rise of [DXI companies](/post/developer-experience-infrastructure-dxi). However, to provide a truly great developer experience for APIs in 2024, there's more to it than meets the eye.
 
-So here's a few insights, and some of the things we built for @stripe’s developer platform:
+So here are a few insights and some of the things we built for @stripe's developer platform:
 
 - **Foundation:** First and foremost, a great API developer experience starts with a strong foundation: An intuitive API platform grounded in principles and predictable patterns across its surface area.
 
@@ -24,17 +24,17 @@ So here's a few insights, and some of the things we built for @stripe’s develo
 
 - **API Review:** To operationalize this, we introduced a forcing function called API Review, where every change that modifies Stripe’s API must pass a strict review process staffed by a cross-functional group of people who care about API design.
 
-  Naturally, as a centralized friction point for the company, it was challenging to manage, particularly at scale with 1000s of engineers.
+  Naturally, it was challenging to manage as a centralized friction point for the company, particularly at scale with 1000s of engineers.
 
   {% image src="/images/posts/api-developer-experience-2024/api_review.png" title="API Review" /%}
 
   If I were to do things differently today, I would probably pivot the concept away from “review” to more of an education service that helps internal engineers develop excellent and consistent APIs.
 
-  It turns out that great engineers aren’t always great API/abstraction designers, but this skill can be learned with support and tools.
+  Engineers aren't always great API/abstraction designers, but this skill can be learned with support and tools.
 
   My former colleague [@cjav_dev](https://twitter.com/cjav_dev/) has a great post on the API design process here: [https://blog.postman.com/how-stripe-builds-apis/](https://blog.postman.com/how-stripe-builds-apis/).
 
-- **Abstraction ladders:** Every API as an abstraction, and as APIs evolve over time, so does it’s abstraction ladder. Great abstractions enables developers to do powerful things with minimal effort, and great platforms reveals power and complexity as they go through the abstraction ladder.
+- **Abstraction ladders:** Every API is an abstraction, and as APIs evolve, so does their abstraction ladder. Great abstractions enable developers to do powerful things with minimal effort, and great platforms reveal power and complexity as they progress through the abstraction ladder.
 
   {% image src="/images/posts/api-developer-experience-2024/abstraction_ladders.png" title="abstraction_ladders" /%}
 
@@ -44,11 +44,11 @@ So here's a few insights, and some of the things we built for @stripe’s develo
 
   It doesn't matter if you call GET request to retrieve or get in your SDKs. What matters is consistency all the way through.
 
-- **Error messages:** The difference between a good and a great error message can mean hours saved in debugging, so in addition, to being rigorous on the error messages themselves, we also included two links directly to the request logs and the relevant doc page as part of the API response to enable better resource discoverability.
+- **Error messages:** The difference between a good and a great error message can mean hours saved in debugging, so in addition to being rigorous on the error messages themselves, we also included two links directly to the request logs and the relevant doc page as part of the API response to enable better resource discoverability.
 
   {% image src="/images/posts/api-developer-experience-2024/error_message.png" title="Error Message" /%}
 
-- **Request spell checking:** Building upon great error messages, a common mistake is getting a parameter name wrong, so why not do some spell checking and help developers?
+- **Request spell-checking:** Building upon great error messages, a common mistake is getting a parameter name wrong, so why not do some spell-checking and help developers?
 
   Notice the: Did you mean email?
 
@@ -68,19 +68,19 @@ So here's a few insights, and some of the things we built for @stripe’s develo
 
 - Further, having request logs enables “inspectability” of any API request, an essential educational tool for developers, as they can learn how the platform works by inspecting requests and understated object models and relationships.
 
-  **Example:** Every API request made by the Stripe Dashboard shows up in request logs, enabling anyone to use the Dashboard UI and map it to the underlaying API requests.
+  **Example:** Every API request made by the Stripe Dashboard shows up in request logs, enabling anyone to use the Dashboard UI and map it to the underlying API requests.
 
   {% image src="/images/posts/api-developer-experience-2024/inspectability.png" title="inspectability" /%}
 
-- **Integration insights:** Building upon request logs and the concept of inspectability, we built Integration Insights, which would analyze API request errors and provide developers with actionable insights and tips on how to fix their integration.
+- **Integration insights:** Building upon request logs and the concept of inspectability, we built Integration Insights, which would analyze API request errors and provide developers with actionable insights and tips on fixing their integration.
 
-  Developers would up/down vote insights, which helped our recommenation engine to provide insights.
+  Developers would up/downvote insights, which helped our recommendation engine provide insights.
 
   {% image src="/images/posts/api-developer-experience-2024/integration_insights.png" title="integration_insights" /%}
 
-- **Integration builders:** It’s common to provide sample projects and code examples to help developers get started, but what developers reallty want is a more educational approach, that can teach them core concepts while seeing code.
+- **Integration builders:** It's common to provide sample projects and code examples to help developers get started, but what developers really want is a more educational approach that can teach them core concepts while they see code.
 
-  So we introduced what we called [integration b uilders](https://docs.stripe.com/checkout/quickstart), which takes an interactive approach to explaining concepts while also showing developers tangible sample code that they can download and run.
+  So we introduced what we called [integration builders](https://docs.stripe.com/checkout/quickstart), which takes an interactive approach to explain concepts while showing developers tangible sample code they can download and run.
 
   The format has been vital in getting developers started even faster on Stripe. In particular, Stripe has scaled from indie hackers building in PHP to enterprise developers building in Java.
 
@@ -90,21 +90,21 @@ So here's a few insights, and some of the things we built for @stripe’s develo
 
   {% image src="/images/posts/api-developer-experience-2024/cli.png" title="cli" /%}
 
-- **Thicker SDKs:** As we went from handwritten SDKs to code generated SDKs based upon our OpenAPI spec, we gained the ability to have always up to date SDKs and code examples in our docs, but it also enabled us to provide static types for languages like TypeScript.
+- **Thicker SDKs:** As we went from handwritten SDKs to code-generated SDKs based upon our OpenAPI spec, we gained the ability to have always up-to-date SDKs and code examples in our docs. This also enabled us to provide static types for languages like TypeScript.
 
-  Most importantly, it enabled us to focus our investments into thicker SDKs for frameworks like React, where we now could provide more tailored experiences by building upon our code-generated baseline.
+  Most importantly, it enabled us to focus our investments on thicker SDKs for frameworks like React, where we could now provide more tailored experiences by building upon our code-generated baseline.
 
   {% image src="/images/posts/api-developer-experience-2024/thick_sdks.png" title="thick_sdks" /%}
 
-- And lastly, while building supporting developer products and processes for our developer platform, nothing would beat the process of **dog fooding** our own products and abstractions through a process we called **friction logging**, where we all would try to use a new thing, and document all the friction along the way.
+- Lastly, while building supporting developer products and processes for our developer platform, nothing would beat the process of **dogfooding** our own products and abstractions through a process we called **friction logging**, where we all would try to use a new thing and document all the friction along the way.
 
   Here is [@dps](https://twitter.com/dps) sharing insights about friction logging to [@lennysan](https://twitter.com/lennysan/):
 
   {% tweet_embed id="1658293670960066562" /%}
 
-If you made it this far: I hope you enjoyed this little post. Let me know what else you might find interesting, and I'll factor that into the next post.
+If you've made it this far, I hope you enjoyed this little post. Let me know what else you find interesting, and I'll incorporate that into the next post.
 
-And as always I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg).
+As always, I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg).
 
 Best,
 Kenneth
