@@ -34,6 +34,8 @@ So here are a few insights and some of the things we built for @stripe's develop
 
   Engineers aren't always great API/abstraction designers, but this skill can be learned with support and tools.
 
+  -> This should be a product. Let me know if you are building this!
+
   My former colleague [@cjav_dev](https://twitter.com/cjav_dev/) has a great post on the API design process here: [https://blog.postman.com/how-stripe-builds-apis/](https://blog.postman.com/how-stripe-builds-apis/).
 
 - **Abstraction ladders:** Every API is an abstraction, and as APIs evolve, so does their abstraction ladder. Great abstractions enable developers to do powerful things with minimal effort, and great platforms reveal power and complexity as they progress through the abstraction ladder.
