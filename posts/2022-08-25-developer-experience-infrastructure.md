@@ -91,7 +91,7 @@ Let’s say, for example, a company is developing a weather data product for dev
 - **Surprisingly great attention to detail on error messages** and API semantics.
 - **API References** that help developers get an overview of domain models and relationships.
 - **SDKs** that meet developers where they are in the right abstraction level across various platforms, programming languages, and frameworks.
-- **Baseline API infrastructure** like rate limiming, request logging, etc
+- **Baseline API infrastructure** like rate limiting, request logging, etc
 - **Debugging tools**, such as request logging and inspection\*\* enabling integration failure alerting (user error rate etc.)
 - **Interactive integration** formats that educate developers through code samples and guides on how various concepts work.
 - **UIs for managing API access**, compliance, security, audit logs, token management
