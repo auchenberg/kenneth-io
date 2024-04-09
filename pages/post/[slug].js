@@ -138,7 +138,7 @@ const Post = (props) => {
   let post = props.post;
   let parsedContent = JSON.parse(post.content);
 
-  let socialImageUrl = 'https://kenneth.io/' + (og_image ? post.og_image : `/api/og?title=${post.title}`);
+  let socialImageUrl = 'https://kenneth.io/' + (post.og_image ? post.og_image : `/api/og?title=${post.title}`);
 
   return (
     <Layout
