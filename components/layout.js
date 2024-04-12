@@ -1,51 +1,59 @@
 import React from 'react';
 import Head from '../components/head';
 import NProgress from '../components/nprogress';
-import {NextSeo} from 'next-seo';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
-const Layout = (props) => (
-  <>
-    <Head title={props.title || 'Hej!' + ' | Kenneth Auchenberg'} />
-    <NProgress />
-    <NextSeo
-      defaultTitle="Hej | Kenneth Auchenberg"
-      title={props.title + ' | Kenneth Auchenberg'}
-      description={props.description}
-      twitter={{
-        handle: '@auchenberg',
-        cardType: 'summary_large_image',
-      }}
-      openGraph={{
-        images: [
-          {
-            url: props.socialImage,
-          },
-        ],
-      }}
-    />
+const Layout = (props) => {
 
-    {!props.main && (
-      <div className="header">
-        <section>
-          <Link href="/" legacyBehavior>
-            <a> 👈 back to kenneth.io</a>
-          </Link>
-        </section>
+  let defaultTitle = "Hej";
+  let title = `${props.title || defaultTitle}`;
+  let formattedTitle = `${title} | Kenneth Auchenberg`;
+
+  let image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${title}`);
+
+  return (
+    <>
+      <Head title={title} />
+      <NProgress />
+      <NextSeo
+        defaultTitle={defaultTitle}
+        title={formattedTitle}
+        description={props.description}
+        twitter={{
+          handle: '@auchenberg',
+          cardType: 'summary_large_image',
+        }}
+        openGraph={{
+          images: [
+            {
+              url: image,
+            },
+          ],
+        }}
+      />
+
+      {!props.main && (
+        <div className="header">
+          <section>
+            <Link href="/" legacyBehavior>
+              <a> 👈 back to kenneth.io</a>
+            </Link>
+          </section>
+        </div>
+      )}
+
+      <div className={'app ' + (props.center ? 'app-center' : '')}>
+        {props.children}
       </div>
-    )}
 
-    <div className={'app ' + (props.center ? 'app-center' : '')}>
-      {props.children}
-    </div>
+      <script
+        async
+        src="//platform.twitter.com/widgets.js"
+        charSet="utf-8"
+      ></script>
 
-    <script
-      async
-      src="//platform.twitter.com/widgets.js"
-      charSet="utf-8"
-    ></script>
-
-    <style jsx>{`
+      <style jsx>{`
       :global(body) {
         font-size: 14px;
         line-height: 20px;
@@ -106,7 +114,8 @@ const Layout = (props) => (
         font-family: Consolas, monaco, monospace;
       }
     `}</style>
-  </>
-);
+    </>
+  )
+};
 
 export default Layout;
