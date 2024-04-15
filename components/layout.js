@@ -50,7 +50,7 @@ const Layout = (props) => {
       <script
         async
         src="//platform.twitter.com/widgets.js"
-        charSet="utf-8"
+        charset="utf-8"
       ></script>
 
       <style jsx>{`
