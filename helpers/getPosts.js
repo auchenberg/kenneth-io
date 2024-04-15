@@ -22,7 +22,7 @@ function getBlogPosts() {
       excerpt: true,
     });
 
-    const {title, date} = matterResult.data;
+    const { title, date } = matterResult.data;
     let slugged = slug(title).toLowerCase();
 
     return {
@@ -34,8 +34,11 @@ function getBlogPosts() {
     };
   });
 
+  // Remove null values
+  posts = _.compact(posts);
+
   // Sort the posts by date
-  const sortedPosts = posts.sort((a, b) => a.date - b.date);
+  const sortedPosts = posts.sort((a, b) => b.originalDate - a.originalDate);
 
   // We need to format the dates into strings because Next.js expects the props to be serializable as JSON.
   const parsedDatePosts = sortedPosts.map((post) => {
@@ -63,6 +66,17 @@ function getBlogPostsGroupedByYear() {
   return groupedPosts;
 }
 
+function getPublishedBlogPostsGroupedByYear() {
+  let allPosts = getBlogPosts();
+  let publishedPosts = allPosts.filter((post) => post.published);
+  let groupedPosts = _.groupBy(publishedPosts, (p) => new Date(p.date).getFullYear());
+  // Sort the posts by date
+  for (let year in groupedPosts) {
+    groupedPosts[year].sort((a, b) => new Date(b.originalDate) - new Date(a.originalDate));
+  }
+  return groupedPosts;
+}
+
 function getBlogPostBySlug(slug) {
   let allPosts = getBlogPosts();
 
@@ -76,3 +90,4 @@ function getBlogPostBySlug(slug) {
 module.exports.getBlogPosts = getBlogPosts;
 module.exports.getBlogPostBySlug = getBlogPostBySlug;
 module.exports.getBlogPostsGroupedByYear = getBlogPostsGroupedByYear;
+module.exports.getPublishedBlogPostsGroupedByYear = getPublishedBlogPostsGroupedByYear;

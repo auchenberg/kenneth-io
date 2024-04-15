@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout';
-import {getBlogPostsGroupedByYear} from '../helpers/getPosts';
+import { getPublishedBlogPostsGroupedByYear } from '../helpers/getPosts';
 
 const Posts = (props) => {
   const posts = props.posts || {};
@@ -57,7 +57,7 @@ export default Posts;
 export const getStaticProps = async () => {
   return {
     props: {
-      posts: getBlogPostsGroupedByYear(),
+      posts: getPublishedBlogPostsGroupedByYear(),
     },
   };
 };

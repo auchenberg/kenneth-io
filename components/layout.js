@@ -98,7 +98,6 @@ const Layout = (props) => {
       }
 
       .app {
-        overflow: hidden;
         max-width: 600px;
       }
 

@@ -4,6 +4,8 @@
 const nextConfig = {
   // output: 'export',
 
+  transpilePackages: ['react-tweet'],
+
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 

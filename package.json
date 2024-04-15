@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-medium-image-zoom": "^5.0.2",
     "react-social-media-embed": "^2.3.4",
+    "react-tweet": "^3.2.1",
     "react-tweet-embed": "^2.0.0",
     "react-twitter-embed": "^4.0.4",
     "slug": "^2.1.0"
