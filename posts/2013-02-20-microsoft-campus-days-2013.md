@@ -2,6 +2,7 @@
 layout: post
 title: Microsoft Campus Days 2013 talk
 date: 2013-02-20 20:00
+published: true
 comments: true
 categories: talks
 ---

@@ -6,6 +6,7 @@ categories: []
 keywords: []
 slug: >-
   /@auchenberg/what-i-learned-from-the-silicon-valley-hierarchy-of-needs-192e99b2436b
+  published: true
 ---
 
 My life was unique until someone tweeted me this:

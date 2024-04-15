@@ -5,6 +5,7 @@ description: >-
   wasn’t as great as I thought. It has changed many things and been…
 date: '2018-01-06T05:31:35.611Z'
 og_image: images/posts/1__3SDh5G__fTs3UnXPlmI76hw.jpeg
+published: true
 ---
 
 _A lot of great things has happened in 2017, but I also learned my health wasn’t as great as I thought. It has changed many things and been dominating my 2017 completely. This is a very personal post, and try to put some of my many thoughts into words._

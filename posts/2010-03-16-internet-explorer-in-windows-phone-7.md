@@ -3,6 +3,7 @@ layout: post
 title: Internet Explorer User Agent revealed in Windows Phone 7
 categories: Uncategorized
 date: 2010-03-16
+published: true
 ---
 
 I'm here at the Microsoft MIX 2010 conference with <a href="http://madskristensen.net">Mads Kristensen</a> and <a href="http://larholm.com">Thor Larholm</a>. At the Mix10 conference, the Windows Phone 7 teams had some very big announcements – a lot of it had been kept secret and first revealed to the public now. Some of these secrets are the user agents of Internet Explorer for Windows Phone 7, which they simply wouldn’t give us.

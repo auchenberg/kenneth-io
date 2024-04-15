@@ -7,6 +7,7 @@ description: >-
   applications directly from Visual Studio Code
 date: '2018-05-17T17:09:13.827Z'
 og_image: images/posts/1__ca9BN8dJBM70ZwExyOE9Bg__2x.png
+published: true
 ---
 
 Finding and identifying issues with Node.js apps deployed to the cloud can be burdensome process that usually involves local debugging, the sprinkling of `console.logs`on to your codebase, and many re-deployments to get the problem identified and solved.

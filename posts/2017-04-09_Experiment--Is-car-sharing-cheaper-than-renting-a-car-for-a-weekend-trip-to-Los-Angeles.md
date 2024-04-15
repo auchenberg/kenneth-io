@@ -4,6 +4,7 @@ title: >-
   Los Angeles?
 description: Car sharing halved our car expenses for a weekend trip to Los Angeles
 date: '2017-04-09T01:52:24.469Z'
+published: true
 ---
 
 Last week I escaped the rain in Vancouver by going on spontaneous and extended weekend trip to Los Angeles. 4 days in total.

@@ -2,6 +2,7 @@
 layout: post
 title: How to disable accidentally text-zooming in browsers when using Magic Trackpad/Mouse in OSX
 date: 2010-10-17
+published: true
 ---
 
 One thing has lately annoyed me, and it has been the accidentally text zooming in my browsers (Google Chrome, Firefox and Safari), when using the Trackpad, Magic Trackpad or Magic Mouse.

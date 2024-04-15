@@ -5,6 +5,7 @@ description: >-
   Code & debugger.html
 date: '2017-04-10T13:01:03.039Z'
 og_image: images/posts/1__NGdCzvXOHYFEmZzA1OId4Q.png
+published: true
 ---
 
 Today, I’m happy to announce a new project, [RemoteDebug iOS WebKit Adapter](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter), which enables Safari and WebViews on iOS to be debugged from tools like [VS Code](http://code.visualstudio.com), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) and [Firefox debugger.html](https://github.com/devtools-html/debugger.html) on both Windows and Mac.

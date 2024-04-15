@@ -2,6 +2,7 @@
 layout: post
 title: 'Word wrapping/hyphenation using CSS.'
 date: 2012-03-04 14:34
+published: true
 comments: true
 categories:
 ---
@@ -141,5 +142,4 @@ Goodbye &lt;WBR&gt;, I don't need you anymore.
       <li>Included a section about <code>word-break: break-word</code> in WebKit (Credits: <a href="http://twitter.com/mkristensen">Mads Kristensen</a>)</li>
       <li>Added proper references to <code>word-break: break-all;</code>, and highlighted that CSS3 Hyphenation isn't supported in Chrome (Credits: <a href="http://twitter.com/fakebaldur">Baldur Bjarnason</a>)</li>
     </ul>
-
 </div>

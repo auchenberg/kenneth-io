@@ -2,6 +2,7 @@
 layout: post
 title: Introducing Auto-Check-in
 date: 2010-08-11
+published: true
 ---
 
 The past few days I worked on a new mashup-project I wanted to realize since the day I started used Foursquare...

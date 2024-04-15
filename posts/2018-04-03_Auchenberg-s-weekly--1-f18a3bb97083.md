@@ -3,6 +3,7 @@ title: 'Auchenberg’s reading list #1'
 description: March 26th-April 1st 2018.
 date: '2018-04-03T00:47:24.680Z'
 og_image: images/posts/1__Sc1cMDS0vhSz734__QINz2Q.jpeg
+published: true
 ---
 
 As something new I’m gonna try to curate a weekly reading list of interesting articles I found during the week. This is the first weekly, and the format is probably gonna evolve over time.

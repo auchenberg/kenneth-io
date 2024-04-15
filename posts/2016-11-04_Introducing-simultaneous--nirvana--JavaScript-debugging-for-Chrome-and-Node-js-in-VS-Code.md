@@ -11,6 +11,7 @@ keywords: []
 slug: >-
   /@auchenberg/introducing-simultaneous-nirvana-javascript-debugging-for-node-js-and-chrome-in-vs-code-d898a4011ab1
 og_image: images/posts/1__lCs395mV1NHp__NEtNDwV2A.png
+published: true
 ---
 
 In [Visual Studio Code](https://code.visualstudio.com) 1.7 we shipped a new experimental feature called [“multi-target debugging”](https://code.visualstudio.com/updates/v1_7#_node-debugging), which enables VS Code to start multiple debuggers from the same instance of the editor.

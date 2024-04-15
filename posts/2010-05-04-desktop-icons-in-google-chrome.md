@@ -2,6 +2,7 @@
 layout: post
 title: How to use desktop icons in Google Chrome - the HTML5 way.
 date: 2010-05-04
+published: true
 ---
 
 Today I wondered how Google Reader and Google Mail was having nice high resolution icons when I saved a application shortcut to them in Google Chrome (currently a windows only feature).

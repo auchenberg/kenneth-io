@@ -4,6 +4,7 @@ description: >-
   Use Visual Studio Code to super-charge your Angular JavaScript debugging
   workflow in a few simple steps
 date: '2017-06-15T16:38:58.987Z'
+published: true
 ---
 
 ![Demo of a click event handler in an Angular component being debugged and live edited from VS Code](/images/posts/1__GNaWtfa4A61eFU9QQiwRXQ.gif)

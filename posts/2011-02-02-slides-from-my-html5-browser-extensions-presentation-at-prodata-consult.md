@@ -3,6 +3,7 @@ layout: post
 title: Slides from my HTML5 & browser extensions presentation at ProData Consult
 categories: Uncategorized
 date: 2011-02-02 12:00
+published: true
 ---
 
 Thursday last week (27th january 2010) I hosted a "evening-event" at <a href="http://prodata.dk" target="_blank">ProData Consult</a> for their consultants, where I spoke about HTML5 &amp; Browser extensions. My HTML5 talk was a short recap of the recent changes in the specification, the W3C logo, and a showcase of the semantic changes, new tags and attributes and the HTML5-related JavaScript API's.

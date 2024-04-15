@@ -3,6 +3,7 @@ layout: post
 title: 'Diving into photography. '
 categories: Uncategorized
 date: 2011-01-12 12:00
+published: true
 ---
 
 Lately I've been quite hooked on getting a DSLR, because I wanted to explore the world of photography from another angle than just looking at beautiful pictures.

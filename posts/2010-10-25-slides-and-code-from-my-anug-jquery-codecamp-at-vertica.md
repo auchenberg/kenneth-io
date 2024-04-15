@@ -3,6 +3,7 @@ layout: post
 title: Slides and code from my ANUG jQuery CodeCamp at Vertica
 categories: Uncategorized
 date: 2010-10-25 12:00
+published: true
 ---
 
 This saturday I hosted a jQuery CodeCamp at <a href="http://vertica.dk">Vertica</a> in Århus, Denmark.  The code camp was arranged by <a href="http://anug.dk">ANUG</a>, a local .NET user group in Århus, which is one of the most active .NET user groups in Denmark. It was really awesome to see that many people meetup on a saturday to do some jQuery hacking!

@@ -2,6 +2,7 @@
 layout: post
 title: Warm Crocodile Conference Talk
 date: 2013-01-21 22:00
+published: true
 comments: true
 categories: talks
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: Let the new adventure begin...
 date: 2010-07-19
+published: true
 ---
 
 About a month ago I <a href="http://twitter.com/auchenberg/status/16205847885">tweeted</a> that I had made a LIFECHANGING DICISION.  I had accepted a position at <a href="http://hoisthq.com/">Hoist</a>, a startup located in Copenhagen.

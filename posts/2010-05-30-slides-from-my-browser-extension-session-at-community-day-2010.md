@@ -2,6 +2,7 @@
 layout: post
 title: Slides from my Browser Extension session at Community Day 2010
 date: 2010-05-30
+published: true
 ---
 
 This week I had a session about Browser Extensions in Mozilla Firefox and Google Chrome at<a href="http://community.in/copenhagen" target="_blank"> Community Day 2010 in Copenhagen</a>. The event was a cross community primary arranged by Microsoft Denmark. The event had a lot of different sessions subjects with everything from Browser Extensions to Dependency Injection in C#

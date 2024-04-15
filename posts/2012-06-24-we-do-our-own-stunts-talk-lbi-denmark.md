@@ -2,6 +2,7 @@
 layout: post
 title: We do our own stunts talk at LBI Denmark
 date: 2012-06-24 20:00
+published: true
 comments: true
 categories: talks
 ---

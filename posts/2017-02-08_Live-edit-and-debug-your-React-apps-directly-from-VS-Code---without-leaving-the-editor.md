@@ -3,6 +3,7 @@ title: "Live edit and debug your React apps directly from VS Code — without le
 description: Supercharge your React debugging workflow with VS Code and Chrome debugging
 date: '2017-02-08T17:48:45.380Z'
 og_image: images/posts/1__lai2E3hB0L8oGBEUNcMsCQ.png
+published: true
 ---
 
 In our most recent release of our [Chrome debugger for VS Code](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), we have landed a bunch of improvements to our sourcemapping-engine, which enables us to support live-editing and debugging out of the box with [create-react-app](https://github.com/facebookincubator/create-react-app).

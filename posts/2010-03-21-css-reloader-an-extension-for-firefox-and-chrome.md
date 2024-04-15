@@ -3,6 +3,7 @@ layout: post
 title: CSS Reloader - an extension for Firefox and Chrome
 categories: Uncategorized
 date: 2010-03-21
+published: true
 ---
 
 Some months ago at Vodafone, I was finding myself doing a huge amount of F5's duing the day while I was pixel-pushing parts of the layout of  at <a href="http://360.com">360</a>. 30 minutes later a new Firefox extension was born - <a href="https://addons.mozilla.org/da/firefox/addon/46211">CSS Reloader</a>.

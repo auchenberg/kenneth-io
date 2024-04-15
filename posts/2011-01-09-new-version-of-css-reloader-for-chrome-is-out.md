@@ -3,6 +3,7 @@ layout: post
 title: New version of CSS Reloader for Chrome is out
 categories: Uncategorized
 date: 2011-01-09 12:00
+published: true
 ---
 
 It has been a long time since I did changes to my CSS Reloader browser extension. This evening I had some time, and pushed a updated version of CSS Reloader for Chrome out in the public.

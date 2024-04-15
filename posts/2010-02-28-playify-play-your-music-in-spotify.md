@@ -3,6 +3,7 @@ layout: post
 date: 2010-02-28
 title: Playify - A tool to play your iTunes music in Spotify
 categories: Uncategorized
+published: true
 ---
 
 Some days ago at <a href="http://demodag.org">#demodag</a>,  I launched <a href="http://playify.kenneth.io" target="_blank">Playify</a>, which is a new web application that helps your migrate your iTunes music to <a href="http://spotify.com" target="_blank">Spotify</a>.

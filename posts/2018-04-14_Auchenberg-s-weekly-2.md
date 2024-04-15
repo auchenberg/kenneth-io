@@ -3,6 +3,7 @@ title: 'Auchenberg’s reading list #2'
 description: April 2nd-April 14 2018.
 date: '2018-04-14T18:01:46.596Z'
 og_image: images/posts/1__CvTBv63iSLUHvCcNaWWTvA.jpeg
+published: true
 ---
 
 ![Photo by [Nikhil kumar](https://unsplash.com/photos/JdPHvI7VF0o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/spring?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/images/posts/1__CvTBv63iSLUHvCcNaWWTvA.jpeg)

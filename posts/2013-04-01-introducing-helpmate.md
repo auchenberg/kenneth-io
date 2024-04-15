@@ -2,6 +2,7 @@
 layout: post
 title: Introducing Helpmate.
 date: 2013-04-01 21:32
+published: true
 comments: true
 categories:
 ---

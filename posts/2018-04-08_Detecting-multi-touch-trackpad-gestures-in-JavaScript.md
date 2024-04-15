@@ -5,6 +5,7 @@ description: >-
   support pinch-to-zoom multi-touch gestures from my trackpad on…
 date: '2018-04-08T21:52:45.693Z'
 og_image: images/posts/1__bwwRLlyBufhc1Tbjta3Szg.jpeg
+published: true
 ---
 
 ![Photo by [Scott Webb](https://unsplash.com/photos/ZLeogVvtXk0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/kP0pjdyYNyU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](/images/posts/1__bwwRLlyBufhc1Tbjta3Szg.jpeg)
