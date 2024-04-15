@@ -55,6 +55,11 @@ function getBlogPostsGroupedByYear() {
     return new Date(p.date).getFullYear();
   });
 
+  // Sort the posts by date
+  for (let year in groupedPosts) {
+    groupedPosts[year].sort((a, b) => new Date(b.originalDate) - new Date(a.originalDate));
+  }
+
   return groupedPosts;
 }
 
