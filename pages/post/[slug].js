@@ -100,7 +100,6 @@ const markDocComponents = {
 
 export const getStaticPaths = async () => {
   let allPosts = getBlogPosts();
-  console.log(allPosts);
 
   const paths = allPosts.map((post) => {
     return { params: { slug: `${post.slug}` } };
