@@ -13,6 +13,11 @@ import 'react-medium-image-zoom/dist/styles.css';
 import { InstagramEmbed } from 'react-social-media-embed';
 
 const markDocConfig = {
+  nodes: {
+    table: {
+      render: 'Table'
+    }
+  },
   tags: {
     tweet_embed: {
       render: 'Tweet',
@@ -94,6 +99,15 @@ const markDocComponents = {
           allowfullscreen
         ></iframe>
       </figure>
+    );
+  },
+  Table: ({ children }) => {
+    return (
+      <div className='table-wrap'>
+        <table>
+          {children}
+        </table>
+      </div>
     );
   },
 };
@@ -196,11 +210,12 @@ const Post = (props) => {
         :global(.post ul> li) {
           margin-bottom: 20px;
         }
-
-        :global(.post table) {
+        
+        :global(.post table) {    
           width: 150%;
-          margin-left: -25%;
-          padding: 20px;
+          margin-left: -25%;     
+          padding: 20px;             
+
           border: 1px solid black;
           border-collapse: collapse;
           border-spacing: 0;
@@ -223,7 +238,18 @@ const Post = (props) => {
         
         :global(.post table td ul) {
           padding: 0 12px;
-        }            
+        }    
+        
+        @media (max-width: 800px) {
+          :global(.post .table-wrap) {
+            overflow-x: auto;
+          }
+
+          :global(.post table) {
+            width: 100%;
+            margin-left: 0;
+          }
+        }        
 
         :global(.react-tweet-theme) {
           --tweet-body-font-size: 14px;
