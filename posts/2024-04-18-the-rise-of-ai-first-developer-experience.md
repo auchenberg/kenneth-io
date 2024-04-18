@@ -189,6 +189,13 @@ Let's dream a little and imagine what a DX 2.0 lens would mean for the typical a
 
 ---
 
+- Playgrounds
+- - Interactive playgrounds where developers can try and run APIs and services.
+- - AI-powered playgrounds that writes demos automatically with one-click integrations and deployment.
+  - Fine-tuned models and agents specific to the platform that can craft demos and integrations.
+
+---
+
 - Developer Advocacy content
 - - Bespoke video productions for YouTube and related platforms, mainly produced in English and potentially localized to other languages.
   - Bespoke podcast recordings and blog posts.
