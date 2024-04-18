@@ -7,11 +7,12 @@ comments: true
 draft: true
 categories:
 description:
+og_image: images/posts/ai-first-dx/transition.png
 ---
 
 In this blog post, I will outline a few of my thoughts as I've been talking to founders, investors, and builders in the world of developer experience. I want to outline a few hypotheses and assumptions I have for the future and describe how I see the impact of AI on DX, which I've started to call the rise of AI-first Developer Experience.
 
-{% image src="/images/posts/ai-first-dx/splash.png" title="spell_check" /%}
+{% image src="/images/posts/ai-first-dx/splash.png" title="splash" /%}
 
 Since 2022, we have seen a wave of [developer experience infrastructure companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge, helping companies improve the baseline for their developer experiences.
 
@@ -80,6 +81,8 @@ So, what’s changing with our developer tools and developer workflows?
   Regardless of how much of Devin is real at [this point in time](https://twitter.com/GergelyOrosz/status/1779035184978866332), the demo showed us the edge of what a potential future agentic world will look like for software engineering, and this prompts us to start to ask questions about what Developer Experience means in an agentic world.
 
 ## DX 2.0: The rise of AI-first developer experience
+
+{% image src="/images/posts/ai-first-dx/transition.png" title="transition" /%}
 
 With the arrival of AI, we are entering a world where most experiences will be [hyper-personalized](https://www.implications.com/p/8-forecasts-and-implications-for) based on how well a company or product knows you, and when it comes to developer experience, it will be no different.
 
