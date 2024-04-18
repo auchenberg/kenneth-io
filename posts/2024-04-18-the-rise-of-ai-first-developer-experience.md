@@ -9,13 +9,13 @@ categories:
 description:
 ---
 
-Back in 2022, I wrote a blog post about what I call [developer experience infrastructure](https://kenneth.io/post/developer-experience-infrastructure-dxi), which outlines a thesis around the "servicification" of Developer Experience that had started to emerge as a new set of infrastructure services, like SDK-as-a-service, to make it easier to provide a great (API) DX without building large in-house DX teams.
+In this blog post, I will outline a few of my thoughts as I've been talking to founders, investors, and builders in the world of developer experience. I want to outline a few hypotheses and assumptions I have for the future and describe how I see the impact of AI on DX, which I've started to call the rise of AI-first Developer Experience.
 
 {% image src="/images/posts/ai-first-dx/splash.png" title="spell_check" /%}
 
-Since 2022, we have seen a wave of [DXI companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge. However, we have also started to see a paradigm shift for developer tools with the arrival of LLMs, particularly GPT-4-like quality models. These have enabled a new generation of AI-enabled tools like GitHub Copilot to take developer tools and developer experience to new levels.
+Since 2022, we have seen a wave of [developer experience infrastructure companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge helping companies improving the baseline for their developer expeirence.
 
-In this blog post, I will outline a few of my thoughts as I've been talking to founders, investors, and builders in the world of developer experience. I want to outline a few hypotheses and assumptions I have for the future and describe how I see the impact of AI on DX, which I've started to call the rise of AI-first Developer Experience.
+But we have also started to see a paradigm shift for developer tools with the arrival of LLMs, particularly GPT-4-like quality models. With the arrival of AI, there’s a new frontier emerging for DX, and the key unlock here is new capabilities enabled by AI.
 
 ## DX 1.0: The era of generalized DX
 
@@ -25,8 +25,6 @@ The challenge of building these specialized experiences has traditionally been r
 
 In other words, targeting a new framework/language or runtime has been very expensive, so most companies have been focused on providing a good enough baseline. At the same time, only a few have had the resources to invest in specific verticals.
 
-Today, most [DXI companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) focus on helping companies with the general baseline, while a few startups are carving out niches by targeting specific verticals. However, with the arrival of AI, I think there’s a new frontier emerging, and the key unlock here is new capabilities enabled by AI.
-
 ## What’s changing?
 
 With the arrival of AI, we have started to see the realized impact of the rise of [Software 3.0](https://medium.com/@itamar_f/software-3-0-the-era-of-intelligent-software-development-acd3cafe6cd7), where we are going through one of the few fundamental paradigm/platform shifts in our industry, as we are transitioning from a world where 80% of all code is written by humans to a reality where the majority of code will be authored by AIs and Agents.
@@ -35,7 +33,7 @@ So, what’s changing with our developer tools and developer workflows?
 
 - **The cost of syntax is going to zero**
 
-  As outlined by my friend Alessio Fanelli, we are transitioning software engineering from [syntax to semantics](https://www.alessiofanelli.com/posts/syntax-to-semantics), which is the natural evolution of the never-ending quest to move to higher abstractions. Thanks to LLMs, human languages are now programming languages.
+  We are transitioning software engineering from [syntax to semantics](https://www.alessiofanelli.com/posts/syntax-to-semantics), which is the natural evolution of the never-ending quest to move to higher abstractions. Thanks to LLMs, human languages are now programming languages.
 
   Software builders can now express their intents in human language through prompts and offload the cognitive effort of writing perfect syntax to an LLM, which now does the heavy lifting of writing syntax that fits perfectly into the codebase.
 
@@ -87,9 +85,9 @@ With the arrival of AI, we are entering a world where most experiences will be [
 
 In the future, the developer services and infrastructure you are using to build with will be able to provide a hyper-personalized experience that is bespoke to what you are trying to build, presented in your preferred format and language, and tailored to your specific tech stack and preferences.
 
-Imagine a company with an API that never expects you to write code to integrate with it. Instead, you tell the AI what you want it to do, and it will generate a custom SDK with all the features you want, a stable facade, and a tailored codebase so you can add features later without needing to rewrite things.
+> Imagine a company with an API that never expects you to write code to integrate with it. Instead, you tell the AI what you want it to do, and it will generate a custom SDK with all the features you want, a stable facade, and a tailored codebase so you can add features later without needing to rewrite things.
 
-If you have a question about the service, you can ask your in-editor copilot or have a short 10-minute video generated with your favorite DevRel in Spanish. However, if you are in a hurry that day, you can ask your workspace agent to draft the integration and send you a voice note with the TL;DR once it is done.
+> If you have a question about the service, you can ask your in-editor copilot or have a short 10-minute video generated with your favorite DevRel in Spanish. However, if you are in a hurry that day, you can ask your workspace agent to draft the integration and send you a voice note with the TL;DR once it is done.
 
 While this may seem futuristic today, we can envision a near future where it becomes feasible—even perfectly reasonable.
 
@@ -126,7 +124,7 @@ Let's dream a little and imagine what a DX 2.0 lens would mean for the typical a
 ---
 
 - Boilerplate and Scaffolding
-- - Hard-coded templates on a per framework/language with variable substitution offered via CLIs and other tools.
+- - Hard-coded templates per framework/language with variable substitution offered via CLIs and other tools.
 - - Code-generated projects tailored to specific requirements based on baseline templates and fine-tuning, allowing for hyper-personalization.
     {% tweet_embed id="1734604588282794237" /%}
   - AI-powered agents trained on your platform can generate code projects on demand and provide instant guidance and support to developers.
@@ -159,7 +157,7 @@ Let's dream a little and imagine what a DX 2.0 lens would mean for the typical a
 
 - Developer support
 - - Front-line developer support on GitHub and Discord staffed by developer relations and solution architects.
-- - AI-powered AI teammates, like [https://dosu.dev/](https://dosu.dev/), who are trained on your platform and can provide instant support and guidance to developers and escalate to human beings when needed.
+- - AI-powered AI teammates, like [https://dosu.dev/](https://dosu.dev/) or [https://www.duckie.ai/](https://www.duckie.ai/), who are trained on your platform and can provide instant support and guidance to developers and escalate to human beings when needed.
 
 ---
 
@@ -209,9 +207,13 @@ It looks like I'm not alone:
 
 I regularly share thoughts and perspectives on developer experience and developer platforms, so follow me at [@auchenberg](https://twitter.com/auchenberg).
 
+If you are working on something in this space, I want to talk with you. I'd love to riff about the future, and if you are lookling for funding; I'm actively to fund early AI-first DX companies via [developers.vc](http://developers.vc).
+
 Best, Kenneth
 
 ## Questions I've started to ask myself
+
+(in no particular order)
 
 - Can traditionally expensive and bespoke code examples and demos now be generated by AIs?
 - In a world where it's almost free to generate code examples, what more does this enable?
@@ -241,6 +243,7 @@ Best, Kenneth
   - You can imagine a similar principle for APIs, error messages, console logs, etc
 - If we have infinite intern-level AI agents today, when will we have senior-level AI agents? Staff? What's the timeline?
 - What does it mean for Developer Experience if all engineers instantly are senior due to AI?
+- How do companies prevent exploit and security issues in a world where AIs and Agents are writing integrations?
 
 ## Related reading
 
@@ -250,4 +253,4 @@ Best, Kenneth
 - [Insights from building @stripe's developer platform & API developer experience: Part 1](https://kenneth.io/post/insights-from-building-stripes-developer-platform-and-api-developer-experience-part-1)
 - [Developer Experience Infrastructure (DXI)](https://kenneth.io/post/developer-experience-infrastructure-dxi)
 
-_Thanks to [@fanahova](https://twitter.com/fanahova), [@nickBruun](https://twitter.com/nickBruun), [@treybigDavis](https://twitter.com/TreybigDavis), [@nkohari](https://twitter.com/nkohari), [@ianmst](https://twitter.com/ianmst) for providing feedback on early drafts of this post._
+_Thanks to [@fanahova](https://twitter.com/fanahova), [@nickBruun](https://twitter.com/nickBruun), [@treybigDavis](https://twitter.com/TreybigDavis), [@nkohari](https://twitter.com/nkohari), [@ianmst](https://twitter.com/ianmst), [@indexzero](https://twitter.com/indexzero), [@mortenjust](https://twitter.com/mortenjust) for providing feedback on early drafts of this post._
