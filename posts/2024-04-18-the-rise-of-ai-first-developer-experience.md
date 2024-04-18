@@ -13,9 +13,9 @@ In this blog post, I will outline a few of my thoughts as I've been talking to f
 
 {% image src="/images/posts/ai-first-dx/splash.png" title="spell_check" /%}
 
-Since 2022, we have seen a wave of [developer experience infrastructure companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge helping companies improving the baseline for their developer expeirence.
+Since 2022, we have seen a wave of [developer experience infrastructure companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge, helping companies improve the baseline for their developer experiences.
 
-But we have also started to see a paradigm shift for developer tools with the arrival of LLMs, particularly GPT-4-like quality models. With the arrival of AI, there’s a new frontier emerging for DX, and the key unlock here is new capabilities enabled by AI.
+But we have also started to see a paradigm shift for developer tools with the arrival of AI and LLMs, particularly GPT-4-like quality models, which have enabled new categories of tools to exist. With the arrival of AI, a new frontier is emerging for DX, and that frontier is AI-first.
 
 ## DX 1.0: The era of generalized DX
 
