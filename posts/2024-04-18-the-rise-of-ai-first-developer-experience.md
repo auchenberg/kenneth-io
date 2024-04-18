@@ -2,7 +2,7 @@
 layout: post
 title: 'The rise of AI-first Developer Experience (DX 2.0)'
 date: 2024-04-18 09:00
-published: false
+published: true
 comments: true
 draft: true
 categories:
