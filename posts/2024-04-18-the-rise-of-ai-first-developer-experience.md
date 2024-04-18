@@ -12,7 +12,7 @@ og_image: images/posts/ai-first-dx/og_image.png
 
 In this blog post, I will outline a few of my thoughts as I've been talking to founders, investors, and builders in the world of developer experience. I want to outline a few hypotheses and assumptions I have for the future and describe how I see the impact of AI on DX, which I've started to call the rise of AI-first Developer Experience.
 
-{% image src="/images/posts/ai-first-dx/splash.png" title="splash" /%}
+{% image src="/images/posts/ai-first-dx/transition.png" title="splash" /%}
 
 Since 2022, we have seen a wave of [developer experience infrastructure companies](https://kenneth.io/post/developer-experience-infrastructure-dxi) emerge, helping companies improve the baseline for their developer experiences.
 
