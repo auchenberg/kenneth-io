@@ -182,6 +182,10 @@ const Post = (props) => {
           margin-bottom: 30px;
         }
 
+        :global(.post) {
+            overflow-wrap: break-word;
+        }
+
         :global(.post img),
         :global(.post iframe) {
           width: 100%;
