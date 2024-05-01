@@ -12,9 +12,7 @@ Recently there has a been a lot of debate wether [Safari is the new IE](http://n
 
 The problem isn’t Safari. It’s a somewhat modern browser that in the eyes of some might lack some important features, but overall is still pretty good and modern.
 
-<img src="/images/posts/ios-browser-lock/safari-ios.png" />
-
-<!--more-->
+{% image src="/images/posts/ios-browser-lock/safari-ios.png" /%}
 
 The real problem is Apple’s lack of browser-choice in iOS, and that’s a problem for several reasons:
 
@@ -28,9 +26,7 @@ The real problem is Apple’s lack of browser-choice in iOS, and that’s a prob
 
 This is why I suggested to [start a petition](https://github.com/h5bp/lazyweb-requests/issues/181#issuecomment-117436986), so we, in the web community, can raise our voices and create awareness of this fundamental problem for the web.
 
-<figure>
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">An open letter to put pressure on Apple… <a href=“https://t.co/yLp1LHqgA4”>https://t.co/yLp1LHqgA4</a> <a href=“http://t.co/ibSWzAAmLd”>pic.twitter.com/ibSWzAAmLd</a></p>&mdash; Šime Vidas (@simevidas) <a href=“https://twitter.com/simevidas/status/616114174729551872”>July 1, 2015</a></blockquote>
-</figure>
+{% tweet_embed id="616114174729551872”" /%}
 
 As a vendor of dominant mobile operating system, Apple, should make a **real browser choice possible in iOS** in order to ensure fair competition and innovation. Any other major operating system (Android, Windows, OSX, Linux) has a free browser choice, and iOS should be no different.
 
@@ -46,9 +42,7 @@ In the recent years our community has talked about the lack of browser choice in
 
 The good news is that I'm not alone with this; Jake from the Chrome team, and given his bias of working from a competing vendor; he agree's with me:
 
-<figure>
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">If Apple are throttling back on web platform work in Safari, I wish they&#39;d allow other browsers on iOS so someone else can have a go</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/612992537238896641">June 22, 2015</a></blockquote>
-</figure>
+{% tweet_embed id="612992537238896641" /%}
 
 So let's put [some power behind a petition](https://github.com/h5bp/lazyweb-requests/issues/181#issuecomment-117792929) and get this ball rolling. It's about time that we get a free browser choice on iOS.
 

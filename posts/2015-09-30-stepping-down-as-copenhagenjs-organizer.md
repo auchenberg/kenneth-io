@@ -10,11 +10,9 @@ og_image: images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg
 
 Back in December I [decided to quit my job](https://kenneth.io/blog/2014/12/12/leaving-citrix-time-for-a-break/) and take a leap into unexplored territories. I ended up [packing a backpack to travel Asia](https://kenneth.io/blog/2015/02/22/60-items-for-the-next-many-months-in-asia/), which has been an amazing experience, but it also meant that I haven’t been able to help organizing [CopenhagenJS](http://copenhagenjs.dk), as I simply haven’t been around.
 
-<img src="/images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg" />
+{% image src="/images/posts/copenhagenjs-stepping-down/copenhagenjs.jpg" /%}
 
 Now I’m back in Copenhagen, and been putting a bit of thought into how I should be spending my time going forward, and I reached the conclusion that it’s time to step down as [CopenhagenJS](http://copenhagenjs.dk) organizer and pass the baton on.
-
-<!--more-->
 
 ## 4 years of fun years with CopenhagenJS
 
@@ -50,10 +48,7 @@ So now that I’m back in Copenhagen I’ve decided to take a step back, and loo
 
 This means I’m now stepping down as [CopenhagenJS](http://copenhagenjs.dk) organizer, and I passed the baton to the [Kevin Simper](http://twitter.com/kevinsimper) who is the main driver of community today. I’m sure Kevin’s drive and commitment to CopenhagenJS will take the community to new levels. To support Kevin and welcome a “new generation” of organizers, we are also looking for new co-organizers, so if you are interested reach out to Kevin.
 
-<figure>
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Want to be part of organising CopenhagenJS? We&#39;re looking for more co-organisers. Get in touch here or via hello@copenhagenjs.dk</p>&mdash; copenhagenjs (@copenhagenjs) <a href="https://twitter.com/copenhagenjs/status/648105238516363265">September 27, 2015</a></blockquote>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</figure>
+{% tweet_embed id="648105238516363265" /%}
 
 Much has happened in Copenhagen the past 4 years. We now have an established tech & startup-scene with [CPHFTW](http://cphftw.org). We have a better meetup culture, and the rise of JavaScript has shown a need for a strong united community.
 

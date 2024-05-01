@@ -48,7 +48,7 @@ I’ll be joining a team of brilliant people like [Rey Bango](https://twitter.co
 
 Yup. In January 2016, I’ll be relocating to Vancouver, Canada, so I can be in the same timezone, and be close to the team in Seattle. Once I’ll get my american visa, I’ll be packing my things and be headed to the Microsoft HQ in Redmond.
 
-<img src="/images/posts/joining-microsoft/vancouver.jpg" />
+{% image src="/images/posts/joining-microsoft/vancouver.jpg" /%}
 
 This means I’ll be leaving Copenhagen, Denmark, where I’m born and raised. This is going to be quite a change, but after many months of recent travel, and after working on-and-off in San Francisco, the timing feels right, and I’m sure there’s going to be many amazing adventures ahead.
 

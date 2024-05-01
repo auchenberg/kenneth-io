@@ -10,9 +10,7 @@ og_image: images/posts/remotedebug-gateway/remotedebug-gateway-og.png
 
 I’d like to introduce a new project of mine. It’s called [RemoteDebug Gateway](https://github.com/auchenberg/remotedebug-gateway), and instead of writing long blog post I’ve done something new. I’ve made this little screencast explaining the project.
 
-<figure>
-	<iframe src="https://www.youtube.com/embed/fRCJ8gpRe3w" frameborder="0" allowfullscreen></iframe>
-</figure>
+{% youtube src="https://www.youtube.com/embed/fRCJ8gpRe3w" width="600" height="300" /%}
 
 There’s many aspects of [RemoteDebug Gateway](https://github.com/auchenberg/remotedebug-gateway) I super find important, which I could write many posts about, but the most important one is, that RemoteDebug Gateway is an example of the kind of tools we can start building when we have a common API to our browsers. That’s what [RemoteDebug](https://remotedebug.org) is about, so if you like the perspectives in tools like this, please help spread the word :)
 

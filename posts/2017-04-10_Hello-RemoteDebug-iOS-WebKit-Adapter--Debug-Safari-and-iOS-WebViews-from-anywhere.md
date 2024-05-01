@@ -40,7 +40,7 @@ The protocol adapter enables a broad range of features that hasn’t been workin
   Implements a range of basic DOM/CSS APIs which enables basic element inspection and CSS manipulation.
 - **Console**  
   Enables the console to function as expected, by [mapping](https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter/blob/master/src/protocols/ios/ios.ts#L79) the WebKit APIs to the new Chrome APIs.
-- **Network tool **
+- **Network tool**
   Enables the network tool to function as expected, and re-enables cookies to be set and deleted.
 - **Script debugging**
   Debugging of scripts and enables usage of the debugger-statement from VS Code, debugger.html and Chrome DevTools
