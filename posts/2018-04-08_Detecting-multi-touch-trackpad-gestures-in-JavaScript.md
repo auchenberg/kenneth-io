@@ -19,16 +19,11 @@ Apparently Microsoft with IE10 was the pioneers here, as they enabled pinch-to-z
 
 The Chrome team had a discussion [about this back in January 2014](https://groups.google.com/a/chromium.org/forum/#!searchin/chromium-dev/mousewheel$20byers/chromium-dev/L_kaBhYFi5U/RIMFBx12dJoJ), and the adaption landed in Chrome M35 as per [documented in this bug](https://bugs.chromium.org/p/chromium/issues/detail?id=289887). Mozilla followed up with parity and [landed the support](https://bugzilla.mozilla.org/show_bug.cgi?id=1052253) in Firefox 55.
 
-As explained by [Rick Byers](https://twitter.com/RickByers) in the [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=289887):
+As explained by [Rick Byers](https://twitter.com/RickByers) in the [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=289887), the spec has an example that says:
 
-```
-The spec has an example that says:
+> "The user's environment might be configured to associate vertical scrolling with rotation along the y-axis, horizontal scrolling with rotation along the x-axis, and zooming with rotation along the z-axis."
 
-"The user's environment might be configured to associate vertical scrolling with rotation along the y-axis, horizontal scrolling with rotation along the x-axis, and zooming with rotation along the z-axis."
-
-From this perspective it seems reasonable to generate deltaZ wheel events for trackpad pinch gestures.  This would enable apps like google maps to respond nicely to pinch.
-
-```
+> From this perspective it seems reasonable to generate deltaZ wheel events for trackpad pinch gestures. This would enable apps like google maps to respond nicely to pinch.
 
 So that was a bit of the historic context. Today this means that we have a de-facto “hack” standard to detect pinch-to-zoom gestures from trackpads, which is supported in multiple browsers.
 
@@ -39,8 +34,6 @@ So how does it work?
 You can detect a pinch-to-zoom gesture with this quite simple event handler listening for the `wheel` event, where the `e.deltaY` value represents your zoom/scale factor when the `e.ctrlKey` is set.
 
 That’s it.
-
-<script src="https://gist.github.com/auchenberg/9eae2e61ba01e0ea8747c8268ed5c8fd.js"></script>
 
 #### What browsers does this work in?
 
@@ -69,7 +62,6 @@ I’ve put together a simple demo of a <div> which you can move around and scale
 **Code:** [https://stackblitz.com/edit/multi-touch-trackpad-gesture](https://stackblitz.com/edit/multi-touch-trackpad-gesture)
 
 ![[https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)](/images/posts/1__ly0W__nCdu__7DmiA3j7arww.png)
-[https://multi-touch-trackpad-gesture.stackblitz.io/](https://multi-touch-trackpad-gesture.stackblitz.io/)
 
 Another cool demo I found is using WebGL and the performance is even better: [http://jsbin.com/fepuficudolo/3/edit?html,output](http://jsbin.com/fepuficudolo/3/edit?html,output)
 
