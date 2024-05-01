@@ -7,8 +7,6 @@ published: true
 
 This week I had a session about Browser Extensions in Mozilla Firefox and Google Chrome at<a href="http://community.in/copenhagen" target="_blank"> Community Day 2010 in Copenhagen</a>. The event was a cross community primary arranged by Microsoft Denmark. The event had a lot of different sessions subjects with everything from Browser Extensions to Dependency Injection in C#
 
-<!--more-->
-
 Here is the slides from my session:
 
 <figure class="slides">

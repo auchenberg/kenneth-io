@@ -6,12 +6,10 @@ categories: Uncategorized
 published: true
 ---
 
-Some days ago at <a href="http://demodag.org">#demodag</a>,  I launched <a href="http://playify.kenneth.io" target="_blank">Playify</a>, which is a new web application that helps your migrate your iTunes music to <a href="http://spotify.com" target="_blank">Spotify</a>.
+Some days ago at [#demodag](http://demodag.org),  I launched [Playify](http://playify.kenneth.io), which is a new web application that helps your migrate your iTunes music to [Spotify](http://spotify.com).
 
-<!--more-->
+This first version is quite basic, it allows you to upload your iTunes Library file, the tool then parses the file, and asks Spotify which albums that is avaliable.  The results its presented as a nice sortable list (with covers from [Last.fm](http://last.fm)).
 
-This first version is quite basic, it allows you to upload your iTunes Library file, the tool then parses the file, and asks Spotify which albums that is avaliable.  The results its presented as a nice sortable list (with covers from <a href="http://last.fm">Last.fm</a>).
+[Playify](http://playify.kenneth.io) might help you getting started with [Spotify](http://spotify.com) or even help you to discover some of your favorite music you had forgotten. Personally I found a lot of my favorite music this way, simply because I hadn't thought about searching for it on [Spotify](http://spotify.com).
 
-<a href="http://playify.kenneth.io">Playify</a> might help you getting started with <a href="http://spotify.com">Spotify </a>or even help you to discover some of your favorite music you had forgotten. Personally I found a lot of my favorite music this way, simply because I hadn't thought about searching for it on <a href="http://spotify.com">Spotify</a>.
-
-Try it out at <a href="http://playify.kenneth.io" target="_blank">http://playify.kenneth.io</a>, and let me know what works, and what that doesn't!
+Try it out at [http://playify.kenneth.io](http://playify.kenneth.io), and let me know what works, and what that doesn't!
