@@ -29,7 +29,9 @@ This is what true platform building is all about: providing the primitives that 
 
 The value proposition for developers is that your platform offers better economics and primitives, allowing them to offload the cognitive overhead of building onto the platform. This means developers don't have to worry about inference scaling, model differences, or whether the models are locally or in the cloud. Instead, they use software-defined intelligence, leveraging your abstractions, SDKs, APIs, and whatever the future brings. The platform ensures the model runs securely, cost-effectively, and in the most privacy-sensitive way possible.
 
-That's what AI platform companies should be selling: a higher-level platform that abstracts away the complexities through well-defined primitives. This approach moves them away from selling low-level models and positions them to capture more value; something differentiated.
+That's what AI platform companies should be selling: A higher-level platform that abstracts away the complexities of models, and treats them like processors in operating systems, where developers use well-defined primitives, and never need to know what is going on under the hood.
+
+This approach moves them away from selling low-level models and positions them to capture more value; something differentiated.
 
 ## Relevent reading
 
