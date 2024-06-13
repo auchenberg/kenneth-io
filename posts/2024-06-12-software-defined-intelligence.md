@@ -19,7 +19,7 @@ That's it. All major AI companies follow the business model developed initially 
 
 However, I'm not convinced this is the best approach moving forward.
 
-If AI platform companies continue to sell their foundational models as inference, they will become indistinguishable, leading to a race to the bottom.
+If AI platform companies continue to only sell their foundational models as inference, they will become indistinguishable, leading to a race to the bottom.
 
 Instead, they need to build true platforms that climb the abstraction ladder and create something more high-level, and that is **software-defined intelligence**.
 
