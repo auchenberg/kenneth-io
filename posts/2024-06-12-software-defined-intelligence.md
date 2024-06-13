@@ -23,9 +23,9 @@ If AI platform companies continue to only sell their foundational models as infe
 
 Instead, they need to build true platforms that climb the abstraction ladder and create something more high-level, and that is **software-defined intelligence**.
 
-By building a platform offering software-defined intelligence, your goal is to own the workflow of creating AI-powered products. You achieve this by providing a full spectrum of abstractions, enabling a seamless transition from low-level model inference to data storage, computing, agents, embedding, authorization, and an ecosystem for functionality and long-tail features such as function calling and actions.
+By building a platform offering software-defined intelligence, your goal is to own the _workflow_ of creating AI-powered products. You achieve this by providing a full spectrum of abstractions, enabling a seamless transition from low-level model inference to data storage, computing, agents, embedding, authorization, and an ecosystem for functionality and long-tail features such as function calling and actions.
 
-This is what true platform building is all about: providing the primitives that abstract away the underlying technology. Most AI companies are far from reaching their goal today.
+This is what true platform building is all about: providing the primitives that abstract away the underlying technology. Most AI companies are far away from this, as they are too busy selling OpenAI-compatible inference-shovels, than building real platforms.
 
 The value proposition for developers is that your platform offers better economics and primitives, allowing them to offload the cognitive overhead of building onto the platform. This means developers don't have to worry about inference scaling, model differences, or whether the models are locally or in the cloud. Instead, they use software-defined intelligence, leveraging your abstractions, SDKs, APIs, and whatever the future brings. The platform ensures the model runs securely, cost-effectively, and in the most privacy-sensitive way possible.
 
