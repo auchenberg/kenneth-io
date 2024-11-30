@@ -27,22 +27,26 @@ Zed:                    ?
 v0:                     ?
 ```
 
-
 ### Historic revenue ($USD)
 
 ```
-|                | 2020   | 2021   | 2022   | 2023   | 2024   |
-|----------------|--------|--------|--------|--------|--------|
-| JetBrains      | $384M  | $480M  | $532M  | $562M  | $593M  |
-| GitHub Copilot |        |        |        | $115M  | $400M  |
-| Cursor         |        |        |        | $1M    | $65M   |
-| Codeium        |        |        |        | $0M    | $10M   |
-| Bolt.new       |        |        |        | $0M    | $6M    |
-| Zed            |        |        |        |        |        |
-| v0 by Vercel   |        |        |        |        |        |
-| Sublime Text   |        |        |        |        |        |
+|                | 2020   | 2021   | 2022   | 2023   | 2024    |
+|----------------|--------|--------|--------|--------|---------|
+| JetBrains      | $384M  | $480M  | $532M  | $562M  | $593M   |
+| GitHub Copilot |        |        |        | $115M  | $400M   |
+| Cursor         |        |        |        | $1M    | $65M    |
+| Codeium        |        |        |        | $0M    | $10M    |
+| Bolt.new       |        |        |        | $0M    | $6M     |
+| Sublime Text   |        |        |        |        | $6M [1] |
+| Zed            |        |        |        |        |         |
+| v0 by Vercel   |        |        |        |        |         |
 ```
+
+## Note on sources and data accuracy
+
+Most of this data comes from Sacra [0] with a few additional sources. The data may be _incomplete_ or _inaccurate_, so if you read this and have better sources, please let me know, so I can update this.
 
 ## Relevent reading
 
-- [Sacra: Cursor revenue, growth, and valuation](https://sacra.com/research/cursor-revenue-growth-valuation/)
+- [[0] Sacra: Cursor revenue, growth, and valuation](https://sacra.com/research/cursor-revenue-growth-valuation/)
+- [[1] Zoominfo](https://www.zoominfo.com/c/sublime-text/348086923)
