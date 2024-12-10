@@ -11,28 +11,23 @@ const Home = () => {
         <p className="wave">👋</p>
         <p>Hej there, I'm Kenneth.</p>
 
-        <p>I'm a product leader, angel investor, strategic advisor focused on developer tools based in NYC.</p>
+        <p>I'm a partner at <a href="https://alleycorp.com">AlleyCorp</a>, a New York-based venture capital firm, where I focus on AI, developer tools, and infrastructure.</p>
 
-        <p>Before that I worked at <a href="https://stripe.com">Stripe</a>, building developer experience infrastructure and ecosystems.</p>
+        <p>Before stepping into venture capital, I spent two decades building products and leading engineering teams. As an <a href="https://developers.vc/">angel investor</a>, I help and support founders building for developers.</p>
 
-        <p>I originally moved to the US to work on developer tools at Microsoft, where I worked on Visual Studio Code and browser DevTools.</p>
+        <p>My journey brought me to the US to work on developer tools at Microsoft, where I was a part of the early <a href="https://code.visualstudio.com/">Visual Studio Code</a> team. Later, at <a href="https://stripe.com">Stripe</a>, I led the work on our developer platform and platform for extensibility.</p>
 
         <p>
-         I'm born and raised in Copenhagen, Denmark, where I co-founded the <a href="https://coldfront.co">ColdFront</a> conference, and was a part of the Danish startups, Podio and ZYB, who both got acquired with the Podio
-          going to Citrix, and ZYB going to Vodafone.
+          I was born and raised in Copenhagen, Denmark, where I co-founded the technology ColdFront conference, the hacker café <a href="/post/rebooting-prototype-our-hacker-cafe-in-copenhagen">Prototype</a>, and was a part of the Danish startups Podio and ZYB, both of which were acquired, by Citrix and Vodafone, respectively.
         </p>
+
         <p>
-          I'm a Global Shaper for{' '}
-          <a href="https://www.weforum.org/">Word Economic Forum</a>, serve on
-          multiple advisory boards and a frequent public speaker who travels the
-          world
+          I love helping people and am always up for a coffee ☕️.
         </p>
-        <p>
-          I love helping people and am always up for a ☕️, so shoot me an email
-          at <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a> or ping me at Twitter{' '}
-          <a href="https://twitter.com/auchenberg">@auchenberg</a> if you wanna
-          chat.
-        </p>
+
+        <p> Drop me a line
+          at <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a> or reach out on X at{' '}
+          <a href="https://twitter.com/auchenberg">@auchenberg</a>.</p>
         <Nav />
       </div>
       <style jsx>{`
