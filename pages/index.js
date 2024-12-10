@@ -18,7 +18,7 @@ const Home = () => {
         <p>My journey brought me to the US to work on developer tools at Microsoft, where I was a part of the early <a href="https://code.visualstudio.com/">Visual Studio Code</a> team. Later, at <a href="https://stripe.com">Stripe</a>, I led the work on our developer platform and platform for extensibility.</p>
 
         <p>
-          I was born and raised in Copenhagen, Denmark, where I co-founded the technology ColdFront conference, the hacker café <a href="/post/rebooting-prototype-our-hacker-cafe-in-copenhagen">Prototype</a>, and was a part of the Danish startups Podio and ZYB, both of which were acquired, by Citrix and Vodafone, respectively.
+          I was born and raised in Copenhagen, Denmark, where I co-founded the technology <a href="https://clearleft.com/thinking/ice-cold-in-copenhagen">ColdFront conference</a>, the hacker café <a href="/post/rebooting-prototype-our-hacker-cafe-in-copenhagen">Prototype</a>, and was a part of the Danish startups <a href="https://techcrunch.com/2012/04/11/citrix-acquires-cloud-based-social-business-collaboration-platform-podio/">Podio</a> and <a href="https://archive.nytimes.com/www.nytimes.com/idg/IDG_852573C4006938800025744B003E6D64.html?ref=technology">ZYB</a>, both of which were acquired, by Citrix and Vodafone, respectively.
         </p>
 
         <p>
