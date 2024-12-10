@@ -16,11 +16,13 @@ Some exciting news! I’ve joined [AlleyCorp](https://alleycorp.com/), a New Yor
 
 ## Back to the early stage
 
-After [wrapping up my time at Stripe last year](https://kenneth.io/post/getting-back-to-my-entrepreneurial-roots), I have been working closely with founders building for developers through advisory roles and angel investing. This experience has connected me with many aspiring leaders, but above all, it has reaffirmed what I’ve always loved about the early stages of company building: the energy, the vision, and the chance to create something from nothing.
+After [wrapping up my time at Stripe last year](https://kenneth.io/post/getting-back-to-my-entrepreneurial-roots), I have been working closely with founders building for developers through advisory roles and angel investing. This experience has connected me with many aspiring leaders, but above all, it has reaffirmed what I’ve always loved about the early stages of company building: the energy, the vision, the gritty all-nighters before an important launch, and the chance to create something from nothing.
 
 It became clear to me that this is where I want to spend more of my time.
 
-Starting my career in startups in Denmark, I have been fortunate to experience the highs and lows of entrepreneurship—from navigating multiple acquisitions, where I learned how to scale and transition effectively, to working on products that achieved global impact. Later, at Microsoft and Stripe, I gained insight into what it takes to operate at true global scale. Through it all, one thing has stood out: being part of a vibrant startup ecosystem, with great partners by your side, makes all the difference.
+Starting my career in Denmark’s startup scene, I experienced the full spectrum of entrepreneurship—from late nights, failed launches, and breaking production to navigating acquisitions and scaling products with global impact. Later, at Microsoft and Stripe, I gained invaluable insight into operating at true global scale and driving industry-wide impact.
+
+Through it all, one thing has stood out: being part of a vibrant startup ecosystem, with great partners by your side, makes all the difference.
 
 That’s the role I aim to play for founders now.
 
@@ -40,7 +42,7 @@ This is the time to back founders building for developers. As an [angel investor
 
 So, when I met [Kevin Ryan](https://alleycorp.com/companies/kevin-ryan/), [Marshall Porter](https://alleycorp.com/companies/marshall-porter/), and the team at [AlleyCorp](https://alleycorp.com/), I was struck by how operator-heavy their team is—and how deeply they understand the challenges founders face because the team has done this over and over again. AlleyCorp is a group that knows how to get things done, and I’m thrilled to join them as a Partner.
 
-My focus at [AlleyCorp](https://alleycorp.com/) won’t change. I’ll continue to focus on AI, developer tools, and infrastructure investments. And as a fund, we focus on incubating and investing at the pre-seed, seed, and Series A stages.
+My focus at [AlleyCorp](https://alleycorp.com/) won’t change. I'm doubling down, and will continue to focus on AI, developer tools, and infrastructure investments, while also spending much more time in the ecosystem. And as a fund, we focus on incubating and investing at the pre-seed, seed, and Series A stages.
 
 If you’re a founder building for developers—whether you’re in NYC, SF, Europe, or anywhere else — I’d love to chat!
 
