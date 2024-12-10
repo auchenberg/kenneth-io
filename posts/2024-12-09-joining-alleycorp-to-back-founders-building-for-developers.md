@@ -7,6 +7,7 @@ comments: true
 draft: false
 categories:
 description:
+og_image: images/posts/alleycorp/joining-alleycorp.jpg
 ---
 
 Some exciting news! I’ve joined [AlleyCorp](https://alleycorp.com/), a New York-based venture capital firm, to focus on AI, developer tools, and infrastructure investments.
