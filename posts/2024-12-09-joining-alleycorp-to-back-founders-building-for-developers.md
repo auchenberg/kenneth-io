@@ -29,7 +29,7 @@ When I moved to NYC a few years ago, I immersed myself in the local ecosystem—
 
 I’m incredibly bullish on what’s happening here, especially in AI, infrastructure, and developer tools, where NYC’s multi-dimensional ecosystem empowers founders to think bigger and take bold swings. Unlike other regions often caught in insular echo chambers, NYC fosters the creation of true enterprise-grade companies from day one.
 
-## Backing founders building for developers.
+## Backing founders building for developers
 
 We are in the middle of one of the most unique and fundamental paradigm shifts in our industry, and for the first time in a very long time, we are unlocking _new capabilities_ at a pace that forces us to _completely rethink software, platforms, and what it means to build developer tools_.
 
@@ -41,9 +41,9 @@ So, when I met [Kevin Ryan](https://alleycorp.com/companies/kevin-ryan/), [Marsh
 
 My focus at [AlleyCorp](https://alleycorp.com/) won’t change. I’ll continue to focus on AI, developer tools, and infrastructure investments. And as a fund, we focus on incubating and investing at the pre-seed, seed, and Series A stages.
 
-If you’re a founder building for developers—whether you’re in NYC, SF, Europe, or anywhere else—I’d love to chat and collaborate!
+If you’re a founder building for developers—whether you’re in NYC, SF, Europe, or anywhere else — I’d love to chat and collaborate!
 
-Slide into my DMs at [@auchenberg](https://x.com/auchenberg) or email me at [kenneth@alleycorp.com](mailto:kenneth@alleycorp.com).
+Drop me a line at [kenneth@alleycorp.com](mailto:kenneth@alleycorp.com) or reach out on X at [@auchenberg](https://x.com/auchenberg).
 
 Best,  
 Kenneth
