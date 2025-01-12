@@ -3,6 +3,15 @@ import Layout from '../../components/layout';
 import Markdoc from '@markdoc/markdoc';
 import path from 'path';
 import fs from 'fs';
+import Prism from 'prismjs';
+
+import "prismjs/components/prism-cshtml";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-markdown";
 
 import { getBlogPostBySlug, getBlogPosts } from '../../helpers/getPosts';
 
@@ -11,17 +20,35 @@ import { Tweet } from 'react-tweet'
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import { InstagramEmbed } from 'react-social-media-embed';
+import 'prismjs/themes/prism.css';
 
 const markDocConfig = {
   nodes: {
     table: {
       render: 'Table'
-    }
+    },
+    fence: {
+      render: 'CodeBlock',
+      attributes: {
+        language: {
+          type: String,
+          default: 'text',
+        },
+        source: {
+          type: String,
+        },
+        content: { type: String },
+      },
+    },
   },
   tags: {
     tweet_embed: {
       render: 'Tweet',
       description: 'Display an embedded Tweet',
+    },
+    references: {
+      render: 'References',
+      description: 'Display a list of references',
     },
     image: {
       render: 'ZoomableImage',
@@ -61,7 +88,7 @@ const markDocConfig = {
           required: true,
         },
       },
-    },
+    }
   },
 };
 
@@ -107,6 +134,35 @@ const markDocComponents = {
         <table>
           {children}
         </table>
+      </div>
+    );
+  },
+  References: ({ children }) => {
+    return (
+      <div className='references'>
+        {children}
+      </div>
+    );
+  },
+  CodeBlock: ({ language, children, source }) => {
+
+    let content = Prism.highlight(children, Prism.languages[language], language);
+
+    return (
+      <div className="code-block">
+        <pre className="">
+          <code
+            className={`language-${language}`}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </pre>
+        {
+          path && (
+            <div className="source-link text-center">
+              Source: <a href={source} target="_blank">{source}</a>
+            </div>
+          )
+        }
       </div>
     );
   },
@@ -159,7 +215,7 @@ const Post = (props) => {
     <Layout
       title={post.title}
       socialImage={socialImageUrl}
-      description={post.description}
+      description={post.descripwtion}
       center
     >
       <div className="post">
@@ -270,7 +326,37 @@ const Post = (props) => {
         :global(.react-tweet-theme img) {
          margin: 0;
         }  
-        
+
+        :global(.code-block) {
+                 margin: 20px 0;
+        }
+
+        :global(.code-block pre) {
+          background: #f6f8fa;
+          padding: 20px;
+          border-radius: 5px;
+          overflow: auto;
+          font-size: 14px;
+        }
+
+        :global(.code-block pre code) {
+          font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+          font-size: 12px;
+          line-height: 1;
+        }
+
+        :global(.code-block .source-link) {
+          font-size: 12px;
+        } 
+
+        :global(.references ul) {
+          padding-left: 20px;
+        }        
+
+        :global(.references ul li) {
+          margin-bottom: 5px;
+        }
+
       `}</style>
     </Layout>
   );
