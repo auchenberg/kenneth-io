@@ -100,7 +100,7 @@ Currently, APIs and services are characterized by the following:
 1. **Discovery**: While not as dynamic as Bret Victor might envision, developers discover APIs and services in decentralized ways, without a rigid discovery framework.
 2. **Tightly coupled, but well-defined**: Integrations between systems are often hard-coded, but many API providers offer standardized specifications like OpenAPI, which describe their APIs in a well-defined and consistent format.
 3. **No gatekeepers**: Services are inherently decentralized, with no central app-store-like gatekeeper controlling access. This allows for open and flexible integrations.
-4. **Aggregation**: Unified API providers like Merge exist, but they are the exception rather than the rule. Most service providers publish their APIs independently, maintaining control over the experiences they offer and the methods they use.
+4. **Limited aggregation**: Unified API providers like Merge exist, but they are the exception rather than the rule. Most service providers publish their APIs independently, maintaining control over the experiences they offer and the methods they use.
 
 This decentralized, standardized, and flexible approach offers valuable insights into the potential future evolution of the AI tools and integrations ecosystem.
 
