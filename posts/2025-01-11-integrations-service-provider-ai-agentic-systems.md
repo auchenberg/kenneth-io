@@ -4,6 +4,7 @@ title: 'Integrations and the service-provider side of AI and agentic systems'
 date: 2025-01-21 09:00
 published: true
 comments: true
+og_image: 'https://raw.githubusercontent.com/auchenberg/ai-tools-integrations-market-map/refs/heads/main/output/market-map.png'
 categories:
 description:
 ---
