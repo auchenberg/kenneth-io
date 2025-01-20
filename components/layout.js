@@ -9,8 +9,13 @@ const Layout = (props) => {
   let defaultTitle = "Hej";
   let title = `${props.title || defaultTitle}`;
   let formattedTitle = `${title} | Kenneth Auchenberg`;
+  let image = '';
 
-  let image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${title}`);
+  if (props.socialImage && props.socialImage.startsWith('http')) {
+    image = props.socialImage;
+  } else {
+    image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${title}`);
+  }
 
   return (
     <>
