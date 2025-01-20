@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Integrations and the service-provider side of AI and agentic systems'
-date: 2025-01-21 09:00
+date: 2025-01-20 09:00
 published: true
 comments: true
 og_image: 'https://raw.githubusercontent.com/auchenberg/ai-tools-integrations-market-map/refs/heads/main/output/market-map.png'
@@ -13,7 +13,7 @@ As we move into an agentic world where AI systems will take actions on our behal
 
 Looking back at 2024, we saw a range of new frameworks and runtimes focused on building AI systems (and agents), but far fewer companies focused on the service provider side of AI and agentic systems — which, in my opinion, is the most critical aspect.
 
-In the not-so-distant future, we will all have agents working on our behalf. Some agents will be built into our phones and laptops ([Apple Intelligence](https://www.apple.com/apple-intelligence/) and [Gemini](https://blog.google/products/android/android-gemini-google-ai/)), while others will address more vertical-specific needs, such as writing code ([Augment Code](https://www.augmentcode.com/), [Devin](https://www.cognition.ai/), [Cursor](https://www.cursor.com/)), managing customer service ([Lorikeet](https://www.lorikeetcx.ai/) and [Intercom Fin](https://www.intercom.com/fin)), or conducting research ([Perplexity](https://www.perplexity.ai/)).
+In the not-so-distant future, we will all have agents working on our behalf. Some agents will be built into our phones and laptops ([Apple Intelligence](https://www.apple.com/apple-intelligence/) and [Gemini](https://blog.google/products/android/android-gemini-google-ai/)), while others will address more vertical-specific needs, such as code generation tools ([Devin](https://www.cognition.ai/), [Cursor](https://www.cursor.com/), or [Augment Code](https://www.augmentcode.com/)), managing customer service ([Lorikeet](https://www.lorikeetcx.ai/) and [Intercom Fin](https://www.intercom.com/fin)), or conducting research ([Perplexity](https://www.perplexity.ai/)).
 
 The common thread among all these agents is that they need to interact with the existing world of services and software to **retrieve production data and take actions on the user’s behalf via tools**.
 
@@ -111,6 +111,8 @@ In typical VC fashion, I’ve created a new market map of what I call the `AI to
 The landscape is divided into several layers, spanning from the most high-level integration layer to the most low-level model provider layer. It features the startups and companies that I find most interesting in this space. Naturally, this is not a comprehensive list.
 
 {% image src="https://raw.githubusercontent.com/auchenberg/ai-tools-integrations-market-map/refs/heads/main/output/market-map.png" /%}
+
+The market map is also available as an interactive site on [https://ai-tools-integrations-market-map.vercel.app/](https://ai-tools-integrations-market-map.vercel.app/).
 
 If you think I missed something, I’ve made the market map fully [open-source and updatable via GitHub](https://github.com/auchenberg/ai-tools-integrations-market-map/), so feel free to contribute by [opening a PR](https://github.com/auchenberg/ai-tools-integrations-market-map/?tab=readme-ov-file#how-to-contribute) to either add a company or update an existing one.
 
@@ -217,6 +219,10 @@ That’s it for now.
 
 Best,  
 Kenneth
+
+### Thank you
+
+A big thank you to [Ian Livingstone](https://x.com/ianlivingstone), [Peter Zakin](https://x.com/pzaki), [Charlie Robbins](https://x.com/indexzero), [Davis Treybig](https://x.com/TreybigDavis), [James Dillard](https://x.com/jamesdillard), [Jeff Silverstein](https://x.com/jeffreysilv), [Paul Butler](https://x.com/paulgb), [Paul Klein](https://x.com/pk_iv), and [Smit Patel](https://x.com/thesmitpatel) for their feedback for this post.
 
 ### Relevant reading
 
