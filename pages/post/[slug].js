@@ -215,7 +215,7 @@ const Post = (props) => {
     <Layout
       title={post.title}
       socialImage={socialImageUrl}
-      description={post.descripwtion}
+      description={post.description}
       center
     >
       <div className="post">
