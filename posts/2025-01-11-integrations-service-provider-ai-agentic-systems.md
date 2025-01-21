@@ -21,9 +21,9 @@ Today, this behavior has emerged as `tools for LLMs`, where every major model pr
 
 It’s January 2025, and tools for LLMs are the Wild West.
 
-Each service provider must figure out how to make their services available to a given LLM or agent. This varies across every AI provider, every LLM, and every AI agent framework. In many ways, this feels similar to the early days of Web 2.0, when building mashups was painful — until a standard like OAuth emerged to solve authentication challenges and introduce a well-defined workflow for interacting with third-party APIs.
-
 ## Using tools with AI agents today is like the early days of Web 2.0
+
+Each service provider must figure out how to make their services available to a given LLM or agent. This varies across every AI provider, every LLM, and every AI agent framework. In many ways, this feels similar to the early days of Web 2.0, when building mashups was painful — until a standard like OAuth emerged to solve authentication challenges and introduce a well-defined workflow for interacting with third-party APIs.
 
 Today, if you are building an agent, you are likely first choosing which framework you want to use. Then, you select a model provider. If you want your agent to interact with tools and services, you have two options:
 
