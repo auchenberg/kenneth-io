@@ -11,6 +11,7 @@ export default class Nav extends React.Component {
       <nav className="menu">
         <a href="/posts">Thoughts</a>
         <a href="https://instagram.com/auchenberg">Photography</a>
+        <a href="/objects">Objects</a>
 
         <style jsx>{`
           .menu {
