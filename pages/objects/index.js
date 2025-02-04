@@ -2,28 +2,9 @@ import React from 'react';
 import Layout from '../../components/layout';
 import Link from 'next/link';
 import Image from 'next/image';
-
 // Inspiration: https://paulstamatiou.com/
 
-// Hardware
-// https://paulstamatiou.com/gear/apple-studio-display
-// https://paulstamatiou.com/gear/apple-macbook-pro
-// https://paulstamatiou.com/gear/apple-iphone-first-generation
 
-// Watches
-// https://paulstamatiou.com/gear/omega-speedmaster-38
-// IWC HOdinkee
-
-// Travel
-// https://paulstamatiou.com/gear/apple-airtags
-// Rimowa
-
-// Fashion
-// https://paulstamatiou.com/gear/peak-design-everyday
-
-// Photography
-// https://paulstamatiou.com/gear/leica-m11-rangefinder
-// https://paulstamatiou.com/gear/leica-q3-43
 
 // Furniture
 // Vitsoe shelves
@@ -45,36 +26,40 @@ const ObjectsPage = () => {
   const categories = {
     'Work': [
       {
+        name: 'Apple Macbook Pro 13',
+        description: 'My daily driver.',
+        link: 'https://www.apple.com/macbook-pro-13/',
+        image: '/images/objects/apple-macbook-pro.jpg'
+      },
+      {
         name: 'Apple Studio Display',
-        description: 'My main display.',
+        description: 'My main display with a wonderful 5k panel, webcam and speakers.',
         link: 'https://www.apple.com/studio-display/',
-        image: '/images/objects/studio-display.jpg'
+        image: '/images/objects/apple-studio-display.jpg'
       },
       {
         name: 'Bang & Olufsen H95',
-        description: 'Premium active noise-cancelling headphones with exceptional sound quality and craftsmanship. The titanium drivers and leather ear cushions make these my go-to headphones for focused work and travel.',
+        description: 'My go-to headphones for focused work and travel.',
         link: 'https://www.bang-olufsen.com/en/us/headphones/beoplay-h95',
         image: '/images/objects/bang-olfsen-h95.jpg'
       },
       {
         name: 'Apple iPhone 16 Pro',
-        description: 'My daily driver and mobile computing device.',
+        description: 'My mobile driver.',
         link: 'https://www.apple.com/iphone-16-pro/',
         image: '/images/objects/apple-iphone-16-pro.jpg'
       },
-      {}
-
     ],
     'Photography': [
       {
-        name: 'Leica M11 Monochrome Rangefinder',
+        name: 'Leica M11 Monochrome',
         description: 'My favorite camera for street photography.',
         link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
         image: '/images/objects/leica-m11-monochrome.jpg'
       },
       {
         name: 'Leica Q3',
-        description: 'My favorite camera for street photography.',
+        description: 'My favorite camera for everything else.',
         link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
         image: '/images/objects/leica-q3.jpg'
       }
@@ -82,16 +67,16 @@ const ObjectsPage = () => {
     'Furniture': [
       {
         name: 'Vitsoe Shelves',
-        description: 'My favorite way to store my books and other items.',
-        link: 'https://www.vitsoe.com/products/shelves',
+        description: 'Timeless Dieter Rams design.',
+        link: 'https://www.vitsoe.com/us/606',
         image: '/images/objects/vitsoe.jpg'
       }
     ],
     'Cars': [
       {
         name: '2019 Porsche 911 GT3 Touring',
-        description: 'My daily driver and mobile computing device.',
-        link: 'https://www.apple.com/iphone-16-pro/',
+        description: 'The ultimate driving machine.',
+        link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
         image: '/images/objects/porsche-911-gt3-touring.jpg'
       }
     ],
@@ -101,26 +86,24 @@ const ObjectsPage = () => {
         description: 'My favorite watch for everyday wear.',
         link: 'https://www.omegawatches.com/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001002',
         image: '/images/objects/omega-speedmaster.jpg'
+      },
+      {
+        name: 'IWC Hodinkee',
+        description: 'My favorite re-issue watch.',
+        link: 'https://limited.hodinkee.com/iwc/',
+        image: '/images/objects/iwc1.jpg'
       }
     ],
-    // 'Fashion': [
-    //   {
-    //     name: 'Peak Design Everyday',
-    //     description: 'My favorite everyday bag.',
-    //     link: 'https://www.peakdesign.com/products/everyday-bag',
-    //     image: '/images/objects/peak-design-everyday.jpg'
-    //   }
-    // ],
     'Travel': [
       {
         name: 'Apple AirTags',
-        description: 'My favorite way to find my keys and other small items.',
+        description: 'Genius hardware.',
         link: 'https://www.apple.com/airtags/',
-        image: '/images/objects/airtag.jpg'
+        image: '/images/objects/airtags.jpg'
       },
       {
         name: 'Rimowa',
-        description: 'My favorite luggage.',
+        description: 'My favorite luggage. Expensive, but worth it.',
         link: 'https://www.rimowa.com/en-us',
         image: '/images/objects/rimowa.jpg'
       }
@@ -172,12 +155,14 @@ const ObjectsPage = () => {
       <style jsx>{`
         .objects {
           margin: 0 auto;
-          max-width: 600px;
+          max-width: 1200px;
+          padding: 0 20px;
         }
 
         .intro {
           color: #666;
           margin-bottom: 40px;
+          max-width: 600px;
         }
 
         section {
@@ -193,7 +178,14 @@ const ObjectsPage = () => {
 
         .items {
           display: grid;
+          grid-template-columns: repeat(1, 1fr);
           gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+          .items {
+            grid-template-columns: 1fr;
+          }
         }
 
         .item {
@@ -203,15 +195,19 @@ const ObjectsPage = () => {
         :global(.image-container) {
           position: relative;
           margin-bottom: 15px;
-          border-radius: 8px;
+          border-radius: 10px;
           overflow: hidden;
+          background-color: #fff;
+          aspect-ratio: 16/9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         :global(.item-image) {
           width: 100%;
-          height: auto;
-          max-height: 300px;
-          object-fit: contain;
+          height: 100%;
+          object-fit: cover;
           transition: transform 0.3s ease;
         }
 
@@ -243,6 +239,8 @@ const ObjectsPage = () => {
           margin: 0;
           font-size: 14px;
           line-height: 1.6;
+          min-height: 50px;
+          display: inline-block;
         }
       `}</style>
     </Layout>
