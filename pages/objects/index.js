@@ -5,23 +5,6 @@ import Image from 'next/image';
 // Inspiration: https://paulstamatiou.com/
 
 
-
-// Furniture
-// Vitsoe shelves
-// Wishbone chair
-// Eames lounge chair
-// https://paulstamatiou.com/gear/kismas-doric-lamp
-// https://paulstamatiou.com/gear/xiaomi-mi-led-desk-lamp
-
-// Cars
-// 2019 Porsche 911 GT3 Touring
-// 1987 Porsche 930 Turbo`
-// Porsche 964
-// 2019 Mercedes-Benz AMG G-63
-
-// Books
-
-
 const ObjectsPage = () => {
   const categories = {
     'Work': [
@@ -70,14 +53,32 @@ const ObjectsPage = () => {
         description: 'Timeless Dieter Rams design.',
         link: 'https://www.vitsoe.com/us/606',
         image: '/images/objects/vitsoe.jpg'
+      },
+      {
+        name: 'Carl Hansen & Son Wishbone Chair',
+        description: 'A timeless chair.',
+        link: 'https://www.carlhansen.com/en/en/collection/chairs/dining-chairs/ch24',
+        image: '/images/objects/wishbone-chair.jpg'
+      },
+      {
+        name: 'Isamu Noguchi Akari',
+        description: 'Simple, beautiful and functional.',
+        link: 'https://shop.noguchi.org/collections/akari-light-sculptures',
+        image: '/images/objects/akari.jpg'
       }
     ],
     'Cars': [
       {
         name: '2019 Porsche 911 GT3 Touring',
-        description: 'The ultimate driving machine.',
+        description: 'GT Silver.',
         link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
         image: '/images/objects/porsche-911-gt3-touring.jpg'
+      },
+      {
+        name: '1993 Porsche 964 Carrera 4',
+        description: 'Oak Green Metallic',
+        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
+        image: '/images/objects/porsche-964.jpg'
       }
     ],
     'Watches': [
