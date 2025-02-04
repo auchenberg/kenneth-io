@@ -112,8 +112,8 @@ const ObjectsPage = () => {
 
   return (
     <Layout
-      title="Objects"
-      description="A collection of objects I appreciate and use."
+      title="Objects - a curated collection of objects I appreciate and use in my daily life."
+      description="A curated collection of objects I appreciate and use in my daily life."
       center
     >
       <div className="objects">
