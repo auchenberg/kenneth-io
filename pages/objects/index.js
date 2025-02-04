@@ -12,6 +12,7 @@ import Image from 'next/image';
 
 // Watches
 // https://paulstamatiou.com/gear/omega-speedmaster-38
+// IWC HOdinkee
 
 // Travel
 // https://paulstamatiou.com/gear/apple-airtags
@@ -22,7 +23,6 @@ import Image from 'next/image';
 
 // Photography
 // https://paulstamatiou.com/gear/leica-m11-rangefinder
-// https://paulstamatiou.com/gear/teenage-engineering-tp-7-field-recorder
 // https://paulstamatiou.com/gear/leica-q3-43
 
 // Furniture
@@ -38,13 +38,15 @@ import Image from 'next/image';
 // Porsche 964
 // 2019 Mercedes-Benz AMG G-63
 
+// Books
+
 
 const ObjectsPage = () => {
   const categories = {
     'Work': [
       {
         name: 'Apple Studio Display',
-        description: 'My main display for coding and content creation.',
+        description: 'My main display.',
         link: 'https://www.apple.com/studio-display/',
         image: '/images/objects/studio-display.jpg'
       },
@@ -58,7 +60,7 @@ const ObjectsPage = () => {
         name: 'Apple iPhone 16 Pro',
         description: 'My daily driver and mobile computing device.',
         link: 'https://www.apple.com/iphone-16-pro/',
-        image: '/images/objects/iphone-15-pro.jpg'
+        image: '/images/objects/apple-iphone-16-pro.jpg'
       },
       {}
 
@@ -82,7 +84,7 @@ const ObjectsPage = () => {
         name: 'Vitsoe Shelves',
         description: 'My favorite way to store my books and other items.',
         link: 'https://www.vitsoe.com/products/shelves',
-        image: '/images/objects/vitsoe-shelves.jpg'
+        image: '/images/objects/vitsoe.jpg'
       }
     ],
     'Cars': [
@@ -95,26 +97,32 @@ const ObjectsPage = () => {
     ],
     'Watches': [
       {
-        name: 'Omega Speedmaster 38',
+        name: 'Omega Speedmaster Professional',
         description: 'My favorite watch for everyday wear.',
-        link: 'https://www.omega.com/en-us/watches/speedmaster-38',
-        image: '/images/objects/omega-speedmaster-38.jpg'
+        link: 'https://www.omegawatches.com/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001002',
+        image: '/images/objects/omega-speedmaster.jpg'
       }
     ],
-    'Fashion': [
-      {
-        name: 'Peak Design Everyday',
-        description: 'My favorite everyday bag.',
-        link: 'https://www.peakdesign.com/products/everyday-bag',
-        image: '/images/objects/peak-design-everyday.jpg'
-      }
-    ],
+    // 'Fashion': [
+    //   {
+    //     name: 'Peak Design Everyday',
+    //     description: 'My favorite everyday bag.',
+    //     link: 'https://www.peakdesign.com/products/everyday-bag',
+    //     image: '/images/objects/peak-design-everyday.jpg'
+    //   }
+    // ],
     'Travel': [
       {
         name: 'Apple AirTags',
         description: 'My favorite way to find my keys and other small items.',
         link: 'https://www.apple.com/airtags/',
         image: '/images/objects/airtag.jpg'
+      },
+      {
+        name: 'Rimowa',
+        description: 'My favorite luggage.',
+        link: 'https://www.rimowa.com/en-us',
+        image: '/images/objects/rimowa.jpg'
       }
     ]
   };
