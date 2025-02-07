@@ -9,8 +9,53 @@ const TravelMap = () => {
 
     // Countries I've visited (use full country names)
     const visitedCountries = [
-        'United States of America', 'Canada', 'Mexico', 'United Kingdom', 'France', 'Germany', 'Italy', 'Spain',
-        'Portugal', 'Denmark', 'Sweden', 'Norway', 'Japan', 'Korea, Republic of', 'Singapore', 'Australia'
+        // North America
+        'Canada',
+        'Cuba',
+        'Mexico',
+        'United States of America',
+
+        // Europe
+        'Austria',
+        'Belgium',
+        'Bulgaria',
+        'Czech Republic',
+        'Denmark',
+        'France',
+        'Germany',
+        'Greece',
+        'Iceland',
+        'Italy',
+        'Netherlands',
+        'Norway',
+        'Portugal',
+        'Romania',
+        'Spain',
+        'Sweden',
+        'Switzerland',
+        'United Kingdom',
+
+        // Asia
+        'Bangladesh',
+        'Cambodia',
+        'China',
+        'India',
+        'Indonesia',
+        'Japan',
+        'Korea, Republic of',
+        "Lao People's Democratic Republic",
+        'Malaysia',
+        'Myanmar',
+        'Qatar',
+        'Singapore',
+        'Taiwan',
+        'Thailand',
+        'Timor-Leste',
+        'Vietnam',
+
+        // South America
+        'Argentina',
+        'Colombia',
     ];
 
     useEffect(() => {
