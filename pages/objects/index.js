@@ -79,6 +79,12 @@ const ObjectsPage = () => {
         description: 'Oak Green Metallic',
         link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
         image: '/images/objects/porsche-964.jpg'
+      },
+      {
+        name: '1989 Porsche 930 Turbo 3.3',
+        description: 'Black',
+        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/#open-911-turbo',
+        image: '/images/objects/porsche-930.jpg'
       }
     ],
     'Watches': [
