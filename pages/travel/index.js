@@ -70,14 +70,15 @@ const TravelMap = () => {
         // Clear any existing SVG
         container.selectAll("*").remove();
 
-        // Create SVG
+        // Create SVG with touch-action manipulation
         const svg = container
             .append('svg')
             .attr('width', width)
             .attr('height', height)
             .attr('viewBox', `0 0 ${width} ${height}`)
             .attr('preserveAspectRatio', 'xMidYMid meet')
-            .style('background', '#ffffff');
+            .style('background', '#ffffff')
+            .style('touch-action', 'none'); // Prevent default touch actions
 
         // Create tooltip
         const tooltip = d3.select(mapRef.current)
@@ -171,9 +172,16 @@ const TravelMap = () => {
         // Start animation
         frame();
 
-        // Add zoom behavior
+        // Add zoom behavior with touch support
         const zoom = d3.zoom()
-            .scaleExtent([0.5, 5]) // Allow zoom from half size to 5x
+            .scaleExtent([0.5, 5])
+            .touchable(true) // Enable touch events
+            .filter(event => {
+                // Allow both mouse wheel and touch events
+                return (!event.ctrlKey || event.type === 'wheel') &&
+                    !event.button &&
+                    (event.type !== 'mousedown' || !event.altKey);
+            })
             .on('zoom', function (event) {
                 const newScale = initialScale * event.transform.k;
                 projection.scale(newScale);
@@ -183,9 +191,10 @@ const TravelMap = () => {
                     .style('stroke-width', `${0.5 / event.transform.k}px`);
             });
 
-        // Add drag behavior
+        // Add drag behavior with touch support
         const drag = d3.drag()
-            .on('start', function () {
+            .touchable(true) // Enable touch events
+            .on('start', function (event) {
                 // Stop auto-rotation when dragging starts
                 cancelAnimationFrame(globeRef.current);
                 d3.select(this).style("cursor", "grabbing");
@@ -217,9 +226,21 @@ const TravelMap = () => {
         // Disable double-click zoom
         svg.on("dblclick.zoom", null);
 
+        // Add touch event listeners for iOS
+        svg.node().addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        svg.node().addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+
         // Cleanup
         return () => {
             cancelAnimationFrame(globeRef.current);
+            // Remove touch event listeners
+            svg.node().removeEventListener('gesturestart', null);
+            svg.node().removeEventListener('gesturechange', null);
         };
     }, []);
 
@@ -252,6 +273,8 @@ const TravelMap = () => {
                 .map-container {
                     width: 100%;
                     aspect-ratio: 1;
+                    user-select: none;
+                    touch-action: none;                    
                 }
 
                 header {
