@@ -89,7 +89,7 @@ const ObjectsPage = () => {
       {
         name: '1987 Porsche 911 Targa',
         description: 'Guards Red',
-        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
+        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
         image: '/images/objects/porsche-911-carrera-targa.jpg'
       },
     ],
