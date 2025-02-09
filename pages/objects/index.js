@@ -74,18 +74,24 @@ const ObjectsPage = () => {
         link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
         image: '/images/objects/porsche-911-gt3-touring.jpg'
       },
+      // {
+      //   name: '1993 Porsche 964 Carrera 4',
+      //   description: 'Oak Green Metallic',
+      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
+      //   image: '/images/objects/porsche-964.jpg'
+      // },
+      // {
+      //   name: '1989 Porsche 930 Turbo 3.3',
+      //   description: 'Black',
+      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/#open-911-turbo',
+      //   image: '/images/objects/porsche-930.jpg'
+      // },
       {
-        name: '1993 Porsche 964 Carrera 4',
-        description: 'Oak Green Metallic',
+        name: '1987 Porsche 911 Targa',
+        description: 'Guards Red',
         link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
-        image: '/images/objects/porsche-964.jpg'
+        image: '/images/objects/porsche-911-carrera-targa.jpg'
       },
-      {
-        name: '1989 Porsche 930 Turbo 3.3',
-        description: 'Black',
-        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/#open-911-turbo',
-        image: '/images/objects/porsche-930.jpg'
-      }
     ],
     'Watches': [
       {
