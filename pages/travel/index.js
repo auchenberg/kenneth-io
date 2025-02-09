@@ -61,17 +61,21 @@ const TravelMap = () => {
 
     useEffect(() => {
         // Get the viewport dimensions
-        const width = 600;
-        const height = 600;
+        const container = d3.select(mapRef.current);
+        const containerWidth = container.node().getBoundingClientRect().width;
+        const width = containerWidth;
+        const height = containerWidth; // Keep it square
 
         // Clear any existing SVG
-        d3.select(mapRef.current).selectAll("*").remove();
+        container.selectAll("*").remove();
 
         // Create SVG
-        const svg = d3.select(mapRef.current)
+        const svg = container
             .append('svg')
             .attr('width', width)
             .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`)
+            .attr('preserveAspectRatio', 'xMidYMid meet')
             .style('background', '#ffffff');
 
         // Create tooltip
@@ -220,11 +224,10 @@ const TravelMap = () => {
 
     return (
         <Layout
-            title="Travel Globe"
+            title="Travel"
             description="A map of the places I've visited around the world."
             center
         >
-
             <div className="travel-map">
                 <header>
                     <h1>Travel</h1>
@@ -242,12 +245,12 @@ const TravelMap = () => {
                     margin: 0 auto;
                     max-width: 1200px;
                     padding: 0 20px;
+                    width: 100%;
                 }
 
                 .map-container {
                     width: 100%;
-                    height: 100%;
-                    border-radius: 0;
+                    aspect-ratio: 1;
                 }
 
                 header {
