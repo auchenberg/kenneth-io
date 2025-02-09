@@ -225,29 +225,35 @@ const TravelMap = () => {
             center
         >
 
-            <header>
-                <h1>Travel</h1>
-                <p className="intro">
-                    A map of the places I've visited around the world.
-                </p>
-            </header>
-
-
             <div className="travel-map">
+                <header>
+                    <h1>Travel</h1>
+                    <p className="intro">
+                        A map of the places I've visited around the world.
+                    </p>
+                </header>
+
                 <div className="map-container" ref={mapRef}></div>
             </div>
 
             <style jsx>{`
                 .travel-map {
                     background: #ffffff;
+                    margin: 0 auto;
+                    max-width: 1200px;
+                    padding: 0 20px;
                 }
 
                 .map-container {
                     width: 100%;
                     height: 100%;
                     border-radius: 0;
-                    
-                    
+                }
+
+                header {
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid #eaeaea;
                 }
 
                 :global(.visited) {
