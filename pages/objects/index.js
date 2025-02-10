@@ -7,6 +7,66 @@ import Image from 'next/image';
 
 const ObjectsPage = () => {
   const categories = {
+    'Furniture': [
+      {
+        name: 'Vitsoe Shelves',
+        description: 'Timeless Dieter Rams design.',
+        link: 'https://www.vitsoe.com/us/606',
+        image: '/images/objects/vitsoe.jpg'
+      },
+      {
+        name: 'Carl Hansen & Son Wishbone Chair',
+        description: 'A timeless chair.',
+        link: 'https://www.carlhansen.com/en/en/collection/chairs/dining-chairs/ch24',
+        image: '/images/objects/wishbone-chair.jpg'
+      },
+      {
+        name: 'Isamu Noguchi Akari',
+        description: 'Simple, beautiful and functional.',
+        link: 'https://shop.noguchi.org/collections/akari-light-sculptures',
+        image: '/images/objects/akari.jpg'
+      }
+    ],
+    'Photography': [
+      {
+        name: 'Leica M11 Monochrome',
+        description: 'My favorite camera for street photography.',
+        link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
+        image: '/images/objects/leica-m11-monochrome.jpg'
+      },
+      {
+        name: 'Leica Q3',
+        description: 'My favorite camera for everything else.',
+        link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
+        image: '/images/objects/leica-q3.jpg'
+      }
+    ],
+    'Cars': [
+      {
+        name: '2019 Porsche 911 GT3 Touring',
+        description: 'GT Silver.',
+        link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
+        image: '/images/objects/porsche-911-gt3-touring.jpg'
+      },
+      // {
+      //   name: '1993 Porsche 964 Carrera 4',
+      //   description: 'Oak Green Metallic',
+      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
+      //   image: '/images/objects/porsche-964.jpg'
+      // },
+      // {
+      //   name: '1989 Porsche 930 Turbo 3.3',
+      //   description: 'Black',
+      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/#open-911-turbo',
+      //   image: '/images/objects/porsche-930.jpg'
+      // },
+      {
+        name: '1987 Porsche 911 Targa',
+        description: 'Guards Red.',
+        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
+        image: '/images/objects/porsche-911-carrera-targa.jpg'
+      },
+    ],
     'Work': [
       {
         name: 'Apple Macbook Pro 13',
@@ -33,66 +93,6 @@ const ObjectsPage = () => {
         image: '/images/objects/apple-iphone-16-pro.jpg'
       },
     ],
-    'Photography': [
-      {
-        name: 'Leica M11 Monochrome',
-        description: 'My favorite camera for street photography.',
-        link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
-        image: '/images/objects/leica-m11-monochrome.jpg'
-      },
-      {
-        name: 'Leica Q3',
-        description: 'My favorite camera for everything else.',
-        link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
-        image: '/images/objects/leica-q3.jpg'
-      }
-    ],
-    'Furniture': [
-      {
-        name: 'Vitsoe Shelves',
-        description: 'Timeless Dieter Rams design.',
-        link: 'https://www.vitsoe.com/us/606',
-        image: '/images/objects/vitsoe.jpg'
-      },
-      {
-        name: 'Carl Hansen & Son Wishbone Chair',
-        description: 'A timeless chair.',
-        link: 'https://www.carlhansen.com/en/en/collection/chairs/dining-chairs/ch24',
-        image: '/images/objects/wishbone-chair.jpg'
-      },
-      {
-        name: 'Isamu Noguchi Akari',
-        description: 'Simple, beautiful and functional.',
-        link: 'https://shop.noguchi.org/collections/akari-light-sculptures',
-        image: '/images/objects/akari.jpg'
-      }
-    ],
-    'Cars': [
-      {
-        name: '2019 Porsche 911 GT3 Touring',
-        description: 'GT Silver.',
-        link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
-        image: '/images/objects/porsche-911-gt3-touring.jpg'
-      },
-      // {
-      //   name: '1993 Porsche 964 Carrera 4',
-      //   description: 'Oak Green Metallic',
-      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/964/',
-      //   image: '/images/objects/porsche-964.jpg'
-      // },
-      // {
-      //   name: '1989 Porsche 930 Turbo 3.3',
-      //   description: 'Black',
-      //   link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/#open-911-turbo',
-      //   image: '/images/objects/porsche-930.jpg'
-      // },
-      {
-        name: '1987 Porsche 911 Targa',
-        description: 'Guards Red',
-        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
-        image: '/images/objects/porsche-911-carrera-targa.jpg'
-      },
-    ],
     'Watches': [
       {
         name: 'Omega Speedmaster Professional',
@@ -110,7 +110,7 @@ const ObjectsPage = () => {
     'Travel': [
       {
         name: 'Apple AirTags',
-        description: 'Genius hardware.',
+        description: 'Helps me manage my OCD.',
         link: 'https://www.apple.com/airtags/',
         image: '/images/objects/airtags.jpg'
       },
@@ -191,7 +191,7 @@ const ObjectsPage = () => {
 
         .items {
           display: grid;
-          grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 40px;
         }
 
