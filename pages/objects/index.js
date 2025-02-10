@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const ObjectsPage = () => {
   const categories = {
-    'Furniture': [
+    'Home': [
       {
         name: 'Vitsoe Shelves',
         description: 'Timeless Dieter Rams design.',
@@ -15,8 +15,8 @@ const ObjectsPage = () => {
         image: '/images/objects/vitsoe.jpg'
       },
       {
-        name: 'Carl Hansen & Son Wishbone Chair',
-        description: 'A timeless chair.',
+        name: 'Carl Hansen Wishbone Chair',
+        description: 'A timeless dining chair.',
         link: 'https://www.carlhansen.com/en/en/collection/chairs/dining-chairs/ch24',
         image: '/images/objects/wishbone-chair.jpg'
       },
@@ -25,6 +25,24 @@ const ObjectsPage = () => {
         description: 'Simple, beautiful and functional.',
         link: 'https://shop.noguchi.org/collections/akari-light-sculptures',
         image: '/images/objects/akari.jpg'
+      },
+      {
+        name: 'La Marzocco Linea Micra',
+        description: 'Daily shot of espresso.',
+        link: 'https://home.lamarzoccousa.com/product/linea-micra/',
+        image: '/images/objects/la-marzocco-lInea-micra.jpg'
+      },
+      {
+        name: 'Poul Kjærholm PK22 chair',
+        description: 'A timeless lounge chair.',
+        link: 'https://www.fritzhansen.com/en/categories/by-series/pk22/pk22-upholstered?sku=PK22-ELBLA-SBSS',
+        image: '/images/objects/pk22.jpg'
+      },
+      {
+        name: 'Bang Olufsen Beosound 2',
+        description: 'A timeless speaker.',
+        link: 'https://www.bang-olufsen.com/en/us/speakers/beosound-2',
+        image: '/images/objects/beosound2.jpg'
       }
     ],
     'Photography': [
@@ -76,13 +94,13 @@ const ObjectsPage = () => {
       },
       {
         name: 'Apple Studio Display',
-        description: 'My main display with a wonderful 5k panel, webcam and speakers.',
+        description: 'My main display.',
         link: 'https://www.apple.com/studio-display/',
         image: '/images/objects/apple-studio-display.jpg'
       },
       {
         name: 'Bang & Olufsen H95',
-        description: 'My go-to headphones for focused work and travel.',
+        description: 'My go-to headphones.',
         link: 'https://www.bang-olufsen.com/en/us/headphones/beoplay-h95',
         image: '/images/objects/bang-olfsen-h95.jpg'
       },
@@ -91,6 +109,12 @@ const ObjectsPage = () => {
         description: 'My mobile driver.',
         link: 'https://www.apple.com/iphone-16-pro/',
         image: '/images/objects/apple-iphone-16-pro.jpg'
+      },
+      {
+        name: 'Apple EarPods',
+        description: "Can't do meetings without",
+        link: 'https://www.apple.com/shop/product/MYQY3AM/A/earpods-usb-c',
+        image: '/images/objects/apple-earbuds.jpg'
       },
     ],
     'Watches': [
@@ -110,13 +134,13 @@ const ObjectsPage = () => {
     'Travel': [
       {
         name: 'Apple AirTags',
-        description: 'Helps me manage my OCD.',
+        description: 'Helps me stay sane.',
         link: 'https://www.apple.com/airtags/',
         image: '/images/objects/airtags.jpg'
       },
       {
-        name: 'Rimowa',
-        description: 'My favorite luggage. Expensive, but worth it.',
+        name: 'Rimowa luggages',
+        description: 'Expensive, but worth it.',
         link: 'https://www.rimowa.com/en-us',
         image: '/images/objects/rimowa.jpg'
       }
