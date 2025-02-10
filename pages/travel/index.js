@@ -17,6 +17,7 @@ const TravelMap = () => {
         'United States of America',
 
         // Europe
+        'Andorra',
         'Austria',
         'Belgium',
         'Bulgaria',
