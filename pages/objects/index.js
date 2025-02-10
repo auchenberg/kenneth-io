@@ -2,7 +2,11 @@ import React from 'react';
 import Layout from '../../components/layout';
 import Link from 'next/link';
 import Image from 'next/image';
-// Inspiration: https://paulstamatiou.com/
+
+
+// TODO:
+// - Bookcases
+// - Gaggennau
 
 
 const ObjectsPage = () => {
