@@ -8,6 +8,7 @@
   "dependencies": {
     "@markdoc/markdoc": "^0.1.7",
     "d3": "^7.9.0",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.21",
