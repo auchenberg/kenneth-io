@@ -21,7 +21,7 @@ const TravelMap = () => {
         'Austria',
         'Belgium',
         'Bulgaria',
-        'Czech Republic',
+        'Czechia',
         'Denmark',
         'France',
         'Germany',
