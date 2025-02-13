@@ -19,7 +19,7 @@ const ObjectsPage = () => {
         image: '/images/objects/vitsoe.jpg'
       },
       {
-        name: 'Carl Hansen Wishbone Chair',
+        name: 'Carl Hansen wishbone chair',
         description: 'A timeless dining chair.',
         link: 'https://www.carlhansen.com/en/en/collection/chairs/dining-chairs/ch24',
         image: '/images/objects/wishbone-chair.jpg'
@@ -47,6 +47,12 @@ const ObjectsPage = () => {
         description: 'A timeless speaker.',
         link: 'https://www.bang-olufsen.com/en/us/speakers/beosound-2',
         image: '/images/objects/beosound2.jpg'
+      },
+      {
+        name: 'Arne Jacobsen series 7 chair',
+        description: 'Arne Jacobsen, model 3117 ',
+        link: 'https://www.fritzhansen.com/en/categories/by-series/series-7/series-7-3117-front-upholstered',
+        image: '/images/objects/series7.jpg'
       }
     ],
     'Photography': [
