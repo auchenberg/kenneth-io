@@ -53,6 +53,12 @@ const ObjectsPage = () => {
         description: 'Arne Jacobsen, model 3117 ',
         link: 'https://www.fritzhansen.com/en/categories/by-series/series-7/series-7-3117-front-upholstered',
         image: '/images/objects/series7.jpg'
+      },
+      {
+        name: 'HAY Mags soft sofa',
+        description: 'Danish design at its finest.',
+        link: 'https://www.hay.com/products/furniture/seating/sofas/mags-sofa-collection/mags-soft',
+        image: '/images/objects/hay-mags-soft.jpg'
       }
     ],
     'Photography': [
@@ -126,6 +132,12 @@ const ObjectsPage = () => {
         link: 'https://www.apple.com/shop/product/MYQY3AM/A/earpods-usb-c',
         image: '/images/objects/apple-earbuds.jpg'
       },
+      {
+        name: 'Herman Miller Aeron Chair',
+        description: 'Designed by Bill Stumpf and Don Chadwick',
+        link: 'https://www.hermanmiller.com/products/seating/office-chairs/aeron-chair/',
+        image: '/images/objects/herman-miller-aeron.jpg'
+      }
     ],
     'Watches': [
       {
