@@ -7,6 +7,7 @@ import worldData from '../../public/data/world.json';
 const TravelMap = () => {
     const mapRef = useRef();
     const globeRef = useRef();
+    const rotationStateRef = useRef({ isRotating: true });
 
     // Countries I've visited (use full country names)
     const visitedCountries = [
@@ -113,6 +114,13 @@ const TravelMap = () => {
             .attr('r', initialScale)
             .style('fill', '#fafafa');
 
+        // Initialize rotation variables
+        const rotationState = {
+            rotation: [0, 0],
+            lastTime: d3.now(),
+            speed: 0.01
+        };
+
         // Draw countries
         const countryPaths = g.selectAll('path')
             .data(countries.features)
@@ -135,9 +143,14 @@ const TravelMap = () => {
                     .duration(200)
                     .style("opacity", 1);
 
+                // Calculate position relative to the container
+                const containerRect = mapRef.current.getBoundingClientRect();
+                const tooltipX = event.clientX - containerRect.left + 10;
+                const tooltipY = event.clientY - containerRect.top - 20;
+
                 tooltip.html(d.properties.name)
-                    .style("left", (event.pageX + 10) + "px")
-                    .style("top", (event.pageY - 20) + "px");
+                    .style("left", tooltipX + "px")
+                    .style("top", tooltipY + "px");
             })
             .on('mouseout', function (event, d) {
                 d3.select(this)
@@ -148,56 +161,80 @@ const TravelMap = () => {
                     .style("opacity", 0);
             });
 
-        // Add rotation
-        let rotate = [0, 0];
-        let lastTime = d3.now();
+        // Add resume button
+        const resumeButton = d3.select(mapRef.current)
+            .append("div")
+            .attr("class", "resume-button")
+            .style("opacity", 0)
+            .style("pointer-events", "none")
+            .html("Resume Rotation")
+            .on("click", function () {
+                // Store current rotation
+                rotationState.rotation = projection.rotate();
+                rotationState.lastTime = d3.now();
 
-        function frame() {
-            // Time passed since last frame
-            const now = d3.now();
-            const diff = now - lastTime;
-            lastTime = now;
+                // Update state and UI
+                rotationStateRef.current.isRotating = true;
+                d3.select(this)
+                    .style("opacity", 0)
+                    .style("pointer-events", "none");
 
-            // Update rotation
-            rotate[0] += diff * 0.01;
-
-            // Update projection
-            projection.rotate([rotate[0], rotate[1]]);
-
-            // Update all paths
-            countryPaths.attr('d', path);
-
-            globeRef.current = requestAnimationFrame(frame);
-        }
-
-        // Start animation
-        frame();
-
-        // Add zoom behavior with touch support
-        const zoom = d3.zoom()
-            .scaleExtent([0.5, 5])
-            .touchable(true) // Enable touch events
-            .filter(event => {
-                // Allow both mouse wheel and touch events
-                return (!event.ctrlKey || event.type === 'wheel') &&
-                    !event.button &&
-                    (event.type !== 'mousedown' || !event.altKey);
-            })
-            .on('zoom', function (event) {
-                const newScale = initialScale * event.transform.k;
-                projection.scale(newScale);
-                sphere.attr('r', newScale);
-                countryPaths.attr('d', path);
-                g.selectAll('path')
-                    .style('stroke-width', `${0.5 / event.transform.k}px`);
+                // Start animation
+                startAnimation();
             });
 
-        // Add drag behavior with touch support
-        const drag = d3.drag()
-            .touchable(true) // Enable touch events
-            .on('start', function (event) {
-                // Stop auto-rotation when dragging starts
+        // Function to stop rotation
+        const stopRotation = function () {
+            if (rotationStateRef.current.isRotating) {
+                rotationStateRef.current.isRotating = false;
                 cancelAnimationFrame(globeRef.current);
+
+                // Save current rotation state
+                rotationState.rotation = projection.rotate();
+
+                // Show resume button
+                resumeButton
+                    .style("opacity", 1)
+                    .style("pointer-events", "auto");
+            }
+        };
+
+        // Animation frame function
+        function animate() {
+            if (!rotationStateRef.current.isRotating) return;
+
+            const now = d3.now();
+            const diff = now - rotationState.lastTime;
+            rotationState.lastTime = now;
+
+            // Update rotation based on current position
+            rotationState.rotation[0] += diff * rotationState.speed;
+            projection.rotate(rotationState.rotation);
+
+            // Update paths
+            countryPaths.attr('d', path);
+
+            // Continue animation
+            globeRef.current = requestAnimationFrame(animate);
+        }
+
+        // Function to start animation
+        function startAnimation() {
+            if (rotationStateRef.current.isRotating) {
+                animate();
+            }
+        }
+
+        // Initialize animation if needed
+        if (rotationStateRef.current.isRotating) {
+            startAnimation();
+        }
+
+        // Drag behavior
+        const drag = d3.drag()
+            .touchable(true)
+            .on('start', function () {
+                stopRotation();
                 d3.select(this).style("cursor", "grabbing");
             })
             .on('drag', function (event) {
@@ -210,18 +247,44 @@ const TravelMap = () => {
                 countryPaths.attr('d', path);
             })
             .on('end', function () {
-                // Update the rotation state to match the current projection rotation
-                rotate = projection.rotate();
-                lastTime = d3.now();
-                frame();
+                // Update rotation state with current projection
+                rotationState.rotation = projection.rotate();
                 d3.select(this).style("cursor", "grab");
             });
 
-        // Apply behaviors to different elements
+        // Click handler for stopping rotation
+        g.on("click", function (event) {
+            if (!event.defaultPrevented) {
+                stopRotation();
+            }
+        });
+
+        // Zoom behavior
+        const zoom = d3.zoom()
+            .scaleExtent([0.5, 5])
+            .touchable(true)
+            .filter(event => {
+                return (!event.ctrlKey || event.type === 'wheel') &&
+                    !event.button &&
+                    (event.type !== 'mousedown' || !event.altKey);
+            })
+            .on('start', function () {
+                stopRotation();
+            })
+            .on('zoom', function (event) {
+                const newScale = initialScale * event.transform.k;
+                projection.scale(newScale);
+                sphere.attr('r', newScale);
+                countryPaths.attr('d', path);
+                g.selectAll('path')
+                    .style('stroke-width', `${0.5 / event.transform.k}px`);
+            });
+
+        // Apply behaviors
         svg.call(zoom);
         g.call(drag);
 
-        // Set initial cursor style
+        // Set cursor style
         g.style("cursor", "grab");
 
         // Disable double-click zoom
@@ -239,11 +302,10 @@ const TravelMap = () => {
         // Cleanup
         return () => {
             cancelAnimationFrame(globeRef.current);
-            // Remove touch event listeners
             svg.node().removeEventListener('gesturestart', null);
             svg.node().removeEventListener('gesturechange', null);
         };
-    }, []);
+    }, []); // No dependency on React state
 
     return (
         <Layout
@@ -275,7 +337,8 @@ const TravelMap = () => {
                     width: 100%;
                     aspect-ratio: 1;
                     user-select: none;
-                    touch-action: none;                    
+                    touch-action: none;
+                    position: relative;          
                 }
 
                 header {
@@ -307,6 +370,26 @@ const TravelMap = () => {
                     pointer-events: none;
                     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                     z-index: 100;
+                    transform: translate(0, 0); /* Ensures positioning is exact */
+                }
+
+                :global(.resume-button) {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(255, 255, 255, 0.95);
+                    border: 1px solid #e0e0e0;
+                    border-radius: 4px;
+                    padding: 8px 16px;
+                    font: 14px/1.5 system-ui, sans-serif;
+                    cursor: pointer;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    transition: all 0.2s ease;
+                }
+
+                :global(.resume-button:hover) {
+                    background: #f0f0f0;
                 }
             `}</style>
         </Layout>
