@@ -264,9 +264,8 @@ const TravelMap = () => {
             .scaleExtent([0.5, 5])
             .touchable(true)
             .filter(event => {
-                return (!event.ctrlKey || event.type === 'wheel') &&
-                    !event.button &&
-                    (event.type !== 'mousedown' || !event.altKey);
+                // Simplified filter for better touch support
+                return !event.button || event.type === 'touchstart';
             })
             .on('start', function () {
                 stopRotation();
@@ -290,20 +289,36 @@ const TravelMap = () => {
         // Disable double-click zoom
         svg.on("dblclick.zoom", null);
 
-        // Add touch event listeners for iOS
-        svg.node().addEventListener('gesturestart', function (e) {
-            e.preventDefault();
-        });
+        // Improved touch event handling for mobile
+        const handleTouch = (e) => {
+            if (e.touches && e.touches.length === 2) {
+                e.preventDefault();
+                stopRotation();
+            }
+        };
 
-        svg.node().addEventListener('gesturechange', function (e) {
+        svg.node().addEventListener('touchstart', handleTouch, { passive: false });
+        svg.node().addEventListener('touchmove', handleTouch, { passive: false });
+
+        // Add gesture event listeners for iOS with proper zoom handling
+        const handleGesture = (e) => {
+            console.log('gesture', e);
             e.preventDefault();
-        });
+            stopRotation();
+        };
+
+        svg.node().addEventListener('gesturestart', handleGesture, { passive: false });
+        svg.node().addEventListener('gesturechange', handleGesture, { passive: false });
+        svg.node().addEventListener('gestureend', handleGesture, { passive: false });
 
         // Cleanup
         return () => {
             cancelAnimationFrame(globeRef.current);
-            svg.node().removeEventListener('gesturestart', null);
-            svg.node().removeEventListener('gesturechange', null);
+            svg.node().removeEventListener('touchstart', handleTouch);
+            svg.node().removeEventListener('touchmove', handleTouch);
+            svg.node().removeEventListener('gesturestart', handleGesture);
+            svg.node().removeEventListener('gesturechange', handleGesture);
+            svg.node().removeEventListener('gestureend', handleGesture);
         };
     }, []); // No dependency on React state
 
