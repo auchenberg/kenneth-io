@@ -1,22 +1,33 @@
 ---
-title: 'Bucket List'
+title: 'Lists'
 description: 'Things I want to do, see, and experience in my lifetime'
 ---
 
 ## Travel & Places
 
-- [x] See the Northern Lights
-- [x] Solo backpack Asia
-- [ ] Visit all 7 continents
+- [x] See the Northern Lights in Island
+- [x] Solo backpack trip
 - [ ] Road trip across the United States
 - [ ] Visit Japan during cherry blossom season
 - [ ] Explore the Swiss Alps
 - [ ] Safari in Africa
-- [ ] Visit Machu Picchu
-- [ ] See the Great Wall of China
 - [ ] Experience the midnight sun in Norway
 - [ ] Visit New Zealand
-- [ ] Visit all continents
+- [ ] Visit Africa continent
+- [ ] Visit Oceania continent
+- [ ] Visit Antarctica continent
+- [x] Visit Asia continent
+- [x] Visit North America continent
+- [x] Visit South America continent
+- [x] Visit Europe continent
+- [ ] New 7 Wonders of the World: Great Pyramid of Giza
+- [ ] New 7 Wonders of the World: Great Wall of China
+- [ ] New 7 Wonders of the World: Petra
+- [ ] New 7 Wonders of the World: Colosseum
+- [ ] New 7 Wonders of the World: Chichén Itzá
+- [ ] New 7 Wonders of the World: Machu Picchu
+- [ ] New 7 Wonders of the World: Taj Mahal
+- [ ] New 7 Wonders of the World: Christ the Redeemer
 
 ## Experiences & Adventures
 
@@ -39,19 +50,16 @@ description: 'Things I want to do, see, and experience in my lifetime'
 - [ ] Learn to cook like a chef
 - [ ] Get a pilot's license
 - [ ] Learn to dance (properly)
+- [ ] Learn to paint or draw well
+- [ ] Learn to meditate regularly
 
 ## Career & Personal
 
+- [x] Start and sell business
 - [ ] Write and publish a book
-- [ ] Give a TED talk
 - [ ] Mentor someone to success
-- [ ] Start a successful business
-- [ ] Learn to meditate regularly
 - [ ] Run a marathon
-- [ ] Build something with my own hands
 - [ ] Create a scholarship or foundation
-- [ ] Learn to paint or draw well
-- [ ] Disconnect from technology for a month
 
 ## Cars & Driving
 
@@ -62,6 +70,7 @@ description: 'Things I want to do, see, and experience in my lifetime'
 - [ ] Get a racing drivers license
 - [ ] Drive on the Nürburgring
 - [ ] Drive Route 66
+- [ ] Drive Tail of the Dragon
 - [ ] Drive in the Swiss Alps
 - [ ] Road trip through Italy, France and Europe.
 - [ ] Visit Porsche Museum in Stuttgart
