@@ -10,7 +10,9 @@ description: 'I’m observing the emergence of a new breed of entrepreneurs: AI-
 
 I’m observing the emergence of a new breed of entrepreneurs: **AI-native founders**. These founders operate from a different assumption: that AI has fundamentally changed how software is built, and by leveraging tools like [Cursor](https://cursor.com/), [Codex](https://openai.com/codex/), [ChatGPT](http://chat.com), and [Bolt](http://bolt.new), they can iterate at incredible speeds, at a fraction of the traditional cost.
 
-This has created a **new reality for early stage investing**, as AI-native founders now are able to _seedstrap_ their companies not just to first design partners, but to meaningful commercial traction — landing more revenue and users than folks thought possible at such early stages. This reshapes how I think about pre-seed and seed funding rounds.
+This has created a **new reality for early stage investing**, as AI-native founders now are able to _seedstrap_ their companies not just to first design partners, but to meaningful commercial traction — landing more revenue and users than folks thought possible at such early stages.
+
+This reshapes how I think about pre-seed and seed funding rounds.
 
 Historically, seed capital was primarily used to hire a handful of engineers to start building out initial product ideas, and after 6-12 months of building, you would be able to launch your first product.
 
@@ -28,7 +30,7 @@ If you've spent more time perfecting your pitch deck than using AI tools to iter
 
 In many ways, this brings us full circle—everything new is old again. We're returning to the foundational principle of venture investing: **backing builders.** The difference now is that AI has democratized building to the point where not having built something is the exception that needs explaining, regardless of whether you have a technical background or not.
 
-But building is just table stakes now. The winners will be founders who can build tastefully, understand their customers deeply and keep a high iteration velocity
+The winners will be founders who can build tastefully, understand their customers deeply and keep a high iteration velocity.
 
 Moving forward, the founders worth backing aren't those who talk about what they're going to build — **they're the ones who have already built something and can show the early edge of traction.**
 
