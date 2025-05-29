@@ -24,7 +24,7 @@ Since anyone can now build software quickly, the differentiator isn't technical 
 
 The new reality is that if you're trying to raise capital in 2025 **without a working vibe-coded prototype**, you're signaling something very clear: you're not an AI-native founder, and you're operating with outdated assumptions.
 
-The new question investors are asking isn't _What will you build?_ but **Why haven't you built something yet?**
+The new question investors are asking isn't _What will you build?_ but **why haven't you built something yet?**
 
 If you've spent more time perfecting your pitch deck than using AI tools to iterate on your actual product, your priorities are backwards. The era of raising money purely on the strength of an idea and polished slides is over — at least for me.
 
