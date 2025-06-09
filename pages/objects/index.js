@@ -187,7 +187,7 @@ const ObjectsPage = () => {
         image: '/images/objects/oliverspeople.jpg'
       },
       {
-        name: 'Common Projects Achilles Leather Sneakers',
+        name: 'Common Projects Achilles',
         description: 'Perfect for everyday wear.',
         link: 'https://www.mrporter.com/en-us/mens/product/common-projects/shoes/low-top-sneakers/original-achilles-leather-sneakers/3024088872901548?utm_source=google&utm_medium=cpc&utm_campaign=GOO%3AMRP%3AAM%3AUS%3ANY%3AENG%3ASEAU%3APLA%3ASLR%3AMXO%3ANEW%3AMN%3ACOMMON-PROJECTS%3ALV0%3ALV1%3ALV2%3AXXX%3A18%3AEMPTY%3A&utm_id=19816477437&utm_term=3074457345616696426&vtp00=GOOGLE&vtp01=SEAU&vtp02=152923875245&vtp03=pla-489161055549&vtp04=g&vtp05=c&vtp06=677061953912&vtp07=pla&gad_source=1&gad_campaignid=19816477437&gbraid=0AAAAADRhcNaJfiY4WSIfanbnSqZzfUxXq&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd4yOhWjLNFlj1ViMhFRIpvq5POSKDT_AYQ3CjzbNKNzs-G_A0HhSMhoCWXMQAvD_BwE',
         image: '/images/objects/common-projects.jpg'
