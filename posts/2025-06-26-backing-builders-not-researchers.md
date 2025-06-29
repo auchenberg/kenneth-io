@@ -18,7 +18,7 @@ That's mostly been true in AI so far. Research-driven investments into foundatio
 
 I'm not saying research labs don't matter — they absolutely do, and we're all thankful for the foundational work they enable. But as most early tech companies didn't work on transistors, they **accrued value** from them. The same will happen in the age of AI, where most of the long-term value will come from **leveraging AI,** not building technology in search of a customer.
 
-This means that the next AI investment thesis is closer to traditional software investing, and the founders worth backing are [AI-native builders](https://kenneth.io/post/ai-native-founders-and-the-new-reality-for-early-stage-investing) — operators who treat GPT, Claude, or even AGI like AWS or Stripe: powerful infrastructure that lets them focus on the hard part of solving real problems for customers.
+This means that the next AI investment thesis is closer to traditional software investing, and the founders worth backing are [AI-native founders](https://kenneth.io/post/ai-native-founders-and-the-new-reality-for-early-stage-investing) — operators who treat GPT, Claude, or even AGI like AWS or Stripe: powerful infrastructure that lets them focus on the hard part of solving real problems for customers.
 
 The next Salesforce or Facebook won't be a foundation model — it'll sure be built on top of one.
 
