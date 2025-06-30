@@ -22,4 +22,4 @@ In this view, AI investing is just software investing, but the founders worth ba
 
 The next Salesforce or Facebook won't be a foundation model — but it will sure be built on top of one.
 
-**The future belongs to builders who ship, not researchers who publish.**
+**The future belongs to those who ship products, not just publish papers.**
