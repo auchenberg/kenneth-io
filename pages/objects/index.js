@@ -59,6 +59,12 @@ const ObjectsPage = () => {
         description: 'Danish design at its finest.',
         link: 'https://www.hay.com/products/furniture/seating/sofas/mags-sofa-collection/mags-soft',
         image: '/images/objects/hay-mags-soft.jpg'
+      },
+      {
+        name: 'Mogens Koch bookcases',
+        description: 'A timeless bookcase.',
+        link: 'https://form-atelier.com/shop/mogens-koch-modular-bookcases-solid-oak',
+        image: '/images/objects/mogens-koch-bookcase.jpg'
       }
     ],
     'Photography': [
