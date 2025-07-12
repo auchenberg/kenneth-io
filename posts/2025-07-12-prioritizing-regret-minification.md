@@ -1,18 +1,18 @@
 ---
 layout: post
-title: 'Prioritizing regret minification'
+title: 'Prioritizing regret minimization'
 date: 2025-07-12 09:00
 published: true
 comments: true
 categories:
-description: 'Prioritizing regret minification'
+description: 'Prioritizing regret minimization'
 ---
 
 I've reached that age where life stops being all sweet moments and starts throwing real curveballs. In the past few years, I've lost close friends, watched people get terribly sick, and seen carefully laid plans crumble. Your late 30s hit differently as you start seeing your parents age, get sick, and the roles reverse, while you're simultaneously juggling your own career, family, friends, and health.
 
 Suddenly life feels less rosy and more... finite.
 
-This led me to regret minification, which comes down to one simple question:
+This led me to regret minimization, which comes down to one simple question:
 
 **When I'm 80 years old, would I regret not doing this?**
 
@@ -28,7 +28,7 @@ Look, these might be financially questionable decisions, influenced by reading [
 
 Life is short. [The Tail End](https://waitbutwhy.com/2015/12/the-tail-end.html) is coming faster than I anticipated, and the plan you have will never be the plan that happens.
 
-So when I'm facing those gnarly one-way trap door decisions — like moving continents for a new life or pivoting my career — optimizing for minimizing major regrets is how I'm choosing to live my life at the moment.
+So when I'm facing those gnarly one-way trap door decisions — like moving continents for a new life or pivoting my career — optimizing for minimization of major regrets is how I'm choosing to live my life at the moment.
 
 The guiding question remains: _Would I regret not doing this?_
 
