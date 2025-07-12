@@ -28,7 +28,7 @@ Look, these might be financially questionable decisions, influenced by reading [
 
 Life is short. [The Tail End](https://waitbutwhy.com/2015/12/the-tail-end.html) is coming faster than I anticipated, and the plan you have will never be the plan that happens.
 
-So when I'm facing those gnarly one-way trap door decisions — like moving continents for a new life or pivoting my career — optimizing for minimization of major regrets is how I'm choosing to live my life at the moment.
+So when I'm facing those gnarly one-way trap door decisions — like moving continents for a new life or pivoting my career — optimizing to minimize major regrets is how I'm choosing to live my life at the moment.
 
 The guiding question remains: _Would I regret not doing this?_
 
