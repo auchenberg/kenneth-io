@@ -79,7 +79,13 @@ const ObjectsPage = () => {
         description: 'My favorite camera for everything else.',
         link: 'https://www.leica-camera.com/en-us/products/m-system/m11-rangefinder-camera',
         image: '/images/objects/leica-q3.jpg'
-      }
+      },
+      {
+        name: 'Leica Sofort 2',
+        description: 'Leica goes retro',
+        link: 'https://leica-camera.com/en-US/photography/cameras/sofort-2-red?srsltid=AfmBOooNUwq2IkOCymDwQJuTr1A_BglEaNAbhKlcRVlPxEkxz1m28Jz5',
+        image: '/images/objects/leica-sofort.jpg'
+      },
     ],
     'Cars': [
       {
