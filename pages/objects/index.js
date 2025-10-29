@@ -65,7 +65,13 @@ const ObjectsPage = () => {
         description: 'A timeless bookcase.',
         link: 'https://form-atelier.com/shop/mogens-koch-modular-bookcases-solid-oak',
         image: '/images/objects/mogens-koch-bookcase.jpg'
-      }
+      },
+      {
+        name: 'Fellow Stagg EKG Electric Kettle',
+        description: 'A timeless electric kettle.',
+        link: 'https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle',
+        image: '/images/objects/fellow_stagg.png'
+      },
     ],
     'Photography': [
       {
@@ -112,6 +118,12 @@ const ObjectsPage = () => {
         link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
         image: '/images/objects/porsche-911-carrera-targa.jpg'
       },
+      {
+        name: 'Lego Icons 10295 Porsche 911',
+        description: 'My favorite Lego set.',
+        link: 'https://www.lego.com/en-us/product/porsche-911-10295',
+        image: '/images/objects/lego_porsche.png'
+      }
     ],
     'Work': [
       {
@@ -163,6 +175,12 @@ const ObjectsPage = () => {
         description: 'My favorite re-issue watch.',
         link: 'https://limited.hodinkee.com/iwc/',
         image: '/images/objects/iwc1.jpg'
+      },
+      {
+        name: 'Braun BN0021',
+        description: 'My favorite watch for everyday wear.',
+        link: 'https://www.braun.com/en-us/products/watches/bn0021.html',
+        image: '/images/objects/braun_bn0021.png'
       }
     ],
     'Travel': [
