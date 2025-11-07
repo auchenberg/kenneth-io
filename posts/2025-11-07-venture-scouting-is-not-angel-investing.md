@@ -22,8 +22,6 @@ But the money isn't theirs. And that changes everything.
 
 For the fund, scout programs serve as lead generation operations. Partners get access and information rights into early-stage companies, allowing them to track promising startups and potentially invest at later rounds with better information than competitors.
 
-## The incentive problem
-
 What's in it for the scout? Free capital, big-name fund brand, and zero personal risk.
 
 The result: scouts deploy into high-risk bets with house money, then add personal capital only when conviction is high. You might get $50K of scout money and $10K of their own.
