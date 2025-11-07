@@ -5,7 +5,7 @@ date: 2025-11-07 09:00
 published: true
 comments: true
 categories:
-description: 'The difference comes down to skin in the game.'
+description: 'The bar is simple: skin in the game.'
 ---
 
 As someone who started as an angel investor and now works as a full-time investor, I've seen both sides of the early-stage funding equation. There's a fundamental difference between venture scouting and traditional angel investing that founders need to understand.
