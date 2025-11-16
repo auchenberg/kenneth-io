@@ -37,7 +37,7 @@ const ObjectsPage = () => {
         brand: 'Noguchi',
         description: 'Simple, beautiful and functional.',
         link: 'https://shop.noguchi.org/collections/akari-light-sculptures',
-        image: '/images/objects/akari.webp'
+        image: '/images/objects/akari.png'
       },
       {
         name: 'La Marzocco Linea Micra',
@@ -79,14 +79,14 @@ const ObjectsPage = () => {
         brand: 'Vitsoe',
         description: 'Timeless Dieter Rams design.',
         link: 'https://www.vitsoe.com/us/606',
-        image: '/images/objects/vitsoe.jpg'
+        image: '/images/objects/vitsoe-shelves.png'
       },
       {
         name: 'Mogens Koch bookcases',
         brand: 'Mogens Koch',
         description: 'A timeless bookcase.',
         link: 'https://form-atelier.com/shop/mogens-koch-modular-bookcases-solid-oak',
-        image: '/images/objects/mogens-koch-bookcase.jpg'
+        image: '/images/objects/mogens-koch-bookcase.png'
       },
       {
         name: 'Fellow Stagg EKG Electric Kettle',
@@ -132,14 +132,14 @@ const ObjectsPage = () => {
         brand: 'Porsche',
         description: 'GT Silver.',
         link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
-        image: '/images/objects/porsche-911-gt3-touring.jpg'
+        image: '/images/objects/porsche-911-gt3-touring.png'
       },
       {
         name: '1987 Porsche 911 Targa',
         brand: 'Porsche',
         description: 'Guards Red.',
         link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
-        image: '/images/objects/porsche-911-carrera-targa.jpg'
+        image: '/images/objects/porsche-911-targa.png'
       },
       {
         name: 'Lego Icons 10295 Porsche 911',
@@ -172,11 +172,11 @@ const ObjectsPage = () => {
         image: '/images/objects/bang-olfsen-h95.png'
       },
       {
-        name: 'Apple iPhone 16 Pro',
+        name: 'Apple iPhone7 Pro',
         brand: 'Apple',
         description: 'My mobile driver.',
-        link: 'https://www.apple.com/iphone-16-pro/',
-        image: '/images/objects/apple-iphone-16-pro.jpg'
+        link: 'https://www.apple.com/iphone-17-pro/',
+        image: '/images/objects/apple-iphone-17-pro.png'
       },
       {
         name: 'Apple EarPods',
@@ -238,28 +238,28 @@ const ObjectsPage = () => {
         brand: 'Hardgraft',
         description: 'Perfect for daily carry.',
         link: 'https://www.mukama.com/products/hardgraft-flat-pack',
-        image: '/images/objects/flatpack.jpg'
+        image: '/images/objects/hardgraft-flatpack.png'
       },
       {
         name: 'Paul Smith Storm Wool Mac Coat',
         brand: 'Paul Smith',
         description: 'Seasonal staple.',
         link: 'https://www.paulsmith.com/men-s-navy-wool-mac-with-detachable-gilet',
-        image: '/images/objects/coat.jpg'
+        image: '/images/objects/paul-smith-coat.png'
       },
       {
         name: 'Oliver Peoples Oliver Sun',
         brand: 'Oliver Peoples',
         description: 'Wide fit.',
         link: 'https://www.oliverpeoples.com/usa/0OV5393SU--100357',
-        image: '/images/objects/oliverspeople.jpg'
+        image: '/images/objects/oliverspeople.png'
       },
       {
         name: 'Common Projects Achilles',
         brand: 'Common Projects',
         description: 'Perfect for everyday wear.',
         link: 'https://www.mrporter.com/en-us/mens/product/common-projects/shoes/low-top-sneakers/original-achilles-leather-sneakers/3024088872901548?utm_source=google&utm_medium=cpc&utm_campaign=GOO%3AMRP%3AAM%3AUS%3ANY%3AENG%3ASEAU%3APLA%3ASLR%3AMXO%3ANEW%3AMN%3ACOMMON-PROJECTS%3ALV0%3ALV1%3ALV2%3AXXX%3A18%3AEMPTY%3A&utm_id=19816477437&utm_term=3074457345616696426&vtp00=GOOGLE&vtp01=SEAU&vtp02=152923875245&vtp03=pla-489161055549&vtp04=g&vtp05=c&vtp06=677061953912&vtp07=pla&gad_source=1&gad_campaignid=19816477437&gbraid=0AAAAADRhcNaJfiY4WSIfanbnSqZzfUxXq&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd4yOhWjLNFlj1ViMhFRIpvq5POSKDT_AYQ3CjzbNKNzs-G_A0HhSMhoCWXMQAvD_BwE',
-        image: '/images/objects/common-projects.jpg'
+        image: '/images/objects/common-projects.png'
       }
     ]
   };
