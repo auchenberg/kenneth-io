@@ -33,89 +33,31 @@ const Home = () => {
       <style jsx>{`
         @keyframes wave-animation {
           0% {
-            transform: translateY(0) rotate(0deg);
+            transform: rotate(0deg);
           }
           10% {
-            transform: translateY(0) rotate(-10deg);
+            transform: rotate(-10deg);
           }
           20% {
-            transform: translateY(0) rotate(50deg);
+            transform: rotate(50deg);
           }
           30% {
-            transform: translateY(0) rotate(-10deg);
+            transform: rotate(-10deg);
           }
           40% {
-            transform: translateY(0) rotate(9deg);
+            transform: rotate(9deg);
           }
           50% {
-            transform: translateY(0) rotate(0deg);
+            transform: rotate(0deg);
           }
           100% {
-            transform: translateY(0) rotate(0deg);
+            transform: rotate(0deg);
           }
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .home p:not(.wave) {
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        .home p:not(.wave):nth-of-type(2) {
-          animation-delay: 0.1s;
-        }
-
-        .home p:not(.wave):nth-of-type(3) {
-          animation-delay: 0.2s;
-        }
-
-        .home p:not(.wave):nth-of-type(4) {
-          animation-delay: 0.3s;
-        }
-
-        .home p:not(.wave):nth-of-type(5) {
-          animation-delay: 0.4s;
-        }
-
-        .home p:not(.wave):nth-of-type(6) {
-          animation-delay: 0.5s;
-        }
-
-        .home p:not(.wave):nth-of-type(7) {
-          animation-delay: 0.6s;
-        }
-
-        .home p:not(.wave):nth-of-type(8) {
-          animation-delay: 0.7s;
-        }
-
-        .home p:not(.wave):nth-of-type(9) {
-          animation-delay: 0.8s;
-        }
-
-        .home p.wave {
-          font-size: 30px;
-          animation: fadeInUp 0.6s ease-out 0.05s forwards, wave-animation 2.5s ease-in-out 0.65s infinite;
-          transform-origin: 70% 70%;
-          display: inline-block;
-          opacity: 0;
         }
 
         h1 {
           font-size: 35px;
           font-weight: 600;
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
         }
 
         h2 {
@@ -123,31 +65,13 @@ const Home = () => {
           width: 70%;
         }
 
-        .home :global(.menu) {
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
-          animation-delay: 0.9s;
-        }
-
-        .home :global(.menu a) {
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        .home :global(.menu a:nth-child(1)) {
-          animation-delay: 1s;
-        }
-
-        .home :global(.menu a:nth-child(2)) {
-          animation-delay: 1.1s;
-        }
-
-        .home :global(.menu a:nth-child(3)) {
-          animation-delay: 1.2s;
-        }
-
-        .home :global(.menu a:nth-child(4)) {
-          animation-delay: 1.3s;
+        .wave {
+          font-size: 30px;
+          animation-name: wave-animation;
+          animation-duration: 2.5s;
+          animation-iteration-count: infinite;
+          transform-origin: 70% 70%;
+          display: inline-block;
         }
       `}</style>
     </Layout>
