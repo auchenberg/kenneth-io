@@ -1,0 +1,3 @@
+# Travel guide markdown files - preserve manual formatting
+data/travel-guides/**/*.md
+
