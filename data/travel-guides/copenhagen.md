@@ -274,3 +274,6 @@ city: 'Copenhagen'
 
 - Svinkløv Badehotel
 
+
+
+
