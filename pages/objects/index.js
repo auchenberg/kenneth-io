@@ -101,6 +101,13 @@ const ObjectsPage = () => {
         description: 'A timeless chair.',
         link: 'https://www.hermanmiller.com/products/seating/side-chairs/eames-molded-plywood-chairs/',
         image: '/images/objects/herman-miller-eames-molded-plyw.webp'
+      },
+      {
+        name: "Beolab 50",
+        brand: "Bang & Olufsen",
+        description: "Beolab 50",
+        link: "https://www.bang-olufsen.com/en/us/speakers/beolab-50",
+        image: '/images/objects/beolab50.png'
       }
     ],
     'Photography': [
@@ -266,14 +273,14 @@ const ObjectsPage = () => {
 
   return (
     <Layout
-      title="Objects - a curated collection of objects I appreciate and use in my daily life."
-      description="A curated collection of objects I appreciate and use in my daily life."
+      title="Objects - a curated collection of objects I appreciate."
+      description="A curated collection of objects I appreciate.."
       center
     >
       <div className="objects">
         <header>
           <h1>Objects</h1>
-          <p className="intro">A curated collection of objects I appreciate and use in my daily life.</p>
+          <p className="intro">A curated collection of objects I appreciate.</p>
         </header>
 
         {Object.entries(categories).map(([category, items]) => (
