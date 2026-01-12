@@ -330,10 +330,7 @@ const ObjectsPage = () => {
         }
 
         h1 {
-          font-size: 32px;
-          font-weight: 600;
           margin: 0 0 12px 0;
-          letter-spacing: -0.02em;
         }
 
         .intro {
