@@ -28,7 +28,7 @@ Kenneth is based in New York City.`;
     ];
 
     return (
-        <Layout title="Bio" center>
+        <Layout title="Bio" description="Bio for Kenneth Auchenberg" center>
             <div className="page-bio">
                 <h1>Bio</h1>
 
