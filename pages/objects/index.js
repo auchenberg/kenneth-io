@@ -47,6 +47,13 @@ const ObjectsPage = () => {
         image: '/images/objects/la-marzocco-lInea-micra.webp'
       },
       {
+        name: 'Weber Workshops The Key',
+        brand: 'Weber Workshops',
+        description: '83mm conical burr grinder.',
+        link: 'https://weberworkshops.com/products/key-grinder',
+        image: '/images/objects/weber-workshops-the-key.png'
+      },
+      {
         name: 'Poul Kjærholm PK22 chair',
         brand: 'Fritz Hansen',
         description: 'A timeless lounge chair.',
