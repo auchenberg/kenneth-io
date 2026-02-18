@@ -1,0 +1,24 @@
+package.json
+  d308c1d5c8bfe7fd 6-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "2f2b149594cc36ebb96e02be00e9af28b670d06b",
+  "prompts": {
+    "d308c1d5c8bfe7fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eefc9064-f3b1-451e-aab6-03f2261d2c27",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/f6790d7218a49c952afd6b27c302d1d06c8fd4aa712ea8a02067808915e422b0"
+    }
+  }
+}
