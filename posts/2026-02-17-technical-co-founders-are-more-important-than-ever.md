@@ -24,7 +24,7 @@ The tools are different. The speed is different. The cost structure is different
 
 If anything, the bar for technical leadership is **higher** now. It's no longer enough to be a great engineer who can write clean code, and lead humans.
 
-You need someone who understands the current AI landscape, who can evaluate when to use agents versus when to write code by hand, who can make the right build-versus-buy decisions, and most importantly: who can help you stay **ahead of the curve**, in a world where the options are compouding expoentially.
+You need someone who understands the current AI landscape, who can evaluate when to use agents versus when to write code by hand, who can make the right build-versus-buy decisions, and most importantly: who can help you stay **ahead of the curve**, in a world where the options are compounding exponentially.
 
 If you're building a technology company in 2026, your **technical co-founder are more important than ever**.
 
