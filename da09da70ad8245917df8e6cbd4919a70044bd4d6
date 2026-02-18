@@ -1,0 +1,24 @@
+posts/2026-02-17-technical-co-founders-are-more-important-than-ever.md
+  d308c1d5c8bfe7fd 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "da09da70ad8245917df8e6cbd4919a70044bd4d6",
+  "prompts": {
+    "d308c1d5c8bfe7fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eefc9064-f3b1-451e-aab6-03f2261d2c27",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/5b7078f0cab58e48fb2537303edf1c6ab85ae268ec4a0148d994bf92e89836d0"
+    }
+  }
+}
