@@ -5,6 +5,7 @@ date: 2026-02-17 09:00
 published: true
 comments: true
 categories:
+og_image: images/posts/technical-co-founders-og.png
 description: 'Technical co-founders are more important than ever. Software is cheap to produce, but the decisions about what to build, how to architect it, and how to manage agents have only gotten harder.'
 ---
 
