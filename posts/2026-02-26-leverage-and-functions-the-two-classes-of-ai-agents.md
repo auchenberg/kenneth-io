@@ -11,8 +11,6 @@ description: 'I think there are two classes of AI agents: Leverage agents that m
 
 Lately, I've started to think about AI agents through the lens of two buckets: **Leverage** and **Functions**, which is admittedly a reductionist framework, but please bear with me, as I think through this.
 
-![Leverage and Functions. The two Classes of AI Agents](/images/posts/leverage-and-functions-og.png)
-
 ## Leverage agents
 
 The first lens is leverage agents, which are here to make you orders of magnitude more productive. A leverage agent is your infinite Chief of Staff that drafts, researches, coordinates and executes on your behalf, while you stay in charge and make the calls.
