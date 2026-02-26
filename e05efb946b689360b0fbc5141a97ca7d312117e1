@@ -1,0 +1,24 @@
+posts/2026-02-26-leverage-and-functions-the-two-classes-of-ai-agents.md
+  b1f5a495b6af9b40 1-2,4-13,15-19,21-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.5",
+  "base_commit_sha": "e05efb946b689360b0fbc5141a97ca7d312117e1",
+  "prompts": {
+    "b1f5a495b6af9b40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff28cf6c-1c13-4d20-a00d-3963077dc33c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "messages": [],
+      "total_additions": 53,
+      "total_deletions": 13,
+      "accepted_lines": 33,
+      "overriden_lines": 2,
+      "messages_url": "https://usegitai.com/cas/c89a9f30ff9ed989a6ff3747c0e00f88ae4889e1bca57dfa2f39bd4bb5f4ae0e"
+    }
+  }
+}
