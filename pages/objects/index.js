@@ -228,6 +228,13 @@ const ObjectsPage = () => {
         description: 'My favorite watch for everyday wear.',
         link: 'https://www.braun.com/en-us/products/watches/bn0021.html',
         image: '/images/objects/braun_bn0021.png'
+      },
+      {
+        name: 'Patek Philippe Ref. 3940',
+        brand: 'Patek Philippe',
+        description: 'Perpetual calendar in yellow gold.',
+        link: 'https://www.patek.com/en/collection/grand-complications/5327R-001',
+        image: '/images/objects/patek-philippe-3940.png'
       }
     ],
     'Travel': [
