@@ -1,0 +1,24 @@
+pages/objects/index.js
+  eeaeab99f5052b2d 231-237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.7",
+  "base_commit_sha": "0e97d420f9112cf7886e31ac946d8a43317e68b0",
+  "prompts": {
+    "eeaeab99f5052b2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c2d3446-d742-4707-9342-d8128bb2d688",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 1,
+      "accepted_lines": 7,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/32f75c9531fc6e28e0b786fb7bc83dda513b8f94c20642f2886246812df88b7b"
+    }
+  }
+}
