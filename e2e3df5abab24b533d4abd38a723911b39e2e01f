@@ -1,0 +1,24 @@
+posts/2026-03-12-ai-skills-are-the-recipe-vertical-agents-are-the-cake.md
+  8226530afbb09268 1-2,4-15,17-27,29,33-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.11",
+  "base_commit_sha": "e2e3df5abab24b533d4abd38a723911b39e2e01f",
+  "prompts": {
+    "8226530afbb09268": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e8e2229e-4504-48bf-a3bf-de0b88600e92",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 0,
+      "accepted_lines": 30,
+      "overriden_lines": 4,
+      "messages_url": "https://usegitai.com/cas/79a2fa50d3557973a254eb1df411cd76a340a6a166d3375ee9db3445d5051c0d"
+    }
+  }
+}
