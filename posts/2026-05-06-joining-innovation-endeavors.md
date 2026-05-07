@@ -9,7 +9,7 @@ description: "Personal news! I'm joining Innovation Endeavors to back technical 
 
 Personal news! I'm joining [Innovation Endeavors](https://www.innovationendeavors.com/) to back technical builders, as our partner in NYC.
 
-Something materially changed as we entered 2026. [Some say](https://x.com/tbpn/status/2026405097446797776) Q1 2026 may be looked back on as the first quarter of the singularity, and after watching the incredible progress of models and agents over the past six months, I agree with that view.
+Something materially changed as we entered 2026. [Some say](https://x.com/tbpn/status/2026405097446797776) Q1 2026 may be looked back on as the first quarter of the singularity, and after watching the exponentiel progress of models over the past six months, I agree with that view.
 
 As a consequence of this rapid progress, what's become clear is that all of our infrastructure and abstractions need to be rethought for an agent-first world. Now is the time to double down on frontier builders.
 
