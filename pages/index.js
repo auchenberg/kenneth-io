@@ -11,7 +11,7 @@ const Home = () => {
         <p className="wave">👋</p>
         <p>Hej there, I'm Kenneth.</p>
 
-        <p>I'm a partner at <a href="https://alleycorp.com">AlleyCorp</a>, a New York-based venture capital firm, where I focus on AI, developer tools, and infrastructure.</p>
+        <p>I'm a partner at <a href="https://www.innovationendeavors.com/">Innovation Endeavors</a>, a deeply technical venture capital firm, where I focus on AI, developer tools, and infrastructure.</p>
 
         <p>Before stepping into venture capital, I spent two decades building products and leading engineering teams. As an <a href="https://developers.vc/">angel investor</a>, I help and support founders building for developers.</p>
 
