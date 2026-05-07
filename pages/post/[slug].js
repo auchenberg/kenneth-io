@@ -45,6 +45,15 @@ const markDocConfig = {
     tweet_embed: {
       render: 'Tweet',
       description: 'Display an embedded Tweet',
+      attributes: {
+        id: {
+          type: String,
+          required: true,
+        },
+        width: {
+          type: String,
+        },
+      },
     },
     references: {
       render: 'References',
@@ -100,9 +109,9 @@ const markDocComponents = {
       </div>
     );
   },
-  Tweet: ({ id }) => {
+  Tweet: ({ id, width }) => {
     return (
-      <div className="tweet-embed light">
+      <div className="tweet-embed light" style={width ? { maxWidth: width, margin: '0 auto' } : undefined}>
         <Tweet id={id}></Tweet>
       </div>
     );
@@ -312,16 +321,16 @@ const Post = (props) => {
         }        
 
         :global(.react-tweet-theme) {
-          --tweet-body-font-size: 14px;
+          --tweet-body-font-size: 13px;
           --tweet-body-line-height: 1.2;
-          --tweet-header-font-size: 12px;
-          --tweet-info-font-size: 12px;
-          --tweet-quoted-body-font-size: 12px;
-          --tweet-replies-font-size: 12px;
-          --tweet-actions-icon-size: 12px;
-          --tweet-actions-font-size: 12px;
+          --tweet-header-font-size: 11px;
+          --tweet-info-font-size: 11px;
+          --tweet-quoted-body-font-size: 11px;
+          --tweet-replies-font-size: 11px;
+          --tweet-actions-icon-size: 11px;
+          --tweet-actions-font-size: 11px;
           margin: 30px auto;
-        }   
+        }
 
         :global(.react-tweet-theme img) {
          margin: 0;
