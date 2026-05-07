@@ -39,7 +39,7 @@ While my base continues to be in NYC, I'll be spending more time in the Bay Area
 
 At the moment, two thesis areas are top of mind:
 
-**1) Agent Experience.** We're moving to an agent-first world, something [I've been talking about for a while](https://www.youtube.com/watch?v=wCoqvDeiDdc). Every piece of infrastructure that was designed for humans - the dashboards, the abstractions, the conceptual constraints themselves - needs to be rebuilt for a world where agents are the primary users.
+**1) Agent-first infrastructure and Agent Experience.** We're moving to an agent-first world, something [I've been talking about for a while](https://www.youtube.com/watch?v=wCoqvDeiDdc). Every piece of infrastructure that was designed for humans - the dashboards, the abstractions, the conceptual constraints themselves - needs to be rebuilt for a world where agents are the primary users.
 
 {% tweet_embed id="2050727309049770244" width="80%" /%}
 
