@@ -1,0 +1,26 @@
+components/nav.js
+  s_ec327007b88503::t_c064ff978ed50c 16
+pages/about.js
+  s_ec327007b88503::t_d76eed832f007a 199
+  s_ec327007b88503::t_d9a153c0b6acde 104-108
+  s_ec327007b88503::t_b77456da2747e4 31-33
+  s_ec327007b88503::t_baab11086deb81 4
+pages/index.js
+  s_ec327007b88503::t_89a33067499420 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "5635951918764c5150bb47c630920df71b767b1c",
+  "prompts": {},
+  "sessions": {
+    "s_ec327007b88503": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3df7aa7d-4aee-4053-a9fb-ad7826a17135",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
