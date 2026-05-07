@@ -1,0 +1,48 @@
+posts/2026-05-06-joining-innovation-endeavors.md
+  h_1f2e42d76557d4 5-7,10,13,15-16
+  h_2613bbeb2f15ef 3,45
+  s_ec327007b88503::t_79703718b10976 44
+  ec327007b8850373 1-2,4,8,11-12,14,17-43,46-54
+  s_ec327007b88503::t_1589454a862131 9
+pages/post/[slug].js
+  s_ec327007b88503::t_1265633023fa37 48-56
+  s_ec327007b88503::t_fa573980e1e0d7 112,114
+  s_ec327007b88503::t_0d979f70effce2 324,326-331,333
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "efec295d98a3a72cb9a601647abfb46cd1eca8d5",
+  "prompts": {
+    "ec327007b8850373": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3df7aa7d-4aee-4053-a9fb-ad7826a17135",
+        "model": "<synthetic>"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>",
+      "total_additions": 52,
+      "total_deletions": 0,
+      "accepted_lines": 43,
+      "overriden_lines": 4
+    }
+  },
+  "humans": {
+    "h_1f2e42d76557d4": {
+      "author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    },
+    "h_2613bbeb2f15ef": {
+      "author": "Kenneth Auchenberg"
+    }
+  },
+  "sessions": {
+    "s_ec327007b88503": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3df7aa7d-4aee-4053-a9fb-ad7826a17135",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
