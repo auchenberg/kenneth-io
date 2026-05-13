@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Joining Innovation Endeavors to double down on technical builders
-date: 2026-05-06 09:00
-published: false
+date: 2026-05-12 09:00
+published: true
 og_image: images/posts/joining-innovation-endeavors.png
 description: "Personal news! I'm joining Innovation Endeavors to back technical builders, as our partner in NYC."
 ---
