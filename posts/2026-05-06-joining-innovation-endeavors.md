@@ -29,7 +29,7 @@ That's us. And with our current $630M fund, we're set up to back technical found
 
 ## Where I'm focused
 
-As our partner in NYC, I'll be focused on working with founders building infrastructure across New York, the Bay Area, and Europe.
+As our partner in NYC, I'll be focused on working with founders building software infrastructure across New York, the Bay Area, and Europe.
 
 NYC is where ambitious founders come to build for real customers. The largest financial institutions, media companies, healthcare systems, and global enterprises all run out of this city, and they're the customers every infrastructure and AI company wants. As a European, I'd also argue NYC is the ideal landing spot for European founders entering the American market.
 
@@ -37,7 +37,11 @@ While my base continues to be in NYC, I'll be spending more time in the Bay Area
 
 ## What I'm focused on
 
-At the moment, two thesis areas are top of mind:
+To mark the moment, [@Davis Treybig](https://x.com/TreybigDavis) and I are sharing our thoughts on the decade ahead in software infrastructure, where we expect to see a new generation of infrastructure built for an agent-first world. 
+
+Read our thesis on the IE blog: [https://www.innovationendeavors.com/insights/a-decade-of-software-infrastructure](https://www.innovationendeavors.com/insights/a-decade-of-software-infrastructure )
+
+But, at the moment, these two thesis areas are particularly top of mind for me:
 
 **1) Agent-first infrastructure and Agent Experience.** We're moving to an agent-first world, something [I've been talking about for a while](https://www.youtube.com/watch?v=wCoqvDeiDdc). Every piece of infrastructure that was designed for humans - the dashboards, the abstractions, the conceptual constraints themselves - needs to be rebuilt for a world where agents are the primary users.
 
