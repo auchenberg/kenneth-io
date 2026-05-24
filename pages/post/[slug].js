@@ -195,20 +195,35 @@ function collectTweetIds(node, acc = []) {
 }
 
 // react-tweet's renderer iterates entities.{hashtags,urls,user_mentions,symbols}
-// without null-checks. Tweets with no entities come back as `{}`, which crashes
-// the client render. Fill the missing arrays.
+// without null-checks. Tweets without those entities come back from the
+// syndication API with the keys missing, which crashes the renderer. Fill the
+// missing arrays, including on any quoted tweet.
+function fillEntities(entities) {
+  return {
+    hashtags: [],
+    urls: [],
+    user_mentions: [],
+    symbols: [],
+    ...(entities ?? {}),
+  };
+}
+
 function sanitizeTweet(tweet) {
   if (!tweet) return tweet;
-  return {
+  const sanitized = {
     ...tweet,
-    entities: {
-      hashtags: [],
-      urls: [],
-      user_mentions: [],
-      symbols: [],
-      ...(tweet.entities ?? {}),
-    },
+    entities: fillEntities(tweet.entities),
   };
+  // getStaticProps cannot serialize undefined values; strip or sanitize.
+  if (tweet.quoted_tweet) {
+    sanitized.quoted_tweet = {
+      ...tweet.quoted_tweet,
+      entities: fillEntities(tweet.quoted_tweet.entities),
+    };
+  } else {
+    delete sanitized.quoted_tweet;
+  }
+  return JSON.parse(JSON.stringify(sanitized));
 }
 
 export const getStaticProps = async (context) => {
