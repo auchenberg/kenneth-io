@@ -1,0 +1,22 @@
+pages/post/[slug].js
+  s_187c5566b0eec9::t_8b01afe3d63793 18-19
+  s_187c5566b0eec9::t_3199d41dc30ba5 261-273,288
+  s_187c5566b0eec9::t_71a4281fcf3d62 186-213,225-237,246
+  s_187c5566b0eec9::t_16e76503308a32 113-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "e41d72d29c0cde92e9fb0d205ea4722b2dc25381",
+  "prompts": {},
+  "sessions": {
+    "s_187c5566b0eec9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f3ffdc9-4089-4870-a465-e923efdba238",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
