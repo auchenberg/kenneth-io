@@ -15,7 +15,8 @@ import "prismjs/components/prism-markdown";
 
 import { getBlogPostBySlug, getBlogPosts } from '../../helpers/getPosts';
 
-import { Tweet } from 'react-tweet'
+import { EmbeddedTweet, TweetNotFound } from 'react-tweet';
+import { getTweet } from 'react-tweet/api';
 
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
@@ -109,13 +110,8 @@ const markDocComponents = {
       </div>
     );
   },
-  Tweet: ({ id, width }) => {
-    return (
-      <div className="tweet-embed light" style={width ? { maxWidth: width, margin: '0 auto' } : undefined}>
-        <Tweet id={id}></Tweet>
-      </div>
-    );
-  },
+  // Tweet is provided per-render inside the Post component so it can close
+  // over the pre-fetched tweet data from getStaticProps.
   ZoomableImage: ({ src, title }) => {
     return (
       <Zoom>
@@ -187,6 +183,34 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+function collectTweetIds(node, acc = []) {
+  if (!node) return acc;
+  if (node.type === 'tag' && node.tag === 'tweet_embed' && node.attributes?.id) {
+    acc.push(String(node.attributes.id));
+  }
+  if (Array.isArray(node.children)) {
+    for (const child of node.children) collectTweetIds(child, acc);
+  }
+  return acc;
+}
+
+// react-tweet's renderer iterates entities.{hashtags,urls,user_mentions,symbols}
+// without null-checks. Tweets with no entities come back as `{}`, which crashes
+// the client render. Fill the missing arrays.
+function sanitizeTweet(tweet) {
+  if (!tweet) return tweet;
+  return {
+    ...tweet,
+    entities: {
+      hashtags: [],
+      urls: [],
+      user_mentions: [],
+      symbols: [],
+      ...(tweet.entities ?? {}),
+    },
+  };
+}
+
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
 
@@ -198,6 +222,19 @@ export const getStaticProps = async (context) => {
   const ast = Markdoc.parse(source);
   const content = JSON.stringify(Markdoc.transform(ast, markDocConfig));
 
+  const tweetIds = [...new Set(collectTweetIds(ast))];
+  const tweetsById = {};
+  await Promise.all(
+    tweetIds.map(async (id) => {
+      try {
+        const tweet = await getTweet(id);
+        tweetsById[id] = sanitizeTweet(tweet) ?? null;
+      } catch (err) {
+        tweetsById[id] = null;
+      }
+    })
+  );
+
   let paddedPost = {
     ...post,
     content,
@@ -206,6 +243,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       post: paddedPost,
+      tweetsById,
     },
   };
 };
@@ -219,6 +257,19 @@ const Post = (props) => {
   let parsedContent = JSON.parse(post.content);
 
   let socialImageUrl = post.og_image;
+
+  const tweetsById = props.tweetsById ?? {};
+  const components = {
+    ...markDocComponents,
+    Tweet: ({ id, width }) => {
+      const tweet = tweetsById[id];
+      return (
+        <div className="tweet-embed light" style={width ? { maxWidth: width, margin: '0 auto' } : undefined}>
+          {tweet ? <EmbeddedTweet tweet={tweet} /> : <TweetNotFound />}
+        </div>
+      );
+    },
+  };
 
   return (
     <Layout
@@ -234,7 +285,7 @@ const Post = (props) => {
         </header>
         <div className="content">
           {Markdoc.renderers.react(parsedContent, React, {
-            components: markDocComponents,
+            components,
           })}
         </div>
       </div>
