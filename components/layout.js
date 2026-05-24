@@ -14,7 +14,7 @@ const Layout = (props) => {
   if (props.socialImage && props.socialImage.startsWith('http')) {
     image = props.socialImage;
   } else {
-    image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${title}`);
+    image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${encodeURIComponent(title)}`);
   }
 
   return (
