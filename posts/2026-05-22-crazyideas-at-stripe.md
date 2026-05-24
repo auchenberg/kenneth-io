@@ -19,7 +19,7 @@ What made it work wasn't the channel. It was the underlying **belief** that anyo
 
 A handful of those ideas became real products, like Stripe Link and Identity, but most didn't. That ratio was the point. Most companies **kill the long tail through process** — review boards, planning cycles, OKR alignment — and end up with a much narrower aperture for what they could become. In other words, **most companies create too much friction for big ideas.**
 
-\#crazyideas worked because people weren't precious or protective of their domain. Someone could pitch something related to a separate team, and if it was great, the **cultural norm** was to get that person transferred to the team to help build it. I also think [writing culture](https://kenneth.io/post/writing-cultures-will-win-the-ai-era) played a role here, as the culture of ran memos and decision logs also gave you a place to fire off a **half-formed thought** at 11pm and have a thread on it by morning.
+\#crazyideas worked because people weren't precious or protective of their domain. Someone could pitch something related to a separate team, and if it was great, the **cultural norm** was to get that person transferred to the team to help build it. I also think [writing culture](https://kenneth.io/post/writing-cultures-will-win-the-ai-era) played a role here, as the culture that ran on memos and decision logs also gave you a place to fire off a **half-formed thought** at 11pm and have a thread on it by morning.
 
 I'm not sure if \#crazyideas still exist at Stripe today, but the pattern is almost free to replicate. Create an alias, a channel, and provide the **cultural permission** for anyone to post.
 
