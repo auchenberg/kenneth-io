@@ -1,0 +1,19 @@
+components/layout.js
+  s_187c5566b0eec9::t_a4ef41b86f2ad9 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "bffd4b7c568db1298dfd73d8cfd8c934c44a598a",
+  "prompts": {},
+  "sessions": {
+    "s_187c5566b0eec9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f3ffdc9-4089-4870-a465-e923efdba238",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
