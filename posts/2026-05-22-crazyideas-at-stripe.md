@@ -15,7 +15,7 @@ Greg's [2014 post](https://stripe.com/blog/scaling-email-transparency) on email 
 
 The thesis behind \#crazyideas was clear: For an idea to earn the label "crazy", it must carry the real possibility of being wrong. Without that tension, it isn't bold; just obvious.
 
-Some of the ideas were nonsense. Some were one-line feature requests. Others were multi-decade moonshots. What mattered was that people would react, comment, riff, build on each other. It was a firehose of the collective hivemind in action.
+Some of the ideas were nonsense. Some were one-line feature requests. Others were multi-decade moonshots. What mattered was that people would react, comment, riff, build on each other. It was a firehose of the collective hive mind in action.
 
 What made it work wasn't the channel. It was the underlying belief that anyone, regardless of seniority or function, could see something the company should build, and it was their job to say it. A support engineer in Dublin could pitch a new product. A new hire on day three could surface a strategic gap. The signal got mixed in with the noise, and the company collectively did the sorting.
 
@@ -27,6 +27,6 @@ I'm not sure if \#crazyideas still exist at Stripe today, but the pattern is alm
 
 Most companies have the tools. Very few have the permission.
 
-To the \#crazyideas and the collective hivemind.
+To the \#crazyideas and the collective hive mind.
 
 /k
