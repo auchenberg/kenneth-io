@@ -13,8 +13,13 @@ const Layout = (props) => {
 
   if (props.socialImage && props.socialImage.startsWith('http')) {
     image = props.socialImage;
+  } else if (props.socialImage) {
+    // Route local social images through Next.js image optimization so external
+    // crawlers fetch a downscaled, re-encoded variant instead of the original.
+    const srcPath = props.socialImage.startsWith('/') ? props.socialImage : `/${props.socialImage}`;
+    image = `https://kenneth.io/_next/image?url=${encodeURIComponent(srcPath)}&w=1200&q=75`;
   } else {
-    image = 'https://kenneth.io/' + (props.socialImage ? props.socialImage : `api/og?title=${encodeURIComponent(title)}`);
+    image = `https://kenneth.io/api/og?title=${encodeURIComponent(title)}`;
   }
 
   return (

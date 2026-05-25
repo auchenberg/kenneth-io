@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Layout from '../../components/layout';
 import Markdoc from '@markdoc/markdoc';
 import path from 'path';
@@ -115,7 +116,15 @@ const markDocComponents = {
   ZoomableImage: ({ src, title }) => {
     return (
       <Zoom>
-        <img src={src} title={title} />
+        <Image
+          src={src}
+          title={title}
+          alt={title || ''}
+          width={1600}
+          height={900}
+          sizes="(max-width: 700px) 100vw, 700px"
+          style={{ width: '100%', height: 'auto' }}
+        />
       </Zoom>
     );
   },

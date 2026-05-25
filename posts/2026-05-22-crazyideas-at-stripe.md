@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "#crazyideas at Stripe"
+title: '#crazyideas at Stripe'
 date: 2026-05-22 09:00
 published: true
-og_image: 
-description: "A small cultural mechanism at Stripe — an email alias and Slack channel where anyone could pitch anything the company should build. Most companies have the tools. Very few have the permission."
+og_image: images/posts/crazyideas.png
+description: 'A small cultural mechanism at Stripe — an email alias and Slack channel where anyone could pitch anything the company should build. Most companies have the tools. Very few have the permission.'
 ---
 
-Back in my time at Stripe, we had an email alias (crazyideas@) and a Slack channel called \#crazyideas. Anyone in the company could post anything they thought Stripe should build. No filter, no template, no permission needed. You could just do things.
+Back in my time at Stripe, we had an email alias (crazyideas@) and a Slack channel called \#crazyideas. Anyone in the company could post anything they thought Stripe should build. No filter, no template, no permission needed.
 
 Greg's [2014 post](https://stripe.com/blog/scaling-email-transparency) on email transparency mentions crazyideas@ in passing as a long-tail list, "ideas for things Stripe should try". That single line captured one of the best cultural mechanisms I've ever seen inside a company.
+
+{% image src="/images/posts/crazyideas.png" /%}
 
 The thesis behind \#crazyideas was clear: For an idea to earn the label "crazy", it must carry the real possibility of being wrong. Without that tension, it isn't bold; just obvious.
 
@@ -25,6 +27,6 @@ I'm not sure if \#crazyideas still exist at Stripe today, but the pattern is alm
 
 Most companies have the tools. Very few have the permission.
 
-**To the \#crazyideas and the collective hivemind.**
+To the \#crazyideas and the collective hivemind.
 
 /k
