@@ -29,4 +29,6 @@ Most companies have the tools. Very few have the permission.
 
 To the \#crazyideas and the collective hive mind.
 
+_Thanks to [Dmitry Alexeenko](http://linkedin.com/in/dalexeenko/), [Dave Nunez](https://www.linkedin.com/in/djnunez/) and [Anthony Kline](https://www.linkedin.com/in/anthonyklinesf/) for reviewing drafts of this post._
+
 /k
