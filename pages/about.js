@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Layout from '../components/layout';
 
 const About = () => {
@@ -23,8 +24,8 @@ Kenneth is based in New York City.`;
     };
 
     const headshots = [
-        { src: '/images/headshots/headshot.jpg', alt: 'Kenneth Auchenberg' },
-        { src: '/images/headshots/headshot2.jpg', alt: 'Kenneth Auchenberg' },
+        { src: '/images/headshots/kenneth_bw.jpg', alt: 'Kenneth Auchenberg' },
+        { src: '/images/headshots/kenneth_color.jpg', alt: 'Kenneth Auchenberg' },
     ];
 
     return (
@@ -94,7 +95,14 @@ Kenneth is based in New York City.`;
                                 target="_blank"
                                 className="headshot-item"
                             >
-                                <img src={headshot.src} alt={headshot.alt} />
+                                <Image
+                                    src={headshot.src}
+                                    alt={headshot.alt}
+                                    width={1734}
+                                    height={2600}
+                                    sizes="(max-width: 600px) 100vw, 350px"
+                                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                                />
                             </a>
                         ))}
                     </div>
@@ -164,20 +172,14 @@ Kenneth is based in New York City.`;
 
                 .headshot-item {
                     display: block;
-                    aspect-ratio: 1;
                     overflow: hidden;
-                    border: 1px solid #eee;
                     transition: border-color 0.2s ease;
-                }
-
-                .headshot-item:hover {
-                    border-color: #000;
                 }
 
                 .headshot-item img {
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    height: auto;
+                    display: block;
                 }
 
                 @media (max-width: 600px) {
