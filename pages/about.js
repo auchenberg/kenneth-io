@@ -25,7 +25,7 @@ Kenneth is based in New York City.`;
 
     const headshots = [
         { src: '/images/headshots/kenneth_bw.jpg', alt: 'Kenneth Auchenberg' },
-        { src: '/images/headshots/ie_color.jpg', alt: 'Kenneth Auchenberg' },
+        { src: '/images/headshots/kenneth_color.jpg', alt: 'Kenneth Auchenberg' },
     ];
 
     return (
