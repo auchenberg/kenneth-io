@@ -1,0 +1,19 @@
+pages/about.js
+  s_db18f67d16fa61::t_ac21fbc201b2db 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "cc4b71d00c5525a6cde409f8a0de910580a6b038",
+  "prompts": {},
+  "sessions": {
+    "s_db18f67d16fa61": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2968950-aa0f-4edd-a440-434c2d2ea181",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
