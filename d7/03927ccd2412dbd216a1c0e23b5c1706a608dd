@@ -1,0 +1,24 @@
+pages/objects/index.js
+  s_db18f67d16fa61::t_4d220964a0cfa1 160-163,166
+  s_db18f67d16fa61::t_81f6fb604c98ce 149
+  s_db18f67d16fa61::t_ee7c6ba3c0022d 164-165
+  s_db18f67d16fa61::t_89b1b16bb19eb1 150
+  s_db18f67d16fa61::t_02453c6001bec6 327
+  s_db18f67d16fa61::t_07268f2c42560c 415-418
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "d703927ccd2412dbd216a1c0e23b5c1706a608dd",
+  "prompts": {},
+  "sessions": {
+    "s_db18f67d16fa61": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2968950-aa0f-4edd-a440-434c2d2ea181",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
