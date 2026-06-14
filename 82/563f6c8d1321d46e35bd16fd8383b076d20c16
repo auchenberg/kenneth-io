@@ -1,0 +1,19 @@
+posts/2026-05-22-crazyideas-at-stripe.md
+  s_9bcf5e398f3474::t_40a2f06cb18ea2 7,10,14,16,18,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "82563f6c8d1321d46e35bd16fd8383b076d20c16",
+  "prompts": {},
+  "sessions": {
+    "s_9bcf5e398f3474": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f8b578b3-af1c-48f6-8d26-6a6befa05002",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
