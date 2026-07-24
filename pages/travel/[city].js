@@ -166,9 +166,12 @@ const TravelGuidePage = ({ guide }) => {
 export async function getStaticPaths() {
     const guides = getAllTravelGuides();
 
-    const paths = guides.map((guide) => ({
-        params: { city: guide.slug }
-    }));
+    // Copenhagen has its own hand-built page at /travel/copenhagen.
+    const paths = guides
+        .filter((guide) => guide.slug !== 'copenhagen')
+        .map((guide) => ({
+            params: { city: guide.slug }
+        }));
 
     return {
         paths,
