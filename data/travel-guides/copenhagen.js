@@ -27,11 +27,11 @@ const copenhagen = [
         image: '/images/travel/copenhagen/villa-copenhagen.webp',
       },
       {
-        name: 'Radisson Collection Royal Hotel',
+        name: '1 Hotel Copenhagen',
         meta: 'City Centre · $$$',
-        description: 'Arne Jacobsen\'s SAS Royal — the world\'s first design hotel.',
-        link: 'https://www.radissonhotels.com/en-us/hotels/radisson-collection-royal-copenhagen',
-        image: '/images/travel/copenhagen/radisson-royal.webp',
+        description: 'Nature-first architecture, and the wellness floor is the reason.',
+        link: 'https://www.1hotels.com/copenhagen',
+        image: '/images/travel/copenhagen/one-hotel.webp',
       },
       {
         name: 'Hotel Sanders',
@@ -484,11 +484,11 @@ const copenhagen = [
         image: '/images/travel/copenhagen/conservatory.webp',
       },
       {
-        name: 'Winterspring',
-        meta: 'Copenhagen · Ice cream & coffee',
-        description: 'Chef-made ice cream, proper coffee.',
-        link: 'https://winterspring.dk/',
-        image: '/images/travel/copenhagen/winterspring.webp',
+        name: 'Isoteket',
+        meta: 'Copenhagen · Ice cream',
+        description: "The Guardian put it among Europe's twenty best. Hard to argue.",
+        link: 'https://www.instagram.com/isoteket.kbh',
+        image: '/images/travel/copenhagen/isoteket.webp',
       },
       {
         name: 'Kafeteria at SMK',

@@ -174,7 +174,7 @@ const guides = [
         city: 'Copenhagen',
         country: 'Denmark',
         description: 'Where to stay, what to see and where to eat in my hometown.',
-        image: '/images/travel/copenhagen/christianshavn.webp',
+        image: '/images/travel/copenhagen/nyhavn.webp',
         places: countPlaces(copenhagen),
     },
 ];

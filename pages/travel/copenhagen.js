@@ -7,7 +7,7 @@ const CopenhagenGuide = () => (
     city="Copenhagen"
     intro="My hometown, and the list I send friends before they visit."
     description="Where to stay, what to see and where to eat in my hometown."
-    socialImage="/images/travel/copenhagen/christianshavn.webp"
+    socialImage="/images/travel/copenhagen/nyhavn.webp"
     sections={copenhagen}
   />
 );
