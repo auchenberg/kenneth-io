@@ -20,3 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 
 
+
+# travel guide photo originals (see scripts/travel-photos/README.md)
+/raw-photos
