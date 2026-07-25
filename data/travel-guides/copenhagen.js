@@ -100,13 +100,6 @@ const copenhagen = [
     category: 'See',
     places: [
       {
-        name: 'Louisiana Museum of Modern Art',
-        meta: 'Humlebæk · Art',
-        description: 'Worth the 35 min train ride up the coast.',
-        link: 'https://louisiana.dk/en/',
-        image: '/images/travel/copenhagen/louisiana.webp',
-      },
-      {
         name: 'Copenhagen Contemporary',
         meta: 'Refshaleøen · Art',
         description: 'Large-scale installation art in an old welding hall.',
@@ -727,8 +720,15 @@ const copenhagen = [
     ],
   },
   {
-    category: 'Countryside',
+    category: 'Out of town',
     places: [
+      {
+        name: 'Louisiana Museum of Modern Art',
+        meta: 'Humlebæk · 35 min by train',
+        description: 'Art in a garden over the Øresund. The best day trip from the city.',
+        link: 'https://louisiana.dk/en/',
+        image: '/images/travel/copenhagen/louisiana.webp',
+      },
       {
         name: 'Svinkløv Badehotel',
         meta: 'North Jutland · Seaside hotel',
