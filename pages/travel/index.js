@@ -343,20 +343,42 @@ const WorldMap = () => {
             {/* The tooltip is a sibling of the canvas, never a child of it:
                 d3 clears the canvas with selectAll('*').remove() on redraw,
                 which would tear a React-rendered child out of the DOM. */}
-            <div className="map-frame">
+            {/* Positioning and appearance are inline rather than in the
+                style block below: the tooltip has to sit exactly at the
+                pointer, and inline styles can't be lost to scoped-CSS
+                injection order. .map-frame anchors it, so it's inline too. */}
+            <div className="map-frame" style={{ position: 'relative' }}>
                 <div className="map-canvas" ref={containerRef}></div>
                 {hovered && (
                     <div
-                        className={
-                            'tooltip' +
-                            (hovered.pin ? ' pin' : hovered.visited ? ' visited' : '') +
-                            (hovered.below ? ' below' : '')
-                        }
-                        style={{ left: hovered.x, top: hovered.y }}
+                        style={{
+                            position: 'absolute',
+                            left: hovered.x,
+                            top: hovered.y,
+                            transform: hovered.below
+                                ? 'translate(-50%, 12px)'
+                                : 'translate(-50%, calc(-100% - 12px))',
+                            background: '#ffffff',
+                            border: '1px solid #e5e5e5',
+                            borderRadius: '6px',
+                            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+                            padding: '5px 9px',
+                            fontSize: '12px',
+                            lineHeight: 1.3,
+                            fontWeight: hovered.pin || hovered.visited ? 500 : 400,
+                            color: hovered.pin ? PIN_BLUE : hovered.visited ? '#000000' : '#666666',
+                            whiteSpace: 'nowrap',
+                            pointerEvents: 'none',
+                            zIndex: 10,
+                        }}
                     >
                         {hovered.name}
-                        {hovered.note && <span className="note"> — {hovered.note}</span>}
-                        {!hovered.visited && !hovered.pin && <span className="not-yet"> — not yet</span>}
+                        {hovered.note && (
+                            <span style={{ fontWeight: 400, opacity: 0.75 }}> — {hovered.note}</span>
+                        )}
+                        {!hovered.visited && !hovered.pin && (
+                            <span style={{ fontWeight: 400, color: '#bbbbbb' }}> — not yet</span>
+                        )}
                     </div>
                 )}
             </div>
@@ -374,54 +396,8 @@ const WorldMap = () => {
                     padding-top: 12px;
                 }
 
-                .map-frame {
-                    position: relative;
-                }
-
                 .map-canvas {
                     width: 100%;
-                }
-
-                /* Sits at the pointer. left/top come from the handler; the
-                   transform lifts it clear of the cursor. */
-                .tooltip {
-                    position: absolute;
-                    transform: translate(-50%, calc(-100% - 12px));
-                    background: #ffffff;
-                    border: 1px solid #e5e5e5;
-                    border-radius: 6px;
-                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-                    padding: 5px 9px;
-                    font-size: 12px;
-                    line-height: 1.3;
-                    color: #666;
-                    white-space: nowrap;
-                    pointer-events: none;
-                    z-index: 2;
-                }
-
-                .tooltip.below {
-                    transform: translate(-50%, 12px);
-                }
-
-                .tooltip.visited {
-                    color: #000;
-                    font-weight: 500;
-                }
-
-                .tooltip.pin {
-                    color: ${PIN_BLUE};
-                    font-weight: 500;
-                }
-
-                .not-yet {
-                    color: #bbb;
-                    font-weight: normal;
-                }
-
-                .note {
-                    font-weight: normal;
-                    opacity: 0.75;
                 }
 
                 @media (max-width: 768px) {
