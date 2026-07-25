@@ -63,6 +63,25 @@ const microStates = [
     { name: 'Singapore', coordinates: [103.82, 1.35] },
 ];
 
+// The two cities that matter more than the rest — pinned in blue, the
+// only colour on the map.
+const pinnedCities = [
+    {
+        name: 'Copenhagen',
+        note: 'born here',
+        coordinates: [12.5683, 55.6761],
+        offset: [9, -7],
+    },
+    {
+        name: 'New York',
+        note: 'live here',
+        coordinates: [-74.006, 40.7128],
+        offset: [10, 4],
+    },
+];
+
+const PIN_BLUE = '#007aff';
+
 const DISPLAY_NAMES = { 'United States of America': 'United States' };
 const displayName = (name) => DISPLAY_NAMES[name] || name;
 
@@ -212,6 +231,44 @@ const WorldMap = () => {
                     d3.select(this).attr('fill', FILL_VISITED);
                     setHovered(null);
                 });
+
+            // Pins last so they sit above every country fill.
+            const pins = svg
+                .append('g')
+                .selectAll('g')
+                .data(pinnedCities)
+                .join('g')
+                .attr('transform', (d) => {
+                    const [x, y] = projection(d.coordinates);
+                    return `translate(${x},${y})`;
+                })
+                .attr('class', 'pin')
+                .on('mouseenter', (event, d) => setHovered({ name: d.name, note: d.note, pin: true }))
+                .on('mouseleave', () => setHovered(null));
+
+            pins.append('circle').attr('r', 8).attr('fill', PIN_BLUE).attr('opacity', 0.16);
+            pins
+                .append('circle')
+                .attr('r', 4.5)
+                .attr('fill', PIN_BLUE)
+                .attr('stroke', '#ffffff')
+                .attr('stroke-width', 1.75);
+
+            // White halo under the label so it stays readable over both the
+            // dark visited fills and the light ones.
+            pins
+                .append('text')
+                .attr('x', (d) => d.offset[0])
+                .attr('y', (d) => d.offset[1])
+                .attr('dominant-baseline', 'middle')
+                .attr('font-size', 11)
+                .attr('font-weight', 500)
+                .attr('fill', '#111111')
+                .attr('stroke', '#ffffff')
+                .attr('stroke-width', 3)
+                .attr('paint-order', 'stroke')
+                .attr('pointer-events', 'none')
+                .text((d) => d.name);
         };
 
         draw();
@@ -226,9 +283,14 @@ const WorldMap = () => {
             <div className="map-canvas" ref={containerRef}></div>
             <p className="map-caption">
                 {hovered ? (
-                    <span className={hovered.visited ? 'hovered visited' : 'hovered'}>
+                    <span
+                        className={
+                            hovered.pin ? 'hovered pin' : hovered.visited ? 'hovered visited' : 'hovered'
+                        }
+                    >
                         {hovered.name}
-                        {!hovered.visited && <span className="not-yet"> — not yet</span>}
+                        {hovered.note && <span className="note"> — {hovered.note}</span>}
+                        {!hovered.visited && !hovered.pin && <span className="not-yet"> — not yet</span>}
                     </span>
                 ) : (
                     <span className="hint">Hover a country</span>
@@ -278,6 +340,16 @@ const WorldMap = () => {
                     font-weight: normal;
                 }
 
+                .hovered.pin {
+                    color: ${PIN_BLUE};
+                    font-weight: 500;
+                }
+
+                .note {
+                    font-weight: normal;
+                    opacity: 0.75;
+                }
+
                 @media (max-width: 768px) {
                     .map {
                         width: calc(100vw - 50px);
@@ -289,6 +361,10 @@ const WorldMap = () => {
                 }
 
                 :global(.country.visited) {
+                    cursor: default;
+                }
+
+                :global(.pin) {
                     cursor: default;
                 }
             `}</style>
@@ -303,16 +379,34 @@ const TravelPage = () => {
     return (
         <Layout
             title="Travel"
-            description="Guides to the cities I know well, and a map of everywhere I've been."
+            description="Everywhere I've been, and guides to the cities I know well."
             center
         >
             <div className="travel">
                 <header>
                     <h1>Travel</h1>
                     <p className="intro">
-                        Guides to the cities I know well, and a map of everywhere I've been.
+                        Everywhere I've been, and guides to the cities I know well.
                     </p>
                 </header>
+
+                <section>
+                    <h2>Countries</h2>
+                    <div className="regions">
+                        {Object.entries(visitedByRegion).map(([region, countries]) => (
+                            <div className="region" key={region}>
+                                <h3>
+                                    {region}
+                                    <span className="region-count">{countries.length}</span>
+                                </h3>
+                                <p>{countries.map(displayName).sort().join(', ')}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="footnote">
+                        {countryCount} countries across {regionCount} regions. Plenty left.
+                    </p>
+                </section>
 
                 <section>
                     <h2>Guides</h2>
@@ -338,27 +432,6 @@ const TravelPage = () => {
                             </Link>
                         ))}
                     </div>
-                </section>
-
-                <section>
-                    <h2>
-                        Countries
-                        <span className="count">{countryCount} visited</span>
-                    </h2>
-                    <div className="regions">
-                        {Object.entries(visitedByRegion).map(([region, countries]) => (
-                            <div className="region" key={region}>
-                                <h3>
-                                    {region}
-                                    <span className="region-count">{countries.length}</span>
-                                </h3>
-                                <p>{countries.map(displayName).sort().join(', ')}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="footnote">
-                        {countryCount} countries across {regionCount} regions. Plenty left.
-                    </p>
                 </section>
             </div>
 
@@ -394,15 +467,6 @@ const TravelPage = () => {
                     margin-bottom: 20px;
                     padding-bottom: 10px;
                     border-bottom: 1px solid #eaeaea;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: baseline;
-                }
-
-                .count {
-                    font-size: 13px;
-                    color: #666;
-                    font-weight: normal;
                 }
 
                 .guides-grid {
