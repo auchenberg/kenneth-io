@@ -23,3 +23,6 @@ yarn-error.log*
 
 # travel guide photo originals (see scripts/travel-photos/README.md)
 /raw-photos
+
+# Claude Code local settings (machine-specific, keep untracked)
+.claude/settings.local.json
