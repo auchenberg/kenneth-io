@@ -20,20 +20,10 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
         <Layout title={city} description={description} socialImage={socialImage} center>
             <div className="guide">
                 <header>
-                    <h1>{city}</h1>
-                    <p className="intro">
-                        {intro} {total} places to stay, see, eat and drink.
-                    </p>
-                    {/* Category links left, view switch pushed to the right
-                        edge of the same row. */}
-                    <div className="controls">
-                        <nav className="jump">
-                            {sections.map((section) => (
-                                <a href={`#${anchor(section.category)}`} key={section.category}>
-                                    {section.category}
-                                </a>
-                            ))}
-                        </nav>
+                    {/* The view switch sits on the title line, well clear of
+                        the category links — sharing that row read as a clash. */}
+                    <div className="title-row">
+                        <h1>{city}</h1>
                         <div className="views">
                             {['grid', 'list'].map((option) => (
                                 <button
@@ -48,6 +38,16 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                             ))}
                         </div>
                     </div>
+                    <p className="intro">
+                        {intro} {total} places to stay, see, eat and drink.
+                    </p>
+                    <nav className="jump">
+                        {sections.map((section) => (
+                            <a href={`#${anchor(section.category)}`} key={section.category}>
+                                {section.category}
+                            </a>
+                        ))}
+                    </nav>
                 </header>
 
                 {sections.map((section) => (
@@ -108,6 +108,13 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     margin-bottom: 56px;
                 }
 
+                .title-row {
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    gap: 24px;
+                }
+
                 h1 {
                     margin: 0 0 12px 0;
                 }
@@ -120,19 +127,11 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     max-width: 42em;
                 }
 
-                .controls {
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    gap: 10px 24px;
-                    margin-top: 24px;
-                }
-
                 .jump {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 8px 18px;
+                    margin-top: 24px;
                 }
 
                 .jump a {
@@ -150,9 +149,6 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                 .views {
                     display: flex;
                     gap: 14px;
-                    /* Keeps it at the right edge even when the category links
-                       fill the row and push it onto its own line. */
-                    margin-left: auto;
                     flex-shrink: 0;
                 }
 
@@ -184,15 +180,16 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
 
                 /* List view: plain bullets flowed into columns, so a long
                    category reads as one scannable block. */
+                /* No padding on the list itself, so the two columns land on
+                   exactly the same x positions as the grid's two columns —
+                   switching views doesn't shift anything. The bullet is drawn
+                   inside each row's own indent instead. */
                 .place-list {
                     column-count: 2;
                     column-gap: 32px;
                     margin: 0;
-                    /* Bullets hang outside so the name and the meta line
-                       beneath it share one left edge. The right column still
-                       ends flush with the right edge of the page. */
-                    padding-left: 17px;
-                    list-style-position: outside;
+                    padding-left: 0;
+                    list-style: none;
                 }
 
                 @media (max-width: 560px) {
@@ -205,6 +202,15 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     break-inside: avoid;
                     margin-bottom: 7px;
                     line-height: 1.45;
+                    position: relative;
+                    padding-left: 17px;
+                }
+
+                .place-list li::before {
+                    content: '•';
+                    position: absolute;
+                    left: 2px;
+                    top: 0;
                     color: #bbb;
                 }
 
@@ -265,15 +271,14 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    /* The files keep their colour; the grid is desaturated here
-                       so hovering a card brings its real colour back. */
-                    filter: grayscale(1);
-                    transition: transform 0.5s ease, filter 0.5s ease;
+                    transition: transform 0.5s ease;
                 }
 
+                /* The photos show in colour; hovering keeps the lift. To get
+                   the desaturated grid back, add filter: grayscale(1) to the
+                   rule above and filter: grayscale(0) to this one. */
                 .item-card:hover :global(.item-image) {
                     transform: scale(1.03);
-                    filter: grayscale(0);
                 }
 
                 .item-info {

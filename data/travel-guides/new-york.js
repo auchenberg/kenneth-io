@@ -397,6 +397,13 @@ const newYork = [
         image: '/images/travel/new-york/peter-luger.webp',
       },
       {
+        name: 'KazuNori',
+        meta: 'Manhattan · Hand rolls',
+        description: 'One thing, done perfectly, at a counter. Order the four-hand-roll set.',
+        link: 'https://www.handrollbar.com/',
+        image: '/images/travel/new-york/kazunori.webp',
+      },
+      {
         name: 'Olives',
         meta: 'SoHo · Sandwiches',
         description: '191 Prince Street. Grab a sandwich and eat it somewhere else.',
