@@ -243,6 +243,9 @@ const WorldMap = () => {
                     width: min(1100px, calc(100vw - 100px));
                     margin-left: 50%;
                     transform: translateX(-50%);
+                    /* Padding, not margin — a top margin here would just
+                       collapse with the section margin above it. */
+                    padding-top: 40px;
                 }
 
                 .map-canvas {
@@ -342,27 +345,24 @@ const TravelPage = () => {
                         Countries
                         <span className="count">{countryCount} visited</span>
                     </h2>
+                    <div className="regions">
+                        {Object.entries(visitedByRegion).map(([region, countries]) => (
+                            <div className="region" key={region}>
+                                <h3>
+                                    {region}
+                                    <span className="region-count">{countries.length}</span>
+                                </h3>
+                                <p>{countries.map(displayName).sort().join(', ')}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="footnote">
+                        {countryCount} countries across {regionCount} regions. Plenty left.
+                    </p>
                 </section>
             </div>
 
             <WorldMap />
-
-            <div className="travel">
-                <div className="regions">
-                    {Object.entries(visitedByRegion).map(([region, countries]) => (
-                        <div className="region" key={region}>
-                            <h3>
-                                {region}
-                                <span className="region-count">{countries.length}</span>
-                            </h3>
-                            <p>{countries.map(displayName).sort().join(', ')}</p>
-                        </div>
-                    ))}
-                </div>
-                <p className="footnote">
-                    {countryCount} countries across {regionCount} regions. Plenty left.
-                </p>
-            </div>
 
             <style jsx>{`
                 .travel {
@@ -487,7 +487,6 @@ const TravelPage = () => {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     gap: 24px 32px;
-                    margin-top: 48px;
                 }
 
                 @media (max-width: 768px) {
@@ -522,7 +521,7 @@ const TravelPage = () => {
                 .footnote {
                     font-size: 13px;
                     color: #999;
-                    margin: 40px 0 0 0;
+                    margin: 28px 0 0 0;
                 }
             `}</style>
         </Layout>
