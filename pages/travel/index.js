@@ -7,8 +7,19 @@ import { feature } from 'topojson-client';
 import worldData from '../../public/data/world.json';
 import copenhagen from '../../data/travel-guides/copenhagen';
 
-// Countries I've visited, grouped by region. Names match the `name`
-// property in public/data/world.json.
+// Countries I've visited, grouped by region.
+//
+// To add one: put its name in the right region below. That's it — the map
+// fill, the hover label, the region counts and the total all read from
+// here. The name has to match the `name` property in
+// public/data/world.json, which mostly uses common names ("Czechia",
+// "Timor-Leste") but not always ("United States of America").
+//
+// Two cases need a line elsewhere:
+//   - a country too small to have a polygon at this resolution goes in
+//     `microStates` below, as a dot
+//   - a country whose polygon includes overseas territory goes in
+//     `TERRITORY_SPLITS`, so the territory isn't marked visited too
 const visitedByRegion = {
     'Europe': [
         'Andorra',
@@ -189,6 +200,23 @@ const WorldMap = () => {
 
             const isVisited = (d) => visited.has(d.properties.name);
 
+            // Label on hover for a mouse, and on tap for a touch screen.
+            // Touch needs the explicit click binding — iOS Safari happens to
+            // synthesise mouse events on tap, but Android and Chrome don't.
+            const labels = (selection, { label, highlight, restore }) =>
+                selection
+                    .on('mouseenter', function (event, d) {
+                        highlight(d3.select(this), d);
+                        setHovered(label(d));
+                    })
+                    .on('mouseleave', function (event, d) {
+                        restore(d3.select(this), d);
+                        setHovered(null);
+                    })
+                    .on('click', function (event, d) {
+                        setHovered(label(d));
+                    });
+
             svg
                 .append('g')
                 .selectAll('path')
@@ -199,16 +227,15 @@ const WorldMap = () => {
                 .attr('stroke', '#ffffff')
                 .attr('stroke-width', 0.6)
                 .attr('class', (d) => (isVisited(d) ? 'country visited' : 'country'))
-                .on('mouseenter', function (event, d) {
-                    d3.select(this).attr(
-                        'fill',
-                        isVisited(d) ? FILL_VISITED_HOVER : FILL_UNVISITED_HOVER
-                    );
-                    setHovered({ name: displayName(d.properties.name), visited: isVisited(d) });
-                })
-                .on('mouseleave', function (event, d) {
-                    d3.select(this).attr('fill', isVisited(d) ? FILL_VISITED : FILL_UNVISITED);
-                    setHovered(null);
+                .call(labels, {
+                    label: (d) => ({
+                        name: displayName(d.properties.name),
+                        visited: isVisited(d),
+                    }),
+                    highlight: (node, d) =>
+                        node.attr('fill', isVisited(d) ? FILL_VISITED_HOVER : FILL_UNVISITED_HOVER),
+                    restore: (node, d) =>
+                        node.attr('fill', isVisited(d) ? FILL_VISITED : FILL_UNVISITED),
                 });
 
             svg
@@ -223,13 +250,10 @@ const WorldMap = () => {
                 .attr('stroke', '#ffffff')
                 .attr('stroke-width', 1)
                 .attr('class', 'country visited')
-                .on('mouseenter', function (event, d) {
-                    d3.select(this).attr('fill', FILL_VISITED_HOVER);
-                    setHovered({ name: d.name, visited: true });
-                })
-                .on('mouseleave', function () {
-                    d3.select(this).attr('fill', FILL_VISITED);
-                    setHovered(null);
+                .call(labels, {
+                    label: (d) => ({ name: d.name, visited: true }),
+                    highlight: (node) => node.attr('fill', FILL_VISITED_HOVER),
+                    restore: (node) => node.attr('fill', FILL_VISITED),
                 });
 
             // Pins last so they sit above every country fill.
@@ -243,8 +267,11 @@ const WorldMap = () => {
                     return `translate(${x},${y})`;
                 })
                 .attr('class', 'pin')
-                .on('mouseenter', (event, d) => setHovered({ name: d.name, note: d.note, pin: true }))
-                .on('mouseleave', () => setHovered(null));
+                .call(labels, {
+                    label: (d) => ({ name: d.name, note: d.note, pin: true }),
+                    highlight: () => {},
+                    restore: () => {},
+                });
 
             pins.append('circle').attr('r', 8).attr('fill', PIN_BLUE).attr('opacity', 0.16);
             pins
@@ -293,7 +320,7 @@ const WorldMap = () => {
                         {!hovered.visited && !hovered.pin && <span className="not-yet"> — not yet</span>}
                     </span>
                 ) : (
-                    <span className="hint">Hover a country</span>
+                    <span className="hint">Hover or tap a country</span>
                 )}
             </p>
 
