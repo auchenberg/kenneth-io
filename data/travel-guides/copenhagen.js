@@ -6,20 +6,6 @@ const copenhagen = [
     category: 'Stay',
     places: [
       {
-        name: 'Kanalhuset',
-        meta: 'Christianshavn · $$',
-        description: 'Canal-side guesthouse and coffee bar.',
-        link: 'https://kanalhusetcph.com/en/forside-english/',
-        image: '/images/travel/copenhagen/kanalhuset.webp',
-      },
-      {
-        name: 'Charlottehaven',
-        meta: 'Østerbro · $$',
-        description: 'Serviced apartments in a quiet garden block.',
-        link: 'https://www.charlottehaven.com/',
-        image: '/images/travel/copenhagen/charlottehaven.webp',
-      },
-      {
         name: 'Villa Copenhagen',
         meta: 'Vesterbro · $$$',
         description: 'The old central post office. Very good breakfast included.',
@@ -46,6 +32,20 @@ const copenhagen = [
         description: 'The grande dame of Copenhagen since 1755.',
         link: 'https://www.dangleterre.com/',
         image: '/images/travel/copenhagen/dangleterre.webp',
+      },
+      {
+        name: 'Kanalhuset',
+        meta: 'Christianshavn · $$',
+        description: 'Canal-side guesthouse and coffee bar.',
+        link: 'https://kanalhusetcph.com/en/forside-english/',
+        image: '/images/travel/copenhagen/kanalhuset.webp',
+      },
+      {
+        name: 'Charlottehaven',
+        meta: 'Østerbro · $$',
+        description: 'Serviced apartments in a quiet garden block.',
+        link: 'https://www.charlottehaven.com/',
+        image: '/images/travel/copenhagen/charlottehaven.webp',
       },
     ],
   },
