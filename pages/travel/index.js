@@ -63,11 +63,54 @@ const microStates = [
     { name: 'Singapore', coordinates: [103.82, 1.35] },
 ];
 
-// Antarctica is dropped: nobody's been, and it eats a third of the frame.
-const EXCLUDED = new Set(['Antarctica']);
-
 const DISPLAY_NAMES = { 'United States of America': 'United States' };
 const displayName = (name) => DISPLAY_NAMES[name] || name;
+
+// Some countries ship as one multipolygon that includes overseas territory,
+// so marking the country visited lights up somewhere I haven't been. Split
+// those out into their own features. Bounds are [west, south, east, north].
+const TERRITORY_SPLITS = {
+    // France's polygon includes French Guiana, which would put South
+    // America on the map for a trip to Paris.
+    France: [{ name: 'French Guiana', bounds: [-55, -2, -50, 7] }],
+};
+
+const ringCentroid = (ring) => {
+    let x = 0;
+    let y = 0;
+    for (const point of ring) {
+        x += point[0];
+        y += point[1];
+    }
+    return [x / ring.length, y / ring.length];
+};
+
+const within = ([x, y], [west, south, east, north]) =>
+    x >= west && x <= east && y >= south && y <= north;
+
+const splitTerritories = (features) =>
+    features.flatMap((f) => {
+        const splits = TERRITORY_SPLITS[f.properties.name];
+        if (!splits || f.geometry.type !== 'MultiPolygon') return [f];
+
+        const home = [];
+        const carved = new Map(splits.map((s) => [s.name, []]));
+        for (const polygon of f.geometry.coordinates) {
+            const match = splits.find((s) => within(ringCentroid(polygon[0]), s.bounds));
+            (match ? carved.get(match.name) : home).push(polygon);
+        }
+
+        return [
+            { ...f, geometry: { type: 'MultiPolygon', coordinates: home } },
+            ...[...carved]
+                .filter(([, polygons]) => polygons.length)
+                .map(([name, polygons]) => ({
+                    type: 'Feature',
+                    properties: { name },
+                    geometry: { type: 'MultiPolygon', coordinates: polygons },
+                })),
+        ];
+    });
 
 const FILL_VISITED = '#2b2b2b';
 const FILL_VISITED_HOVER = '#000000';
@@ -91,8 +134,8 @@ const WorldMap = () => {
 
     useEffect(() => {
         const container = d3.select(containerRef.current);
-        const countries = feature(worldData, worldData.objects.countries).features.filter(
-            (d) => !EXCLUDED.has(d.properties.name)
+        const countries = splitTerritories(
+            feature(worldData, worldData.objects.countries).features
         );
         const collection = { type: 'FeatureCollection', features: countries };
 
