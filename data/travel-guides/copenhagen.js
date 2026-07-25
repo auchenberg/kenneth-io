@@ -199,7 +199,7 @@ const copenhagen = [
         name: 'Grundtvigs Kirke',
         meta: 'Bispebjerg · Church',
         description: 'Expressionist cathedral in six million yellow bricks.',
-        link: 'https://www.visitcopenhagen.com/copenhagen/planning/grundtvigs-church-gdk410636',
+        link: 'https://www.visitcopenhagen.com/copenhagen/planning/grundtvigs-church-gdk410661',
         image: '/images/travel/copenhagen/grundtvigs-kirke.webp',
       },
       {
