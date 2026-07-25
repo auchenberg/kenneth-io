@@ -155,6 +155,11 @@ const FILL_UNVISITED_HOVER = '#dcdcdc';
 
 const countPlaces = (guide) => guide.reduce((total, section) => total + section.places.length, 0);
 
+// The map section is hidden for now. Everything behind it — WorldMap, the
+// territory splitting, the pins — is intact; flip this to true to bring the
+// section back.
+const SHOW_MAP = false;
+
 const guides = [
     {
         slug: 'new-york',
@@ -396,12 +401,20 @@ const WorldMap = () => {
 
             <style jsx>{`
                 .map {
-                    /* Sits in the standard column with everything else,
-                       rather than breaking out wider than the page. */
-                    width: 100%;
+                    /* Breaks out of the 600px text column — a world map wants
+                       the width. Capped so the page never scrolls sideways. */
+                    width: min(1100px, calc(100vw - 100px));
+                    margin-left: 50%;
+                    transform: translateX(-50%);
                     /* Padding, not margin — a top margin here would just
                        collapse with the heading's margin above it. */
                     padding-top: 12px;
+                }
+
+                @media (max-width: 768px) {
+                    .map {
+                        width: calc(100vw - 50px);
+                    }
                 }
 
                 .map-canvas {
@@ -488,12 +501,14 @@ const TravelPage = () => {
 
                 {/* The map breaks out wider than this column, so its heading
                     lives here to stay aligned with the others. */}
-                <section className="map-section">
-                    <h2>Map</h2>
-                </section>
+                {SHOW_MAP && (
+                    <section className="map-section">
+                        <h2>Map</h2>
+                    </section>
+                )}
             </div>
 
-            <WorldMap />
+            {SHOW_MAP && <WorldMap />}
 
             <style jsx>{`
                 .travel {
