@@ -10,6 +10,12 @@ import Image from 'next/image';
 // link, image }] } — the shape the data files in data/travel-guides export.
 const anchor = (category) => category.toLowerCase().replace(/\s+/g, '-');
 
+// Down the first column, then the second — the reading order CSS columns gave.
+const splitInTwo = (places) => {
+    const half = Math.ceil(places.length / 2);
+    return [places.slice(0, half), places.slice(half)];
+};
+
 const CityGuide = ({ city, intro, description, socialImage, sections }) => {
     const total = sections.reduce((n, section) => n + section.places.length, 0);
     // A hundred places is a long scroll in photos. List view is the same
@@ -54,16 +60,23 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     <section key={section.category} id={anchor(section.category)}>
                         <h2>{section.category}</h2>
                         {view === 'list' ? (
-                            <ul className="place-list">
-                                {section.places.map((place) => (
-                                    <li key={place.name}>
-                                        <a href={place.link} target="_blank" rel="noopener noreferrer">
-                                            {place.name}
-                                        </a>
-                                        <span className="list-meta">{place.meta}</span>
-                                    </li>
+                            /* Two explicit lists rather than CSS columns: the
+                               right one is right-aligned, and a multi-column
+                               flow can't be styled per column. */
+                            <div className="place-columns">
+                                {splitInTwo(section.places).map((column, index) => (
+                                    <ul className={index === 1 ? 'place-list end' : 'place-list'} key={index}>
+                                        {column.map((place) => (
+                                            <li key={place.name}>
+                                                <a href={place.link} target="_blank" rel="noopener noreferrer">
+                                                    {place.name}
+                                                </a>
+                                                <span className="list-meta">{place.meta}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 ))}
-                            </ul>
+                            </div>
                         ) : (
                         <div className="items-grid">
                             {section.places.map((place) => (
@@ -180,26 +193,21 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
 
                 /* List view: plain bullets flowed into columns, so a long
                    category reads as one scannable block. */
-                /* No padding on the list itself, so the two columns land on
-                   exactly the same x positions as the grid's two columns —
-                   switching views doesn't shift anything. The bullet is drawn
-                   inside each row's own indent instead. */
+                /* Same column geometry as the grid, so switching views doesn't
+                   shift anything sideways. */
+                .place-columns {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0 32px;
+                }
+
                 .place-list {
-                    column-count: 2;
-                    column-gap: 32px;
                     margin: 0;
-                    padding-left: 0;
+                    padding: 0;
                     list-style: none;
                 }
 
-                @media (max-width: 560px) {
-                    .place-list {
-                        column-count: 1;
-                    }
-                }
-
                 .place-list li {
-                    break-inside: avoid;
                     margin-bottom: 7px;
                     line-height: 1.45;
                     position: relative;
@@ -212,6 +220,43 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     left: 2px;
                     top: 0;
                     color: #bbb;
+                }
+
+                /* Right column mirrors the left: text to the right edge, and
+                   the bullet flips over with it so it stays beside the text. */
+                .place-list.end {
+                    text-align: right;
+                }
+
+                .place-list.end li {
+                    padding-left: 0;
+                    padding-right: 17px;
+                }
+
+                .place-list.end li::before {
+                    left: auto;
+                    right: 2px;
+                }
+
+                /* Stacked on a narrow screen, so both read left. */
+                @media (max-width: 560px) {
+                    .place-columns {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .place-list.end {
+                        text-align: left;
+                    }
+
+                    .place-list.end li {
+                        padding-left: 17px;
+                        padding-right: 0;
+                    }
+
+                    .place-list.end li::before {
+                        left: 2px;
+                        right: auto;
+                    }
                 }
 
                 .place-list a {
