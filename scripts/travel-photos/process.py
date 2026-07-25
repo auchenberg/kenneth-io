@@ -31,6 +31,9 @@ from PIL import Image, ImageEnhance, ImageOps
 WIDTH, HEIGHT = 1200, 900
 QUALITY = 82
 
+# grab.mjs keeps sources.json alongside the photos, so only take images.
+IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".tif", ".tiff"}
+
 # Crop slightly above centre: in architectural shots the subject usually
 # sits above the midline and the bottom is floor or foreground.
 CENTERING = (0.5, 0.45)
@@ -103,7 +106,7 @@ def main():
     only = set(args.only.split(",")) if args.only else None
     total = count = 0
     for name in sorted(os.listdir(raw)):
-        if name.startswith("."):
+        if name.startswith(".") or os.path.splitext(name)[1].lower() not in IMAGE_SUFFIXES:
             continue
         image_id = os.path.splitext(name)[0]
         if only and image_id not in only:

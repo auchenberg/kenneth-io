@@ -6,6 +6,7 @@ import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import worldData from '../../public/data/world.json';
 import copenhagen from '../../data/travel-guides/copenhagen';
+import newYork from '../../data/travel-guides/new-york';
 
 // Countries I've visited, grouped by region.
 //
@@ -152,14 +153,24 @@ const FILL_VISITED_HOVER = '#000000';
 const FILL_UNVISITED = '#ececec';
 const FILL_UNVISITED_HOVER = '#dcdcdc';
 
+const countPlaces = (guide) => guide.reduce((total, section) => total + section.places.length, 0);
+
 const guides = [
+    {
+        slug: 'new-york',
+        city: 'New York',
+        country: 'United States',
+        description: "Where I live now, and what I'd send you to if you had a week.",
+        image: '/images/travel/new-york/brooklyn-bridge.webp',
+        places: countPlaces(newYork),
+    },
     {
         slug: 'copenhagen',
         city: 'Copenhagen',
         country: 'Denmark',
         description: 'Where to stay, what to see and where to eat in my hometown.',
         image: '/images/travel/copenhagen/christianshavn.webp',
-        places: copenhagen.reduce((total, section) => total + section.places.length, 0),
+        places: countPlaces(copenhagen),
     },
 ];
 

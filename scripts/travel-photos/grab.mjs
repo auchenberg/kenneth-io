@@ -15,8 +15,20 @@
 
 import fs from 'fs';
 import path from 'path';
-import { execFileSync } from 'child_process';
+import { execFileSync, spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
+
+// Node's global fetch ignores HTTPS_PROXY unless NODE_USE_ENV_PROXY is set,
+// and that's only read at startup — so behind a proxy some perfectly good
+// hosts answer 403 and look dead. Re-exec once with it enabled.
+if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+  const result = spawnSync(process.execPath, [fileURLToPath(import.meta.url), ...process.argv.slice(2)], {
+    stdio: 'inherit',
+    // NODE_NO_WARNINGS keeps the experimental-flag notice out of the output.
+    env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' },
+  });
+  process.exit(result.status ?? 1);
+}
 
 const MIN_WIDTH = 900;
 const UA =
