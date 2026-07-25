@@ -174,9 +174,15 @@ const WorldMap = () => {
         );
         const collection = { type: 'FeatureCollection', features: countries };
 
+        // Only the width matters, and redrawing throws away the SVG. Mobile
+        // browsers fire resize whenever the address bar slides, so redrawing
+        // on every callback would wipe the map mid-interaction.
+        let drawnAtWidth = 0;
+
         const draw = () => {
             const width = containerRef.current.getBoundingClientRect().width;
-            if (!width) return;
+            if (!width || width === drawnAtWidth) return;
+            drawnAtWidth = width;
 
             container.selectAll('*').remove();
 
@@ -334,7 +340,11 @@ const WorldMap = () => {
 
     return (
         <div className="map">
-            <div className="map-canvas" ref={containerRef}>
+            {/* The tooltip is a sibling of the canvas, never a child of it:
+                d3 clears the canvas with selectAll('*').remove() on redraw,
+                which would tear a React-rendered child out of the DOM. */}
+            <div className="map-frame">
+                <div className="map-canvas" ref={containerRef}></div>
                 {hovered && (
                     <div
                         className={
@@ -364,9 +374,12 @@ const WorldMap = () => {
                     padding-top: 12px;
                 }
 
+                .map-frame {
+                    position: relative;
+                }
+
                 .map-canvas {
                     width: 100%;
-                    position: relative;
                 }
 
                 /* Sits at the pointer. left/top come from the handler; the
