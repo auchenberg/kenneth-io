@@ -93,6 +93,11 @@ const pinnedCities = [
 
 const PIN_BLUE = '#007aff';
 
+// Keep the tooltip clear of the map's edges, and flip it below the pointer
+// when there isn't room above.
+const TOOLTIP_MARGIN = 60;
+const TOOLTIP_FLIP_AT = 44;
+
 const DISPLAY_NAMES = { 'United States of America': 'United States' };
 const displayName = (name) => DISPLAY_NAMES[name] || name;
 
@@ -198,7 +203,23 @@ const WorldMap = () => {
                 .style('display', 'block')
                 .style('overflow', 'visible');
 
+            // Tapping the ocean dismisses the tooltip on touch.
+            svg.on('click', () => setHovered(null));
+
             const isVisited = (d) => visited.has(d.properties.name);
+
+            // Where to put the tooltip: pointer position relative to the
+            // map, clamped so it can't hang off either edge.
+            const positionOf = (event) => {
+                const [x, y] = d3.pointer(event, containerRef.current);
+                return {
+                    x: Math.max(TOOLTIP_MARGIN, Math.min(width - TOOLTIP_MARGIN, x)),
+                    y,
+                    // Near the top there's no room above the cursor, so flip
+                    // the tooltip below it.
+                    below: y < TOOLTIP_FLIP_AT,
+                };
+            };
 
             // Label on hover for a mouse, and on tap for a touch screen.
             // Touch needs the explicit click binding — iOS Safari happens to
@@ -207,14 +228,20 @@ const WorldMap = () => {
                 selection
                     .on('mouseenter', function (event, d) {
                         highlight(d3.select(this), d);
-                        setHovered(label(d));
+                        setHovered({ ...label(d), ...positionOf(event) });
+                    })
+                    .on('mousemove', function (event, d) {
+                        setHovered({ ...label(d), ...positionOf(event) });
                     })
                     .on('mouseleave', function (event, d) {
                         restore(d3.select(this), d);
                         setHovered(null);
                     })
                     .on('click', function (event, d) {
-                        setHovered(label(d));
+                        // Don't let it reach the background handler, which
+                        // clears the tooltip.
+                        event.stopPropagation();
+                        setHovered({ ...label(d), ...positionOf(event) });
                     });
 
             svg
@@ -307,22 +334,22 @@ const WorldMap = () => {
 
     return (
         <div className="map">
-            <div className="map-canvas" ref={containerRef}></div>
-            <p className="map-caption">
-                {hovered ? (
-                    <span
+            <div className="map-canvas" ref={containerRef}>
+                {hovered && (
+                    <div
                         className={
-                            hovered.pin ? 'hovered pin' : hovered.visited ? 'hovered visited' : 'hovered'
+                            'tooltip' +
+                            (hovered.pin ? ' pin' : hovered.visited ? ' visited' : '') +
+                            (hovered.below ? ' below' : '')
                         }
+                        style={{ left: hovered.x, top: hovered.y }}
                     >
                         {hovered.name}
                         {hovered.note && <span className="note"> — {hovered.note}</span>}
                         {!hovered.visited && !hovered.pin && <span className="not-yet"> — not yet</span>}
-                    </span>
-                ) : (
-                    <span className="hint">Hover or tap a country</span>
+                    </div>
                 )}
-            </p>
+            </div>
 
             <style jsx>{`
                 .map {
@@ -339,37 +366,44 @@ const WorldMap = () => {
 
                 .map-canvas {
                     width: 100%;
+                    position: relative;
                 }
 
-                .map-caption {
-                    font-size: 13px;
+                /* Sits at the pointer. left/top come from the handler; the
+                   transform lifts it clear of the cursor. */
+                .tooltip {
+                    position: absolute;
+                    transform: translate(-50%, calc(-100% - 12px));
+                    background: #ffffff;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 6px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                    padding: 5px 9px;
+                    font-size: 12px;
+                    line-height: 1.3;
                     color: #666;
-                    margin: 14px 0 0 0;
-                    min-height: 20px;
-                    text-align: center;
+                    white-space: nowrap;
+                    pointer-events: none;
+                    z-index: 2;
                 }
 
-                .hint {
-                    color: #bbb;
+                .tooltip.below {
+                    transform: translate(-50%, 12px);
                 }
 
-                .hovered {
-                    color: #666;
-                }
-
-                .hovered.visited {
+                .tooltip.visited {
                     color: #000;
+                    font-weight: 500;
+                }
+
+                .tooltip.pin {
+                    color: ${PIN_BLUE};
                     font-weight: 500;
                 }
 
                 .not-yet {
                     color: #bbb;
                     font-weight: normal;
-                }
-
-                .hovered.pin {
-                    color: ${PIN_BLUE};
-                    font-weight: 500;
                 }
 
                 .note {
