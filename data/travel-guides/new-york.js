@@ -60,6 +60,13 @@ const newYork = [
     category: 'Do',
     places: [
       {
+        name: 'Bathhouse',
+        meta: 'Williamsburg · Sauna',
+        description: 'The closest thing to La Banchina. Book the sauna, then the cold plunge.',
+        link: 'https://bathhousestudios.com/',
+        image: '/images/travel/new-york/bathhouse.webp',
+      },
+      {
         name: 'Bike along the West Side Highway',
         meta: 'West Side · By bike',
         description: 'The Hudson River Greenway, all the way up. The one stretch of New York that rides like Copenhagen.',
@@ -149,6 +156,13 @@ const newYork = [
         image: '/images/travel/new-york/whitney.webp',
       },
       {
+        name: 'Guggenheim',
+        meta: 'Upper East Side · Art',
+        description: 'Wright\'s ramp. Worth it for the building alone.',
+        link: 'https://www.guggenheim.org/',
+        image: '/images/travel/new-york/guggenheim.webp',
+      },
+      {
         name: 'Fotografiska',
         meta: 'Flatiron · Photography',
         description: 'The Stockholm photography house, in a Gramercy landmark.',
@@ -196,6 +210,13 @@ const newYork = [
         image: '/images/travel/new-york/seagram.webp',
       },
       {
+        name: 'Four Freedoms Park',
+        meta: 'Roosevelt Island · Kahn',
+        description: 'Louis Kahn\'s last work. Granite, lindens, and the room at the end.',
+        link: 'https://www.fdrfourfreedomspark.org/',
+        image: '/images/travel/new-york/four-freedoms.webp',
+      },
+      {
         name: 'Ford Foundation Atrium',
         meta: 'Midtown · Atrium',
         description: 'A public garden inside an office building. Free, and almost empty.',
@@ -208,6 +229,13 @@ const newYork = [
         description: 'The glass curtain wall that started it, across the street from the Seagram.',
         link: 'https://en.wikipedia.org/wiki/Lever_House',
         image: '/images/travel/new-york/lever-house.webp',
+      },
+      {
+        name: 'Grand Central Terminal',
+        meta: 'Midtown · Landmark',
+        description: 'Stand on the balcony at rush hour and just watch.',
+        link: 'https://www.grandcentralterminal.com/',
+        image: '/images/travel/new-york/grand-central.webp',
       },
       {
         name: 'Little Island',
@@ -264,6 +292,34 @@ const newYork = [
         image: '/images/travel/new-york/le-bernardin.webp',
       },
       {
+        name: 'Eleven Madison Park',
+        meta: 'Flatiron · Michelin',
+        description: 'Three stars, entirely plant-based, in an art deco room on the park.',
+        link: 'https://www.elevenmadisonpark.com/',
+        image: '/images/travel/new-york/eleven-madison-park.webp',
+      },
+      {
+        name: 'Russ & Daughters',
+        meta: 'Lower East Side · Appetizing',
+        description: 'Cured fish on bread by weight — the closest New York gets to smørrebrød.',
+        link: 'https://www.russanddaughters.com/',
+        image: '/images/travel/new-york/russ-daughters.webp',
+      },
+      {
+        name: 'Via Carota',
+        meta: 'West Village · Italian',
+        description: 'No reservations, always a wait, always worth it.',
+        link: 'https://www.viacarota.com/',
+        image: '/images/travel/new-york/via-carota.webp',
+      },
+      {
+        name: 'Estela',
+        meta: 'Nolita · Small plates',
+        description: 'Up a staircase off Houston. Order the endive salad.',
+        link: 'https://www.estelanyc.com/',
+        image: '/images/travel/new-york/estela.webp',
+      },
+      {
         name: 'Lucali',
         meta: 'Carroll Gardens · Pizza',
         description: 'Candlelit, cash only, one man making pies. Put your name down and go for a drink.',
@@ -285,6 +341,13 @@ const newYork = [
         image: '/images/travel/new-york/ovest.webp',
       },
       {
+        name: 'Bondi Sushi',
+        meta: 'Manhattan · Sushi',
+        description: 'Australian-style sushi. The easy weekday answer.',
+        link: 'https://bondisushi.com/',
+        image: '/images/travel/new-york/bondi-sushi.webp',
+      },
+      {
         name: 'Taku Sando',
         meta: 'Greenpoint · Japanese sandwiches',
         description: 'Japanese craft sandwiches on Greenpoint Ave. Also a Kyoto branch, which tells you something.',
@@ -299,11 +362,25 @@ const newYork = [
         image: '/images/travel/new-york/superiority-burger.webp',
       },
       {
+        name: 'Cervo\'s',
+        meta: 'Lower East Side · Seafood',
+        description: 'Tinned fish, tiled walls, cold wine. The Fiskebaren of Canal Street.',
+        link: 'https://cervosnyc.com/',
+        image: '/images/travel/new-york/cervos.webp',
+      },
+      {
         name: 'Aquavit',
         meta: 'Midtown · Nordic',
         description: 'For when you need the home flavours done seriously.',
         link: 'https://www.aquavit.org/',
         image: '/images/travel/new-york/aquavit.webp',
+      },
+      {
+        name: 'Semma',
+        meta: 'West Village · South Indian',
+        description: 'The most exciting cooking in the city, full stop.',
+        link: 'https://www.semma.nyc/',
+        image: '/images/travel/new-york/semma.webp',
       },
       {
         name: 'Katz\'s Delicatessen',
@@ -381,6 +458,13 @@ const newYork = [
         image: '/images/travel/new-york/bien-cuit.webp',
       },
       {
+        name: 'Librae Bakery',
+        meta: 'NoHo · Bakery',
+        description: 'Middle Eastern flavours, Scandinavian-clean room.',
+        link: 'https://www.libraebakery.com/',
+        image: '/images/travel/new-york/librae.webp',
+      },
+      {
         name: 'Breads Bakery',
         meta: 'Union Square · Babka',
         description: 'Buy the chocolate babka. Buy two.',
@@ -414,11 +498,25 @@ const newYork = [
         image: '/images/travel/new-york/abraco.webp',
       },
       {
+        name: 'Rhythm Zero',
+        meta: 'Greenpoint + more · Café',
+        description: 'Coffee culture crossed with art philosophy, which sounds like a lot and works.',
+        link: 'https://www.rhythmzeronyc.com/',
+        image: '/images/travel/new-york/rhythm-zero.webp',
+      },
+      {
         name: 'Maru Coffee',
         meta: 'Manhattan · Café',
         description: 'The Los Angeles minimalists, now here. Pale wood and a very short menu.',
         link: 'https://www.marucoffee.com/',
         image: '/images/travel/new-york/maru-coffee.webp',
+      },
+      {
+        name: 'Devoción',
+        meta: 'Williamsburg · Roastery',
+        description: 'Colombian beans under a huge skylight.',
+        link: 'https://devocion.com/',
+        image: '/images/travel/new-york/devocion.webp',
       },
       {
         name: 'Felix Roasting Co.',
@@ -447,11 +545,32 @@ const newYork = [
     category: 'Drink',
     places: [
       {
+        name: 'The Four Horsemen',
+        meta: 'Williamsburg · Wine bar',
+        description: 'The Ved Stranden 10 of New York. Natural wine, real food, excellent records.',
+        link: 'https://fourhorsemenbk.com/',
+        image: '/images/travel/new-york/four-horsemen.webp',
+      },
+      {
+        name: 'Wildair',
+        meta: 'Lower East Side · Wine bar',
+        description: 'Stand at the counter, drink something orange.',
+        link: 'https://www.wildair.nyc/',
+        image: '/images/travel/new-york/wildair.webp',
+      },
+      {
         name: 'June',
         meta: 'Cobble Hill · Wine bar',
         description: 'The back garden in summer.',
         link: 'https://www.junebk.com/',
         image: '/images/travel/new-york/june-wine.webp',
+      },
+      {
+        name: 'Attaboy',
+        meta: 'Lower East Side · Cocktails',
+        description: 'No menu. Tell them what you like. The Ruby of Eldridge Street.',
+        link: 'https://en.wikipedia.org/wiki/Attaboy_(bar)',
+        image: '/images/travel/new-york/attaboy.webp',
       },
       {
         name: 'Katana Kitten',
@@ -461,11 +580,25 @@ const newYork = [
         image: '/images/travel/new-york/katana-kitten.webp',
       },
       {
+        name: 'Overstory',
+        meta: 'Financial District · Cocktails',
+        description: '64 floors up, on a terrace. Book it.',
+        link: 'https://www.overstory-nyc.com/',
+        image: '/images/travel/new-york/overstory.webp',
+      },
+      {
         name: 'Rhodora',
         meta: 'Fort Greene · Wine bar',
         description: 'Zero-waste wine bar, tinned fish, no fuss.',
         link: 'https://www.rhodorawine.com/',
         image: '/images/travel/new-york/rhodora.webp',
+      },
+      {
+        name: 'Dante',
+        meta: 'Greenwich Village · Aperitivo',
+        description: 'Negroni on the sidewalk since 1915.',
+        link: 'https://www.dante-nyc.com/',
+        image: '/images/travel/new-york/dante.webp',
       },
     ],
   },
@@ -522,6 +655,13 @@ const newYork = [
         image: '/images/travel/new-york/leica-soho.webp',
       },
       {
+        name: 'B&H Photo',
+        meta: 'Midtown · Cameras',
+        description: 'A warehouse with conveyor belts. Overwhelming and essential.',
+        link: 'https://www.bhphotovideo.com/',
+        image: '/images/travel/new-york/bh-photo.webp',
+      },
+      {
         name: 'Dashwood Books',
         meta: 'NoHo · Photo books',
         description: 'A basement of photography books. The New Mags of downtown.',
@@ -576,6 +716,13 @@ const newYork = [
         image: '/images/travel/new-york/dia-beacon.webp',
       },
       {
+        name: 'Storm King Art Center',
+        meta: 'New Windsor · 90 min',
+        description: 'Five hundred acres of sculpture. Rent a bike at the gate.',
+        link: 'https://stormking.org/',
+        image: '/images/travel/new-york/storm-king.webp',
+      },
+      {
         name: 'The Glass House',
         meta: 'New Canaan · 80 min',
         description: 'Philip Johnson\'s own house. Book months ahead.',
@@ -588,6 +735,13 @@ const newYork = [
         description: 'A 1949 Philip Johnson house above the Hudson, now showing art — and the only one you can sleep in.',
         link: 'https://wolfhouseny.com/',
         image: '/images/travel/new-york/wolfhouse.webp',
+      },
+      {
+        name: 'Cold Spring',
+        meta: 'Hudson Valley · 80 min',
+        description: 'Train up, hike Breakneck Ridge, eat, train back.',
+        link: 'https://www.coldspringnychamber.com/',
+        image: '/images/travel/new-york/cold-spring.webp',
       },
       {
         name: 'Montauk',

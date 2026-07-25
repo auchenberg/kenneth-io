@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './layout';
 import Image from 'next/image';
 
@@ -12,6 +12,9 @@ const anchor = (category) => category.toLowerCase().replace(/\s+/g, '-');
 
 const CityGuide = ({ city, intro, description, socialImage, sections }) => {
     const total = sections.reduce((n, section) => n + section.places.length, 0);
+    // A hundred places is a long scroll in photos. List view is the same
+    // content as plain columns of links, for when you know what you're after.
+    const [view, setView] = useState('grid');
 
     return (
         <Layout title={city} description={description} socialImage={socialImage} center>
@@ -21,18 +24,47 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     <p className="intro">
                         {intro} {total} places to stay, see, eat and drink.
                     </p>
-                    <nav className="jump">
-                        {sections.map((section) => (
-                            <a href={`#${anchor(section.category)}`} key={section.category}>
-                                {section.category}
-                            </a>
-                        ))}
-                    </nav>
+                    {/* Category links left, view switch pushed to the right
+                        edge of the same row. */}
+                    <div className="controls">
+                        <nav className="jump">
+                            {sections.map((section) => (
+                                <a href={`#${anchor(section.category)}`} key={section.category}>
+                                    {section.category}
+                                </a>
+                            ))}
+                        </nav>
+                        <div className="views">
+                            {['grid', 'list'].map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    onClick={() => setView(option)}
+                                    className={view === option ? 'current' : undefined}
+                                    aria-pressed={view === option}
+                                >
+                                    {option === 'grid' ? 'Grid' : 'List'}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                 </header>
 
                 {sections.map((section) => (
                     <section key={section.category} id={anchor(section.category)}>
                         <h2>{section.category}</h2>
+                        {view === 'list' ? (
+                            <ul className="place-list">
+                                {section.places.map((place) => (
+                                    <li key={place.name}>
+                                        <a href={place.link} target="_blank" rel="noopener noreferrer">
+                                            {place.name}
+                                        </a>
+                                        <span className="list-meta">{place.meta}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
                         <div className="items-grid">
                             {section.places.map((place) => (
                                 <a
@@ -61,6 +93,7 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                                 </a>
                             ))}
                         </div>
+                        )}
                     </section>
                 ))}
             </div>
@@ -87,11 +120,19 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     max-width: 42em;
                 }
 
+                .controls {
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 10px 24px;
+                    margin-top: 24px;
+                }
+
                 .jump {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 8px 18px;
-                    margin-top: 24px;
                 }
 
                 .jump a {
@@ -106,9 +147,81 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
                     text-decoration: underline;
                 }
 
+                .views {
+                    display: flex;
+                    gap: 14px;
+                    /* Keeps it at the right edge even when the category links
+                       fill the row and push it onto its own line. */
+                    margin-left: auto;
+                    flex-shrink: 0;
+                }
+
+                .views button {
+                    appearance: none;
+                    background: none;
+                    border: 0;
+                    padding: 0;
+                    font: inherit;
+                    font-size: 13px;
+                    color: #bbb;
+                    cursor: pointer;
+                    letter-spacing: 0.02em;
+                }
+
+                .views button:hover {
+                    color: #666;
+                }
+
+                .views button.current {
+                    color: #000;
+                    font-weight: 500;
+                }
+
                 section {
                     margin-bottom: 60px;
                     scroll-margin-top: 24px;
+                }
+
+                /* List view: plain bullets flowed into columns, so a long
+                   category reads as one scannable block. */
+                .place-list {
+                    column-count: 2;
+                    column-gap: 32px;
+                    margin: 0;
+                    /* Bullets hang outside so the name and the meta line
+                       beneath it share one left edge. The right column still
+                       ends flush with the right edge of the page. */
+                    padding-left: 17px;
+                    list-style-position: outside;
+                }
+
+                @media (max-width: 560px) {
+                    .place-list {
+                        column-count: 1;
+                    }
+                }
+
+                .place-list li {
+                    break-inside: avoid;
+                    margin-bottom: 7px;
+                    line-height: 1.45;
+                    color: #bbb;
+                }
+
+                .place-list a {
+                    color: #000;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+
+                .place-list a:hover {
+                    text-decoration: underline;
+                }
+
+                .list-meta {
+                    display: block;
+                    font-size: 12px;
+                    color: #999;
                 }
 
                 h2 {
