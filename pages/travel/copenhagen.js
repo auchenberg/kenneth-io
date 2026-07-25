@@ -151,11 +151,15 @@ const CopenhagenGuide = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.4s ease;
+          /* The files keep their colour; the grid is desaturated here so
+             hovering a card brings its real colour back. */
+          filter: grayscale(1);
+          transition: transform 0.5s ease, filter 0.5s ease;
         }
 
         .item-card:hover :global(.item-image) {
           transform: scale(1.03);
+          filter: grayscale(0);
         }
 
         .item-info {

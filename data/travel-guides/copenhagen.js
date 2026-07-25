@@ -56,7 +56,7 @@ const copenhagen = [
         name: 'Canal boat tour from Nyhavn',
         meta: 'Nyhavn · On the water',
         description: 'Actually quite good — the best first look at the city.',
-        link: 'https://www.visitcopenhagen.com/copenhagen/activities/9-ways-conquer-copenhagens-waters',
+        link: 'https://www.visitcopenhagen.com/copenhagen/planning/stromma-danmark-gdk987281',
         image: '/images/travel/copenhagen/canal-tour.webp',
       },
       {
