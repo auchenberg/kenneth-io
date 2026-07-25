@@ -306,8 +306,8 @@ const WorldMap = () => {
                     margin-left: 50%;
                     transform: translateX(-50%);
                     /* Padding, not margin — a top margin here would just
-                       collapse with the section margin above it. */
-                    padding-top: 40px;
+                       collapse with the heading's margin above it. */
+                    padding-top: 12px;
                 }
 
                 .map-canvas {
@@ -433,6 +433,12 @@ const TravelPage = () => {
                         ))}
                     </div>
                 </section>
+
+                {/* The map breaks out wider than this column, so its heading
+                    lives here to stay aligned with the others. */}
+                <section className="map-section">
+                    <h2>Map</h2>
+                </section>
             </div>
 
             <WorldMap />
@@ -460,6 +466,12 @@ const TravelPage = () => {
 
                 section {
                     margin-bottom: 40px;
+                }
+
+                /* Holds only the map's heading; the map itself supplies the
+                   gap below it. */
+                .map-section {
+                    margin-bottom: 0;
                 }
 
                 h2 {
