@@ -1,23 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from '../../components/layout';
+import Link from 'next/link';
+import Image from 'next/image';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import worldData from '../../public/data/world.json';
+import copenhagen from '../../data/travel-guides/copenhagen';
 
-const TravelMap = () => {
-    const mapRef = useRef();
-    const globeRef = useRef();
-    const rotationStateRef = useRef({ isRotating: true });
-
-    // Countries I've visited (use full country names)
-    const visitedCountries = [
-        // North America
-        'Canada',
-        'Cuba',
-        'Mexico',
-        'United States of America',
-
-        // Europe
+// Countries I've visited, grouped by region. Names match the `name`
+// property in public/data/world.json.
+const visitedByRegion = {
+    'Europe': [
         'Andorra',
         'Austria',
         'Belgium',
@@ -38,377 +31,459 @@ const TravelMap = () => {
         'Sweden',
         'Switzerland',
         'United Kingdom',
-
-        // Asia
+    ],
+    'Asia': [
         'Bangladesh',
         'Cambodia',
         'China',
         'India',
         'Indonesia',
         'Japan',
-        'South Korea',
-        "Laos",
+        'Laos',
         'Malaysia',
         'Myanmar',
         'Qatar',
         'Singapore',
+        'South Korea',
         'Taiwan',
         'Thailand',
         'Timor-Leste',
         'Vietnam',
+    ],
+    'North America': ['Canada', 'Cuba', 'Mexico', 'United States of America'],
+    'South America': ['Argentina', 'Colombia'],
+};
 
-        // South America
-        'Argentina',
-        'Colombia',
-    ];
+const visited = new Set(Object.values(visitedByRegion).flat());
+
+// Countries too small to have a polygon in the 110m topology. Without
+// these they'd silently vanish from the map.
+const microStates = [
+    { name: 'Andorra', coordinates: [1.52, 42.51] },
+    { name: 'Singapore', coordinates: [103.82, 1.35] },
+];
+
+// Antarctica is dropped: nobody's been, and it eats a third of the frame.
+const EXCLUDED = new Set(['Antarctica']);
+
+const DISPLAY_NAMES = { 'United States of America': 'United States' };
+const displayName = (name) => DISPLAY_NAMES[name] || name;
+
+const FILL_VISITED = '#2b2b2b';
+const FILL_VISITED_HOVER = '#000000';
+const FILL_UNVISITED = '#ececec';
+const FILL_UNVISITED_HOVER = '#dcdcdc';
+
+const guides = [
+    {
+        slug: 'copenhagen',
+        city: 'Copenhagen',
+        country: 'Denmark',
+        description: 'Where to stay, what to see and where to eat in my hometown.',
+        image: '/images/travel/copenhagen/christianshavn.webp',
+        places: copenhagen.reduce((total, section) => total + section.places.length, 0),
+    },
+];
+
+const WorldMap = () => {
+    const containerRef = useRef();
+    const [hovered, setHovered] = useState(null);
 
     useEffect(() => {
-        // Get the viewport dimensions
-        const container = d3.select(mapRef.current);
-        const containerWidth = container.node().getBoundingClientRect().width;
-        const width = containerWidth;
-        const height = containerWidth; // Keep it square
+        const container = d3.select(containerRef.current);
+        const countries = feature(worldData, worldData.objects.countries).features.filter(
+            (d) => !EXCLUDED.has(d.properties.name)
+        );
+        const collection = { type: 'FeatureCollection', features: countries };
 
-        // Clear any existing SVG
-        container.selectAll("*").remove();
+        const draw = () => {
+            const width = containerRef.current.getBoundingClientRect().width;
+            if (!width) return;
 
-        // Create SVG with touch-action manipulation
-        const svg = container
-            .append('svg')
-            .attr('width', width)
-            .attr('height', height)
-            .attr('viewBox', `0 0 ${width} ${height}`)
-            .attr('preserveAspectRatio', 'xMidYMid meet')
-            .style('background', '#ffffff')
-            .style('touch-action', 'none'); // Prevent default touch actions
+            container.selectAll('*').remove();
 
-        // Create tooltip
-        const tooltip = d3.select(mapRef.current)
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
+            // Fit to the available width, then take the height the
+            // projection actually needs — no letterboxing.
+            const projection = d3.geoNaturalEarth1().fitWidth(width, collection);
+            const path = d3.geoPath(projection);
+            const [[, y0], [, y1]] = path.bounds(collection);
+            const height = Math.ceil(y1 - y0);
+            projection.fitExtent(
+                [
+                    [0, 0],
+                    [width, height],
+                ],
+                collection
+            );
 
-        // Create a group for the globe
-        const g = svg.append('g')
-            .attr('transform', `translate(${width / 2},${height / 2})`);
+            const svg = container
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('display', 'block')
+                .style('overflow', 'visible');
 
-        // Set initial scale
-        const initialScale = Math.min(width, height) / 2.2;
+            const isVisited = (d) => visited.has(d.properties.name);
 
-        // Create projection for 3D globe with larger scale
-        const projection = d3.geoOrthographic()
-            .scale(initialScale)
-            .translate([0, 0])
-            .clipAngle(90);
+            svg
+                .append('g')
+                .selectAll('path')
+                .data(countries)
+                .join('path')
+                .attr('d', path)
+                .attr('fill', (d) => (isVisited(d) ? FILL_VISITED : FILL_UNVISITED))
+                .attr('stroke', '#ffffff')
+                .attr('stroke-width', 0.6)
+                .attr('class', (d) => (isVisited(d) ? 'country visited' : 'country'))
+                .on('mouseenter', function (event, d) {
+                    d3.select(this).attr(
+                        'fill',
+                        isVisited(d) ? FILL_VISITED_HOVER : FILL_UNVISITED_HOVER
+                    );
+                    setHovered({ name: displayName(d.properties.name), visited: isVisited(d) });
+                })
+                .on('mouseleave', function (event, d) {
+                    d3.select(this).attr('fill', isVisited(d) ? FILL_VISITED : FILL_UNVISITED);
+                    setHovered(null);
+                });
 
-        // Create path generator
-        const path = d3.geoPath(projection);
-
-        // Use the imported data directly
-        const countries = feature(worldData, worldData.objects.countries);
-
-        // Add water sphere
-        const sphere = g.append('circle')
-            .attr('cx', 0)
-            .attr('cy', 0)
-            .attr('r', initialScale)
-            .style('fill', '#fafafa');
-
-        // Initialize rotation variables
-        const rotationState = {
-            rotation: [0, 0],
-            lastTime: d3.now(),
-            speed: 0.01
+            svg
+                .append('g')
+                .selectAll('circle')
+                .data(microStates)
+                .join('circle')
+                .attr('cx', (d) => projection(d.coordinates)[0])
+                .attr('cy', (d) => projection(d.coordinates)[1])
+                .attr('r', Math.max(2.5, width / 300))
+                .attr('fill', FILL_VISITED)
+                .attr('stroke', '#ffffff')
+                .attr('stroke-width', 1)
+                .attr('class', 'country visited')
+                .on('mouseenter', function (event, d) {
+                    d3.select(this).attr('fill', FILL_VISITED_HOVER);
+                    setHovered({ name: d.name, visited: true });
+                })
+                .on('mouseleave', function () {
+                    d3.select(this).attr('fill', FILL_VISITED);
+                    setHovered(null);
+                });
         };
 
-        // Draw countries
-        const countryPaths = g.selectAll('path')
-            .data(countries.features)
-            .enter()
-            .append('path')
-            .attr('d', path)
-            .attr('class', d => {
-                return visitedCountries.includes(d.properties.name) ? 'visited' : 'unvisited';
-            })
-            .style('stroke', '#e6e6e6')
-            .style('stroke-width', '0.5px')
-            .style('fill', d =>
-                visitedCountries.includes(d.properties.name) ? '#404040' : '#f0f0f0'
-            )
-            .on('mouseover', function (event, d) {
-                d3.select(this)
-                    .style('fill', visitedCountries.includes(d.properties.name) ? '#202020' : '#e0e0e0');
+        draw();
 
-                tooltip.transition()
-                    .duration(200)
-                    .style("opacity", 1);
+        const observer = new ResizeObserver(draw);
+        observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
 
-                // Calculate position relative to the container
-                const containerRect = mapRef.current.getBoundingClientRect();
-                const tooltipX = event.clientX - containerRect.left + 10;
-                const tooltipY = event.clientY - containerRect.top - 20;
+    return (
+        <div className="map">
+            <div className="map-canvas" ref={containerRef}></div>
+            <p className="map-caption">
+                {hovered ? (
+                    <span className={hovered.visited ? 'hovered visited' : 'hovered'}>
+                        {hovered.name}
+                        {!hovered.visited && <span className="not-yet"> — not yet</span>}
+                    </span>
+                ) : (
+                    <span className="hint">Hover a country</span>
+                )}
+            </p>
 
-                tooltip.html(d.properties.name)
-                    .style("left", tooltipX + "px")
-                    .style("top", tooltipY + "px");
-            })
-            .on('mouseout', function (event, d) {
-                d3.select(this)
-                    .style('fill', visitedCountries.includes(d.properties.name) ? '#404040' : '#f0f0f0');
+            <style jsx>{`
+                .map {
+                    /* Break out of the 600px text column — a world map
+                       wants the width. Capped so the page never scrolls
+                       sideways. */
+                    width: min(1100px, calc(100vw - 100px));
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                }
 
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
+                .map-canvas {
+                    width: 100%;
+                }
 
-        // Add resume button
-        const resumeButton = d3.select(mapRef.current)
-            .append("div")
-            .attr("class", "resume-button")
-            .style("opacity", 0)
-            .style("pointer-events", "none")
-            .html("Resume Rotation")
-            .on("click", function () {
-                // Store current rotation
-                rotationState.rotation = projection.rotate();
-                rotationState.lastTime = d3.now();
+                .map-caption {
+                    font-size: 13px;
+                    color: #666;
+                    margin: 14px 0 0 0;
+                    min-height: 20px;
+                    text-align: center;
+                }
 
-                // Update state and UI
-                rotationStateRef.current.isRotating = true;
-                d3.select(this)
-                    .style("opacity", 0)
-                    .style("pointer-events", "none");
+                .hint {
+                    color: #bbb;
+                }
 
-                // Start animation
-                startAnimation();
-            });
+                .hovered {
+                    color: #666;
+                }
 
-        // Function to stop rotation
-        const stopRotation = function () {
-            if (rotationStateRef.current.isRotating) {
-                rotationStateRef.current.isRotating = false;
-                cancelAnimationFrame(globeRef.current);
+                .hovered.visited {
+                    color: #000;
+                    font-weight: 500;
+                }
 
-                // Save current rotation state
-                rotationState.rotation = projection.rotate();
+                .not-yet {
+                    color: #bbb;
+                    font-weight: normal;
+                }
 
-                // Show resume button
-                resumeButton
-                    .style("opacity", 1)
-                    .style("pointer-events", "auto");
-            }
-        };
+                @media (max-width: 768px) {
+                    .map {
+                        width: calc(100vw - 50px);
+                    }
+                }
 
-        // Animation frame function
-        function animate() {
-            if (!rotationStateRef.current.isRotating) return;
+                :global(.country) {
+                    transition: fill 0.15s ease;
+                }
 
-            const now = d3.now();
-            const diff = now - rotationState.lastTime;
-            rotationState.lastTime = now;
+                :global(.country.visited) {
+                    cursor: default;
+                }
+            `}</style>
+        </div>
+    );
+};
 
-            // Update rotation based on current position
-            rotationState.rotation[0] += diff * rotationState.speed;
-            projection.rotate(rotationState.rotation);
-
-            // Update paths
-            countryPaths.attr('d', path);
-
-            // Continue animation
-            globeRef.current = requestAnimationFrame(animate);
-        }
-
-        // Function to start animation
-        function startAnimation() {
-            if (rotationStateRef.current.isRotating) {
-                animate();
-            }
-        }
-
-        // Initialize animation if needed
-        if (rotationStateRef.current.isRotating) {
-            startAnimation();
-        }
-
-        // Drag behavior
-        const drag = d3.drag()
-            .touchable(true)
-            .on('start', function () {
-                stopRotation();
-                d3.select(this).style("cursor", "grabbing");
-            })
-            .on('drag', function (event) {
-                const currentRotate = projection.rotate();
-                const newRotate = [
-                    currentRotate[0] + event.dx * 0.5,
-                    currentRotate[1] - event.dy * 0.5
-                ];
-                projection.rotate(newRotate);
-                countryPaths.attr('d', path);
-            })
-            .on('end', function () {
-                // Update rotation state with current projection
-                rotationState.rotation = projection.rotate();
-                d3.select(this).style("cursor", "grab");
-            });
-
-        // Click handler for stopping rotation
-        g.on("click", function (event) {
-            if (!event.defaultPrevented) {
-                stopRotation();
-            }
-        });
-
-        // Zoom behavior
-        const zoom = d3.zoom()
-            .scaleExtent([0.5, 5])
-            .touchable(true)
-            .filter(event => {
-                // Simplified filter for better touch support
-                return !event.button || event.type === 'touchstart';
-            })
-            .on('start', function () {
-                stopRotation();
-            })
-            .on('zoom', function (event) {
-                const newScale = initialScale * event.transform.k;
-                projection.scale(newScale);
-                sphere.attr('r', newScale);
-                countryPaths.attr('d', path);
-                g.selectAll('path')
-                    .style('stroke-width', `${0.5 / event.transform.k}px`);
-            });
-
-        // Apply behaviors
-        svg.call(zoom);
-        g.call(drag);
-
-        // Set cursor style
-        g.style("cursor", "grab");
-
-        // Disable double-click zoom
-        svg.on("dblclick.zoom", null);
-
-        // Improved touch event handling for mobile
-        const handleTouch = (e) => {
-            if (e.touches && e.touches.length === 2) {
-                e.preventDefault();
-                stopRotation();
-            }
-        };
-
-        svg.node().addEventListener('touchstart', handleTouch, { passive: false });
-        svg.node().addEventListener('touchmove', handleTouch, { passive: false });
-
-        // Add gesture event listeners for iOS with proper zoom handling
-        const handleGesture = (e) => {
-            console.log('gesture', e);
-            e.preventDefault();
-            stopRotation();
-        };
-
-        svg.node().addEventListener('gesturestart', handleGesture, { passive: false });
-        svg.node().addEventListener('gesturechange', handleGesture, { passive: false });
-        svg.node().addEventListener('gestureend', handleGesture, { passive: false });
-
-        // Cleanup
-        return () => {
-            cancelAnimationFrame(globeRef.current);
-            svg.node().removeEventListener('touchstart', handleTouch);
-            svg.node().removeEventListener('touchmove', handleTouch);
-            svg.node().removeEventListener('gesturestart', handleGesture);
-            svg.node().removeEventListener('gesturechange', handleGesture);
-            svg.node().removeEventListener('gestureend', handleGesture);
-        };
-    }, []); // No dependency on React state
+const TravelPage = () => {
+    const countryCount = visited.size;
+    const regionCount = Object.keys(visitedByRegion).length;
 
     return (
         <Layout
             title="Travel"
-            description="A map of the places I've visited around the world."
+            description="Guides to the cities I know well, and a map of everywhere I've been."
             center
         >
-            <div className="travel-map">
+            <div className="travel">
                 <header>
                     <h1>Travel</h1>
                     <p className="intro">
-                        A map of the places I've visited around the world.
+                        Guides to the cities I know well, and a map of everywhere I've been.
                     </p>
                 </header>
 
-                <div className="map-container" ref={mapRef}></div>
+                <section>
+                    <h2>Guides</h2>
+                    <div className="guides-grid">
+                        {guides.map((guide) => (
+                            <Link href={`/travel/${guide.slug}`} className="guide-card" key={guide.slug}>
+                                <div className="image-wrapper">
+                                    <Image
+                                        src={guide.image}
+                                        alt={guide.city}
+                                        width={600}
+                                        height={450}
+                                        className="guide-image"
+                                    />
+                                </div>
+                                <div className="guide-info">
+                                    <span className="guide-meta">
+                                        {guide.country} · {guide.places} places
+                                    </span>
+                                    <h3 className="guide-name">{guide.city}</h3>
+                                    <p className="guide-description">{guide.description}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+
+                <section>
+                    <h2>
+                        Countries
+                        <span className="count">{countryCount} visited</span>
+                    </h2>
+                </section>
+            </div>
+
+            <WorldMap />
+
+            <div className="travel">
+                <div className="regions">
+                    {Object.entries(visitedByRegion).map(([region, countries]) => (
+                        <div className="region" key={region}>
+                            <h3>
+                                {region}
+                                <span className="region-count">{countries.length}</span>
+                            </h3>
+                            <p>{countries.map(displayName).sort().join(', ')}</p>
+                        </div>
+                    ))}
+                </div>
+                <p className="footnote">
+                    {countryCount} countries across {regionCount} regions. Plenty left.
+                </p>
             </div>
 
             <style jsx>{`
-                .travel-map {
-                    background: #ffffff;
+                .travel {
                     margin: 0 auto;
-                    max-width: 1200px;
-                    padding: 0 20px;
-                    width: 100%;
-                }
-
-                .map-container {
-                    width: 100%;
-                    aspect-ratio: 1;
-                    user-select: none;
-                    touch-action: none;
-                    position: relative;          
+                    max-width: 600px;
                 }
 
                 header {
-                    padding-bottom: 20px;
+                    margin-bottom: 48px;
+                }
+
+                h1 {
+                    margin: 0 0 12px 0;
+                }
+
+                .intro {
+                    color: #666;
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+
+                section {
+                    margin-bottom: 40px;
+                }
+
+                h2 {
+                    font-size: 20px;
                     margin-bottom: 20px;
+                    padding-bottom: 10px;
                     border-bottom: 1px solid #eaeaea;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
                 }
 
-                :global(.visited) {
-                    cursor: pointer;
-                    fill: #404040;
-                }
-                    
-                :global(.visited:hover) {
-                    fill: #202020 !important;  // Darker grey on hover
+                .count {
+                    font-size: 13px;
+                    color: #666;
+                    font-weight: normal;
                 }
 
-                :global(.unvisited) {
-                    fill: #f0f0f0;
+                .guides-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 28px;
                 }
 
-                :global(.tooltip) {
-                    position: absolute;
-                    padding: 8px 12px;
-                    font: 14px/1.5 system-ui, sans-serif;
-                    background: rgba(255, 255, 255, 0.95);
-                    border: 1px solid #e0e0e0;
-                    border-radius: 4px;
-                    pointer-events: none;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                    z-index: 100;
-                    transform: translate(0, 0); /* Ensures positioning is exact */
+                /* Horizontal cards: one guide doesn't leave half the row
+                   empty, and the list grows cleanly as cities are added. */
+                .guides-grid :global(.guide-card) {
+                    display: grid;
+                    grid-template-columns: 210px 1fr;
+                    gap: 22px;
+                    align-items: start;
+                    text-decoration: none;
+                    color: inherit;
                 }
 
-                :global(.resume-button) {
-                    position: absolute;
-                    bottom: 20px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: rgba(255, 255, 255, 0.95);
-                    border: 1px solid #e0e0e0;
-                    border-radius: 4px;
-                    padding: 8px 16px;
-                    font: 14px/1.5 system-ui, sans-serif;
-                    cursor: pointer;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                    transition: all 0.2s ease;
+                @media (max-width: 560px) {
+                    .guides-grid :global(.guide-card) {
+                        grid-template-columns: 1fr;
+                        gap: 14px;
+                    }
                 }
 
-                :global(.resume-button:hover) {
-                    background: #f0f0f0;
+                .image-wrapper {
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 4/3;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background-color: #f5f5f5;
+                }
+
+                :global(.guide-image) {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: grayscale(1);
+                    transition: transform 0.5s ease, filter 0.5s ease;
+                }
+
+                .guides-grid :global(.guide-card:hover .guide-image) {
+                    transform: scale(1.03);
+                    filter: grayscale(0);
+                }
+
+                .guide-info {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .guide-meta {
+                    font-size: 13px;
+                    color: #666;
+                    font-weight: 500;
+                    margin-bottom: 4px;
+                }
+
+                .guide-name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin: 0;
+                    color: #000;
+                    line-height: 1.4;
+                    letter-spacing: -0.01em;
+                }
+
+                .guides-grid :global(.guide-card:hover) .guide-name {
+                    text-decoration: underline;
+                }
+
+                .guide-description {
+                    font-size: 14px;
+                    color: #666;
+                    line-height: 1.5;
+                    margin: 6px 0 0 0;
+                }
+
+                .regions {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 24px 32px;
+                    margin-top: 48px;
+                }
+
+                @media (max-width: 768px) {
+                    .regions {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .region h3 {
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: #000;
+                    margin: 0 0 6px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                }
+
+                .region-count {
+                    font-size: 12px;
+                    color: #bbb;
+                    font-weight: normal;
+                }
+
+                .region p {
+                    font-size: 13px;
+                    color: #666;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                .footnote {
+                    font-size: 13px;
+                    color: #999;
+                    margin: 40px 0 0 0;
                 }
             `}</style>
         </Layout>
     );
 };
 
-export default TravelMap; 
+export default TravelPage;
