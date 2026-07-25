@@ -396,12 +396,9 @@ const WorldMap = () => {
 
             <style jsx>{`
                 .map {
-                    /* Break out of the 600px text column — a world map
-                       wants the width. Capped so the page never scrolls
-                       sideways. */
-                    width: min(1100px, calc(100vw - 100px));
-                    margin-left: 50%;
-                    transform: translateX(-50%);
+                    /* Sits in the standard column with everything else,
+                       rather than breaking out wider than the page. */
+                    width: 100%;
                     /* Padding, not margin — a top margin here would just
                        collapse with the heading's margin above it. */
                     padding-top: 12px;
@@ -409,12 +406,6 @@ const WorldMap = () => {
 
                 .map-canvas {
                     width: 100%;
-                }
-
-                @media (max-width: 768px) {
-                    .map {
-                        width: calc(100vw - 50px);
-                    }
                 }
 
                 :global(.country) {
