@@ -12,9 +12,10 @@ const anchor = (category) => category.toLowerCase().replace(/\s+/g, '-');
 
 const CityGuide = ({ city, intro, description, socialImage, sections }) => {
     const total = sections.reduce((n, section) => n + section.places.length, 0);
-    // A hundred places is a long scroll in photos. List view is the same
-    // content as plain columns of links, for when you know what you're after.
-    const [view, setView] = useState('grid');
+    // A hundred places is a long scroll in photos, so list view leads: the same
+    // content as plain columns of links, scannable in one screen. Grid is a
+    // click away for browsing by picture.
+    const [view, setView] = useState('list');
 
     return (
         <Layout title={city} description={description} socialImage={socialImage} center>
