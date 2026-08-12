@@ -18,9 +18,9 @@ But overgrazing only explains the clutter. The deeper problem is the opposite fa
 
 And then there's another force at play: the lowest common denominator. Because the dashboard has to be a generic UI around everything, a database, a queue, and an ML training service all get forced into the same interaction model. The ideal interface for S3 looks nothing like the ideal interface for SageMaker, but both have to feel like AWS. The shared UI caps every service's experience at whatever the generic abstraction supports.
 
-Another metaphor I've found for this is the food court. Every cuisine, sushi, barbecue, pho — has to be served from the same-sized stall, on the same tray, paid at the same register. Nobody gets to build the restaurant the food deserves. The mall owns the corridors, the tenants own their stalls, and the experience in between belongs to no one.
+Another metaphor I've found helpful is the food court. Every cuisine, sushi, barbecue, pho — has to be served from the same-sized stall, on the same tray, paid at the same register. Nobody gets to build the restaurant the food deserves. The mall owns the corridors, the tenants own their stalls, and the experience in between belongs to no one.
 
-Extrapolating a bit here, these structural problems can be applied to many shared properties within products. Things like Dashboard UIs, mobile apps, platform APIs, developer experience, and even customer onboarding are the usuall victims. They all suffer from the same curse of being the lowest common denominator, **and** the tragedy of the commons.
+Extrapolating a bit here, these structural problems can be applied to many shared properties within products. Things like Dashboard UIs, mobile apps, platform APIs, developer experience, and even customer onboarding are the usuall victims. They all suffer from the same curse of being the lowest common denominator, and the tragedy of the commons.
 
 **So the next time you experience some of these challenges, take a step back and think about the structural incentives, can change them?**
 
