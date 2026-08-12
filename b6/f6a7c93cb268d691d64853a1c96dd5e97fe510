@@ -1,0 +1,15 @@
+posts/2026-08-02-dashboard-uis-tragedy-of-the-commons.md
+  h_1f2e42d76557d4 7-8,15,21,23
+  h_1f2e42d76557d4 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b6f6a7c93cb268d691d64853a1c96dd5e97fe510",
+  "prompts": {},
+  "humans": {
+    "h_1f2e42d76557d4": {
+      "author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
