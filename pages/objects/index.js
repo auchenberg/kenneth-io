@@ -68,6 +68,14 @@ const ObjectsPage = () => {
         image: '/images/objects/beosound2.png'
       },
       {
+        name: 'Beolab 8000',
+        brand: 'Bang & Olufsen',
+        description: 'An iconic column speaker.',
+        link: 'https://www.bang-olufsen.com/en/int/story/beolab-history',
+        image: '/images/objects/beolab-8000.png',
+        contain: true
+      },
+      {
         name: 'Arne Jacobsen series 7 chair',
         brand: 'Fritz Hansen',
         description: 'Arne Jacobsen, model 3117 ',
@@ -454,4 +462,4 @@ const ObjectsPage = () => {
   );
 };
 
-export default ObjectsPage; 
+export default ObjectsPage;
