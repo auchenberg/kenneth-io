@@ -1,0 +1,22 @@
+pages/objects/index.js
+  s_dbea9151042cfb::t_cd3aa45ce8fa34 465
+  s_dbea9151042cfb::t_15fdb0d1c7c4f9 75
+  s_dbea9151042cfb::t_6f0e4170620a90 71-74,76-77
+  s_dbea9151042cfb::t_de6c3fafaa2002 70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "0f0cc76c403afa595703ee438dc023f6e8982681",
+  "prompts": {},
+  "sessions": {
+    "s_dbea9151042cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02c6c-a832-7b22-9233-717d8b926d39",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
