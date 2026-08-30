@@ -1,0 +1,53 @@
+pages/travel/index.js
+  s_b81b6d3a6c616c::t_958917c077193a 448
+pages/objects/index.js
+  s_b81b6d3a6c616c::t_958917c077193a 309
+helpers/seo.js
+  s_b81b6d3a6c616c::t_964db8460737e1 1-138
+pages/sitemap.xml.js
+  s_b81b6d3a6c616c::t_aa9b8361a7ef54 1-55
+pages/index.js
+  s_b81b6d3a6c616c::t_787e0a95d4e3e4 5-9,13-20,26,40-46
+pages/about.js
+  s_b81b6d3a6c616c::t_787e0a95d4e3e4 4-8,37-44,59,97-107,147-163
+  s_b81b6d3a6c616c::t_cc20be8da09202 164
+components/layout.js
+  s_b81b6d3a6c616c::t_964db8460737e1 6,12-21,25,31,37-40
+pages/post/[slug].js
+  s_b81b6d3a6c616c::t_787e0a95d4e3e4 18,304-306,312-314
+components/head.js
+  s_b81b6d3a6c616c::t_964db8460737e1 4-6,9,12,25-31
+pages/lists.js
+  s_b81b6d3a6c616c::t_95071ce1ca122d 296
+  s_b81b6d3a6c616c::t_958917c077193a 52
+pages/projects.js
+  s_b81b6d3a6c616c::t_958917c077193a 43-48
+pages/posts.js
+  s_b81b6d3a6c616c::t_787e0a95d4e3e4 42-47
+pages/speaking.js
+  s_b81b6d3a6c616c::t_958917c077193a 43-48
+components/city-guide.js
+  s_b81b6d3a6c616c::t_958917c077193a 13,21-27
+pages/travel/copenhagen.js
+  s_b81b6d3a6c616c::t_958917c077193a 8
+pages/travel/new-york.js
+  s_b81b6d3a6c616c::t_958917c077193a 8
+public/robots.txt
+  s_b81b6d3a6c616c::t_aa9b8361a7ef54 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "1e5689e231d066913d934528f097aa9182b36f69",
+  "prompts": {},
+  "sessions": {
+    "s_b81b6d3a6c616c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0548c-7bf4-74a2-a44a-f7b4c29dc4af",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
