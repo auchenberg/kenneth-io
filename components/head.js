@@ -9,6 +9,10 @@ const Head = (props) => (
     <title key="title">{props.title}</title>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="nUgZEeSS0cWP_BmLe2rndP3PTgUSg7H2Ugeyv0xpL6w"
+    />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="alternate"
