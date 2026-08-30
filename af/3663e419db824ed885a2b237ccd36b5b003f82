@@ -1,0 +1,28 @@
+data/press.js
+  s_b81b6d3a6c616c::t_e630dc72cdbcf7 1-150
+components/nav.js
+  s_b81b6d3a6c616c::t_e630dc72cdbcf7 16
+pages/press.js
+  s_b81b6d3a6c616c::t_e630dc72cdbcf7 1-234
+pages/sitemap.xml.js
+  s_b81b6d3a6c616c::t_e630dc72cdbcf7 7
+helpers/seo.js
+  s_b81b6d3a6c616c::t_9e242b6426cb22 74-79,160-168
+  s_b81b6d3a6c616c::t_e630dc72cdbcf7 115-159,169-180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "af3663e419db824ed885a2b237ccd36b5b003f82",
+  "prompts": {},
+  "sessions": {
+    "s_b81b6d3a6c616c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0548c-7bf4-74a2-a44a-f7b4c29dc4af",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
