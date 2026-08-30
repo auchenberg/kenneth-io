@@ -71,6 +71,12 @@ export const personSchema = () => ({
       name: 'AI Agents vs SaaS: The Future of Software with Kenneth Auchenberg',
       url: 'https://www.listennotes.com/podcasts/ai-in-nyc-show/ep30-ai-agents-vs-saas-the-cmAv75TJXuz/',
     },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE_URL}/press#press-page`,
+      name: 'Kenneth Auchenberg — Press, Interviews, and Podcasts',
+      url: `${SITE_URL}/press`,
+    },
   ],
 });
 
@@ -105,6 +111,72 @@ export const profileStructuredData = () => ({
     },
   ],
 });
+
+const pressSchemaType = (type) => {
+  if (type === 'Podcast') return 'PodcastEpisode';
+  if (type === 'Video') return 'VideoObject';
+  if (type === 'News') return 'NewsArticle';
+  return 'Article';
+};
+
+export const pressStructuredData = (pressItems) => {
+  const url = `${SITE_URL}/press`;
+  const itemListId = `${url}#press-list`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      personSchema(),
+      websiteSchema(),
+      {
+        '@type': 'CollectionPage',
+        '@id': `${url}#press-page`,
+        url,
+        name: 'Kenneth Auchenberg — Press, Interviews, and Podcasts',
+        description:
+          'Selected press, interviews, podcasts, and news featuring Kenneth Auchenberg.',
+        inLanguage: 'en-US',
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': PERSON_ID },
+        mainEntity: { '@id': itemListId },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': itemListId,
+        numberOfItems: pressItems.length,
+        itemListElement: pressItems.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': pressSchemaType(item.type),
+            '@id': item.url,
+            url: item.url,
+            name: item.title,
+            headline: item.title,
+            description: item.description,
+            datePublished: item.date,
+            inLanguage: item.language,
+            ...(item.duration ? { duration: item.duration } : {}),
+            ...(item.type === 'Podcast'
+              ? {
+                  partOfSeries: {
+                    '@type': 'PodcastSeries',
+                    name: item.outlet,
+                  },
+                }
+              : {}),
+            ...(item.type === 'Video' ? { uploadDate: item.date } : {}),
+            publisher: {
+              '@type': 'Organization',
+              name: item.outlet,
+            },
+            about: { '@id': PERSON_ID },
+          },
+        })),
+      },
+    ],
+  };
+};
 
 export const blogPostStructuredData = (post) => {
   const url = `${SITE_URL}/post/${post.slug}`;
