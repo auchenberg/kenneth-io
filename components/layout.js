@@ -3,38 +3,41 @@ import Head from '../components/head';
 import NProgress from '../components/nprogress';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
+import { absoluteUrl, socialImageUrl } from '../helpers/seo';
 
 const Layout = (props) => {
 
   let defaultTitle = "Hej";
   let title = `${props.title || defaultTitle}`;
-  let formattedTitle = `${title} | Kenneth Auchenberg`;
-  let image = '';
-
-  if (props.socialImage && props.socialImage.startsWith('http')) {
-    image = props.socialImage;
-  } else if (props.socialImage) {
-    // Route local social images through Next.js image optimization so external
-    // crawlers fetch a downscaled, re-encoded variant instead of the original.
-    const srcPath = props.socialImage.startsWith('/') ? props.socialImage : `/${props.socialImage}`;
-    image = `https://kenneth.io/_next/image?url=${encodeURIComponent(srcPath)}&w=1200&q=75`;
-  } else {
-    image = `https://kenneth.io/api/og?title=${encodeURIComponent(title)}`;
-  }
+  let formattedTitle = props.seoTitle || `${title} | Kenneth Auchenberg`;
+  const canonical = props.canonicalPath
+    ? absoluteUrl(props.canonicalPath)
+    : undefined;
+  const image = socialImageUrl(title, props.socialImage);
+  const structuredData = Array.isArray(props.structuredData)
+    ? props.structuredData
+    : props.structuredData
+      ? [props.structuredData]
+      : [];
 
   return (
     <>
-      <Head title={title} />
+      <Head title={formattedTitle} structuredData={structuredData} />
       <NProgress />
       <NextSeo
         defaultTitle={defaultTitle}
         title={formattedTitle}
         description={props.description}
+        canonical={canonical}
         twitter={{
           handle: '@auchenberg',
           cardType: 'summary_large_image',
         }}
         openGraph={{
+          url: canonical,
+          title: formattedTitle,
+          description: props.description,
+          type: props.openGraphType || 'website',
           images: [
             {
               url: image,

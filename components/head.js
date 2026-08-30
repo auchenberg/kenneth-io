@@ -1,12 +1,15 @@
 import React from 'react';
 import NextHead from 'next/head';
 
+const serializeStructuredData = (data) =>
+  JSON.stringify(data).replace(/</g, '\\u003c');
+
 const Head = (props) => (
   <NextHead>
-    <title>{props.title}</title>
+    <title key="title">{props.title}</title>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -19,6 +22,13 @@ const Head = (props) => (
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossOrigin="anonymous"
     />
+    {(props.structuredData || []).map((data, index) => (
+      <script
+        key={`structured-data-${index}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeStructuredData(data) }}
+      />
+    ))}
   </NextHead>
 );
 

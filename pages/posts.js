@@ -39,7 +39,12 @@ const Posts = (props) => {
     });
 
   return (
-    <Layout title="Thoughts" center>
+    <Layout
+      title="Thoughts"
+      description="Writing by Kenneth Auchenberg about AI, developer tools, infrastructure, investing, and the web."
+      canonicalPath="/posts"
+      center
+    >
       <div className="home">
         <h1>Thoughts</h1>
         <div className="list">{renderedPosts}</div>

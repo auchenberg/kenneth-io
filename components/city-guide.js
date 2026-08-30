@@ -10,7 +10,7 @@ import Image from 'next/image';
 // link, image }] } — the shape the data files in data/travel-guides export.
 const anchor = (category) => category.toLowerCase().replace(/\s+/g, '-');
 
-const CityGuide = ({ city, intro, description, socialImage, sections }) => {
+const CityGuide = ({ city, slug, intro, description, socialImage, sections }) => {
     const total = sections.reduce((n, section) => n + section.places.length, 0);
     // A hundred places is a long scroll in photos, so list view leads: the same
     // content as plain columns of links, scannable in one screen. Grid is a
@@ -18,7 +18,13 @@ const CityGuide = ({ city, intro, description, socialImage, sections }) => {
     const [view, setView] = useState('list');
 
     return (
-        <Layout title={city} description={description} socialImage={socialImage} center>
+        <Layout
+            title={city}
+            description={description}
+            socialImage={socialImage}
+            canonicalPath={`/travel/${slug}`}
+            center
+        >
             <div className="guide">
                 <header>
                     {/* The view switch sits on the title line, well clear of

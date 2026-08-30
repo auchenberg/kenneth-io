@@ -445,6 +445,7 @@ const TravelPage = () => {
         <Layout
             title="Travel"
             description="Everywhere I've been, and guides to the cities I know well."
+            canonicalPath="/travel"
             center
         >
             <div className="travel">

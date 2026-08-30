@@ -15,6 +15,7 @@ import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-markdown";
 
 import { getBlogPostBySlug, getBlogPosts } from '../../helpers/getPosts';
+import { blogPostStructuredData } from '../../helpers/seo';
 
 import { EmbeddedTweet, TweetNotFound } from 'react-tweet';
 import { getTweet } from 'react-tweet/api';
@@ -300,12 +301,17 @@ const Post = (props) => {
       title={post.title}
       socialImage={socialImageUrl}
       description={post.description}
+      canonicalPath={`/post/${post.slug}`}
+      structuredData={blogPostStructuredData(post)}
+      openGraphType="article"
       center
     >
       <div className="post">
         <header>
           <h1>{post.title}</h1>
-          <p className="date">{post.date}</p>
+          <p className="date">
+            By <a href="/about" rel="author">Kenneth Auchenberg</a> · {post.date}
+          </p>
         </header>
         <div className="content">
           {Markdoc.renderers.react(parsedContent, React, {

@@ -49,6 +49,7 @@ const BucketListPage = ({ bucketListData }) => {
     <Layout
       title={`${metadata.title} - ${stats.completed}/${stats.total} completed`}
       description={metadata.description}
+      canonicalPath="/lists"
       center
     >
       <div className="bucket-list">
@@ -292,4 +293,4 @@ export async function getStaticProps() {
   };
 }
 
-export default BucketListPage; 
+export default BucketListPage;

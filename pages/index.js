@@ -2,16 +2,28 @@ import React from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import {
+  DEFAULT_DESCRIPTION,
+  PROFILE_URLS,
+  homeStructuredData,
+} from '../helpers/seo';
 
 const Home = () => {
   return (
-    <Layout title="Hej" main>
+    <Layout
+      title="Kenneth Auchenberg"
+      seoTitle="Kenneth Auchenberg — Partner at Innovation Endeavors"
+      description={DEFAULT_DESCRIPTION}
+      canonicalPath="/"
+      structuredData={homeStructuredData()}
+      main
+    >
       <div className="home">
         <h1>Kenneth Auchenberg</h1>
         <p className="wave">👋</p>
         <p>Hej there, I'm Kenneth.</p>
 
-        <p>I'm a partner at <a href="https://www.innovationendeavors.com/">Innovation Endeavors</a>, a deeply technical venture capital firm, where I focus on AI, developer tools, and infrastructure.</p>
+        <p>I'm a partner at <a href={PROFILE_URLS.innovationEndeavors}>Innovation Endeavors</a>, a deeply technical venture capital firm, where I focus on AI, developer tools, and infrastructure.</p>
 
         <p>Before stepping into venture capital, I spent two decades building products and leading engineering teams. As an <a href="https://developers.vc/">angel investor</a>, I help and support founders building for developers.</p>
 
@@ -25,9 +37,13 @@ const Home = () => {
           I love helping people and am always up for a coffee ☕️.
         </p>
 
-        <p> Drop me a line
-          at <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a> or reach out on X at{' '}
-          <a href="https://twitter.com/auchenberg">@auchenberg</a>.</p>
+        <p>
+          Drop me a line at <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a>,
+          or find me on{' '}
+          <a href={PROFILE_URLS.linkedin} rel="me">LinkedIn</a>,{' '}
+          <a href={PROFILE_URLS.github} rel="me">GitHub</a>, and{' '}
+          <a href={PROFILE_URLS.x} rel="me">X</a>.
+        </p>
         <Nav />
       </div>
       <style jsx>{`

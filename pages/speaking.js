@@ -40,7 +40,12 @@ class Speaking extends React.Component {
       });
     };
     return (
-      <Layout title="Speaking" center>
+      <Layout
+        title="Speaking"
+        description="Talks and conference appearances by Kenneth Auchenberg."
+        canonicalPath="/speaking"
+        center
+      >
         <div className="speaking">
           <h1>Speaking</h1>
           <p>

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Layout from '../components/layout';
+import {
+    DEFAULT_DESCRIPTION,
+    PROFILE_URLS,
+    profileStructuredData,
+} from '../helpers/seo';
 
 const About = () => {
     const [copied, setCopied] = useState(false);
@@ -29,7 +34,14 @@ Kenneth is based in New York City.`;
     ];
 
     return (
-        <Layout title="About" description="About Kenneth Auchenberg" center>
+        <Layout
+            title="About Kenneth Auchenberg"
+            seoTitle="Kenneth Auchenberg — Biography and Headshots"
+            description={DEFAULT_DESCRIPTION}
+            canonicalPath="/about"
+            structuredData={profileStructuredData()}
+            center
+        >
             <div className="page-about">
                 <h1>About</h1>
 
@@ -44,7 +56,7 @@ Kenneth is based in New York City.`;
                     <div className="bio-content">
                         <p>
                             Kenneth Auchenberg is a partner at{' '}
-                            <a href="https://www.innovationendeavors.com/">Innovation Endeavors</a>, a deeply technical
+                            <a href={PROFILE_URLS.innovationEndeavors}>Innovation Endeavors</a>, a deeply technical
                             venture capital firm, where he focuses on AI, developer tools, and
                             infrastructure.
                         </p>
@@ -80,6 +92,17 @@ Kenneth is based in New York City.`;
                             Kenneth is based in New York City.
                         </p>
                     </div>
+                </div>
+
+                <div className="profiles-section">
+                    <h2>Profiles</h2>
+                    <ul>
+                        <li><a href={PROFILE_URLS.innovationEndeavors} rel="me">Innovation Endeavors</a></li>
+                        <li><a href={PROFILE_URLS.linkedin} rel="me">LinkedIn</a></li>
+                        <li><a href={PROFILE_URLS.github} rel="me">GitHub</a></li>
+                        <li><a href={PROFILE_URLS.x} rel="me">X</a></li>
+                        <li><a href={PROFILE_URLS.instagram} rel="me">Instagram</a></li>
+                    </ul>
                 </div>
 
                 <div className="headshots-section">
@@ -119,6 +142,24 @@ Kenneth is based in New York City.`;
 
                 .bio-section {
                     margin-bottom: 3rem;
+                }
+
+                .profiles-section {
+                    margin-bottom: 3rem;
+                }
+
+                .profiles-section h2 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.75rem;
+                }
+
+                .profiles-section ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem 1.25rem;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
                 }
 
                 .bio-header {

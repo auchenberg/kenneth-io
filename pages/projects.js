@@ -40,7 +40,12 @@ export default class Projects extends React.Component {
       });
     };
     return (
-      <Layout title="Speaking" center>
+      <Layout
+        title="Projects"
+        description="Projects by Kenneth Auchenberg."
+        canonicalPath="/projects"
+        center
+      >
         <div className="projects">
           <h1>Projects</h1>
           <ul className="list">{projects()}</ul>

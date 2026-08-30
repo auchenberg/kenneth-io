@@ -306,6 +306,7 @@ const ObjectsPage = () => {
     <Layout
       title="Objects - a curated collection of objects I appreciate."
       description="A curated collection of objects I appreciate.."
+      canonicalPath="/objects"
       center
     >
       <div className="objects">
