@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Just build the damn best product'
+title: 'Build the damn best product.'
 date: 2026-08-31 09:00
 published: true
 comments: true
