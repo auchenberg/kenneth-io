@@ -16,7 +16,7 @@ When I talk to European founders, I hear a different narrative. I hear sovereign
 
 I think this is fundamentally the problem with European tech. It's a mindset problem.
 
-If I'm honest, this is why European tech isn't winning. No one gives a shit that you're building a crappy German copy of Gmail hosted in a bunker in Hamburg and calling it your sovereign AI play. What the world cares about is whether you're building the best email client in the world.
+No one gives a shit that you're building a crappy German copy of Gmail hosted in a bunker in Hamburg and calling it your sovereign AI play. What the world cares about is whether you're building the best email client in the world.
 
 Sovereignty, privacy, compliance. These are important aspects of how you build a company in a globalized world — or what is increasingly a Balkanized one. But they have to be second-order priorities. Not the main one.
 
