@@ -1,0 +1,20 @@
+posts/2026-09-10-the-end-of-human-abstraction.md
+  s_c6c9375ffa7d41::t_4e21deb1fe3ef5 1-3,5-39
+  s_c6c9375ffa7d41::t_d539d511c7d5ef 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "918299f7c84dcf75907f62b4bbb221b9db74ec4e",
+  "prompts": {},
+  "sessions": {
+    "s_c6c9375ffa7d41": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08e23-b611-7d91-9687-f0de7ef32066",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
