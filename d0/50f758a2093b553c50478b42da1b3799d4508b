@@ -1,0 +1,25 @@
+pages/about.js
+  s_beb8267cf783f4::t_c663b31e45c3ac 4-5,41,44,135
+next.config.js
+  s_beb8267cf783f4::t_c663b31e45c3ac 9-18
+helpers/seo.js
+  s_beb8267cf783f4::t_c663b31e45c3ac 75-76,78,98,111,113,124-126,128-169,171-175
+components/press-section.js
+  s_beb8267cf783f4::t_c663b31e45c3ac 28,32,57,63,69,73,97-98,108-136,139-141,145,148-150,155-156,168,188,207,216,220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d050f758a2093b553c50478b42da1b3799d4508b",
+  "prompts": {},
+  "sessions": {
+    "s_beb8267cf783f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09685-bce9-7753-a50a-2dfa56011b96",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
