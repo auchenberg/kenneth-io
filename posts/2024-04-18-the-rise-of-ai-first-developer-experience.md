@@ -260,7 +260,7 @@ Best, Kenneth
 - [AI Is Rewiring Coders’ Brains. Yours May Be Next](https://www.wired.com/story/fast-forward-ai-rewiring-coders-brains-github-copilot/)
 - [From Syntax to Semantics](https://www.alessiofanelli.com/posts/syntax-to-semantics)
 - [Software Systems in a World of LLMs](https://davistreybig.substack.com/p/software-systems-in-a-world-of-llms)
-- [Insights from building @stripe's developer platform & API developer experience: Part 1](https://kenneth.io/post/insights-from-building-stripes-developer-platform-and-api-developer-experience-part-1)
+- [Insights from building @stripe's developer platform & API developer experience](https://kenneth.io/post/insights-from-building-stripes-developer-platform-and-api-developer-experience)
 - [Developer Experience Infrastructure (DXI)](https://kenneth.io/post/developer-experience-infrastructure-dxi)
 
 _Thanks to [@astasiaMyers](https://twitter.com/astasiaMyers), [@deaniHansen](https://twitter.com/deaniHansen), [@fanahova](https://twitter.com/fanahova), [@ianmst](https://twitter.com/ianmst), [@indexzero](https://twitter.com/indexzero), [@mortenjust](https://twitter.com/mortenjust), [@nkohari](https://twitter.com/nkohari), [@nickBruun](https://twitter.com/nickBruun), [@terkelg](https://twitter.com/terkelg), [@treybigDavis](https://twitter.com/TreybigDavis) for providing feedback on early drafts of this post._

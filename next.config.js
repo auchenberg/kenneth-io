@@ -13,6 +13,11 @@ const nextConfig = {
         destination: '/about#press',
         permanent: true,
       },
+      {
+        source: '/post/insights-from-building-stripes-developer-platform-and-api-developer-experience-part-1',
+        destination: '/post/insights-from-building-stripes-developer-platform-and-api-developer-experience',
+        permanent: true,
+      },
     ];
   },
 

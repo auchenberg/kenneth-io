@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Insights from building @stripe's developer platform & API developer experience: Part 1"
+title: "Insights from building @stripe's developer platform & API developer experience"
 date: 2024-04-06 09:00
 published: true
 comments: true
