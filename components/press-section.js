@@ -1,10 +1,3 @@
-import Layout from '../components/layout';
-import press from '../data/press';
-import { pressStructuredData } from '../helpers/seo';
-
-const DESCRIPTION =
-  'Selected press, interviews, podcasts, and news featuring Kenneth Auchenberg.';
-
 const languageLabels = {
   'da-DK': 'Danish',
   'de-DE': 'German',
@@ -32,11 +25,11 @@ const PressItem = ({ item }) => {
         <span>{details.join(' · ')}</span>
         <time dateTime={item.date}>{formatDate(item.date)}</time>
       </div>
-      <h3>
+      <h4>
         <a href={item.url} target="_blank" rel="noopener noreferrer">
           {item.title} <span aria-hidden="true">↗</span>
         </a>
-      </h3>
+      </h4>
       <p>{item.description}</p>
 
       <style jsx>{`
@@ -61,23 +54,23 @@ const PressItem = ({ item }) => {
           flex-shrink: 0;
         }
 
-        h3 {
+        h4 {
           font-size: 18px;
           line-height: 24px;
           margin: 0 0 0.55rem;
         }
 
-        h3 a {
+        h4 a {
           color: #202020;
           text-decoration-thickness: 1px;
           text-underline-offset: 3px;
         }
 
-        h3 a:hover {
+        h4 a:hover {
           color: #0066cc;
         }
 
-        h3 span {
+        h4 span {
           color: #777;
           font-size: 13px;
           white-space: nowrap;
@@ -101,8 +94,8 @@ const PressItem = ({ item }) => {
   );
 };
 
-const Press = () => {
-  const itemsByYear = press.reduce((years, item) => {
+const PressSection = ({ items }) => {
+  const itemsByYear = items.reduce((years, item) => {
     const year = item.date.slice(0, 4);
     years[year] = years[year] || [];
     years[year].push(item);
@@ -112,62 +105,55 @@ const Press = () => {
   const years = Object.keys(itemsByYear).sort((a, b) => b - a);
 
   return (
-    <Layout
-      title="Press"
-      seoTitle="Kenneth Auchenberg — Press, Interviews, and Podcasts"
-      description={DESCRIPTION}
-      canonicalPath="/press"
-      structuredData={pressStructuredData(press)}
-      center
-    >
-      <main className="press-page">
-        <header className="press-header">
-          <h1>Press</h1>
-          <p>
-            Selected interviews, podcasts, profiles, and coverage of my work in
-            AI, developer tools, infrastructure, and investing.
-          </p>
-        </header>
+    <section className="press-section" id="press" aria-labelledby="press-heading">
+      <header className="press-header">
+        <h2 id="press-heading">Press</h2>
+        <p>
+          Selected interviews, podcasts, profiles, and coverage of my work in
+          AI, developer tools, infrastructure, and investing.
+        </p>
+      </header>
 
-        <div className="press-years">
-          {years.map((year) => (
-            <section className="press-year" key={year} aria-labelledby={`year-${year}`}>
-              <h2 id={`year-${year}`}>{year}</h2>
-              <ul>
-                {itemsByYear[year].map((item) => (
-                  <PressItem key={item.url} item={item} />
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
+      <div className="press-years">
+        {years.map((year) => (
+          <section className="press-year" key={year} aria-labelledby={`press-year-${year}`}>
+            <h3 id={`press-year-${year}`}>{year}</h3>
+            <ul>
+              {itemsByYear[year].map((item) => (
+                <PressItem key={item.url} item={item} />
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
 
-        <aside className="press-contact">
-          <h2>Press inquiries</h2>
-          <p>
-            For interviews, speaking, or media requests, email{' '}
-            <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a>.
-          </p>
-        </aside>
-      </main>
+      <aside className="press-contact">
+        <h3>Press inquiries</h3>
+        <p>
+          For interviews, speaking, or media requests, email{' '}
+          <a href="mailto:kenneth@auchenberg.dk">kenneth@auchenberg.dk</a>.
+        </p>
+      </aside>
 
       <style jsx>{`
-        .press-page {
-          max-width: 700px;
+        .press-section {
+          margin-top: 3rem;
+          scroll-margin-top: 2rem;
         }
 
         .press-header {
-          margin-bottom: 3.25rem;
+          margin-bottom: 2rem;
         }
 
-        .press-header h1 {
-          margin-bottom: 0.8rem;
+        .press-header h2 {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
         }
 
         .press-header p {
           color: #555;
-          font-size: 17px;
-          line-height: 25px;
+          font-size: 14px;
+          line-height: 21px;
           margin: 0;
           max-width: 610px;
         }
@@ -179,7 +165,7 @@ const Press = () => {
           margin-bottom: 2.5rem;
         }
 
-        .press-year h2 {
+        .press-year h3 {
           color: #777;
           font-size: 13px;
           font-weight: 600;
@@ -199,7 +185,7 @@ const Press = () => {
           padding-top: 1.5rem;
         }
 
-        .press-contact h2 {
+        .press-contact h3 {
           font-size: 18px;
           margin: 0 0 0.5rem;
         }
@@ -218,7 +204,7 @@ const Press = () => {
             margin-bottom: 3rem;
           }
 
-          .press-year h2 {
+          .press-year h3 {
             margin: 0 0 0.75rem;
           }
 
@@ -227,8 +213,8 @@ const Press = () => {
           }
         }
       `}</style>
-    </Layout>
+    </section>
   );
 };
 
-export default Press;
+export default PressSection;

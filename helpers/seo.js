@@ -72,10 +72,10 @@ export const personSchema = () => ({
       url: 'https://www.listennotes.com/podcasts/ai-in-nyc-show/ep30-ai-agents-vs-saas-the-cmAv75TJXuz/',
     },
     {
-      '@type': 'CollectionPage',
-      '@id': `${SITE_URL}/press#press-page`,
+      '@type': 'WebPageElement',
+      '@id': `${SITE_URL}/about#press`,
       name: 'Kenneth Auchenberg — Press, Interviews, and Podcasts',
-      url: `${SITE_URL}/press`,
+      url: `${SITE_URL}/about#press`,
     },
   ],
 });
@@ -95,7 +95,7 @@ export const homeStructuredData = () => ({
   '@graph': [personSchema(), websiteSchema()],
 });
 
-export const profileStructuredData = () => ({
+export const profileStructuredData = (pressItems = []) => ({
   '@context': 'https://schema.org',
   '@graph': [
     personSchema(),
@@ -108,7 +108,9 @@ export const profileStructuredData = () => ({
       description: DEFAULT_DESCRIPTION,
       isPartOf: { '@id': WEBSITE_ID },
       mainEntity: { '@id': PERSON_ID },
+      hasPart: { '@id': `${SITE_URL}/about#press` },
     },
+    ...pressSectionSchema(pressItems),
   ],
 });
 
@@ -119,63 +121,58 @@ const pressSchemaType = (type) => {
   return 'Article';
 };
 
-export const pressStructuredData = (pressItems) => {
-  const url = `${SITE_URL}/press`;
-  const itemListId = `${url}#press-list`;
+const pressSectionSchema = (pressItems) => {
+  const url = `${SITE_URL}/about#press`;
+  const itemListId = `${SITE_URL}/about#press-list`;
 
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      personSchema(),
-      websiteSchema(),
-      {
-        '@type': 'CollectionPage',
-        '@id': `${url}#press-page`,
-        url,
-        name: 'Kenneth Auchenberg — Press, Interviews, and Podcasts',
-        description:
-          'Selected press, interviews, podcasts, and news featuring Kenneth Auchenberg.',
-        inLanguage: 'en-US',
-        isPartOf: { '@id': WEBSITE_ID },
-        about: { '@id': PERSON_ID },
-        mainEntity: { '@id': itemListId },
-      },
-      {
-        '@type': 'ItemList',
-        '@id': itemListId,
-        numberOfItems: pressItems.length,
-        itemListElement: pressItems.map((item, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          item: {
-            '@type': pressSchemaType(item.type),
-            '@id': item.url,
-            url: item.url,
-            name: item.title,
-            headline: item.title,
-            description: item.description,
-            datePublished: item.date,
-            inLanguage: item.language,
-            ...(item.duration ? { duration: item.duration } : {}),
-            ...(item.type === 'Podcast'
-              ? {
-                  partOfSeries: {
-                    '@type': 'PodcastSeries',
-                    name: item.outlet,
-                  },
-                }
-              : {}),
-            ...(item.type === 'Video' ? { uploadDate: item.date } : {}),
-            publisher: {
-              '@type': 'Organization',
-              name: item.outlet,
-            },
-            about: { '@id': PERSON_ID },
+  return [
+    {
+      '@type': 'WebPageElement',
+      '@id': url,
+      url,
+      name: 'Kenneth Auchenberg — Press, Interviews, and Podcasts',
+      description:
+        'Selected press, interviews, podcasts, and news featuring Kenneth Auchenberg.',
+      inLanguage: 'en-US',
+      isPartOf: { '@id': `${SITE_URL}/about#profile-page` },
+      about: { '@id': PERSON_ID },
+      mainEntity: { '@id': itemListId },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': itemListId,
+      numberOfItems: pressItems.length,
+      itemListElement: pressItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': pressSchemaType(item.type),
+          '@id': item.url,
+          url: item.url,
+          name: item.title,
+          headline: item.title,
+          description: item.description,
+          datePublished: item.date,
+          inLanguage: item.language,
+          ...(item.duration ? { duration: item.duration } : {}),
+          ...(item.type === 'Podcast'
+            ? {
+                partOfSeries: {
+                  '@type': 'PodcastSeries',
+                  name: item.outlet,
+                },
+              }
+            : {}),
+          ...(item.type === 'Video' ? { uploadDate: item.date } : {}),
+          publisher: {
+            '@type': 'Organization',
+            name: item.outlet,
           },
-        })),
-      },
-    ],
-  };
+          about: { '@id': PERSON_ID },
+        },
+      })),
+    },
+  ];
 };
 
 export const blogPostStructuredData = (post) => {

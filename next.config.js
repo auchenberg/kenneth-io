@@ -6,6 +6,16 @@ const nextConfig = {
 
   transpilePackages: ['react-tweet'],
 
+  async redirects() {
+    return [
+      {
+        source: '/press',
+        destination: '/about#press',
+        permanent: true,
+      },
+    ];
+  },
+
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 
@@ -23,4 +33,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-

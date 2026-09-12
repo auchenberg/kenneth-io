@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Layout from '../components/layout';
+import PressSection from '../components/press-section';
+import press from '../data/press';
 import {
     DEFAULT_DESCRIPTION,
     PROFILE_URLS,
@@ -36,10 +38,10 @@ Kenneth is based in New York City.`;
     return (
         <Layout
             title="About Kenneth Auchenberg"
-            seoTitle="Kenneth Auchenberg — Biography and Headshots"
+            seoTitle="Kenneth Auchenberg — Biography, Headshots, and Press"
             description={DEFAULT_DESCRIPTION}
             canonicalPath="/about"
-            structuredData={profileStructuredData()}
+            structuredData={profileStructuredData(press)}
             center
         >
             <div className="page-about">
@@ -130,6 +132,7 @@ Kenneth is based in New York City.`;
                         ))}
                     </div>
                 </div>
+                <PressSection items={press} />
             </div>
             <style jsx>{`
                 .page-about {
