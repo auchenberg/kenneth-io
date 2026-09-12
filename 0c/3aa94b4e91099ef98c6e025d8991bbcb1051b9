@@ -1,0 +1,19 @@
+pages/travel/index.js
+  s_69e985bca9e0bb::t_0c8a22deecb634 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0c3aa94b4e91099ef98c6e025d8991bbcb1051b9",
+  "prompts": {},
+  "sessions": {
+    "s_69e985bca9e0bb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09806-3082-7493-b8bb-a59ee10758c0",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
