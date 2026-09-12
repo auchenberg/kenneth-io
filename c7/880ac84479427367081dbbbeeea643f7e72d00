@@ -1,0 +1,19 @@
+posts/2026-08-31-just-build-the-damn-best-product.md
+  s_10ef9c92d0b06e::t_2bc43151ae0ba5 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c7880ac84479427367081dbbbeeea643f7e72d00",
+  "prompts": {},
+  "sessions": {
+    "s_10ef9c92d0b06e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a097ec-9b4a-7962-a595-16c175e2f85a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
