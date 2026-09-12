@@ -39,6 +39,7 @@ const visitedByRegion = {
         'Poland',
         'Portugal',
         'Romania',
+        'Scotland',
         'Spain',
         'Sweden',
         'Switzerland',
