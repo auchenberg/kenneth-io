@@ -1,0 +1,23 @@
+posts/2024-04-18-the-rise-of-ai-first-developer-experience.md
+  s_10ef9c92d0b06e::t_bb92a5b0d59018 263
+posts/2024-04-06-api-developer-experience-2024.md
+  s_10ef9c92d0b06e::t_bb92a5b0d59018 3
+next.config.js
+  s_10ef9c92d0b06e::t_bb92a5b0d59018 16-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fea10f26559c0a3c282a14860fdfddc3601f993b",
+  "prompts": {},
+  "sessions": {
+    "s_10ef9c92d0b06e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a097ec-9b4a-7962-a595-16c175e2f85a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
