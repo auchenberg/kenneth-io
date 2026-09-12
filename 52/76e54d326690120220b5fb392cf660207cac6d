@@ -1,0 +1,19 @@
+components/nav.js
+  s_beb8267cf783f4::t_b08e739881a36d 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5276e54d326690120220b5fb392cf660207cac6d",
+  "prompts": {},
+  "sessions": {
+    "s_beb8267cf783f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09685-bce9-7753-a50a-2dfa56011b96",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
