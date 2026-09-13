@@ -210,6 +210,13 @@ const ObjectsPage = () => {
         image: '/images/objects/apple-earpods.png'
       },
       {
+        name: 'UniFi Express 7',
+        brand: 'Ubiquiti',
+        description: 'A compact cloud gateway with WiFi 7.',
+        link: 'https://store.ui.com/us/en/products/ux7',
+        image: '/images/objects/unifi-express-7.png'
+      },
+      {
         name: 'Herman Miller Aeron Chair',
         brand: 'Herman Miller',
         description: 'Designed by Bill Stumpf and Don Chadwick',
