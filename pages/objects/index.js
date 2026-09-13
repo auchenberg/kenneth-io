@@ -304,8 +304,9 @@ const ObjectsPage = () => {
         brand: 'Maison Margiela',
         description: 'Adobe Brown.',
         link: 'https://www.maisonmargiela.com/en-us/replica-soft-sneaker-S57WS0557P7795T2162.html',
-        image: '/images/objects/maison-margiela-replica-soft-sneaker.webp',
-        imagePosition: 'center bottom'
+        image: '/images/objects/maison-margiela-replica-soft-sneaker.png',
+        contain: true,
+        imagePadding: '12%'
       }
     ]
   };
@@ -342,7 +343,7 @@ const ObjectsPage = () => {
                       width={400}
                       height={300}
                       className={item.contain ? 'item-image item-image-contain' : 'item-image'}
-                      style={{ objectPosition: item.imagePosition }}
+                      style={{ padding: item.imagePadding }}
                     />
                   </div>
                   <div className="item-info">
