@@ -158,13 +158,6 @@ const ObjectsPage = () => {
         contain: true
       },
       {
-        name: '1987 Porsche 911 Targa',
-        brand: 'Porsche',
-        description: 'Guards Red.',
-        link: 'https://www.porsche.com/international/accessoriesandservice/classic/models/911-g/',
-        image: '/images/objects/porsche-911-targa.png'
-      },
-      {
         name: '2018 Porsche Panamera Turbo Sport Turismo',
         brand: 'Porsche',
         description: 'The practical one.',
