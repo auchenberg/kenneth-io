@@ -1,0 +1,32 @@
+pages/projects.js
+  s_cb1319af0020e9::t_e5b46952fa58a0 3,5,7-36,38-43
+pages/speaking.js
+  s_cb1319af0020e9::t_e5b46952fa58a0 3,5,7-35,37-54,56-59,61-64,66-68,70-75
+  s_cb1319af0020e9::t_a990f212304002 76
+data/speaking.json
+  s_cb1319af0020e9::t_d4c15b41e59128 280,288,296,304,312,320
+data/projects.json
+  s_cb1319af0020e9::t_d4c15b41e59128 23,31,39,47,55,63,71,79,87
+scripts/smoke-test.mjs
+  s_cb1319af0020e9::t_0dddb64f5e0446 1-79
+package.json
+  s_cb1319af0020e9::t_0dddb64f5e0446 5
+tests/catalogs.test.cjs
+  s_cb1319af0020e9::t_fe6102db1e174b 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0b912091102f455980c5681c00fd7ee669e2595f",
+  "prompts": {},
+  "sessions": {
+    "s_cb1319af0020e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a6e3-aaa0-7d93-a189-9c1ebc08c777",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
