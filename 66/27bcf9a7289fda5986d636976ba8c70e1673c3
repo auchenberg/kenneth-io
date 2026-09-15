@@ -1,0 +1,37 @@
+posts/2015-10-18-rebooting-prototype-our-hacker-cafe-in-copenhagen.md
+  s_cb1319af0020e9::t_62865b990c2cf3 21,27,33-35
+helpers/markdoc.js
+  s_cb1319af0020e9::t_62865b990c2cf3 1-97
+pages/post/[slug].js
+  s_cb1319af0020e9::t_62865b990c2cf3 19,170
+scripts/validate-posts.cjs
+  s_cb1319af0020e9::t_391ce2ed0245bd 1-18
+tests/markdoc.test.cjs
+  s_cb1319af0020e9::t_391ce2ed0245bd 1-29
+posts/2013-07-15-the-messy-state-of-web-notifications-in-chrome-safari-blink-webkit.md
+  s_cb1319af0020e9::t_62865b990c2cf3 72,137-139
+posts/2015-06-26-the-fundamental-problem-with-vorlonjs-and-similar-remote-debugging-solutions.md
+  s_cb1319af0020e9::t_62865b990c2cf3 65
+posts/2015-07-03-safari-isnt-the-problem-but-the-lack-of-browser-choice-in-ios-is.md
+  s_cb1319af0020e9::t_62865b990c2cf3 29
+package.json
+  s_cb1319af0020e9::t_391ce2ed0245bd 5
+posts/2011-01-09-new-version-of-css-reloader-for-chrome-is-out.md
+  s_cb1319af0020e9::t_62865b990c2cf3 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6627bcf9a7289fda5986d636976ba8c70e1673c3",
+  "prompts": {},
+  "sessions": {
+    "s_cb1319af0020e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a6e3-aaa0-7d93-a189-9c1ebc08c777",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
