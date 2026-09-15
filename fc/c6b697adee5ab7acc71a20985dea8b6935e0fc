@@ -1,0 +1,22 @@
+helpers/getPosts.js
+  s_cb1319af0020e9::t_6572d78c19a770 15,33-37,43-44,50,53-57,62-65,67
+tests/posts.test.cjs
+  s_cb1319af0020e9::t_086f0a3343e2b0 56,59
+  s_cb1319af0020e9::t_6572d78c19a770 5,28-29,54-55,57-58,60-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fcc6b697adee5ab7acc71a20985dea8b6935e0fc",
+  "prompts": {},
+  "sessions": {
+    "s_cb1319af0020e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a6e3-aaa0-7d93-a189-9c1ebc08c777",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
