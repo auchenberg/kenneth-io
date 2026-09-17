@@ -217,6 +217,14 @@ const ObjectsPage = () => {
         image: '/images/objects/unifi-express-7.png'
       },
       {
+        name: 'Brother HL-L2460DW',
+        brand: 'Brother',
+        description: 'A compact monochrome laser printer.',
+        link: 'https://www.brother-usa.com/p/laser-printers/HLL2460DW',
+        image: '/images/objects/brother-hl-l2460dw.png',
+        contain: true
+      },
+      {
         name: 'Herman Miller Aeron Chair',
         brand: 'Herman Miller',
         description: 'Designed by Bill Stumpf and Don Chadwick',
