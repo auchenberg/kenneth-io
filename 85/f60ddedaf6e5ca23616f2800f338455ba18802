@@ -1,0 +1,20 @@
+pages/objects/index.js
+  s_859bb73c6d309b::t_5a1885d9b61974 220-226
+  s_859bb73c6d309b::t_524600dc665198 219
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "85f60ddedaf6e5ca23616f2800f338455ba18802",
+  "prompts": {},
+  "sessions": {
+    "s_859bb73c6d309b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0afee-9646-7761-877b-4c66c50a65b4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
