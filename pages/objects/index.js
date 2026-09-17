@@ -154,16 +154,18 @@ const ObjectsPage = () => {
         brand: 'Porsche',
         description: 'GT Silver.',
         link: 'https://www.cnet.com/roadshow/reviews/2019-porsche-911-gt3-touring-preview/',
-        image: '/images/objects/porsche-911-gt3-touring-new.png',
-        contain: true
+        image: '/images/objects/porsche-911-gt3-touring-side-right-level.png',
+        contain: true,
+        imageRotation: '-0.35deg'
       },
       {
         name: '2018 Porsche Panamera Turbo Sport Turismo',
         brand: 'Porsche',
         description: 'The practical one.',
         link: 'https://www.porsche.com/international/models/panamera/panamera-models/panamera-turbo-s-e-hybrid-sport-turismo/',
-        image: '/images/objects/porsche_panamera.png',
-        contain: true
+        image: '/images/objects/porsche-panamera-actual.png',
+        contain: true,
+        imageRotation: '-0.35deg'
       },
       {
         name: 'Lego Icons 10295 Porsche 911',
@@ -351,7 +353,7 @@ const ObjectsPage = () => {
                       width={400}
                       height={300}
                       className={item.contain ? 'item-image item-image-contain' : 'item-image'}
-                      style={{ padding: item.imagePadding }}
+                      style={{ padding: item.imagePadding, rotate: item.imageRotation }}
                     />
                   </div>
                   <div className="item-info">
