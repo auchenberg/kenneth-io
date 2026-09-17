@@ -115,7 +115,9 @@ const ObjectsPage = () => {
         brand: 'Herman Miller',
         description: 'A timeless chair.',
         link: 'https://www.hermanmiller.com/products/seating/side-chairs/eames-molded-plywood-chairs/',
-        image: '/images/objects/herman-miller-eames-molded-plyw.webp'
+        image: '/images/objects/eames-chair-side-profile.png',
+        contain: true,
+        imagePadding: '0'
       },
       {
         name: "Beolab 50",
@@ -231,7 +233,9 @@ const ObjectsPage = () => {
         brand: 'Herman Miller',
         description: 'Designed by Bill Stumpf and Don Chadwick',
         link: 'https://www.hermanmiller.com/products/seating/office-chairs/aeron-chair/',
-        image: '/images/objects/herman-miller-aeron.webp'
+        image: '/images/objects/aeron-chair-side-profile.png',
+        contain: true,
+        imagePadding: '0'
       }
     ],
     'Watches': [
