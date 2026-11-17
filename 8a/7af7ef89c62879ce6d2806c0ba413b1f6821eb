@@ -1,0 +1,19 @@
+data/travel-guides/new-york.js
+  s_170df6cda9d4b2::t_a1addd8a6c6fbc 315-321,446-452,500-506
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a7af7ef89c62879ce6d2806c0ba413b1f6821eb",
+  "prompts": {},
+  "sessions": {
+    "s_170df6cda9d4b2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e9bf-f461-73d0-abcb-0a8244351ce2",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
