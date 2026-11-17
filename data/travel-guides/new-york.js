@@ -313,6 +313,13 @@ const newYork = [
         image: '/images/travel/new-york/via-carota.webp',
       },
       {
+        name: 'Buvette',
+        meta: 'West Village · French',
+        description: 'A little French café on Grove Street. Croque madame in the morning, coq au vin at night.',
+        link: 'https://ilovebuvette.com/eat-drink-newyork-location',
+        image: '/images/travel/new-york/buvette.webp',
+      },
+      {
         name: 'Estela',
         meta: 'Nolita · Small plates',
         description: 'Up a staircase off Houston. Order the endive salad.',
@@ -437,6 +444,13 @@ const newYork = [
     category: 'Bread',
     places: [
       {
+        name: 'La Cabra Bakery',
+        meta: 'East Village · Bakery',
+        description: 'Sourdough and croissants on Second Avenue. A little Aarhus in the East Village.',
+        link: 'https://us.lacabra.com/pages/east-village',
+        image: '/images/travel/new-york/la-cabra-bakery.webp',
+      },
+      {
         name: 'Radio Bakery',
         meta: 'Greenpoint · Bakery',
         description: 'The best bread in New York. Get there before noon.',
@@ -483,6 +497,13 @@ const newYork = [
   {
     category: 'Coffee',
     places: [
+      {
+        name: 'WatchHouse',
+        meta: 'Manhattan · Specialty coffee',
+        description: 'London coffee houses, now in Manhattan. Carefully brewed coffee and rooms to match.',
+        link: 'https://watchhouse.com/en-us',
+        image: '/images/travel/new-york/watchhouse.webp',
+      },
       {
         name: 'La Cabra',
         meta: 'Bushwick + East Village · Danish roastery',
