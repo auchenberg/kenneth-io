@@ -377,20 +377,23 @@ function Shelf({ id }) {
 
 export default function ReadingPage() {
   const [view, setView] = useState('shelf');
-  const [selectedId, setSelectedId] = useState(books[0]?.id);
-  const selected = shelfOrder.find((entry) => entry.id === selectedId) || shelfOrder[0];
+  // Nothing is selected to begin with; pressing a book opens its details, pressing it again closes them.
+  const [selectedId, setSelectedId] = useState(null);
+  const selected = shelfOrder.find((entry) => entry.id === selectedId) || null;
   const bookRefs = useRef({});
 
   const onBookKeyDown = (event, id) => {
     const index = shelfOrder.findIndex((entry) => entry.id === id);
     let next = null;
+    if (event.key === 'Escape' && selectedId) { event.preventDefault(); setSelectedId(null); return; }
     if (event.key === 'ArrowRight') next = shelfOrder[index + 1];
     if (event.key === 'ArrowLeft') next = shelfOrder[index - 1];
     if (event.key === 'Home') next = shelfOrder[0];
     if (event.key === 'End') next = shelfOrder[shelfOrder.length - 1];
     if (!next) return;
     event.preventDefault();
-    setSelectedId(next.id);
+    // Arrow keys move along the shelf; the details follow only while they are open
+    if (selectedId) setSelectedId(next.id);
     const node = bookRefs.current[next.id];
     if (node) node.focus();
   };
@@ -472,8 +475,8 @@ export default function ReadingPage() {
                                   fontFamily: spine.font,
                                 }}
                                 aria-label={`${entry.title} by ${entry.author}`}
-                                aria-pressed={entry.id === selected.id}
-                                onClick={() => setSelectedId(entry.id)}
+                                aria-pressed={entry.id === selectedId}
+                                onClick={() => setSelectedId(entry.id === selectedId ? null : entry.id)}
                                 onKeyDown={(event) => onBookKeyDown(event, entry.id)}
                               >
                                 <span className={`spine ${spine.creased ? 'spine-creased' : ''}`} aria-hidden="true">
@@ -508,7 +511,13 @@ export default function ReadingPage() {
                 </div>
               </div>
 
+              {selected && (
               <div className="entry-details" aria-label="Selected book" aria-live="polite">
+                <button type="button" className="close" aria-label="Close details" onClick={() => setSelectedId(null)}>
+                  <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+                    <path d="M2 2 L10 10 M10 2 L2 10" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                  </svg>
+                </button>
                 <span className={`cover ${selected.coverCrop ? 'cover-cropped' : ''}`} style={coverStyle(selected)}>
                   <img src={selected.cover} alt={`${selected.title} cover`} />
                 </span>
@@ -522,6 +531,7 @@ export default function ReadingPage() {
                   )}
                 </div>
               </div>
+              )}
             </section>
 
             {categories.filter((type) => type !== 'Book' && type !== 'Audiobook').map((type) => (
@@ -747,9 +757,18 @@ export default function ReadingPage() {
         .entry-details {
           display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start;
           position: sticky; bottom: 0; z-index: 5;
-          margin-top: 12px; padding: 16px 0; min-height: 150px;
+          margin-top: 12px; padding: 16px 32px 16px 0; min-height: 150px;
           background: #fff;
         }
+        .close {
+          appearance: none; -webkit-appearance: none;
+          position: absolute; top: 10px; right: -6px;
+          display: grid; place-items: center; width: 28px; height: 28px;
+          margin: 0; padding: 0; border: 0; border-radius: 50%; background: none;
+          color: #888; cursor: pointer;
+        }
+        .close:hover { color: #222; background: #f2f2f0; }
+        .close:focus-visible { outline: 2px solid #333; outline-offset: 1px; }
         .cover { display: block; width: 100%; height: auto; border-radius: 1px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14), 2px 4px 10px rgba(0, 0, 0, 0.1); }
         .cover img { display: block; width: 100%; height: auto; }
         .cover-cropped { position: relative; overflow: hidden; }
@@ -766,6 +785,20 @@ export default function ReadingPage() {
         }
         @media (max-width: 450px) {
           .entry-details, .with-cover { grid-template-columns: 60px 1fr; gap: 16px; }
+        }
+        /* Phones: the details are a sheet across the bottom of the screen, not part of the column */
+        @media (max-width: 600px) {
+          .entry-details {
+            position: fixed; left: 0; right: 0; bottom: 0;
+            margin: 0; min-height: 0;
+            padding: 14px 44px calc(14px + env(safe-area-inset-bottom)) 16px;
+            border-top: 1px solid #e6e5e0;
+            box-shadow: 0 -6px 18px rgba(30, 28, 20, 0.08);
+          }
+          .entry-details .description {
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+          }
+          .close { top: 8px; right: 8px; }
         }
 
         /* ---------- Two bays side by side: one continuous shelf line ---------- */
