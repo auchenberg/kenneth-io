@@ -1,0 +1,24 @@
+data/reading.json
+  s_02c5ea879ecb0c::t_f1f2da19211a9e 385-398,427-456,472-516,532-546,740-753,782-796,813-815,817-820,823,825,1344-1358,1464-1478
+  s_02c5ea879ecb0c::t_d08125ad263341 384,399-426,457-471,517-531,547-739,754-781,797-812,816,821-822,824,826-1343,1359-1463,1479-1494
+pages/reading.js
+  s_02c5ea879ecb0c::t_d08125ad263341 8
+  s_02c5ea879ecb0c::t_6a67a92b817023 750
+  s_02c5ea879ecb0c::t_c02629caba2d70 7,187-244,252,380,417-427,433,495,526,596-598,605,615-617,745-749,751,773-785
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3036b4b0ceb93ac6caeb8c949e5338495826ec3e",
+  "prompts": {},
+  "sessions": {
+    "s_02c5ea879ecb0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "df04b602-e7d8-4cdd-8cbb-5dc3a1a7bb2d",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
