@@ -4,7 +4,8 @@ import reading from '../data/reading.json';
 
 // Entries are stored newest first; older backfilled books stay later in the collection.
 const books = reading.filter((entry) => entry.type === 'Book');
-const categories = ['Book', 'Article', 'Resource'];
+const audiobooks = reading.filter((entry) => entry.type === 'Audiobook');
+const categories = ['Book', 'Audiobook', 'Article', 'Resource'];
 const metadata = (entry) =>
   [entry.publication, entry.publishedYear && `Published ${entry.publishedYear}`].filter(Boolean).join(' · ');
 const px = (n) => `${n}px`;
@@ -183,6 +184,64 @@ const fallbackSpine = (entry) => ({
   author: { t: (entry.spineAuthor || entry.author || '').split(' ').slice(-1)[0], fs: 8 },
 });
 
+// Audiobooks have no physical spine, so one is typeset from the title. Size, case and
+// binding vary per book but are derived from its id, so a book always looks the same.
+const hash = (text) => [...text].reduce((n, char) => (n * 31 + char.charCodeAt(0)) >>> 0, 7);
+const audioSpine = (entry) => {
+  const n = hash(entry.id);
+  const upper = (n >> 8) % 3 !== 0;
+  const h = 150 + (n % 9) * 5;
+  let w = 17 + ((n >> 4) % 6) * 2;
+  const text = upper ? entry.title.toUpperCase() : entry.title;
+  const surname = (entry.author.split(/,| and /)[0] || '').trim().split(' ').slice(-1)[0];
+  const author = upper ? surname.toUpperCase() : surname;
+  const glyph = upper ? 0.72 : 0.58;
+  const room = h - 18 - 12 - author.length * 6 * glyph;
+  let lines = [text];
+  let fs = room / (text.length * glyph);
+  if (fs < 5.6) {
+    // Long titles run over two lines, split at the word nearest the middle
+    const words = text.split(' ');
+    let best = 1;
+    for (let i = 1; i < words.length; i += 1) {
+      const at = words.slice(0, i).join(' ').length;
+      if (Math.abs(at - text.length / 2) < Math.abs(words.slice(0, best).join(' ').length - text.length / 2)) best = i;
+    }
+    lines = [words.slice(0, best).join(' '), words.slice(best).join(' ')];
+    w = Math.max(w, 23);
+    fs = Math.min(room / (Math.max(...lines.map((line) => line.length)) * glyph), (w - 7) / 2.3);
+  }
+  fs = Math.round(Math.max(4.4, Math.min(8.5, w * 0.42, fs)) * 10) / 10;
+  return {
+    h, w,
+    bind: (n >> 12) % 4 === 0 ? 'hard' : 'paper',
+    creased: (n >> 14) % 3 === 0,
+    flip: (n >> 16) % 5 === 0,
+    font: (n >> 10) % 4 === 0 ? SERIF : undefined,
+    lines: lines.map((t) => ({ t, fs, weight: 600, track: upper ? '0.03em' : undefined })),
+    author: { t: author, fs: 6, weight: 500, track: upper ? '0.03em' : undefined },
+  };
+};
+const spineFor = (entry) => SPINES[entry.id]
+  || (entry.type === 'Audiobook' ? audioSpine(entry) : fallbackSpine(entry));
+
+// Audiobooks fill further shelves below the two curated bays. A tray holds about 264px of
+// spines at full scale; the count is kept even so shelves pair up side by side.
+const SHELF_RUN = 264;
+const audioBays = (() => {
+  const widths = audiobooks.map((entry) => audioSpine(entry).w + 1);
+  const total = widths.reduce((sum, width) => sum + width, 0);
+  let count = Math.ceil(total / SHELF_RUN);
+  if (count % 2) count += 1;
+  const out = Array.from({ length: count }, () => []);
+  let run = 0;
+  audiobooks.forEach((entry, index) => {
+    out[Math.min(count - 1, Math.floor((run + widths[index] / 2) / (total / count)))].push(entry);
+    run += widths[index];
+  });
+  return out.filter((bay) => bay.length);
+})();
+
 const byId = Object.fromEntries(books.map((entry) => [entry.id, entry]));
 const placed = new Set(BAY_ORDER.flat());
 const bays = BAY_ORDER.map((ids, index) => {
@@ -190,7 +249,7 @@ const bays = BAY_ORDER.map((ids, index) => {
   // Any book added to the data later still gets a place on the last shelf.
   if (index === BAY_ORDER.length - 1) entries.push(...books.filter((entry) => !placed.has(entry.id)));
   return entries;
-});
+}).concat(audioBays);
 const shelfOrder = bays.flat();
 
 const textStyle = (part = {}) => ({
@@ -318,7 +377,7 @@ function Shelf({ id }) {
 export default function ReadingPage() {
   const [view, setView] = useState('shelf');
   const [selectedId, setSelectedId] = useState(books[0]?.id);
-  const selected = books.find((entry) => entry.id === selectedId) || books[0];
+  const selected = shelfOrder.find((entry) => entry.id === selectedId) || shelfOrder[0];
   const bookRefs = useRef({});
 
   const onBookKeyDown = (event, id) => {
@@ -355,13 +414,23 @@ export default function ReadingPage() {
               <div className="wall">
                 <div className="system">
                   {bays.map((bayBooks, bayIndex) => (
-                    <div className={`bay bay-${bayIndex === 0 ? 'a' : 'b'}`} key={bayIndex}>
+                    <div
+                      className={[
+                        'bay',
+                        bayIndex % 2 ? 'bay-b' : 'bay-a',
+                        bayIndex === 0 && 'm-first',
+                        bayIndex === bays.length - 1 && 'm-last',
+                        bayIndex < 2 && 'd-first',
+                        bayIndex >= bays.length - 2 && 'd-last',
+                      ].filter(Boolean).join(' ')}
+                      key={bayIndex}
+                    >
                       <span className="upright upright-l" aria-hidden="true"><Rail id={`rail-${bayIndex}-l`} /></span>
                       <span className="upright upright-r" aria-hidden="true"><Rail id={`rail-${bayIndex}-r`} /></span>
                       <div className="tray">
                         <div className="row">
                           {bayBooks.map((entry, bookIndex) => {
-                            const spine = SPINES[entry.id] || fallbackSpine(entry);
+                            const spine = spineFor(entry);
                             const bands = spine.bands || [];
                             const topBand = bands.find((band) => band.at === 'top');
                             const bottomBand = bands.find((band) => band.at === 'bottom');
@@ -423,7 +492,7 @@ export default function ReadingPage() {
                               </button>
                             );
                           })}
-                          {bayIndex > 0 && <span className="bookend" aria-hidden="true" />}
+                          {bayIndex % 2 === 1 && <span className="bookend" aria-hidden="true" />}
                         </div>
                         
                         
@@ -454,7 +523,7 @@ export default function ReadingPage() {
               </div>
             </section>
 
-            {categories.filter((type) => type !== 'Book').map((type) => (
+            {categories.filter((type) => type !== 'Book' && type !== 'Audiobook').map((type) => (
               <section key={type}>
                 <h2>{type}s</h2>
                 {reading.filter((entry) => entry.type === type).map((entry) => (
@@ -524,15 +593,16 @@ export default function ReadingPage() {
         }
         .system { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; }
         .bay { position: relative; min-width: 0; padding-left: 15px; padding-right: 15px; }
-        .bay-a { padding-top: 40px; padding-bottom: 26px; }
-        .bay-b { padding-top: 18px; padding-bottom: 46px; }
+        .bay { padding-top: 18px; padding-bottom: 26px; }
+        .bay.m-first { padding-top: 40px; }
+        .bay.m-last { padding-bottom: 46px; }
 
         /* Aluminium E-track, drawn as explicit SVG faces by Rail above, straight on: two 4px flanges
            either side of an open 5px channel, 13px in all. Each tray stops 2px short of the rail and
            its pins bridge that gap, so trays sit 17px apart across a shared rail.
            Stacked bays share continuous rails; side by side they share the middle one. */
         .upright {
-          position: absolute; top: 16px; bottom: 14px; width: 13px;
+          position: absolute; top: 0; bottom: -1px; width: 13px;
           background:
             none;
             
@@ -542,9 +612,9 @@ export default function ReadingPage() {
         .upright-l { left: 0; }
         .upright-r { right: 0; }
         /* Stacked: the rails run unbroken from the upper bay into the lower one */
-        .bay-a .upright { bottom: -1px; }
-        .bay-b .upright { top: 0; }
-        .bay-b .upright :global(.rail-cap) { display: none; }
+        .m-first .upright { top: 16px; }
+        .m-last .upright { bottom: 14px; }
+        .bay:not(.m-first) .upright :global(.rail-cap) { display: none; }
 
         /* ---------- Shelf: thin folded tray, seen straight on ---------- */
         .tray { position: relative; }
@@ -672,7 +742,13 @@ export default function ReadingPage() {
         }
 
         /* ---------- Selected book / list ---------- */
-        .entry-details { display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start; margin-top: 28px; min-height: 150px; }
+        /* Stays in view at the bottom of the window while the shelves scroll past */
+        .entry-details {
+          display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start;
+          position: sticky; bottom: 0; z-index: 5;
+          margin-top: 12px; padding: 16px 0; min-height: 150px;
+          background: #fff;
+        }
         .cover { display: block; width: 100%; height: auto; border-radius: 1px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14), 2px 4px 10px rgba(0, 0, 0, 0.1); }
         .cover img { display: block; width: 100%; height: auto; }
         .cover-cropped { position: relative; overflow: hidden; }
@@ -694,13 +770,19 @@ export default function ReadingPage() {
         /* ---------- Two bays side by side: one continuous shelf line ---------- */
         @media (min-width: 601px) {
           .wall { --s: 0.85; padding: 0 28px; }
-          .system { flex-direction: row; max-width: none; }
-          .bay { flex: 1 1 0; }
-          .bay + .bay { margin-left: -13px; }
-          .bay + .bay .upright-l { display: none; }
-          .bay-a, .bay-b { padding-top: 56px; padding-bottom: 52px; }
-          .bay-a .upright, .bay-b .upright { top: 18px; bottom: 16px; }
-          .bay-b .upright :global(.rail-cap) { display: inline; }
+          .system { flex-direction: row; flex-wrap: wrap; max-width: none; }
+          .bay { flex: 0 0 calc(50% + 6.5px); }
+          .bay-b { margin-left: -13px; }
+          .bay-b .upright-l { display: none; }
+          /* Shelves stack in pairs; the rails run unbroken from the top pair to the bottom one */
+          .bay, .bay.m-first, .bay.m-last { padding-top: 22px; padding-bottom: 28px; }
+          .bay.d-first { padding-top: 56px; }
+          .bay.d-last { padding-bottom: 52px; }
+          .bay .upright { top: 0; bottom: -1px; }
+          .bay.d-first .upright { top: 18px; }
+          .bay.d-last .upright { bottom: 16px; }
+          .bay .upright :global(.rail-cap) { display: none; }
+          .bay.d-first .upright :global(.rail-cap) { display: inline; }
           /* Both trays hang at the same height on the shared E-track; bays overlap 13px so the 17px joint holds one rail with a 2px gap either side, its top and bottom ends inside the wall. */
         }
 
