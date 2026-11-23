@@ -5,7 +5,8 @@ import reading from '../data/reading.json';
 // Entries are stored newest first; older backfilled books stay later in the collection.
 const books = reading.filter((entry) => entry.type === 'Book');
 const audiobooks = reading.filter((entry) => entry.type === 'Audiobook');
-const categories = ['Book', 'Audiobook', 'Article', 'Resource'];
+// Articles and resources stay in data/reading.json but are not shown for now.
+const categories = ['Book', 'Audiobook'];
 const metadata = (entry) =>
   [entry.publication, entry.publishedYear && `Published ${entry.publishedYear}`].filter(Boolean).join(' · ');
 const px = (n) => `${n}px`;
