@@ -12,6 +12,7 @@ export default class Nav extends React.Component {
         <a href="/posts">Thoughts</a>
         <a href="https://instagram.com/auchenberg">Photography</a>
         <a href="/objects">Objects</a>
+        <a href="/reading">Reading</a>
         <a href="/travel">Travel</a>
         <a href="/about">About</a>
 
