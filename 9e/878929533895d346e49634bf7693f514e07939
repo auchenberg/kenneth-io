@@ -1,0 +1,19 @@
+posts/2026-11-22-ax-is-not-the-new-dx-its-the-new-ux.md
+  s_4f07bc045c4e35::t_b7beb8fe86ec41 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9e878929533895d346e49634bf7693f514e07939",
+  "prompts": {},
+  "sessions": {
+    "s_4f07bc045c4e35": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20636-6ead-78f3-aec8-8d902ee831ed",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
