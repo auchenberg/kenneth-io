@@ -148,7 +148,8 @@ const SPINES = {
   },
 };
 
-// Two bays of one 606 run. Books are grouped as they would be at home:
+// Two bays of one 606 run: a wide 912mm bay on the left and a narrow 667mm bay on the
+// right, the two widths the system is made in. Books are grouped as they would be at home:
 // business on the left, design on the right, both packed towards the shared
 // upright. The first book of the left bay leans; the right bay has a bookend.
 const BAY_ORDER = [
@@ -160,6 +161,7 @@ const BAY_ORDER = [
     'flash-boys',
     'the-power-of-habit',
     'why-we-buy',
+    'the-paradox-of-choice',
     'open-secrets',
     'tell-me-im-wrong',
     'the-culture-map',
@@ -170,7 +172,6 @@ const BAY_ORDER = [
     'universal-principles-of-design',
     'the-design-of-everyday-things',
     'the-inmates-are-running-the-asylum',
-    'the-paradox-of-choice',
     'porsche-911',
     'soft-electronics',
     'less-but-better',
@@ -226,31 +227,47 @@ const audioSpine = (entry) => {
 const spineFor = (entry) => SPINES[entry.id]
   || (entry.type === 'Audiobook' ? audioSpine(entry) : fallbackSpine(entry));
 
-// Audiobooks fill further shelves below the two curated bays. A tray holds about 264px of
-// spines at full scale; the count is kept even so shelves pair up side by side.
-const SHELF_RUN = 264;
-const audioBays = (() => {
-  const widths = audiobooks.map((entry) => audioSpine(entry).w + 1);
-  const total = widths.reduce((sum, width) => sum + width, 0);
-  let count = Math.ceil(total / SHELF_RUN);
-  if (count % 2) count += 1;
-  const out = Array.from({ length: count }, () => []);
-  let run = 0;
-  audiobooks.forEach((entry, index) => {
-    out[Math.min(count - 1, Math.floor((run + widths[index] / 2) / (total / count)))].push(entry);
-    run += widths[index];
-  });
-  return out.filter((bay) => bay.length);
-})();
-
+// The two curated bays come first; audiobooks fill the room left on them and then further
+// shelves below, in the same wide + narrow pairs. Each tray takes spines in proportion to
+// its length, so both widths end up equally full; PAIR_RUN is the most a pair holds, in px
+// of spine at full scale.
+const BAY_MM = [912, 667];
+const PAIR_RUN = 690;
 const byId = Object.fromEntries(books.map((entry) => [entry.id, entry]));
 const placed = new Set(BAY_ORDER.flat());
-const bays = BAY_ORDER.map((ids, index) => {
-  const entries = ids.map((id) => byId[id]).filter(Boolean);
-  // Any book added to the data later still gets a place on the last shelf.
-  if (index === BAY_ORDER.length - 1) entries.push(...books.filter((entry) => !placed.has(entry.id)));
-  return entries;
-}).concat(audioBays);
+const bays = (() => {
+  const curated = BAY_ORDER.map((ids, index) => {
+    const entries = ids.map((id) => byId[id]).filter(Boolean);
+    // Any book added to the data later still gets a place on the second shelf.
+    if (index === BAY_ORDER.length - 1) entries.push(...books.filter((entry) => !placed.has(entry.id)));
+    return entries;
+  });
+  const runOf = (entries) => entries.reduce((sum, entry) => sum + spineFor(entry).w + 1, 0);
+  const widths = audiobooks.map((entry) => audioSpine(entry).w + 1);
+  // The leaning book and the bookends take a little shelf too
+  const held = curated.map((entries) => runOf(entries) + 12);
+  const total = widths.reduce((sum, width) => sum + width, 0) + held.reduce((sum, run) => sum + run, 0);
+  const count = Math.max(curated.length, Math.ceil(total / PAIR_RUN) * 2);
+  // Tray length is the bay width less the rail between two trays (about 22mm at this scale)
+  const shares = Array.from({ length: count }, (_, index) => BAY_MM[index % 2] - 22);
+  const whole = shares.reduce((sum, share) => sum + share, 0);
+  const room = shares.map((share, index) => Math.max(0, (share / whole) * total - (held[index] || 0)));
+  const free = room.reduce((sum, space) => sum + space, 0);
+  const ends = room.map(((sum) => (space) => (sum += space) / free)(0));
+  const extra = shares.map(() => []);
+  let run = 0;
+  audiobooks.forEach((entry, index) => {
+    const at = (run + widths[index] / 2) / (total - held.reduce((sum, r) => sum + r, 0));
+    const bay = ends.findIndex((end) => at <= end);
+    extra[bay < 0 ? count - 1 : bay].push(entry);
+    run += widths[index];
+  });
+  // Audiobooks sit on the outer side of the curated books, which stay either side of the rail
+  return extra.map((entries, index) => {
+    const own = curated[index] || [];
+    return index % 2 ? own.concat(entries) : entries.concat(own);
+  });
+})();
 const shelfOrder = bays.flat();
 
 const textStyle = (part = {}) => ({
@@ -595,7 +612,8 @@ export default function ReadingPage() {
 
         /* ---------- Wall: a cropped view of a 606 run ---------- */
         .wall {
-          --s: 1;
+          /* Phones: bays stack at one width, so each tray has to hold a wide bay's books */
+          --s: 0.7;
           position: relative;
           overflow: hidden;
           border-radius: 12px;
@@ -604,9 +622,9 @@ export default function ReadingPage() {
         }
         .system { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; }
         .bay { position: relative; min-width: 0; padding-left: 15px; padding-right: 15px; }
-        .bay { padding-top: 18px; padding-bottom: 26px; }
-        .bay.m-first { padding-top: 40px; }
-        .bay.m-last { padding-bottom: 46px; }
+        .bay { padding-top: 12px; padding-bottom: 18px; }
+        .bay.m-first { padding-top: 34px; }
+        .bay.m-last { padding-bottom: 38px; }
 
         /* Aluminium E-track, drawn as explicit SVG faces by Rail above, straight on: two 4px flanges
            either side of an open 5px channel, 13px in all. Each tray stops 2px short of the rail and
@@ -780,8 +798,11 @@ export default function ReadingPage() {
         .with-cover { display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start; }
 
         /* ---------- Small phones ---------- */
+        @media (max-width: 374px) {
+          .wall { --s: 0.66; }
+        }
         @media (max-width: 359px) {
-          .wall { --s: 0.85; padding: 0 8px; }
+          .wall { --s: 0.6; padding: 0 8px; }
         }
         @media (max-width: 450px) {
           .entry-details, .with-cover { grid-template-columns: 60px 1fr; gap: 16px; }
@@ -801,23 +822,34 @@ export default function ReadingPage() {
           .close { top: 8px; right: 8px; }
         }
 
-        /* ---------- Two bays side by side: one continuous shelf line ---------- */
+        /* ---------- Two bays side by side: one continuous shelf line ----------
+           606 bays are 912mm or 667mm between E-track centres. The outer rails sit half a rail
+           in from each end, so the run between them is split 912 : 667. */
         @media (min-width: 601px) {
-          .wall { --s: 0.85; padding: 0 28px; }
+          .wall { --s: 0.69; padding: 0 28px; }
           .system { flex-direction: row; flex-wrap: wrap; max-width: none; }
-          .bay { flex: 0 0 calc(50% + 6.5px); }
-          .bay-b { margin-left: -13px; }
+          .bay-a { flex: 0 0 calc((100% - 13px) * 912 / 1579 + 13px); }
+          .bay-b { flex: 0 0 calc((100% - 13px) * 667 / 1579 + 13px); margin-left: -13px; }
           .bay-b .upright-l { display: none; }
           /* Shelves stack in pairs; the rails run unbroken from the top pair to the bottom one */
-          .bay, .bay.m-first, .bay.m-last { padding-top: 22px; padding-bottom: 28px; }
-          .bay.d-first { padding-top: 56px; }
-          .bay.d-last { padding-bottom: 52px; }
+          .bay, .bay.m-first, .bay.m-last { padding-top: 12px; padding-bottom: 18px; }
+          .bay.d-first { padding-top: 46px; }
+          .bay.d-last { padding-bottom: 42px; }
           .bay .upright { top: 0; bottom: -1px; }
           .bay.d-first .upright { top: 18px; }
           .bay.d-last .upright { bottom: 16px; }
           .bay .upright :global(.rail-cap) { display: none; }
           .bay.d-first .upright :global(.rail-cap) { display: inline; }
           /* Both trays hang at the same height on the shared E-track; bays overlap 13px so the 17px joint holds one rail with a 2px gap either side, its top and bottom ends inside the wall. */
+        }
+
+        /* Full column: the outer rails line up with the edges of the text column */
+        @media (min-width: 660px) {
+          .wall { --s: 0.76; padding: 0; }
+        }
+        /* The wall itself runs 18px past the rails on each side, the same as the gap above them */
+        @media (min-width: 700px) {
+          .wall { margin: 0 -18px; padding: 0 18px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
