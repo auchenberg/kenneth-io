@@ -1,0 +1,27 @@
+pages/reading.js
+  s_02c5ea879ecb0c::t_80d9437d7d60ff 851
+  s_02c5ea879ecb0c::t_f01f42cdac45aa 850,852
+  s_02c5ea879ecb0c::t_b3df704b1b2b97 846-848
+  s_02c5ea879ecb0c::t_b2602bed42aa54 151-152,164,234,251-253,261,825-827,831-832
+  s_02c5ea879ecb0c::t_237f4a66757387 625-627,835-837
+  s_02c5ea879ecb0c::t_14681c5ccb7ae3 849,853
+  s_02c5ea879ecb0c::t_7521349d0f4f16 615,801,803
+  s_02c5ea879ecb0c::t_2fba9cb596fbd0 230-233,235-245,247-250,254-257,260,262,265-269,616,802,805,829
+  s_02c5ea879ecb0c::t_e51d525ea667cd 854
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c245c33b492b948beeff0d1a7b94a23f3e22eacd",
+  "prompts": {},
+  "sessions": {
+    "s_02c5ea879ecb0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "df04b602-e7d8-4cdd-8cbb-5dc3a1a7bb2d",
+        "model": "unknown"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
