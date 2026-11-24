@@ -416,11 +416,11 @@ export default function ReadingPage() {
   };
 
   return (
-    <Layout title="Reading" description="Books and important articles I've read over the years." canonicalPath="/reading" center>
+    <Layout title="Reading" description="My book shelf of books and important articles I've read over the years." canonicalPath="/reading" center>
       <main className="reading">
         <header>
           <h1>Reading</h1>
-          <p className="intro">Books and important articles I’ve read over the years.</p>
+          <p className="intro">My book shelf of books and important articles I’ve read over the years.</p>
           <div className="view-switch" role="group" aria-label="Reading view">
             <button type="button" aria-pressed={view === 'shelf'} onClick={() => setView('shelf')}>Shelf</button>
             <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}>List</button>
