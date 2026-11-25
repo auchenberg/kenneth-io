@@ -1,0 +1,19 @@
+posts/2026-05-13-a-decade-of-software-infrastructure.md
+  s_3088924f55f2ba::t_05a77e1506bc4d 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d2fc4e4db91fdcf1464e47b03fedc605d55fc5a4",
+  "prompts": {},
+  "sessions": {
+    "s_3088924f55f2ba": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a213ff-a054-70d3-b878-2364f9458bb8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Kenneth Auchenberg <kenneth@auchenberg.dk>"
+    }
+  }
+}
