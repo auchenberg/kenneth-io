@@ -288,7 +288,7 @@ function Rail({ id }) {
             <circle cx="6.5" cy="3" r="2.3" fill="#3a3e40" />
             <circle cx="6.5" cy="3" r="1.8" fill="#c4c7c9" stroke="#8a8f91" strokeWidth="0.3" />
             <circle cx="6.1" cy="2.6" r="0.8" fill="#eceeee" opacity="0.8" />
-            <path d="M5.4 3.7 L7.6 2.3" stroke="#4c5052" strokeWidth="0.5" strokeLinecap="round" />
+            <path d="M6.5 1.7 L6.5 4.3" stroke="#4c5052" strokeWidth="0.5" strokeLinecap="round" />
           </pattern>
         </defs>
         <rect x="2" y="0" width="3.5" height="100%" fill={`url(#${id}-channel)`} />
