@@ -227,47 +227,22 @@ const audioSpine = (entry) => {
 const spineFor = (entry) => SPINES[entry.id]
   || (entry.type === 'Audiobook' ? audioSpine(entry) : fallbackSpine(entry));
 
-// The two curated bays come first; audiobooks fill the room left on them and then further
-// shelves below, in the same wide + narrow pairs. Each tray takes spines in proportion to
-// its length, so both widths end up equally full; PAIR_RUN is the most a pair holds, in px
-// of spine at full scale.
-const BAY_MM = [912, 667];
-const PAIR_RUN = 690;
-const byId = Object.fromEntries(books.map((entry) => [entry.id, entry]));
-const placed = new Set(BAY_ORDER.flat());
-const bays = (() => {
-  const curated = BAY_ORDER.map((ids, index) => {
-    const entries = ids.map((id) => byId[id]).filter(Boolean);
-    // Any book added to the data later still gets a place on the second shelf.
-    if (index === BAY_ORDER.length - 1) entries.push(...books.filter((entry) => !placed.has(entry.id)));
-    return entries;
-  });
-  const runOf = (entries) => entries.reduce((sum, entry) => sum + spineFor(entry).w + 1, 0);
-  const widths = audiobooks.map((entry) => audioSpine(entry).w + 1);
-  // The leaning book and the bookends take a little shelf too
-  const held = curated.map((entries) => runOf(entries) + 12);
-  const total = widths.reduce((sum, width) => sum + width, 0) + held.reduce((sum, run) => sum + run, 0);
-  const count = Math.max(curated.length, Math.ceil(total / PAIR_RUN) * 2);
-  // Tray length is the bay width less the rail between two trays (about 22mm at this scale)
-  const shares = Array.from({ length: count }, (_, index) => BAY_MM[index % 2] - 22);
-  const whole = shares.reduce((sum, share) => sum + share, 0);
-  const room = shares.map((share, index) => Math.max(0, (share / whole) * total - (held[index] || 0)));
-  const free = room.reduce((sum, space) => sum + space, 0);
-  const ends = room.map(((sum) => (space) => (sum += space) / free)(0));
-  const extra = shares.map(() => []);
-  let run = 0;
-  audiobooks.forEach((entry, index) => {
-    const at = (run + widths[index] / 2) / (total - held.reduce((sum, r) => sum + r, 0));
-    const bay = ends.findIndex((end) => at <= end);
-    extra[bay < 0 ? count - 1 : bay].push(entry);
-    run += widths[index];
-  });
-  // Audiobooks sit on the outer side of the curated books, which stay either side of the rail
-  return extra.map((entries, index) => {
-    const own = curated[index] || [];
-    return index % 2 ? own.concat(entries) : entries.concat(own);
-  });
-})();
+// One category per shelf, in wide + narrow pairs from the top: the three largest categories
+// take the wide bays. Printed books keep their BAY_ORDER sequence and sit next to the middle
+// rail, with the audiobooks on the outer side.
+const SHELVES = [
+  'Business & leadership', 'Design',
+  'Politics & world', 'Money & economics',
+  'Mind & habits', 'Startups & tech',
+];
+const curatedRank = Object.fromEntries(BAY_ORDER.flat().map((id, index) => [id, index]));
+const bays = SHELVES.map((category, index) => {
+  // A book with no category, or one not listed above, still gets a place on the last shelf.
+  const mine = (entry) => (SHELVES.includes(entry.category) ? entry.category === category : index === SHELVES.length - 1);
+  const printed = books.filter(mine).sort((x, y) => (curatedRank[x.id] ?? 999) - (curatedRank[y.id] ?? 999));
+  const heard = audiobooks.filter(mine);
+  return index % 2 ? printed.concat(heard) : heard.concat(printed);
+});
 const shelfOrder = bays.flat();
 
 const textStyle = (part = {}) => ({
@@ -445,6 +420,8 @@ export default function ReadingPage() {
                         bayIndex >= bays.length - 2 && 'd-last',
                       ].filter(Boolean).join(' ')}
                       key={bayIndex}
+                      role="group"
+                      aria-label={SHELVES[bayIndex]}
                     >
                       <span className="upright upright-l" aria-hidden="true"><Rail id={`rail-${bayIndex}-l`} /></span>
                       <span className="upright upright-r" aria-hidden="true"><Rail id={`rail-${bayIndex}-r`} /></span>
@@ -517,6 +494,7 @@ export default function ReadingPage() {
                         </div>
                         
                         
+                        <span className="shelf-label" aria-hidden="true">{SHELVES[bayIndex]}</span>
                         <div className="shelf" aria-hidden="true">
                           <span className="shelf-shadow" />
                           <Shelf id={`shelf-${bayIndex}`} />
@@ -541,7 +519,7 @@ export default function ReadingPage() {
                 <div>
                   <p className="eyebrow">{selected.author}</p>
                   <h3>{selected.title}</h3>
-                  <p className="meta">{metadata(selected)}</p>
+                  <p className="meta">{[selected.category, metadata(selected)].filter(Boolean).join(' · ')}</p>
                   <p className="description">{selected.description}</p>
                   {selected.url && (
                     <a className="more" href={selected.url} target="_blank" rel="noopener noreferrer">View book ↗</a>
@@ -566,10 +544,11 @@ export default function ReadingPage() {
           </>
         ) : (
           <div aria-label="Reading list">
-            {categories.map((type) => (
-              <section key={type}>
-                <h2>{type}s</h2>
-                {reading.filter((entry) => entry.type === type).map((entry) => (
+            {SHELVES.map((category, index) => (
+              <section key={category}>
+                <h2>{category}</h2>
+                {/* Same grouping as the shelves: printed books first, then audiobooks */}
+                {books.concat(audiobooks).filter((entry) => bays[index].includes(entry)).map((entry) => (
                   <article key={entry.id} className={`list-entry ${entry.cover ? 'with-cover' : ''}`}>
                     {entry.cover && <span className={`cover ${entry.coverCrop ? 'cover-cropped' : ''}`} style={coverStyle(entry)}><img src={entry.cover} alt={`${entry.title} cover`} loading="lazy" /></span>}
                     <div>
@@ -613,11 +592,11 @@ export default function ReadingPage() {
         /* ---------- Wall: a cropped view of a 606 run ---------- */
         .wall {
           /* Phones: bays stack at one width, so each tray has to hold a wide bay's books */
-          --s: 0.7;
+          --s: 0.68;
           position: relative;
           overflow: hidden;
           border-radius: 12px;
-          padding: 0 16px;
+          padding: 0 8px;
           background: linear-gradient(100deg, #f7f6f3 0%, #f3f2ee 55%, #eeede8 100%);
         }
         .system { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; }
@@ -658,6 +637,16 @@ export default function ReadingPage() {
         .bay-b .row { justify-content: flex-start; }
 
         .shelf { position: relative; z-index: 1; height: 10px; }
+        /* Category tag clipped to the front edge of the shelf, like a library shelf label */
+        .shelf-label {
+          position: absolute; z-index: 3; left: 8px; bottom: -4px;
+          padding: 0 5px; height: 12px;
+          font-size: 7px; line-height: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+          white-space: nowrap; color: #55534c;
+          background: linear-gradient(#fdfcf9, #f1f0ea);
+          border-radius: 1.5px;
+          box-shadow: 0 0 0 0.5px rgba(40, 38, 30, 0.22), 0 1px 1.5px rgba(40, 38, 30, 0.22);
+        }
         /* Soft shadow the shelf casts on the wall, straight down */
         .shelf-shadow {
           position: absolute; left: -6px; right: -6px; top: 6px; height: 40px;
@@ -799,10 +788,10 @@ export default function ReadingPage() {
 
         /* ---------- Small phones ---------- */
         @media (max-width: 374px) {
-          .wall { --s: 0.66; }
+          .wall { --s: 0.63; }
         }
         @media (max-width: 359px) {
-          .wall { --s: 0.6; padding: 0 8px; }
+          .wall { --s: 0.55; }
         }
         @media (max-width: 450px) {
           .entry-details, .with-cover { grid-template-columns: 60px 1fr; gap: 16px; }
@@ -826,7 +815,7 @@ export default function ReadingPage() {
            606 bays are 912mm or 667mm between E-track centres. The outer rails sit half a rail
            in from each end, so the run between them is split 912 : 667. */
         @media (min-width: 601px) {
-          .wall { --s: 0.69; padding: 0 28px; }
+          .wall { --s: 0.62; padding: 0 28px; }
           .system { flex-direction: row; flex-wrap: wrap; max-width: none; }
           .bay-a { flex: 0 0 calc((100% - 13px) * 912 / 1579 + 13px); }
           .bay-b { flex: 0 0 calc((100% - 13px) * 667 / 1579 + 13px); margin-left: -13px; }
