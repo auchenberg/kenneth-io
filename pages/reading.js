@@ -850,6 +850,9 @@ export default function ReadingPage() {
         /* The wall itself runs 18px past the rails on each side, the same as the gap above them */
         @media (min-width: 700px) {
           .wall { margin: 0 -18px; padding: 0 18px; }
+          /* The details cover the wall edge to edge; their content stays on the text column */
+          .entry-details { margin-left: -18px; margin-right: -18px; padding-left: 18px; padding-right: 50px; }
+          .close { right: 12px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
